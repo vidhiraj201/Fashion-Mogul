@@ -26,7 +26,7 @@ namespace FashionM.Control
         public int clientNeedItem;
         
 
-        public float takeItemToPlayter;
+        public float takeItemFromPlayer;
         public float waitTimer = 1;
         public bool playerIsNear = false;
 
@@ -34,7 +34,7 @@ namespace FashionM.Control
         private GameManager gm;
         private void Start()
         {
-            takeItemToPlayter = waitTimer;
+            takeItemFromPlayer = waitTimer;
             waitTimerUI.gameObject.SetActive(false);
             gm = FindObjectOfType<GameManager>();
             clientNeedItemRandomize();
@@ -60,16 +60,16 @@ namespace FashionM.Control
             if (playerIsNear)
             {
                 
-                takeItemToPlayter -= Time.deltaTime;
+                takeItemFromPlayer -= Time.deltaTime;
                 waitTimerUI.gameObject.SetActive(true);
-                waitTimerUI.fillAmount = takeItemToPlayter / waitTimer;
-                if (takeItemToPlayter <= 0)
+                waitTimerUI.fillAmount = takeItemFromPlayer / waitTimer;
+                if (takeItemFromPlayer <= 0)
                 {
                     
-                    waitTimerUI.gameObject.SetActive(false);
                     tredingComplete = true;
                     playerIsNear = false;
-                    takeItemToPlayter = waitTimer;
+                    waitTimerUI.gameObject.SetActive(false);
+                    takeItemFromPlayer = waitTimer;
                 }
             }
         }
@@ -95,5 +95,17 @@ namespace FashionM.Control
             }
         }
 
+        
+
+        private void OnCollisionExit(Collision collision)
+        {
+            if (playerIsNear)
+            {
+                playerIsNear = false;
+                startTreding = false;
+                waitTimerUI.gameObject.SetActive(false);
+                takeItemFromPlayer = waitTimer;
+            }
+        }
     }
 }

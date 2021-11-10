@@ -34,11 +34,12 @@ namespace FashionM.Control
         {
             if (other.gameObject.CompareTag("Client"))
             {
-                other.gameObject.GetComponent<clientControl>().startTreding = true;
-                if (other.gameObject.GetComponent<clientControl>().clientNeedItem == StoreNumberStored)
+                if (other.gameObject.GetComponent<clientControl>().clientNeedItem == StoreNumberStored )
                 {
+                    other.gameObject.GetComponent<clientControl>().startTreding = true;
                     other.gameObject.GetComponent<clientControl>().playerIsNear = true;
-                    StoreNumberStored = 0;
+                    /*if(other.gameObject.GetComponent<clientControl>().takeItemFromPlayer <= 0)
+                        StoreNumberStored = 0;*/
                 }
             }
 
@@ -56,6 +57,22 @@ namespace FashionM.Control
                     other.gameObject.GetComponent<Animator>().SetTrigger("collect");
                     Destroy(other.gameObject.GetComponent<Collider>());
                     manager.MaxCoin += other.gameObject.GetComponent<DropCoin>().Coins;
+                }
+            }
+        }
+
+        private void OnCollisionStay(Collision other)
+        {
+            if (other.gameObject.CompareTag("Client"))
+            {
+                if (other.gameObject.GetComponent<clientControl>().clientNeedItem == StoreNumberStored)
+                {
+                    print("1");
+                    if (other.gameObject.GetComponent<clientControl>().takeItemFromPlayer <= 0.1f)
+                    {
+                        print("2");
+                        StoreNumberStored = 0;
+                    }
                 }
             }
         }

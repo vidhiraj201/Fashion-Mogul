@@ -13,7 +13,7 @@ namespace FashionM.Control
         public GameObject TargetForClient;
         public GameObject TargetForStore;
         public bool TargetLock;
-
+        public bool T;
         [Header("Treding")]
         public float StoreNumberStored;
 
@@ -37,6 +37,12 @@ namespace FashionM.Control
                 TargetLock = false ;
             
             FindTargetForStore();
+
+            if (Input.GetKeyDown(KeyCode.E) && T)
+            {
+                TargetForClient = null;
+                TargetLock = false;
+            }
 
         }
 

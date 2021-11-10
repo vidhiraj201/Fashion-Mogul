@@ -142,6 +142,14 @@ namespace FashionM.Core
         }
         private void OnCollisionExit(Collision collision)
         {
+            if (playerIsNear)
+            {
+                playerIsNear = false;
+                giveItemToPlayter = waitTimer;
+                waitTimerUnlockUI.gameObject.SetActive(false);
+            }
+
+
             if (PlayerIsOnClosedRack)
             {
                 loadWaitTimer = waitTimer;
