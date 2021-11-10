@@ -10,6 +10,7 @@ namespace FashionM.Movement
     {
         //private clientCollection CC;
         private NavMeshAgent agent;
+        public Animator Anime;
         public Transform End;
         public GameObject ClientPosition;
         public GameObject PurchesUI;
@@ -66,6 +67,8 @@ namespace FashionM.Movement
 
             if (transform.GetComponent<clientControl>().tredingComplete)
                 agent.SetDestination(End.position);
+
+            Anime.SetFloat("speed", agent.velocity.magnitude);
         }
 
 
