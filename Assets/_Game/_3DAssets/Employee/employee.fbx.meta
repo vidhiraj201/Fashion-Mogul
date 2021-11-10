@@ -1,14 +1,8 @@
 fileFormatVersion: 2
-guid: 91a84fb585becbf4b83b43af0dbb3970
+guid: c25165802a51679449611f306b0fc91f
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
-  - first:
-      74: -5662057800245447957
-    second: SkeletAction
-  - first:
-      74: -2889085019725202202
-    second: Action.001
   - first:
       74: -203655887218126122
     second: mixamo.com
@@ -43,7 +37,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 1.4
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +84,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.0139999995
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

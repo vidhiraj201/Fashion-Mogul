@@ -11,12 +11,10 @@ namespace FashionM.Control
     {
 
         private TextMeshPro Text;
-        public int RackNumberStored = 0;
-
+        public int StoreNumberStored = 0;
         private GameManager manager;
-
-        
         public Stores OR;
+
         private void Start()
         {
             Text = transform.GetChild(1).GetComponent<TextMeshPro>();
@@ -25,10 +23,10 @@ namespace FashionM.Control
 
         private void Update()
         {
-            if(RackNumberStored>=1)
-                Text.text = RackNumberStored.ToString();
+            if(StoreNumberStored>=1)
+                Text.text = StoreNumberStored.ToString();
 
-            if (RackNumberStored <= 0)
+            if (StoreNumberStored <= 0)
                 Text.text = "".ToString();
 
         }
@@ -37,10 +35,10 @@ namespace FashionM.Control
             if (other.gameObject.CompareTag("Client"))
             {
                 other.gameObject.GetComponent<clientControl>().startTreding = true;
-                if (other.gameObject.GetComponent<clientControl>().clientNeedItem == RackNumberStored)
+                if (other.gameObject.GetComponent<clientControl>().clientNeedItem == StoreNumberStored)
                 {
                     other.gameObject.GetComponent<clientControl>().playerIsNear = true;
-                    RackNumberStored = 0;
+                    StoreNumberStored = 0;
                 }
             }
 

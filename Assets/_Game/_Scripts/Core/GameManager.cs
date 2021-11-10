@@ -15,6 +15,7 @@ namespace FashionM.Core
         [Header("UI")]
         public GameObject TapUI;
         public GameObject UnlockStoreUI;
+        public GameObject HireEmployee;
 
         [Header("Stores")]
         public bool basicCloths;
@@ -27,6 +28,7 @@ namespace FashionM.Core
         {
             TapUI.SetActive(true);
             UnlockStoreUI.SetActive(false);
+            HireEmployee.SetActive(false);
         }
 
         

@@ -51,9 +51,10 @@ namespace FashionM.Core
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                if(GM.MaxCoin >=MaxCoinNeedToUnlock && MaxCoinNeedToUnlock > 0)
+                if(GM.MaxCoin >=MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
                 {
                     MaxCoinNeedToUnlock -= CoinReduceSpeed;
+                    GM.MaxCoin -= CoinReduceSpeed;
                     StationPrice.text = "$" + MaxCoinNeedToUnlock;
                 }
             }

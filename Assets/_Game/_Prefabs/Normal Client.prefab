@@ -213,6 +213,8 @@ GameObject:
   - component: {fileID: 3782121376092730445}
   - component: {fileID: 3782121376092730447}
   - component: {fileID: 5255977384082385264}
+  - component: {fileID: 6217123480627832279}
+  - component: {fileID: 2047798730730299126}
   m_Layer: 0
   m_Name: Normal Client
   m_TagString: Client
@@ -313,6 +315,32 @@ MonoBehaviour:
   waitTimer: 1
   playerIsNear: 0
   coinSpwan: 0
+--- !u!114 &6217123480627832279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3782121376092730446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9976d7c87096b047a7045b5fd8f91a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmpNo: 0
+  locked: 0
+--- !u!114 &2047798730730299126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3782121376092730446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a473cf99145c85448696528e5078a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4140978016489893290
 GameObject:
   m_ObjectHideFlags: 0

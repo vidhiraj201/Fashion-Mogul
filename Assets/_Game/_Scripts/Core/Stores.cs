@@ -93,7 +93,7 @@ namespace FashionM.Core
                 waitTimerUnlockUI.fillAmount = giveItemToPlayter / waitTimer;
                 if (giveItemToPlayter <= 0)
                 {
-                    playerC.RackNumberStored = RackNumber;
+                    playerC.StoreNumberStored = RackNumber;
                     playerIsNear = false;
                     giveItemToPlayter = waitTimer;
                     waitTimerUnlockUI.gameObject.SetActive(false);

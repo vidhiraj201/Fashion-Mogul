@@ -7,7 +7,7 @@ using FashionM.Control;
 
 namespace FashionM.Core
 {
-    public class UIButton : MonoBehaviour
+    public class UIButton_Stores : MonoBehaviour
     {
         private GameManager gm;
         private playerControl PControl;
