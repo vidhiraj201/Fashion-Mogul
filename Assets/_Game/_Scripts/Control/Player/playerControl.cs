@@ -38,8 +38,6 @@ namespace FashionM.Control
                 {
                     other.gameObject.GetComponent<clientControl>().startTreding = true;
                     other.gameObject.GetComponent<clientControl>().playerIsNear = true;
-                    /*if(other.gameObject.GetComponent<clientControl>().takeItemFromPlayer <= 0)
-                        StoreNumberStored = 0;*/
                 }
             }
 
@@ -66,11 +64,9 @@ namespace FashionM.Control
             if (other.gameObject.CompareTag("Client"))
             {
                 if (other.gameObject.GetComponent<clientControl>().clientNeedItem == StoreNumberStored)
-                {
-                    print("1");
+                {                    
                     if (other.gameObject.GetComponent<clientControl>().takeItemFromPlayer <= 0.1f)
                     {
-                        print("2");
                         StoreNumberStored = 0;
                     }
                 }

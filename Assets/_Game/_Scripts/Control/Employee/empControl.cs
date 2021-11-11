@@ -12,53 +12,49 @@ namespace FashionM.Control
         public int ClientNo;
         public GameObject TargetForClient;
         public GameObject TargetForStore;
-        public bool TargetLock;
-        public bool T;
+        public bool Occupied;
+
         [Header("Treding")]
+        public Stores OR;
+
         public float StoreNumberStored;
 
+        private GameManager manager;
         void Start()
         {
-
+            manager = FindObjectOfType<GameManager>();
         }
 
         void FixedUpdate()
         {
-            if(!TargetLock)
-                FIndTargetForClient();
+            /*if(!Occupied)
+                FIndTargetForClient();*/
 
-            if(TargetLock)
-                ResetTargetOfClient();
+            /*if(Occupied)
+                ResetTargetOfClient();*/
 
-            if (TargetForClient != null )
-                TargetLock = true;
+            /*if (TargetForClient != null )
+                Occupied = true;*/
 
             if (TargetForClient == null)
-                TargetLock = false ;
+                Occupied = false ;
             
-            FindTargetForStore();
-
-            if (Input.GetKeyDown(KeyCode.E) && T)
-            {
-                TargetForClient = null;
-                TargetLock = false;
-            }
 
         }
 
         void FIndTargetForClient()
         {           
             TargetForClient = FindObjectOfType<DummyScriptForClient>().gameObject;
-            if (TargetForClient.GetComponent<Uitilities>().EmpNo <= 0)
+            if (TargetForClient.GetComponent<ClientUitilities>().EmpNo <= 0)
             {                
-                TargetForClient.GetComponent<Uitilities>().EmpNo = ClientNo;
-                TargetForClient.GetComponent<Uitilities>().locked = true;
+                TargetForClient.GetComponent<ClientUitilities>().EmpNo = ClientNo;
+                TargetForClient.GetComponent<ClientUitilities>().locked = true;
                 Destroy(TargetForClient.GetComponent<DummyScriptForClient>());
             }
         }
         void ResetTargetOfClient()
         {
-            if (TargetForClient.GetComponent<Uitilities>().EmpNo > 0 && TargetForClient.GetComponent<Uitilities>().EmpNo != ClientNo)
+            if (TargetForClient.GetComponent<ClientUitilities>().EmpNo > 0 && TargetForClient.GetComponent<ClientUitilities>().EmpNo != ClientNo)
             {              
                 TargetForClient = null;
             }
@@ -69,24 +65,50 @@ namespace FashionM.Control
         {
              Racks = Physics.OverlapSphere(transform.position, 100);
 
-            foreach (Collider hitCollider in Racks)
-            {
 
-                /*if (hitCollider.tag == "Racks")
-                    Debug.Log("Hello");*/
-                
-                /*if(hitCollider.GetComponent<Stores>().RackNumber == TargetForClient.GetComponent<clientControl>().clientNeedItem)
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            if (other.gameObject.CompareTag("Client"))
+            {
+                if (other.gameObject.GetComponent<clientControl>().clientNeedItem == StoreNumberStored)
                 {
-                    TargetForStore = hitCollider.gameObject;
-                }*/
+                    other.gameObject.GetComponent<clientControl>().startTreding = true;
+                    other.gameObject.GetComponent<clientControl>().playerIsNear = true;
+                }
             }
 
-/*            if (FindObjectOfType<Stores>().RackNumber == TargetForClient.GetComponent<clientControl>().clientNeedItem)
+            if (other.gameObject.CompareTag("Racks"))
             {
-                TargetForStore = FindObjectOfType<Stores>().gameObject;
+                OR = other.gameObject.GetComponent<Stores>();
+                if (OR != null && !OR.isRackClosed)
+                    OR.playerIsNear = true;
             }
 
-*/
+            if (other.gameObject.CompareTag("Coin"))
+            {
+                if (other.gameObject.GetComponent<Animator>() != null)
+                {
+                    other.gameObject.GetComponent<Animator>().SetTrigger("collect");
+                    Destroy(other.gameObject.GetComponent<Collider>());
+                    manager.MaxCoin += other.gameObject.GetComponent<DropCoin>().Coins;
+                }
+            }
+        }
+
+        private void OnCollisionStay(Collision other)
+        {
+            if (other.gameObject.CompareTag("Client"))
+            {
+                if (other.gameObject.GetComponent<clientControl>().clientNeedItem == StoreNumberStored)
+                {
+                    if (other.gameObject.GetComponent<clientControl>().takeItemFromPlayer <= 0.1f)
+                    {
+                        StoreNumberStored = 0;
+                    }
+                }
+            }
         }
     }
 }

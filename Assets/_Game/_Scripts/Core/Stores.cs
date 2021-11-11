@@ -127,19 +127,10 @@ namespace FashionM.Core
         {
             if (collision.gameObject.CompareTag("Player") && isRackClosed)
             {
-                PlayerIsOnClosedRack = true;
-                    
-            }
-
-        }
-
-        private void OnCollisionStay(Collision collision)
-        {
-            if (collision.gameObject.CompareTag("Player") && isRackClosed)
-            {
-                
+                PlayerIsOnClosedRack = true;                    
             }
         }
+
         private void OnCollisionExit(Collision collision)
         {
             if (playerIsNear)

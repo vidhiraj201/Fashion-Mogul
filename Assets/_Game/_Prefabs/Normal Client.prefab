@@ -385,7 +385,7 @@ MonoBehaviour:
   startTreding: 0
   tredingComplete: 0
   clientNeedItem: 0
-  takeItemToPlayter: 0
+  takeItemFromPlayer: 0
   waitTimer: 1
   playerIsNear: 0
   coinSpwan: 0
@@ -403,6 +403,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EmpNo: 0
   locked: 0
+  empList: []
+  EmpCol: {fileID: 0}
 --- !u!114 &2047798730730299126
 MonoBehaviour:
   m_ObjectHideFlags: 0
