@@ -16,6 +16,6 @@ public class coin : MonoBehaviour
     void Update()
     {
         z += Speed * Time.deltaTime;
-        transform.rotation = Quaternion.Euler(90, 0, z);
+        transform.rotation = Quaternion.Euler(0, z, 0);
     }
 }

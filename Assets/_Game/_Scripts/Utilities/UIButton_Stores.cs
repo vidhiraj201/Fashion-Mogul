@@ -10,12 +10,11 @@ namespace FashionM.Core
     public class UIButton_Stores : MonoBehaviour
     {
         private GameManager gm;
-        private playerControl PControl;
-        
+        private playerControl PControl;      
         private Image BUI;
-        private TextMeshProUGUI BName;
-
-        public bool basicCloths, premiumCloths, exclusiveBrand, jewllry;
+        private TextMeshProUGUI BName;        
+        [SerializeField]int StationCountData;
+        private bool isButtonPressed = false;
         private void Start()
         {
             gm = FindObjectOfType<GameManager>();
@@ -32,29 +31,31 @@ namespace FashionM.Core
 
         public void ButtonCheck()
         {
+            if (isButtonPressed)
+                CheckStore();
 
-            if (gm.basicCloths && basicCloths)
+            if (gm.Ex1 && StationCountData == 0)
             {
                 BUI.color = new Color32(202, 202, 202, 160);
                 BName.color = new Color32(202, 202, 202, 160);
                 transform.GetComponent<Button>().enabled = false;
             }
 
-            if (gm.premiumCloths && premiumCloths)
+            if (gm.Ex2 && StationCountData == 1)
             {
                 BUI.color = new Color32(202, 202, 202, 160);
                 BName.color = new Color32(202, 202, 202, 160);
                 transform.GetComponent<Button>().enabled = false;
             }
 
-            if (gm.exclusiveBrand && exclusiveBrand)
+            if (gm.Ex3 && StationCountData == 2)
             {
                 BUI.color = new Color32(202, 202, 202, 160);
                 BName.color = new Color32(202, 202, 202, 160);
                 transform.GetComponent<Button>().enabled = false;
             }
 
-            if (gm.jewllry && jewllry)
+            if (gm.Ex4 && StationCountData == 3)
             {
                 BUI.color = new Color32(202, 202, 202, 160);
                 BName.color = new Color32(202, 202, 202, 160);
@@ -63,31 +64,38 @@ namespace FashionM.Core
         }
 
         public void DeductAmount()
-        {            
-            if (PControl.OR !=null && PControl.OR.transform.name == transform.name && gm.MaxCoin >= PControl.OR.MaxCoinNeedToUnlock && PControl.OR.MaxCoinNeedToUnlock > 0)
+        {
+            if (PControl.SE!=null && gm.MaxCoin>= PControl.SE.MaxCoinNeedToUnlock && PControl.SE.MaxCoinNeedToUnlock>=0)
             {
-                gm.MaxCoin -= PControl.OR.MaxCoinNeedToUnlock;
-                CheckStore();
-                PControl.OR.MaxCoinNeedToUnlock = 0;
-                PControl.OR.RackPrice.text = "$" + PControl.OR.MaxCoinNeedToUnlock.ToString();
-                gm.UnlockStoreUI.GetComponent<Animator>().Play("Out");
-                
+                isButtonPressed = true;
+                Instantiate(gm.Stations[StationCountData], new Vector3(PControl.SE.PlacingPosition.x, PControl.SE.PlacingPosition.y, PControl.SE.PlacingPosition.z), Quaternion.Euler(0,-90,0)).transform.parent = GameObject.Find("Expanded Store").transform;
+                gm.MaxCoin -= PControl.SE.MaxCoinNeedToUnlock;
+                PControl.SE.MaxCoinNeedToUnlock = 0;
+                gm.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");
+                PControl.SE = null;
             }
         }
 
         public void CheckStore()
         {
-            if(premiumCloths)
+            if (StationCountData == 0)
             {
-                gm.premiumCloths = true;
+                gm.Ex1 = true;
             }
-            if (exclusiveBrand)
+
+            if (StationCountData == 1)
             {
-                gm.exclusiveBrand = true;
+                gm.Ex2 = true;
             }
-            if (jewllry)
+
+            if (StationCountData == 2)
             {
-                gm.jewllry = true;
+                gm.Ex3 = true;
+            }
+
+            if (StationCountData == 3)
+            {
+                gm.Ex4 = true;
             }
         }
        

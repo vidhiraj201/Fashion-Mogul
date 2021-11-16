@@ -124,7 +124,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: b1506b16d25540b4caee668529b94934,
+  m_Motion: {fileID: -203655887218126122, guid: 4c118b104bea0f54eb1324d63ceb941a,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -139,7 +139,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WalkVRun
-  m_Speed: 1
+  m_Speed: 1.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -427328453577036842}
@@ -152,7 +152,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 8efcc633488ea6c458497dfc8969ec22,
+  m_Motion: {fileID: -203655887218126122, guid: 9ea6ac70fb491cc4ebfebbf92a055e2d,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 

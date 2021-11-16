@@ -31,6 +31,7 @@ namespace FashionM.Core
         void Update()
         {
             ButtonUpdate();
+           
         }
 
         void ButtonUpdate()
@@ -57,7 +58,7 @@ namespace FashionM.Core
         {
             if(gm.MaxCoin >= EmployeeAmount)
             {
-                Instantiate(Employee, HD.SpwanPoint.position, Quaternion.identity);
+                Instantiate(Employee, HD.SpwanPoint.position, Quaternion.identity).transform.parent = GameObject.Find("EmployeeCollection").transform;
                 gm.HireEmployee.GetComponent<Animator>().Play("Out");
                 gm.MaxCoin -= EmployeeAmount;
             }

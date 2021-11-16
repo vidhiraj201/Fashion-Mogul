@@ -65,7 +65,7 @@ namespace FashionM.Movement
             if (ClientPosition == null && !transform.GetComponent<clientControl>().tredingComplete)
                 agent.SetDestination(transform.position);
 
-            if (transform.GetComponent<clientControl>().tredingComplete)
+            if (transform.GetComponent<clientControl>().TradeComp)
                 agent.SetDestination(End.position);
 
             Anime.SetFloat("speed", agent.velocity.magnitude);
@@ -86,20 +86,24 @@ namespace FashionM.Movement
             if (transform.GetComponent<clientControl>().tredingComplete && other.gameObject.CompareTag("End"))
             {
                 transform.GetComponent<clientControl>().tredingComplete = false;
+                transform.GetComponent<clientControl>().TradeComp = false;
                 transform.GetComponent<clientControl>().startTreding = false;
                 transform.GetComponent<clientControl>().coinSpwan = false;
+                transform.GetComponent<ClientUitilities>().empList.Clear();
                 reched = false;
                 Purchesed = false;
                 PurchesUI.SetActive(false);
                 transform.GetComponent<clientControl>().clientNeedItemRandomize();
 
-
-
             }
                 
         }
 
-        
+        private void OnTriggerExit(Collider other)
+        {
+            reched = false ;
+        }
+
     }
 
 }

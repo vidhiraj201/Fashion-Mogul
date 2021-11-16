@@ -11,6 +11,8 @@ TagManager:
   - FxTemporaire
   - Coin
   - Emp
+  - GameManager
+  - StoreExp
   layers:
   - Default
   - TransparentFX
@@ -20,16 +22,16 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Emp
+  - Client
+  - OE
+  - OC
+  - Coin
+  - Coin Collector
+  - Cloth
+  - Ejected Cloth
+  - ClientDoNotCollied
   - 
   - 
   - 
