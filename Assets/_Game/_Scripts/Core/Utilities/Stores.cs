@@ -15,6 +15,7 @@ namespace FashionM.Core
         public TextMeshPro RackPrice;
 
         public Image waitTimerUnlockUI;
+        public GameObject StoreGFX;
 
         //public Image waitTimerlockUI;
 
@@ -46,6 +47,7 @@ namespace FashionM.Core
         private GameManager gm;
         void Start()
         {
+            
             playerC = FindObjectOfType<playerControl>();
             StoreNameText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshPro>();
             waitTimerUnlockUI.gameObject.SetActive(false);
@@ -56,6 +58,7 @@ namespace FashionM.Core
             {
                 StoreNameText.gameObject.SetActive(false);
                 RackPrice.text = "$" + MaxCoinNeedToUnlock.ToString();
+                StoreGFX.SetActive(false);
             }
 
             if(storeIsOpen)
@@ -102,12 +105,12 @@ namespace FashionM.Core
 
         public void whenPlayerIsOnRack()
         {            
-            StoreNameText.gameObject.SetActive(true);
+            StoreNameText.gameObject.SetActive(false);
             RackPrice.gameObject.SetActive(false);
             StoreNameText.text = StoreName;
-
-            transform.localScale = new Vector3(transform.localScale.x, 1, transform.localScale.z);
-            transform.localPosition = new Vector3(transform.localPosition.x, 5, transform.localPosition.z);
+            StoreGFX.SetActive(true);
+            transform.localScale = new Vector3(transform.localScale.x, 0.75f, transform.localScale.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, 3.5f, transform.localPosition.z);
             CheckStore();
             storeIsOpen = true;
         }

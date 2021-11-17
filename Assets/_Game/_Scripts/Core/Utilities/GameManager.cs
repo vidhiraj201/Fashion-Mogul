@@ -7,15 +7,28 @@ namespace FashionM.Core
 {
     public class GameManager : MonoBehaviour
     {
-        public float MaxCoin;
         private float CurrentCoin;
+        private Watch watch;
+
+        public float MaxCoin;
         public TextMeshProUGUI CoinCountText;
+        public List<GameObject> Stations = new List<GameObject>();
+
 
 
         [Header("UI")]
         public GameObject TapUI;
         public GameObject UnlockStoreExpansionUI;
         public GameObject HireEmployee;
+        public GameObject DayNightCycle;
+
+        [Header("Store Objects")]
+        public GameObject ObasicCloths;
+        public GameObject OpremiumCloths;
+        public GameObject OexclusiveBrand;
+        public GameObject Ojewllry;
+
+        public bool DayOff;
 
         [Header("Stores")]
         public bool basicCloths;
@@ -29,26 +42,13 @@ namespace FashionM.Core
         public bool Ex3;
         public bool Ex4;
 
-        [Header("Store Objects")]
-        public GameObject ObasicCloths;
-        public GameObject OpremiumCloths;
-        public GameObject OexclusiveBrand;
-        public GameObject Ojewllry;
-
-
-
-        public List<GameObject> Stations = new List<GameObject>();
-        /*
-                [Header("TestDummy")]
-                public GameObject Employee;
-                public Transform HD;
-
-        */
         void Start()
         {
             TapUI.SetActive(true);
             UnlockStoreExpansionUI.SetActive(false);
             HireEmployee.SetActive(false);
+            DayNightCycle.SetActive(false);
+            watch = FindObjectOfType<Watch>();
         }
 
         
@@ -76,6 +76,13 @@ namespace FashionM.Core
                 CurrentCoin -= 1;
         }
 
+        public void NextDayButton()
+        {
+            watch.ResetReducer();
+            DayOff = false;
+            if (DayNightCycle.activeSelf)
+                DayNightCycle.GetComponent<Animator>().Play("Out");
+        }
 
     }
 }

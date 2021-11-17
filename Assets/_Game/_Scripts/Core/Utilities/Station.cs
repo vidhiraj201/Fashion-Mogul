@@ -10,7 +10,7 @@ namespace FashionM.Core
         public GameObject clientPosition;
         public GameObject NewClients;       
 
-        public TextMeshPro StationStatus;
+        //public TextMeshPro StationStatus;
         public TextMeshPro StationPrice;
 
         public float CoinReduceSpeed = 1;
@@ -28,7 +28,7 @@ namespace FashionM.Core
         private void Start()
         {
             GM = FindObjectOfType<GameManager>();
-            StationStatus.text = "Station Locked";
+            //StationStatus.text = "Station Locked";
             StationPrice.text = "$" + MaxCoinNeedToUnlock;
         }
         void Update()
