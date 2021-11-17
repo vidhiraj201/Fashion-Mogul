@@ -29,7 +29,9 @@ namespace FashionM.Control
             {
                 transform.gameObject.layer = 11;
                 other.gameObject.layer = 12;
-                if (other.gameObject.GetComponent<clientControl>().NeedItem == StoreNumberStored)
+                
+                GetComponent<EmpStackingSystem>().RemoveCloth(other);
+               /* if (other.gameObject.GetComponent<clientControl>().NeedItem == StoreNumberStored)
                 {
                     other.gameObject.GetComponent<clientControl>().startTreding = true;
                     other.gameObject.GetComponent<clientControl>().playerIsNear = true;
@@ -38,7 +40,7 @@ namespace FashionM.Control
                     StoreNumberStored = 0;
                     GetComponent<empMovement>().ClientNeedItem = 0;
 
-                }
+                }*/
 
                 if (other.gameObject.GetComponent<clientControl>().NeedItem != GetComponent<empMovement>().ClientNeedItem)
                 {
@@ -102,6 +104,7 @@ namespace FashionM.Control
                     {
                         a = 0.5f;
                         StoreNumberStored = OR.RackNumber;
+                        GetComponent<EmpStackingSystem>().addClothToStack(OR.RackNumber);
                         GetComponent<empMovement>().isWalkingTowardStore = false;
                         GetComponent<empMovement>().isWalkingTowardClient = true;
                     }                    

@@ -90,6 +90,7 @@ namespace FashionM.Movement
                 transform.GetComponent<clientControl>().startTreding = false;
                 transform.GetComponent<clientControl>().coinSpwan = false;
                 transform.GetComponent<ClientUitilities>().empList.Clear();
+                transform.GetComponent<ClientUitilities>().x = 0.3f;
                 reched = false;
                 Purchesed = false;
                 PurchesUI.SetActive(false);

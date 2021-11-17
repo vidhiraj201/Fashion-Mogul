@@ -16,6 +16,7 @@ namespace FashionM.Movement
         private float turnSmoothVelocity;
         private Camera cam;
 
+        public bool Hold;
         void Start()
         {
             controller = GetComponent<CharacterController>();
@@ -26,11 +27,17 @@ namespace FashionM.Movement
         {
             movement();
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+            playerAnimation.SetBool("hold", Hold);
         }
 
         private Vector3 direction;
         void movement()
         {
+            if (GetComponent<playerStackingSystem>().ClothObject.Count > 0)
+                Hold = true;
+            if (GetComponent<playerStackingSystem>().ClothObject.Count <= 0)
+                Hold = false;
+
             float z = -joystick.Horizontal;
             float x = joystick.Vertical;
 

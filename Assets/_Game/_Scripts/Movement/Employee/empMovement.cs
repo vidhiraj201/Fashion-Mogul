@@ -20,6 +20,8 @@ namespace FashionM.Movement
         public float ClientNeedItem;
         public float rotationSmooth;
 
+        public bool Hold;
+
         private GameManager gm;
 
         private float turnSmoothVelocity;
@@ -33,6 +35,13 @@ namespace FashionM.Movement
         void Update()
         {
             moveAndRotateTowardsTarget();
+
+            Anime.SetBool("hold", Hold);
+
+            if (GetComponent<EmpStackingSystem>().ClothObject.Count > 0)
+                Hold = true;
+            if (GetComponent<EmpStackingSystem>().ClothObject.Count <= 0)
+                Hold = false;
         }
 
         void moveAndRotateTowardsTarget()

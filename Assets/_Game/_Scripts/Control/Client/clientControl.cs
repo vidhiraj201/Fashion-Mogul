@@ -87,9 +87,10 @@ namespace FashionM.Control
             {
                 gameObject.layer = 17;
             }
-            if (GetComponent<clientMovement>().reched && !tredingComplete)
+            if (GetComponent<clientMovement>().reched && !startTreding)
             {
                 gameObject.layer = 10;
+                startTreding = true;
             }
         }
         public void clientNeedItemRandomize()

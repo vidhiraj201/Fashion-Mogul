@@ -27,6 +27,7 @@ namespace FashionM.Control
             EmpMove();
         }
 
+        public float x = 0.3f;
         public void EmpMove()
         {
             if (locked && GetComponent<clientMovement>().reched )
@@ -37,20 +38,24 @@ namespace FashionM.Control
 
             if (locked && GetComponent<clientControl>().tredingComplete)
             {
-                stopTrade();
-                Target.GetComponent<empMovement>().isWalkingTowardClient = false;
-                Target.GetComponent<empMovement>().gameObject.layer = 9;
-                Target.GetComponent<empControl>().Occupied = false;
-                Target.GetComponent<empMovement>().ClientNeedItem = 0;
-                /*transform.GetComponent<clientControl>().NeedItem = 0;*/
-                transform.gameObject.layer = 10;
-                Target = null;
-                locked = false;
+                if (x >= 0)
+                    x -= Time.deltaTime;
+                if (x <= 0)
+                {
+                    x = 0;
+                    stopTrade();
+                    Target.GetComponent<empMovement>().isWalkingTowardClient = false;
+                    Target.GetComponent<empMovement>().gameObject.layer = 9;
+                    Target.GetComponent<empControl>().Occupied = false;
+                    Target.GetComponent<empMovement>().ClientNeedItem = 0;
+                    /*transform.GetComponent<clientControl>().NeedItem = 0;*/
+                    transform.gameObject.layer = 10;
+                    Target = null;
+                    locked = false;
+                }
+                
             }
         }
-
-
-
         private GameObject Target;
 
         public void stopTrade()

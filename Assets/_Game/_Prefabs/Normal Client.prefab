@@ -342,8 +342,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 9.047644, z: 5}
-  m_Center: {x: 0.011496544, y: 0, z: 0}
+  m_Size: {x: 2.7510915, y: 9.047644, z: 2.7516785}
+  m_Center: {x: 0.011790276, y: 0, z: -0.005393982}
 --- !u!195 &3782121376092730445
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -423,6 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locked: 0
   empList: []
+  x: 0.3
 --- !u!1 &4140978016489893290
 GameObject:
   m_ObjectHideFlags: 0

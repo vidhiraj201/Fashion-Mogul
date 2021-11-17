@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e82a54cfa2135bc4083087ef85671a3a
+guid: 427db9066ab634c4186e42effdd16f75
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
+      74: -4791504522942941401
+    second: Armature|Armature|mixamo.com|Layer0
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
-      takeName: mixamo.com
+      name: Armature|Armature|mixamo.com|Layer0
+      takeName: Armature|Armature|mixamo.com|Layer0
       internalID: 0
       firstFrame: 0
-      lastFrame: 42
+      lastFrame: 172
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -66,7 +66,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.4
+    globalScale: 0.6
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -113,7 +113,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.0139999995
+    globalScale: 0.6
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
