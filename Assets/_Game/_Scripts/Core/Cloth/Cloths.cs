@@ -16,7 +16,7 @@ namespace FashionM.Core {
         void Start()
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
-            Destroy(this.gameI mean Object, 3f);
+            Destroy(this.gameObject, 3f);
         }
 
         private void Update()
