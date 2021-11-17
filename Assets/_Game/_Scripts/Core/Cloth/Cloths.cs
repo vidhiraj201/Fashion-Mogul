@@ -44,7 +44,6 @@ namespace FashionM.Core {
 
             if (Collector.GetComponent<EmpStackingSystem>() != null)
                 Collector.GetComponent<EmpStackingSystem>().ClothObject.Remove(gameObject);
-);
         }
 
     }

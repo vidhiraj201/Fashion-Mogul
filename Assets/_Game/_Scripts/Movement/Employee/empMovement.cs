@@ -54,7 +54,7 @@ namespace FashionM.Movement
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, rotationSmooth);
                 transform.rotation = Quaternion.Euler(0, angle, 0);
             }
-            Anime.SetFloat("speed", agent.velocity.magnitude);
+            Anime.SetFloat("vertical", agent.velocity.magnitude);
         }
 
         void movementTowardsTarget()
