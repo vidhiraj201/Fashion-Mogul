@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.26
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15196171, g: 0.11029716, b: 0.08169646, a: 0.26}
+  m_IndirectSpecularColor: {r: 0.15196182, g: 0.11029729, b: 0.08169668, a: 0.26}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3328,7 +3328,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -20614,7 +20614,7 @@ MonoBehaviour:
   OexclusiveBrand: {fileID: 1717612336}
   Ojewllry: {fileID: 1326183809}
   Stations:
-  - {fileID: 815893849986414047, guid: 533e8aefaaea4a64dba8fa6fb54b8bce, type: 3}
+  - {fileID: 5124207187926218848, guid: a0fb6518b956c55429d4c53937f540ee, type: 3}
   - {fileID: 4622087902831666758, guid: fc1470064a6be71459495209873af9bc, type: 3}
   - {fileID: 4622087902831666758, guid: 80c56cfd231594547bd272cbbf28e5ee, type: 3}
   - {fileID: 4622087902831666758, guid: dffbf6bb11c1b144eabe868f6c6e2765, type: 3}
@@ -22759,7 +22759,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7272423, b: 0.3254717, a: 1}
   m_Intensity: 0.85
   m_Range: 10
   m_SpotAngle: 30
@@ -22769,7 +22769,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.801
+    m_Strength: 1
     m_Bias: 1
     m_NormalBias: 0
     m_NearPlane: 0.1
