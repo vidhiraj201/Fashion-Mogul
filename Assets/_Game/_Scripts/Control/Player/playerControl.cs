@@ -14,6 +14,8 @@ namespace FashionM.Control
         private GameManager manager;
         public Stores OR;
         public StoreExpansion SE;
+
+        public bool holding;
         private void Start()
         {
             //Text = transform.GetChild(1).GetComponent<TextMeshPro>();
@@ -22,11 +24,19 @@ namespace FashionM.Control
 
         private void Update()
         {
-           /* if(StoreNumberStored>=1)
-                Text.text = StoreNumberStored.ToString();
+            /* if(StoreNumberStored>=1)
+                 Text.text = StoreNumberStored.ToString();
 
-            if (StoreNumberStored <= 0)
-                Text.text = "".ToString();*/
+             if (StoreNumberStored <= 0)
+                 Text.text = "".ToString();*/
+
+            if (GetComponent<playerStackingSystem>().ClothObject.Count > 0)
+                holding = true;
+
+
+            if (GetComponent<playerStackingSystem>().ClothObject.Count <= 0)
+                holding = false;
+
 
         }
         private void OnCollisionEnter(Collision other)
@@ -42,6 +52,7 @@ namespace FashionM.Control
                     other.gameObject.GetComponent<clientControl>().tredingComplete = true;
                     StoreNumberStored = 0;
                 }*/
+
             }
            
             if (other.gameObject.CompareTag("Racks"))

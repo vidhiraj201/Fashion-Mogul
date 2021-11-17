@@ -12,6 +12,18 @@ namespace FashionM.Core
         public TextMeshProUGUI CoinCountText;
 
 
+        [Header("Store Objects")]
+        public GameObject ObasicCloths;
+        public GameObject OpremiumCloths;
+        public GameObject OexclusiveBrand;
+        public GameObject Ojewllry;
+
+
+
+        public List<GameObject> Stations = new List<GameObject>();
+
+        public bool DayOff;
+
         [Header("UI")]
         public GameObject TapUI;
         public GameObject UnlockStoreExpansionUI;
@@ -29,15 +41,7 @@ namespace FashionM.Core
         public bool Ex3;
         public bool Ex4;
 
-        [Header("Store Objects")]
-        public GameObject ObasicCloths;
-        public GameObject OpremiumCloths;
-        public GameObject OexclusiveBrand;
-        public GameObject Ojewllry;
 
-
-
-        public List<GameObject> Stations = new List<GameObject>();
         /*
                 [Header("TestDummy")]
                 public GameObject Employee;

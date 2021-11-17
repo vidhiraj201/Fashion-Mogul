@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using FashionM.Core;
+using FashionM.Control;
 
 namespace FashionM.Movement
 {
@@ -9,6 +10,7 @@ namespace FashionM.Movement
     {
         public Joystick joystick;
         public Animator playerAnimation;
+
         public float speed;
         public float rotationSmooth;
 
@@ -26,6 +28,8 @@ namespace FashionM.Movement
         {
             movement();
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
+            playerAnimation.SetBool("holding", GetComponent<playerControl>().holding);
         }
 
         private Vector3 direction;
