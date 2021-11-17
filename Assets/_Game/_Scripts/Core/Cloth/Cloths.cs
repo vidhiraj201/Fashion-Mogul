@@ -9,11 +9,14 @@ namespace FashionM.Core {
         public float ClothIdentityNumber;
         public float DropSpeed;
 
+        public GameObject Collector;
+
         private Transform lastPos;
         private bool shoot;
         void Start()
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
+            Destroy(this.gameI mean Object, 3f);
         }
 
         private void Update()
@@ -35,7 +38,12 @@ namespace FashionM.Core {
             GetComponent<ClothProjectile>().shootPoint = obj;
 */
             transform.parent = null;
-            FindObjectOfType<playerStackingSystem>().ClothObject.Remove(gameObject);
+
+            if(Collector.GetComponent<playerStackingSystem>() != null)
+                Collector.GetComponent<playerStackingSystem>().ClothObject.Remove(gameObject);
+
+            if (Collector.GetComponent<EmpStackingSystem>() != null)
+                Collector.GetComponent<EmpStackingSystem>().ClothObject.Remove(gameObject);
             //Destroy(gameObject, 1);
         }
 
