@@ -18,11 +18,24 @@ namespace FashionM.Control
 
         public float StoreNumberStored;
         private GameManager manager;
+
         void Start()
         {
             manager = FindObjectOfType<GameManager>();
         }
 
+        private void Update()
+        {
+            if (!Occupied)
+            {
+                TargetForClient = null;
+                OR = null;
+            }
+            if (Occupied)
+            {
+                TargetForClient.gameObject.layer = 12;
+            }
+        }
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Client"))
