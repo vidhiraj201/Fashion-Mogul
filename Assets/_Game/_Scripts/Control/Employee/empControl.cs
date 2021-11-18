@@ -34,46 +34,58 @@ namespace FashionM.Control
             if (Occupied)
             {
                 TargetForClient.gameObject.layer = 12;
+                transform.gameObject.layer = 11;
+
             }
         }
         private void OnCollisionEnter(Collision other)
         {
+
             if (other.gameObject.CompareTag("Client"))
             {
-                transform.gameObject.layer = 11;
-                other.gameObject.layer = 12;
-                
-                GetComponent<EmpStackingSystem>().RemoveCloth(other);
-               /* if (other.gameObject.GetComponent<clientControl>().NeedItem == StoreNumberStored)
+                if (other.gameObject.GetComponent<clientControl>().NeedItem != StoreNumberStored || other.gameObject.GetComponent<clientControl>().NeedItem != GetComponent<empMovement>().ClientNeedItem)
                 {
-                    other.gameObject.GetComponent<clientControl>().startTreding = true;
-                    other.gameObject.GetComponent<clientControl>().playerIsNear = true;
-                    other.gameObject.GetComponent<clientControl>().tredingComplete = true;
+                    print(transform.name + " " + other.gameObject.GetComponent<clientControl>().NeedItem + " " + StoreNumberStored);
+                    if (other.gameObject.GetComponent<clientControl>().startTreding && GetComponent<EmpStackingSystem>().ClothObject.Count >0)
+                    {
+                        StoreNumberStored = other.gameObject.GetComponent<clientControl>().NeedItem;
+                        GetComponent<EmpStackingSystem>().ClothObject[0].GetComponent<Cloths>().ClothIdentityNumber = other.gameObject.GetComponent<clientControl>().NeedItem; 
+                    }
+                }
+            }
 
-                    StoreNumberStored = 0;
+
+
+
+
+            if (other.gameObject.CompareTag("Client"))
+            {
+                triggerWhenNearClient(other);
+                GetComponent<EmpStackingSystem>().RemoveCloth(other);
+
+                if (other.gameObject.GetComponent<clientControl>().startTreding)
+                {
+                    if (other.gameObject.GetComponent<clientControl>().NeedItem != StoreNumberStored && !TradeStarted)
+                    {
+                        StoreNumberStored = 0;
+                        GetComponent<empMovement>().ClientNeedItem = 0;
+                        if (GetComponent<empMovement>().ClientNeedItem <= 0)
+                        {
+                            GetComponent<empMovement>().ClientNeedItem = other.gameObject.GetComponent<clientControl>().NeedItem;
+                            TradeStarted = true;
+                        }
+
+                        GetComponent<empMovement>().isWalkingTowardClient = false;
+
+                        /*other.gameObject.layer = other.gameObject.GetComponent<clientControl>().OccupiedLayer;*/
+                    }
+                }
+              /*  if (other.gameObject.GetComponent<clientControl>().NeedItem != GetComponent<empMovement>().ClientNeedItem)
+                {
                     GetComponent<empMovement>().ClientNeedItem = 0;
-
                 }*/
 
-                if (other.gameObject.GetComponent<clientControl>().NeedItem != GetComponent<empMovement>().ClientNeedItem)
-                {
-                    GetComponent<empMovement>().ClientNeedItem = 0;
-                }
-
-                if(other.gameObject.GetComponent<clientControl>().NeedItem != StoreNumberStored && !TradeStarted)
-                {
-                    StoreNumberStored = 0;
-                    GetComponent<empMovement>().ClientNeedItem = 0;
-                    if (GetComponent<empMovement>().ClientNeedItem <= 0)
-                    {
-                        GetComponent<empMovement>().ClientNeedItem =  other.gameObject.GetComponent<clientControl>().NeedItem;
-                        TradeStarted = true;
-                    }
-
-                    GetComponent<empMovement>().isWalkingTowardClient = false;
-
-                    /*other.gameObject.layer = other.gameObject.GetComponent<clientControl>().OccupiedLayer;*/
-                }
+                
             }
 
             if (other.gameObject.CompareTag("Racks"))
@@ -123,6 +135,15 @@ namespace FashionM.Control
                     }                    
                 }
             }
+        }
+
+
+
+        public void triggerWhenNearClient( Collision other)
+        {
+            GetComponent<empMovement>().ClientNeedItem =  other.gameObject.GetComponent<clientControl>().NeedItem;
+            /*transform.gameObject.layer = 11;
+            other.gameObject.layer = 12;*/
         }
     }
 }
