@@ -10,6 +10,7 @@ namespace FashionM.Core
         private float CurrentCoin;
         private Watch watch;
 
+        [Tooltip("Maximum Coin you have remain")]
         public float MaxCoin;
         public TextMeshProUGUI CoinCountText;
         public List<GameObject> Stations = new List<GameObject>();
