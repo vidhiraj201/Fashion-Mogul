@@ -37,7 +37,7 @@ namespace FashionM.Core
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.transform.name == "Ground")
+            if (collision.gameObject.CompareTag("Ground"))
             {
                 GetComponent<Rigidbody>().isKinematic = true;
             }

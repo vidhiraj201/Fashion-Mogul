@@ -34,13 +34,24 @@ namespace FashionM.Core
                 /*ClothObject[Random.Range(0, ClothObject.Count)].GetComponent<Cloths>().throwCloth();*/
             }
         }
-
+        //StackingObject.transform.position
         public void addClothToStack(float num)
         {
-            GameObject o = Instantiate(Cloths, StackingObject.transform.position, Quaternion.identity);
-            o.transform.parent = StackingObject.transform;
-            o.GetComponent<Cloths>().ClothIdentityNumber = num;
-            o.GetComponent<Cloths>().Collector = this.gameObject;
+            if (ClothObject.Count <= 0)
+            {
+                GameObject o = Instantiate(Cloths, StackingObject.transform.position, Quaternion.identity);
+                o.transform.parent = StackingObject.transform;
+                o.GetComponent<Cloths>().ClothIdentityNumber = num;
+                o.GetComponent<Cloths>().Collector = this.gameObject;
+            }
+            if (ClothObject.Count > 0)
+            {
+                GameObject o = Instantiate(Cloths, ClothObject[ClothObject.Count-1].transform.position + new Vector3(0, 0.05f, 0), Quaternion.identity);
+                o.transform.parent = StackingObject.transform;
+                o.GetComponent<Cloths>().ClothIdentityNumber = num;
+                o.GetComponent<Cloths>().Collector = this.gameObject;
+            }
+
         }
 
         public void RemoveCloth(Collision other)

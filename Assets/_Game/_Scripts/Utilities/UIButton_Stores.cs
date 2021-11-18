@@ -68,7 +68,7 @@ namespace FashionM.Core
             if (PControl.SE!=null && gm.MaxCoin>= PControl.SE.MaxCoinNeedToUnlock && PControl.SE.MaxCoinNeedToUnlock>=0)
             {
                 isButtonPressed = true;
-                Instantiate(gm.Stations[StationCountData], new Vector3(PControl.SE.PlacingPosition.x, PControl.SE.PlacingPosition.y, PControl.SE.PlacingPosition.z), Quaternion.Euler(0,0,0)).transform.parent = GameObject.Find("Expanded Store").transform;
+                Instantiate(gm.Stations[StationCountData], new Vector3(PControl.SE.PlacingPosition.x, PControl.SE.PlacingPosition.y, PControl.SE.PlacingPosition.z), Quaternion.Euler(0,-90,0)).transform.parent = GameObject.Find("Expanded Store").transform;
                 gm.MaxCoin -= PControl.SE.MaxCoinNeedToUnlock;
                 PControl.SE.MaxCoinNeedToUnlock = 0;
                 gm.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");

@@ -13,6 +13,7 @@ TagManager:
   - Emp
   - GameManager
   - StoreExp
+  - Ground
   layers:
   - Default
   - TransparentFX

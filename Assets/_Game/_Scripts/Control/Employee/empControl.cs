@@ -56,7 +56,9 @@ namespace FashionM.Control
                         GetComponent<empMovement>().ClientNeedItem =  other.gameObject.GetComponent<clientControl>().NeedItem;
                         TradeStarted = true;
                     }
+
                     GetComponent<empMovement>().isWalkingTowardClient = false;
+
                     /*other.gameObject.layer = other.gameObject.GetComponent<clientControl>().OccupiedLayer;*/
                 }
             }

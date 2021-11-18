@@ -406,7 +406,7 @@ MonoBehaviour:
   NeedItem: 0
   CoinDropOffset: 3.5
   timerToTakeItemFromPlayer: 0
-  waitTimer: 3.5
+  waitTimer: 1
   playerIsNear: 0
   coinSpwan: 0
 --- !u!114 &6217123480627832279
@@ -732,7 +732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9173216363814621618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.56, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2885022317067849553}

@@ -182,5 +182,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f791a1a4037b0e44f86751732c0cdb6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 6
+  force: 3.5
   Coins: 10
