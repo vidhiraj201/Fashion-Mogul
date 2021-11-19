@@ -40,8 +40,13 @@ namespace FashionM.Core
         {
             if (MaxCoinNeedToUnlock <= 0)
             {
-                Bounds.transform.localScale = new Vector3(24,10,131);
-                Bounds.transform.localPosition = new Vector3(-35.76f,39.3f,-36.45f);
+                /*Bounds.transform.localScale = new Vector3(24,10,131);
+                Bounds.transform.localPosition = new Vector3(-35.76f,39.3f,-36.45f);*/
+
+
+                Bounds.GetComponent<BoxCollider>().center = new Vector3(0.119f, 0, -0.221f);
+                Bounds.GetComponent<BoxCollider>().size = new Vector3(1f,1,1.196f);
+
                 transform.GetComponent<MeshRenderer>().enabled = false;
                 Destroy(this.gameObject);
             }

@@ -57,19 +57,23 @@ namespace FashionM.Core
         }
 
         public void RemoveCloth(Collision other)
-        {
-            
+        {            
             if (ClothObject.Count > 0)
             {
-                for (int i = 0; i <= ClothObject.Count - 1)
+                for (int i = 0; i <= ClothObject.Count - 1;)
                 {
-                    if(ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber == other.gameObject.GetComponent<clientControl>().NeedItem)
+                    if (ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber != other.gameObject.GetComponent<clientControl>().NeedItem)
+                    {
+                        i++;
+                    }
+                    if (ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber == other.gameObject.GetComponent<clientControl>().NeedItem)
                     {
                         other.gameObject.layer = 17;
                         ClothObject[i].GetComponent<Cloths>().throwCloth(other.gameObject.transform);                        
                         other.gameObject.GetComponent<clientControl>().playerIsNear = true;
-                        other.gameObject.GetComponent<clientControl>().tredingComplete = true;                        
-                    }
+                        other.gameObject.GetComponent<clientControl>().tredingComplete = true;
+                        break;
+                    }                    
                 }
             }
         }

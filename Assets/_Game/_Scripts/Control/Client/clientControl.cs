@@ -57,6 +57,7 @@ namespace FashionM.Control
             if (tredingComplete)
             {
                 GetComponent<clientMovement>().PurchesUI.SetActive(false);
+                
             }
 
             
@@ -65,6 +66,11 @@ namespace FashionM.Control
             {
                 
                 timerToTakeItemFromPlayer -= Time.deltaTime;
+
+                if (timerToTakeItemFromPlayer <= waitTimer / 2)
+                {
+                    GetComponent<clientMovement>().Anime.SetTrigger("Celeb");
+                }
                 //waitTimerUI.gameObject.SetActive(true);
                 //waitTimerUI.fillAmount = timerToTakeItemFromPlayer / waitTimer;
                 if (timerToTakeItemFromPlayer <= 0)

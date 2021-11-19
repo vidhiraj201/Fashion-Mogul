@@ -14,10 +14,11 @@ namespace FashionM.Movement
         public Transform End;
         public GameObject ClientPosition;
         public GameObject PurchesUI;
-
+        public float rotationSmooth = 0.01f;
 
         public bool reched = false;
         public bool Purchesed = false;
+        private float turnSmoothVelocity;
         // Start is called before the first frame update
         void Start()
         {
@@ -59,6 +60,17 @@ namespace FashionM.Movement
 
         public void moveTowardSlot()
         {
+
+            if (agent.velocity.magnitude > 0.1f)
+            {
+                float targetAngle = Mathf.Atan2(agent.velocity.x, agent.velocity.z) * Mathf.Rad2Deg;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, rotationSmooth);
+                transform.rotation = Quaternion.Euler(0, angle, 0);
+            }
+
+
+
+
             if (ClientPosition != null && !transform.GetComponent<clientControl>().tredingComplete)
                 agent.SetDestination(ClientPosition.transform.position);
 
@@ -95,6 +107,7 @@ namespace FashionM.Movement
                 Purchesed = false;
                 PurchesUI.SetActive(false);
                 transform.GetComponent<clientControl>().clientNeedItemRandomize();
+                transform.GetComponent<clientMovement>().Anime.ResetTrigger("Celeb");
 
             }
                 

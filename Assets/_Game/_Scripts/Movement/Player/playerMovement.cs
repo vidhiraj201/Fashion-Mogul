@@ -47,7 +47,7 @@ namespace FashionM.Movement
             if (direction.magnitude > 0.1f)
             {
                 FindObjectOfType<GameManager>().OnMouseDownData();
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg ;
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, rotationSmooth);
                 transform.rotation = Quaternion.Euler(0, angle, 0);
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;

@@ -37,7 +37,7 @@ namespace FashionM.Control
             }
 
             if (locked && GetComponent<clientControl>().tredingComplete)
-            {
+            {                
                 if (x >= 0)
                     x -= Time.deltaTime;
                 if (x <= 0)
