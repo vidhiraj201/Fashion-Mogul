@@ -35,11 +35,12 @@ namespace FashionM.Core
             }
         }
         //StackingObject.transform.position
-        public void addClothToStack(float num)
+        public void addClothToStack(float num, Material mat)
         {
             if (ClothObject.Count <= 0)
             {
                 GameObject o = Instantiate(Cloths, StackingObject.transform.position, Quaternion.identity);
+                o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;
                 o.transform.parent = StackingObject.transform;
                 o.GetComponent<Cloths>().ClothIdentityNumber = num;
                 o.GetComponent<Cloths>().Collector = this.gameObject;
@@ -47,6 +48,7 @@ namespace FashionM.Core
             if (ClothObject.Count > 0)
             {
                 GameObject o = Instantiate(Cloths, ClothObject[ClothObject.Count-1].transform.position + new Vector3(0, 0.05f, 0), Quaternion.identity);
+                o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;
                 o.transform.parent = StackingObject.transform;
                 o.GetComponent<Cloths>().ClothIdentityNumber = num;
                 o.GetComponent<Cloths>().Collector = this.gameObject;

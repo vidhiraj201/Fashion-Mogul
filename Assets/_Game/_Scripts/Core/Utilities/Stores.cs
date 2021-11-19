@@ -16,7 +16,7 @@ namespace FashionM.Core
 
         public Image waitTimerUnlockUI;
         public GameObject StoreGFX;
-
+        public Material mat;
         //public Image waitTimerlockUI;
 
         public string StoreName;
@@ -127,7 +127,7 @@ namespace FashionM.Core
                 if (giveItemToPlayter <= 0)
                 {
                     playerC.StoreNumberStored = RackNumber;
-                    playerC.GetComponent<playerStackingSystem>().addClothToStack(RackNumber);
+                    playerC.GetComponent<playerStackingSystem>().addClothToStack(RackNumber, mat);
                     playerIsNear = false;
                     giveItemToPlayter = waitTimer;
                     waitTimerUnlockUI.gameObject.SetActive(false);

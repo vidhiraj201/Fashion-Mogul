@@ -31557,6 +31557,7 @@ MonoBehaviour:
   RackPrice: {fileID: 6099214973701213118}
   waitTimerUnlockUI: {fileID: 6099214973433276300}
   StoreGFX: {fileID: 6099214973354559016}
+  mat: {fileID: 2100000, guid: 2d39446bbbfe98045a33bb2d99d3c47b, type: 2}
   StoreName: Premium clothes
   RackNumber: 2
   giveItemToPlayter: 1
@@ -35913,6 +35914,7 @@ MonoBehaviour:
   RackPrice: {fileID: 6099214973938030217}
   waitTimerUnlockUI: {fileID: 6099214974388982086}
   StoreGFX: {fileID: 6099214974455129920}
+  mat: {fileID: 2100000, guid: c505d09ab16e324478abfad41705c2c8, type: 2}
   StoreName: Jewellry
   RackNumber: 4
   giveItemToPlayter: 1
@@ -36480,7 +36482,7 @@ Transform:
   m_GameObject: {fileID: 6099214974702700251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.92, y: 5.25, z: 13.23}
-  m_LocalScale: {x: 11.550161, y: 8.0205345, z: 1}
+  m_LocalScale: {x: 10, y: 8.0205345, z: 1}
   m_Children: []
   m_Father: {fileID: 6099214974992695162}
   m_RootOrder: 3
@@ -36612,6 +36614,7 @@ MonoBehaviour:
   RackPrice: {fileID: 6099214975127480001}
   waitTimerUnlockUI: {fileID: 6099214973228630234}
   StoreGFX: {fileID: 6099214973271339940}
+  mat: {fileID: 2100000, guid: 665e4e7019804b542956559ea5f05ecb, type: 2}
   StoreName: Exclusive brands
   RackNumber: 3
   giveItemToPlayter: 1
@@ -36655,7 +36658,7 @@ Transform:
   m_GameObject: {fileID: 6099214974736883642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.92, y: 5.25, z: -10.86}
-  m_LocalScale: {x: 11.550161, y: 8.0205345, z: 1}
+  m_LocalScale: {x: 10, y: 8.0205345, z: 1}
   m_Children: []
   m_Father: {fileID: 6099214973860924481}
   m_RootOrder: 0
@@ -38498,6 +38501,7 @@ MonoBehaviour:
   RackPrice: {fileID: 0}
   waitTimerUnlockUI: {fileID: 6099214973869407519}
   StoreGFX: {fileID: 6099214973245227933}
+  mat: {fileID: 2100000, guid: 6cf899aaacd9d644984072911aa9a6ae, type: 2}
   StoreName: Basic clothes
   RackNumber: 1
   giveItemToPlayter: 1
@@ -57594,6 +57598,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: b02af34ac87614c4fa3bc26695079be1, type: 2}
+    - target: {fileID: -3778644264426962316, guid: cb21792a096cf10438d9f938f44a0533,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3778644264426962316, guid: cb21792a096cf10438d9f938f44a0533,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -3243602521655207705, guid: cb21792a096cf10438d9f938f44a0533,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -57614,6 +57628,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.1596
       objectReference: {fileID: 0}
+    - target: {fileID: -2045257923548263128, guid: cb21792a096cf10438d9f938f44a0533,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2045257923548263128, guid: cb21792a096cf10438d9f938f44a0533,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: -859322575320243141, guid: cb21792a096cf10438d9f938f44a0533,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -57633,6 +57657,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Updated_Diwar
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cb21792a096cf10438d9f938f44a0533,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2380718651202138832, guid: cb21792a096cf10438d9f938f44a0533,
         type: 3}
@@ -57703,6 +57732,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.9772
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141816029861474070, guid: cb21792a096cf10438d9f938f44a0533,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141816029861474070, guid: cb21792a096cf10438d9f938f44a0533,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217234437682292332, guid: cb21792a096cf10438d9f938f44a0533,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9217234437682292332, guid: cb21792a096cf10438d9f938f44a0533,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb21792a096cf10438d9f938f44a0533, type: 3}
