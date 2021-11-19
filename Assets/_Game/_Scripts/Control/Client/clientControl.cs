@@ -67,7 +67,7 @@ namespace FashionM.Control
                 
                 timerToTakeItemFromPlayer -= Time.deltaTime;
 
-                if (timerToTakeItemFromPlayer <= waitTimer / 2)
+                if (timerToTakeItemFromPlayer <= waitTimer /2)
                 {
                     GetComponent<clientMovement>().Anime.SetTrigger("Celeb");
                 }

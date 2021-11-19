@@ -15,6 +15,7 @@ namespace FashionM.Movement
         public GameObject ClientPosition;
         public GameObject PurchesUI;
         public float rotationSmooth = 0.01f;
+        public float lookRotation = 90;
 
         public bool reched = false;
         public bool Purchesed = false;
@@ -37,6 +38,10 @@ namespace FashionM.Movement
 
             PurchesUI.transform.forward = Camera.main.transform.forward;
 
+            if(reched && !GetComponent<clientControl>().tredingComplete)
+            {
+                transform.rotation = Quaternion.Euler(0, lookRotation, 0);
+            }
         }
 
         /*public void checkForEmetySlot()
