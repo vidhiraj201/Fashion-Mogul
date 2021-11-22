@@ -62,6 +62,7 @@ namespace FashionM.Control
         {
             if (Target != null)
                 Target.GetComponent<empControl>().TradeStarted = false;
+            //FindObjectOfType<FashionM.Core.LevelManager>().CustomerIncrement += 1;
         }
 
         void checkForEmp()

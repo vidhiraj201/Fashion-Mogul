@@ -10,10 +10,14 @@ namespace FashionM.Core
         private float CurrentCoin;
         private Watch watch;
 
-        public float MaxCoin;
         public TextMeshProUGUI CoinCountText;
         public List<GameObject> Stations = new List<GameObject>();
 
+        public float MaxCoin;
+
+        public float customerGoal;
+        public float CustomerIncrement;
+        
 
 
         [Header("UI")]
@@ -78,10 +82,10 @@ namespace FashionM.Core
 
         public void NextDayButton()
         {
-            watch.ResetReducer();
             DayOff = false;
             if (DayNightCycle.activeSelf)
                 DayNightCycle.GetComponent<Animator>().Play("Out");
+            CustomerIncrement = 0;
         }
 
     }

@@ -76,10 +76,10 @@ namespace FashionM.Movement
 
 
 
-            if (ClientPosition != null && !transform.GetComponent<clientControl>().tredingComplete)
+            if (ClientPosition != null && !transform.GetComponent<clientControl>().tredingComplete && !FindObjectOfType<FashionM.Core.GameManager>().DayOff)
                 agent.SetDestination(ClientPosition.transform.position);
 
-            if (ClientPosition == null && !transform.GetComponent<clientControl>().tredingComplete)
+            if (ClientPosition == null && !transform.GetComponent<clientControl>().tredingComplete || FindObjectOfType<FashionM.Core.GameManager>().DayOff)
                 agent.SetDestination(transform.position);
 
             if (transform.GetComponent<clientControl>().TradeComp)
@@ -106,6 +106,7 @@ namespace FashionM.Movement
                 transform.GetComponent<clientControl>().TradeComp = false;
                 transform.GetComponent<clientControl>().startTreding = false;
                 transform.GetComponent<clientControl>().coinSpwan = false;
+                transform.GetComponent<clientControl>().CCountAdded = false;
                 transform.GetComponent<ClientUitilities>().empList.Clear();
                 transform.GetComponent<ClientUitilities>().x = 0.3f;
                 reched = false;

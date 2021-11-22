@@ -14,7 +14,7 @@ namespace FashionM.Control
 {
     public class clientControl : MonoBehaviour
     {
-
+        public FashionM.Core.LevelManager lv;
         public GameObject coin;
         public TextMeshPro T1;
         public Image waitTimerUI;
@@ -42,6 +42,9 @@ namespace FashionM.Control
             gm = FindObjectOfType<GameManager>();
             clientNeedItemRandomize();
         }
+
+        //Customer Count from Level Manager Added
+        [HideInInspector]public bool CCountAdded;
         private void Update()
         {
             //waitTimerUI.transform.forward = Camera.main.transform.forward;
@@ -57,6 +60,11 @@ namespace FashionM.Control
             if (tredingComplete)
             {
                 GetComponent<clientMovement>().PurchesUI.SetActive(false);
+                if (!CCountAdded)
+                {
+                    gm.CustomerIncrement += 1;
+                    CCountAdded = true;
+                }
                 
             }
 

@@ -174,9 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c46daa348e3624c8921339a80d0b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RotationT: {fileID: 1953954447}
-  Speed: 0.01
-  RoationTimes: 1
 --- !u!1 &48330953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,7 +2436,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &730411213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6711,13 +6708,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0f6b5bd289ba448bfe09b7b8872600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxCoin: 2800
   CoinCountText: {fileID: 1321967205}
   Stations:
   - {fileID: 1937618109941504963, guid: 1dcadf6bc1def6c42b5efb713f841a3e, type: 3}
   - {fileID: 4622087902831666758, guid: fc1470064a6be71459495209873af9bc, type: 3}
   - {fileID: 4622087902831666758, guid: 80c56cfd231594547bd272cbbf28e5ee, type: 3}
   - {fileID: 4622087902831666758, guid: dffbf6bb11c1b144eabe868f6c6e2765, type: 3}
+  MaxCoin: 2800
+  customerGoal: 10
+  CustomerIncrement: 0
   TapUI: {fileID: 1074431779}
   UnlockStoreExpansionUI: {fileID: 1391039572}
   HireEmployee: {fileID: 1992726661}
@@ -8546,6 +8545,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 574f991f200e9064992b8560ba2d084b, type: 3}
+--- !u!1 &254945430312734037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6099214974292959616, guid: 574f991f200e9064992b8560ba2d084b,
+    type: 3}
+  m_PrefabInstance: {fileID: 254945430312734036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &254945430312734038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254945430312734037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e19df7c535c57a44a4f6e371f262d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6281813604324858290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6099214975041639654, guid: 574f991f200e9064992b8560ba2d084b,

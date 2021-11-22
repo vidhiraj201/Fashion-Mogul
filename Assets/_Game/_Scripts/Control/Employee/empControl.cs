@@ -76,14 +76,9 @@ namespace FashionM.Control
                         }
 
                         GetComponent<empMovement>().isWalkingTowardClient = false;
-
-                        /*other.gameObject.layer = other.gameObject.GetComponent<clientControl>().OccupiedLayer;*/
                     }
                 }
-              /*  if (other.gameObject.GetComponent<clientControl>().NeedItem != GetComponent<empMovement>().ClientNeedItem)
-                {
-                    GetComponent<empMovement>().ClientNeedItem = 0;
-                }*/
+
 
                 
             }
@@ -105,17 +100,6 @@ namespace FashionM.Control
         float a = 0.5f;
         private void OnCollisionStay(Collision other)
         {
-          /*  if (other.gameObject.CompareTag("Client"))
-            {
-                if (other.gameObject.GetComponent<clientControl>().NeedItem == StoreNumberStored)
-                {
-                    if (other.gameObject.GetComponent<clientControl>().timerToTakeItemFromPlayer <= 0.1f)
-                    {
-                        StoreNumberStored = 0;
-                        GetComponent<empMovement>().ClientNeedItem = 0;
-                    }
-                }
-            }*/
 
             if (other.gameObject.CompareTag("Racks"))
             {
