@@ -9,7 +9,7 @@ namespace FashionM.Movement
 {
     public class empMovement : MonoBehaviour
     {
-
+        public LevelManagerStore_1 lv;
         private NavMeshAgent agent;
         [Header("Detection of Client")]
         public Animator Anime;
@@ -77,22 +77,22 @@ namespace FashionM.Movement
                     return;
                 if (ClientNeedItem == 1)
                 {
-                    TargetToStore = gm.ObasicCloths;
+                    TargetToStore = lv.ObasicCloths;
                     isWalkingTowardStore = true;
                 }
                 if (ClientNeedItem == 2)
                 {
-                    TargetToStore = gm.OpremiumCloths;
+                    TargetToStore = lv.OpremiumCloths;
                     isWalkingTowardStore = true;
                 }
                 if (ClientNeedItem == 3)
                 {
-                    TargetToStore = gm.OexclusiveBrand;
+                    TargetToStore = lv.OexclusiveBrand;
                     isWalkingTowardStore = true;
                 }
                 if (ClientNeedItem == 4)
                 {
-                    TargetToStore = gm.Ojewllry;
+                    TargetToStore = lv.Ojewllry;
                     isWalkingTowardStore = true;
                 }
             }

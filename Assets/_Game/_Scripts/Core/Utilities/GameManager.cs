@@ -17,8 +17,6 @@ namespace FashionM.Core
 
         public float customerGoal;
         public float CustomerIncrement;
-        
-
 
         [Header("UI")]
         public GameObject TapUI;
@@ -26,19 +24,7 @@ namespace FashionM.Core
         public GameObject HireEmployee;
         public GameObject DayNightCycle;
 
-        [Header("Store Objects")]
-        public GameObject ObasicCloths;
-        public GameObject OpremiumCloths;
-        public GameObject OexclusiveBrand;
-        public GameObject Ojewllry;
-
         public bool DayOff;
-
-        [Header("Stores")]
-        public bool basicCloths;
-        public bool premiumCloths;
-        public bool exclusiveBrand;
-        public bool jewllry;
 
         [Header("Store Expansion")]
         public bool Ex1;

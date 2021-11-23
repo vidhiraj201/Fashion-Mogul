@@ -10,12 +10,14 @@ namespace FashionM.Core
 {
     public class Stores : MonoBehaviour
     {
-       
+
+        public LevelManagerStore_1 lv;
         private TextMeshPro StoreNameText;
         public TextMeshPro RackPrice;
 
         public Image waitTimerUnlockUI;
         public GameObject StoreGFX;
+        public GameObject PurchesGFX;
         public Material mat;
         //public Image waitTimerlockUI;
 
@@ -59,6 +61,7 @@ namespace FashionM.Core
                 StoreNameText.gameObject.SetActive(false);
                 RackPrice.text = "$" + MaxCoinNeedToUnlock.ToString();
                 StoreGFX.SetActive(false);
+                PurchesGFX.SetActive(true);
             }
 
             if(storeIsOpen)
@@ -91,15 +94,15 @@ namespace FashionM.Core
         {
             if (premiumCloths)
             {
-                gm.premiumCloths = true;
+                lv.premiumCloths = true;
             }
             if (exclusiveBrand)
             {
-                gm.exclusiveBrand = true;
+                lv.exclusiveBrand = true;
             }
             if (jewllry)
             {
-                gm.jewllry = true;
+                lv.jewllry = true;
             }
         }
 
@@ -109,6 +112,7 @@ namespace FashionM.Core
             RackPrice.gameObject.SetActive(false);
             StoreNameText.text = StoreName;
             StoreGFX.SetActive(true);
+            PurchesGFX.SetActive(false);
             transform.localScale = new Vector3(transform.localScale.x, 0.75f, transform.localScale.z);
             transform.localPosition = new Vector3(transform.localPosition.x, 3.5f, transform.localPosition.z);
             CheckStore();

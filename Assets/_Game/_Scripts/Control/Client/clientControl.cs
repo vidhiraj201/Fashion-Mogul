@@ -14,7 +14,7 @@ namespace FashionM.Control
 {
     public class clientControl : MonoBehaviour
     {
-        public FashionM.Core.LevelManager lv;
+        public FashionM.Core.LevelManagerStore_1 lv;
         public GameObject coin;
         public TextMeshPro T1;
         public Image waitTimerUI;
@@ -109,19 +109,19 @@ namespace FashionM.Control
         }
         public void clientNeedItemRandomize()
         {
-            if (gm.basicCloths && !gm.premiumCloths && !gm.exclusiveBrand && !gm.jewllry)
+            if (lv.basicCloths && !lv.premiumCloths && !lv.exclusiveBrand && !lv.jewllry)
             {
                 NeedItem = 1;
             }
-            if (gm.basicCloths && gm.premiumCloths && !gm.exclusiveBrand && !gm.jewllry)
+            if (lv.basicCloths && lv.premiumCloths && !lv.exclusiveBrand && !lv.jewllry)
             {
                 NeedItem = Random.Range(1, 3);
             }
-            if (gm.basicCloths && gm.premiumCloths && gm.exclusiveBrand && !gm.jewllry)
+            if (lv.basicCloths && lv.premiumCloths && lv.exclusiveBrand && !lv.jewllry)
             {
                 NeedItem = Random.Range(1, 4);
             }
-            if (gm.basicCloths && gm.premiumCloths && gm.exclusiveBrand && gm.jewllry)
+            if (lv.basicCloths && lv.premiumCloths && lv.exclusiveBrand && lv.jewllry)
             {
                 NeedItem = Random.Range(1, 5);
             }            

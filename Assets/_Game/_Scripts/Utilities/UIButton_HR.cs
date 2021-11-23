@@ -58,7 +58,9 @@ namespace FashionM.Core
         {
             if(gm.MaxCoin >= EmployeeAmount)
             {
-                Instantiate(Employee, HD.SpwanPoint.position, Quaternion.identity).transform.parent = GameObject.Find("EmployeeCollection").transform;
+                GameObject EMP =  Instantiate(Employee, HD.SpwanPoint.position, Quaternion.identity);
+                EMP.transform.parent = GameObject.Find("EmployeeCollection").transform;
+                EMP.GetComponent<FashionM.Movement.empMovement>().lv = HD.GetComponent<HRDesk>().LevelManager;
                 gm.HireEmployee.GetComponent<Animator>().Play("Out");
                 gm.MaxCoin -= EmployeeAmount;
             }
