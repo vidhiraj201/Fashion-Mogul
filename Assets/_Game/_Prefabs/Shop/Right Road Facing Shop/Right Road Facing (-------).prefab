@@ -4799,7 +4799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256850492628348340}
   m_LocalRotation: {x: -0.5, y: -0.50000006, z: -0.49999994, w: 0.50000006}
-  m_LocalPosition: {x: 22.25, y: 11.4436, z: -22.28}
+  m_LocalPosition: {x: 24.7, y: 11.4436, z: -24.8}
   m_LocalScale: {x: 147.44525, y: 147.44518, z: 112.79842}
   m_Children: []
   m_Father: {fileID: 7500094115255616527}
@@ -28819,7 +28819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7500094115860945837}
   m_Layer: 0
-  m_Name: Right Road Facing Shop
+  m_Name: Right Road Facing (-------)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30681,14 +30681,15 @@ MonoBehaviour:
   StoreUpgradesPrice: {fileID: 8283917123299693793}
   WaitTimerUnlockUI: {fileID: 8283917122089505729}
   WaitTimer: 1
+  facingSide: 3
   CoinReduceSpeed: 1
   MaxCoinNeedToUnlock: 700
   Bounds: {fileID: 0}
-  PlacingPosition: {x: 54.9, y: 0, z: -51.16}
-  PlacingRotation: {x: 0, y: -90, z: 0}
-  BoundCenter: {x: 0, y: 0, z: 0}
-  BoundSize: {x: 0, y: 0, z: 0}
-  X: 0
+  PlacingPosition: {x: 55, y: 0, z: -55.1}
+  PlacingRotation: {x: 0, y: 0, z: 0}
+  BoundCenter: {x: 1.267, y: 0, z: -0.221}
+  BoundSize: {x: 3.89764, y: 1, z: 1.196}
+  X: 1
   Z: 0
 --- !u!65 &3360919655293186530
 BoxCollider:
@@ -34072,6 +34073,7 @@ MonoBehaviour:
   StoreUpgradesPrice: {fileID: 148173740660420042}
   WaitTimerUnlockUI: {fileID: 4739394536025804825}
   WaitTimer: 1
+  facingSide: 0
   CoinReduceSpeed: 1
   MaxCoinNeedToUnlock: 700
   Bounds: {fileID: 0}

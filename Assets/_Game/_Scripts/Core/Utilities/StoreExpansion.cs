@@ -16,6 +16,10 @@ namespace FashionM.Core
         private float UIUnlock;
         private bool isPlayerNear;
 
+       [Tooltip("0- L&R Facing \n 1- L Facing \n 2- R Facing \n 3- Facing")]
+        public int facingSide;
+
+
         public float CoinReduceSpeed = 1;
         public float MaxCoinNeedToUnlock;
         public GameObject Bounds;
@@ -33,7 +37,9 @@ namespace FashionM.Core
         // Start is called before the first frame update
         void Start()
         {
+
             GM = FindObjectOfType<GameManager>();
+            Bounds = GameObject.Find("Bound");
             StoreStatus.text = "Store Locked";
             StoreUpgradesPrice.text = "$" + MaxCoinNeedToUnlock;
             WaitTimerUnlockUI.gameObject.SetActive(false);

@@ -1560,7 +1560,6 @@ Transform:
   - {fileID: 439423173}
   - {fileID: 1087043516}
   - {fileID: 1962123389}
-  - {fileID: 964192198}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3059,101 +3058,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941092411}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &964192197
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 964192198}
-  - component: {fileID: 964192201}
-  - component: {fileID: 964192200}
-  - component: {fileID: 964192199}
-  m_Layer: 0
-  m_Name: Bound (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &964192198
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964192197}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.3, y: 42.9, z: 3.9}
-  m_LocalScale: {x: 23.967108, y: 10, z: 69.55329}
-  m_Children: []
-  m_Father: {fileID: 415287049}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &964192199
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964192197}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2705996957146715403, guid: 723ff9403bfc5db4e83911973bc09c5f, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &964192200
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964192197}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &964192201
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964192197}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0038898, y: 1, z: 0.33322793}
-  m_Center: {x: 0.11973193, y: 0, z: 0.22548264}
 --- !u!1 &994096685
 GameObject:
   m_ObjectHideFlags: 0
@@ -6555,9 +6459,11 @@ MonoBehaviour:
   CustomerUI: {fileID: 534690876}
   RightRoadFacingStations:
   - {fileID: 7500094115860945836, guid: 1dcadf6bc1def6c42b5efb713f841a3e, type: 3}
-  LeftRoadFacingStation: []
+  LeftRoadFacingStation:
+  - {fileID: 7754335930440994373, guid: 700d2096ccafd1a4fb59287a1083cd85, type: 3}
   LeftAndRightFacingStation: []
-  NoRoadFacingStation: []
+  NoRoadFacingStation:
+  - {fileID: 8166368779306992019, guid: 0088d9174b579904a9418123f6a92e38, type: 3}
   MaxCoin: 2800
   EmployeeCount: 0
   customerGoal: 10
@@ -7941,15 +7847,15 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 439423172}
+    - target: {fileID: 4063447252240357947, guid: 78b03c03f627fad4b8317aa9d2485f92,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 439423172}
     - target: {fileID: 4063447253520813272, guid: 78b03c03f627fad4b8317aa9d2485f92,
         type: 3}
       propertyPath: m_Name
       value: Casual Shop
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063447253520813272, guid: 78b03c03f627fad4b8317aa9d2485f92,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4063447253520813273, guid: 78b03c03f627fad4b8317aa9d2485f92,
         type: 3}
