@@ -129,13 +129,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cbd0b558873cd43b5e3c94782706ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lv: {fileID: 0}
   Anime: {fileID: 4872032264945157387}
   TargetToClient: {fileID: 0}
   TargetToStore: {fileID: 0}
   isWalkingTowardClient: 0
   isWalkingTowardStore: 0
-  ClientNeedItem: 0
+  ClientNeedItem: -1
   rotationSmooth: 0.1
+  initPos: {fileID: 0}
   Hold: 0
 --- !u!114 &5617175501116341468
 MonoBehaviour:
@@ -153,7 +155,7 @@ MonoBehaviour:
   Occupied: 0
   OR: {fileID: 0}
   TradeStarted: 0
-  StoreNumberStored: 0
+  StoreNumberStored: -1
 --- !u!54 &5433773063820758298
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -184,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClothObject: []
   StackingObject: {fileID: 3879145784571781498}
-  Cloths: {fileID: 8668948465460680198, guid: a385aa1fa0fda2f4fbcce43be1c1dd57, type: 3}
+  Cloths: {fileID: 8668948465460680198, guid: 266c3b2dc354b9f4d98ac07059cc95b1, type: 3}
   OR: {fileID: 0}
 --- !u!1001 &9053630727270726418
 PrefabInstance:

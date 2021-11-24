@@ -24,6 +24,11 @@ namespace FashionM.Core
 
         
         public Vector3 PlacingPosition;
+        public Vector3 PlacingRotation;
+
+        [Header ("Collider Bound")]
+        public Vector3 BoundCenter;
+        public Vector3 BoundSize;
 
         // Start is called before the first frame update
         void Start()
@@ -35,6 +40,8 @@ namespace FashionM.Core
             UIUnlock = WaitTimer;
         }
 
+        public bool X, Z;
+
         // Update is called once per frame
         void Update()
         {
@@ -43,9 +50,17 @@ namespace FashionM.Core
                 /*Bounds.transform.localScale = new Vector3(24,10,131);
                 Bounds.transform.localPosition = new Vector3(-35.76f,39.3f,-36.45f);*/
 
+                if (X)
+                {
+                    Bounds.GetComponent<BoxCollider>().center = new Vector3(BoundCenter.x, Bounds.GetComponent<BoxCollider>().center.y, Bounds.GetComponent<BoxCollider>().center.z); 
+                    Bounds.GetComponent<BoxCollider>().size = new Vector3(BoundSize.x, Bounds.GetComponent<BoxCollider>().size.y, Bounds.GetComponent<BoxCollider>().size.z); 
+                }
 
-                Bounds.GetComponent<BoxCollider>().center = new Vector3(0.119f, 0, -0.221f);
-                Bounds.GetComponent<BoxCollider>().size = new Vector3(1f,1,1.196f);
+                if (Z)
+                {
+                    Bounds.GetComponent<BoxCollider>().center = new Vector3(Bounds.GetComponent<BoxCollider>().center.x, Bounds.GetComponent<BoxCollider>().center.y, BoundCenter.z ); 
+                    Bounds.GetComponent<BoxCollider>().size = new Vector3(Bounds.GetComponent<BoxCollider>().size.x, Bounds.GetComponent<BoxCollider>().size.y, BoundSize.z); 
+                }
 
                 transform.GetComponent<MeshRenderer>().enabled = false;
                 Destroy(this.gameObject);
@@ -89,12 +104,16 @@ namespace FashionM.Core
         }
         private void OnCollisionExit(Collision collision)
         {
+            
             if (isPlayerNear)
             {
-                isPlayerNear = false;
-                WaitTimerUnlockUI.gameObject.SetActive(false);
+                isPlayerNear = false;                
                 UIUnlock = WaitTimer;
             }
+
+            if(WaitTimerUnlockUI.gameObject.activeSelf)
+                WaitTimerUnlockUI.gameObject.SetActive(false);
+
             if (GM.UnlockStoreExpansionUI.activeSelf)
                 GM.UnlockStoreExpansionUI.GetComponent<Animator>().Play("Out");
 

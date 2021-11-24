@@ -14,7 +14,7 @@ namespace FashionM.Control
 {
     public class clientControl : MonoBehaviour
     {
-        public FashionM.Core.LevelManagerStore_1 lv;
+        public FashionM.Core.LevelManagerStore lv;
         public GameObject coin;
         public TextMeshPro T1;
         public Image waitTimerUI;
@@ -35,6 +35,8 @@ namespace FashionM.Control
 
         [HideInInspector]public bool coinSpwan = false;
         private GameManager gm;
+
+        public bool StopeWalking;
         private void Start()
         {
             timerToTakeItemFromPlayer = waitTimer;
@@ -60,11 +62,7 @@ namespace FashionM.Control
             if (tredingComplete)
             {
                 GetComponent<clientMovement>().PurchesUI.SetActive(false);
-                if (!CCountAdded)
-                {
-                    gm.CustomerIncrement += 1;
-                    CCountAdded = true;
-                }
+
                 
             }
 
@@ -94,8 +92,18 @@ namespace FashionM.Control
 
         private void FixedUpdate()
         {
+            if (gm.CustomerIn <= gm.customerGoal)
+                StopeWalking = false;
+
+            if (gm.CustomerIn >= gm.customerGoal && !CCountAdded)
+            {
+                StopeWalking = true;
+                //StartCoroutine(edlay(0.5f));
+            }
+
+/*
             if (NeedItem == 0 && !tredingComplete)
-                clientNeedItemRandomize();
+                clientNeedItemRandomize();*/
 
             if (!GetComponent<clientMovement>().reched)
             {
@@ -107,27 +115,47 @@ namespace FashionM.Control
                 startTreding = true;
             }
         }
+
         public void clientNeedItemRandomize()
         {
-            if (lv.basicCloths && !lv.premiumCloths && !lv.exclusiveBrand && !lv.jewllry)
+            if (lv.rackOpen.Count == 0)
+                return;
+            if (lv.rackOpen.Count <= 1)
             {
-                NeedItem = 1;
+                print("one Item");
+                NeedItem = lv.rackOpen[0];
             }
-            if (lv.basicCloths && lv.premiumCloths && !lv.exclusiveBrand && !lv.jewllry)
+
+            if (lv.rackOpen.Count >= 2)
             {
-                NeedItem = Random.Range(1, 3);
+                int a = Random.Range(lv.rackOpen[0], lv.rackOpen[lv.rackOpen.Count-1]);
+                NeedItem = lv.rackOpen[a];
+
+
+                print(NeedItem);
             }
-            if (lv.basicCloths && lv.premiumCloths && lv.exclusiveBrand && !lv.jewllry)
-            {
-                NeedItem = Random.Range(1, 4);
-            }
-            if (lv.basicCloths && lv.premiumCloths && lv.exclusiveBrand && lv.jewllry)
-            {
-                NeedItem = Random.Range(1, 5);
-            }            
         }
 
-        
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("DoorChecker"))
+            {
+                if (!CCountAdded)
+                {
+                    gm.CustomerIn += 1;
+                    CCountAdded = true;
+                }
+
+                if (CCountAdded && tredingComplete)
+                {
+                    gm.CustomerOut += 1;
+                    CCountAdded = false;
+                }
+
+                if (gm.CustomerIn >= gm.customerGoal+1)
+                    StopeWalking = true;
+            }
+        }
 
         private void OnCollisionExit(Collision collision)
         {

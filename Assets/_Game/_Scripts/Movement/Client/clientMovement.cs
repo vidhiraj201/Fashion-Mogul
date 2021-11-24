@@ -10,6 +10,7 @@ namespace FashionM.Movement
     {
         //private clientCollection CC;
         private NavMeshAgent agent;
+
         public Animator Anime;
         public Transform End;
         public GameObject ClientPosition;
@@ -20,20 +21,22 @@ namespace FashionM.Movement
         public bool reched = false;
         public bool Purchesed = false;
         private float turnSmoothVelocity;
+
+        public int num;
         // Start is called before the first frame update
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
-            //CC = GameObject.Find("Client Position").GetComponent<clientCollection>();
-           /* if (ClientPosition == null)
-                checkForEmetySlot();*/
-
             PurchesUI.SetActive(false);
+            num = Random.Range(0, 2);
+            customerSetup();
         }
 
+       
         void Update()
         {
-            //checkForEmetySlot();
+
+            
             moveTowardSlot();
 
             PurchesUI.transform.forward = Camera.main.transform.forward;
@@ -44,23 +47,35 @@ namespace FashionM.Movement
             }
         }
 
-        /*public void checkForEmetySlot()
+        private void FixedUpdate()
         {
-            if(ClientPosition == null && !reched)
+            customerSetup();
+        }
+
+        void customerSetup()
+        {
+            if (transform.GetChild(2).transform.GetChild(0).gameObject.activeSelf)
             {
-                foreach (Transform dc in CC.gameObject.transform)
-                {
-                    if (!dc.GetComponent<dottedCircle>().occupied && !dc.GetComponent<dottedCircle>().thisPositonIsMine)
-                    {
-                        ClientPosition = dc.gameObject;
-                        
-                    }
-                }
+                Anime = transform.GetChild(2).transform.GetChild(0).gameObject.GetComponent<Animator>();
+            }
+            if (transform.GetChild(2).transform.GetChild(1).gameObject.activeSelf)
+            {
+                Anime = transform.GetChild(2).transform.GetChild(1).gameObject.GetComponent<Animator>();
             }
 
-            if (ClientPosition != null && ClientPosition.GetComponent<dottedCircle>().occupied )
-                ClientPosition = null;
-        }*/
+            if (num == 0)
+            {
+                transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(2).transform.GetChild(1).gameObject.SetActive(false);
+            }
+
+            if (num == 1)
+            {
+                transform.GetChild(2).transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(false);
+
+            }
+        }
 
 
         public void moveTowardSlot()
@@ -76,10 +91,10 @@ namespace FashionM.Movement
 
 
 
-            if (ClientPosition != null && !transform.GetComponent<clientControl>().tredingComplete && !FindObjectOfType<FashionM.Core.GameManager>().DayOff)
+            if (ClientPosition != null && !transform.GetComponent<clientControl>().tredingComplete && !transform.GetComponent<clientControl>().StopeWalking)
                 agent.SetDestination(ClientPosition.transform.position);
 
-            if (ClientPosition == null && !transform.GetComponent<clientControl>().tredingComplete || FindObjectOfType<FashionM.Core.GameManager>().DayOff)
+            if (ClientPosition == null && !transform.GetComponent<clientControl>().tredingComplete || transform.GetComponent<clientControl>().StopeWalking)
                 agent.SetDestination(transform.position);
 
             if (transform.GetComponent<clientControl>().TradeComp)
@@ -114,7 +129,7 @@ namespace FashionM.Movement
                 PurchesUI.SetActive(false);
                 transform.GetComponent<clientControl>().clientNeedItemRandomize();
                 transform.GetComponent<clientMovement>().Anime.ResetTrigger("Celeb");
-
+                num = Random.Range(0, 2);
             }
                 
         }

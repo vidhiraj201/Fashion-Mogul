@@ -11,10 +11,9 @@ namespace FashionM.Control
         
 
         public List<GameObject> empList = new List<GameObject>();
-        private Transform EmpCol;
+        public Transform EmpCol;
         void Start()
         {
-            EmpCol = GameObject.Find("EmployeeCollection").transform;
         }
         
         void FixedUpdate()
@@ -32,7 +31,7 @@ namespace FashionM.Control
         {
             if (locked && GetComponent<clientMovement>().reched )
             {
-                if(Target.GetComponent<empMovement>().ClientNeedItem<=0)
+                if(Target.GetComponent<empMovement>().ClientNeedItem<=-1)
                     Target.GetComponent<empMovement>().isWalkingTowardClient = true;                
             }
 
@@ -47,7 +46,7 @@ namespace FashionM.Control
                     Target.GetComponent<empMovement>().isWalkingTowardClient = false;
                     Target.GetComponent<empMovement>().gameObject.layer = 9;
                     Target.GetComponent<empControl>().Occupied = false;
-                    Target.GetComponent<empMovement>().ClientNeedItem = 0;
+                    Target.GetComponent<empMovement>().ClientNeedItem = -1;
                     /*transform.GetComponent<clientControl>().NeedItem = 0;*/
                     transform.gameObject.layer = 10;
                     Target = null;

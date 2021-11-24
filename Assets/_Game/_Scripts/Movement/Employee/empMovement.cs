@@ -9,16 +9,24 @@ namespace FashionM.Movement
 {
     public class empMovement : MonoBehaviour
     {
-        public LevelManagerStore_1 lv;
+        public LevelManagerStore lv;
         private NavMeshAgent agent;
-        [Header("Detection of Client")]
         public Animator Anime;
+
+        [Header("Target Position")]
         public GameObject TargetToClient;
         public GameObject TargetToStore;
+
+        [Header("Where to go")]
         public bool isWalkingTowardClient = false;
         public bool isWalkingTowardStore = false;
+
+        [Header("What item you need")]
         public float ClientNeedItem;
+
         public float rotationSmooth;
+
+        [HideInInspector] public Transform initPos;
 
         public bool Hold;
 
@@ -27,6 +35,7 @@ namespace FashionM.Movement
         private float turnSmoothVelocity;
         void Start()
         {
+            ClientNeedItem = -1;
             agent = GetComponent<NavMeshAgent>();
             gm = FindObjectOfType<GameManager>();
         }
@@ -69,33 +78,35 @@ namespace FashionM.Movement
                 agent.SetDestination(TargetToStore.transform.position);
 
             if (!GetComponent<empControl>().Occupied)
-                agent.SetDestination(FindObjectOfType<HRDesk>().SpwanPoint.position);
+                agent.SetDestination(initPos.position);
 
-           if(GetComponent<empControl>().StoreNumberStored <= 0)
+           if(GetComponent<empControl>().StoreNumberStored <= -1)
             {
-                if (ClientNeedItem <= 0)
-                    return;
+               /* if (ClientNeedItem <= 0)
+                    return;*/
+                if (ClientNeedItem == 0)
+                {
+                    TargetToStore = lv.AiPosForRack0;
+                    isWalkingTowardStore = true;
+                }
+
                 if (ClientNeedItem == 1)
                 {
-                    TargetToStore = lv.ObasicCloths;
+                    TargetToStore = lv.AiPosForRack1;
                     isWalkingTowardStore = true;
                 }
                 if (ClientNeedItem == 2)
                 {
-                    TargetToStore = lv.OpremiumCloths;
+                    TargetToStore = lv.AiPosForRack2;
                     isWalkingTowardStore = true;
                 }
                 if (ClientNeedItem == 3)
                 {
-                    TargetToStore = lv.OexclusiveBrand;
-                    isWalkingTowardStore = true;
-                }
-                if (ClientNeedItem == 4)
-                {
-                    TargetToStore = lv.Ojewllry;
+                    TargetToStore = lv.AiPosForRack3;
                     isWalkingTowardStore = true;
                 }
             }
         }
+
     }
 }

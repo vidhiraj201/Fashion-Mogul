@@ -13,14 +13,16 @@ namespace FashionM.Core
         public GameObject Cloths;
 
         public Stores OR;
-        public void addClothToStack(float num)
+        public void addClothToStack(float num, Material mat)
         {
             if (ClothObject.Count <= 1)
             {
                 GameObject o = Instantiate(Cloths, StackingObject.transform.position, Quaternion.identity);
+                o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;
                 o.transform.parent = StackingObject.transform;
                 o.GetComponent<Cloths>().ClothIdentityNumber = num;
                 o.GetComponent<Cloths>().Collector = this.gameObject;
+
                 GetComponent<empMovement>().isWalkingTowardStore = false;
             }            
         }
@@ -34,12 +36,12 @@ namespace FashionM.Core
                     if (ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber == other.gameObject.GetComponent<clientControl>().NeedItem)
                     {
                         other.gameObject.layer = 17;
-                        ClothObject[i].GetComponent<Cloths>().throwCloth(other.gameObject.transform);
-                        /*other.gameObject.GetComponent<clientControl>().startTreding = true;*/
+                        ClothObject[i].GetComponent<Cloths>().throwCloth(other.gameObject.transform);                        
                         other.gameObject.GetComponent<clientControl>().playerIsNear = true;
                         other.gameObject.GetComponent<clientControl>().tredingComplete = true;
-                        GetComponent<empControl>().StoreNumberStored = 0;
-                        GetComponent<empMovement>().ClientNeedItem = 0;
+
+                        GetComponent<empControl>().StoreNumberStored = -1;
+                        GetComponent<empMovement>().ClientNeedItem = -1;
                     }
                 }
             }

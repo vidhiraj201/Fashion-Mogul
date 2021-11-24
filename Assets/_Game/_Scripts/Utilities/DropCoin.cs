@@ -16,7 +16,7 @@ namespace FashionM.Core
         }
         public void Destroy()
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject.transform.parent.gameObject);
         }
 
         void Start()
@@ -50,7 +50,7 @@ namespace FashionM.Core
                 GetComponent<Rigidbody>().isKinematic = true;
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().MaxCoin += Coins;
                 StoreToPlayer = true;
-                Destroy(this.gameObject, 1.5f);
+                Destroy(this.gameObject.transform.parent.gameObject, 1.5f);
             }
         }
 

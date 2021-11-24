@@ -14,13 +14,13 @@ namespace FashionM.Movement
 
         private CharacterController controller;
         private float turnSmoothVelocity;
-        private Camera cam;
+        private Transform cam;
 
         public bool Hold;
         void Start()
         {
             controller = GetComponent<CharacterController>();
-            cam = Camera.main;
+            cam = Camera.main.transform;
         }
 
         void Update()
@@ -30,29 +30,33 @@ namespace FashionM.Movement
             playerAnimation.SetBool("hold", Hold);
         }
 
-        private Vector3 direction;
+        [SerializeField]private Vector3 direction;
+        [SerializeField]private Vector3 RbVelocity;
         void movement()
         {
+            RbVelocity = GetComponent<Rigidbody>().velocity;
+
             if (GetComponent<playerStackingSystem>().ClothObject.Count > 0)
                 Hold = true;
             if (GetComponent<playerStackingSystem>().ClothObject.Count <= 0)
                 Hold = false;
 
-            float z = -joystick.Horizontal;
             float x = joystick.Vertical;
+            float z = -joystick.Horizontal;
 
             direction = new Vector3(x, 0, z).normalized;
+
             playerAnimation.SetFloat("vertical", Mathf.Abs(direction.magnitude));
             
             if (direction.magnitude > 0.1f)
             {
                 FindObjectOfType<GameManager>().OnMouseDownData();
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, rotationSmooth);
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle+45, ref turnSmoothVelocity, rotationSmooth);
                 transform.rotation = Quaternion.Euler(0, angle, 0);
-                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * new Vector3(1, 0, 1);
                 controller.Move(moveDir.normalized * speed*Time.deltaTime);
-            }
+            }                        
         }
     }
 }

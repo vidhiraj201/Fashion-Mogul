@@ -7,10 +7,11 @@ namespace FashionM.Core
 {
     public class HRDesk : MonoBehaviour
     {
-        public LevelManagerStore_1 LevelManager;
+        public LevelManagerStore LevelManager;
         public Image waitTimerUI;
         public float UILoadWaitTimer = 1;
         public Transform SpwanPoint;
+        public Transform Collection;
         private GameManager gm;
 
         private float LoadUITimer;

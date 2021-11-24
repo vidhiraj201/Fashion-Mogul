@@ -14,6 +14,8 @@ TagManager:
   - GameManager
   - StoreExp
   - Ground
+  - HR
+  - DoorChecker
   layers:
   - Default
   - TransparentFX

@@ -11,26 +11,29 @@ namespace FashionM.Core
         private Watch watch;
 
         public TextMeshProUGUI CoinCountText;
-        public List<GameObject> Stations = new List<GameObject>();
+        public TextMeshProUGUI CustomerUI;
+        public List<GameObject> RightRoadFacingStations = new List<GameObject>();
+        public List<GameObject> LeftRoadFacingStation = new List<GameObject>();
+        public List<GameObject> LeftAndRightFacingStation = new List<GameObject>();
+        public List<GameObject> NoRoadFacingStation = new List<GameObject>();
+
 
         public float MaxCoin;
 
+        public float EmployeeCount;
+
         public float customerGoal;
-        public float CustomerIncrement;
+        public float CustomerIn;
+        public float CustomerOut;
 
         [Header("UI")]
         public GameObject TapUI;
         public GameObject UnlockStoreExpansionUI;
         public GameObject HireEmployee;
         public GameObject DayNightCycle;
+        
 
         public bool DayOff;
-
-        [Header("Store Expansion")]
-        public bool Ex1;
-        public bool Ex2;
-        public bool Ex3;
-        public bool Ex4;
 
         void Start()
         {
@@ -45,6 +48,8 @@ namespace FashionM.Core
         void Update()
         {
             coinControl();
+
+            CustomerUI.text = CustomerOut + " / " + customerGoal;
            /* if (Input.GetKeyDown(KeyCode.P))
             {
                 Instantiate(Employee, HD.position, Quaternion.identity).transform.parent = GameObject.Find("EmployeeCollection").transform;
@@ -71,7 +76,10 @@ namespace FashionM.Core
             DayOff = false;
             if (DayNightCycle.activeSelf)
                 DayNightCycle.GetComponent<Animator>().Play("Out");
-            CustomerIncrement = 0;
+
+            CustomerIn = 0;
+            CustomerOut = 0;
+            customerGoal = customerGoal * 2;
         }
 
     }

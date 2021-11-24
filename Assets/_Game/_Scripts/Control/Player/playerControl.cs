@@ -14,6 +14,7 @@ namespace FashionM.Control
         private GameManager manager;
         public Stores OR;
         public StoreExpansion SE;
+        [HideInInspector] public HRDesk HR;
         private void Start()
         {
             //Text = transform.GetChild(1).GetComponent<TextMeshPro>();
@@ -42,6 +43,11 @@ namespace FashionM.Control
                     other.gameObject.GetComponent<clientControl>().tredingComplete = true;
                     StoreNumberStored = 0;
                 }*/
+            }
+
+            if (other.gameObject.CompareTag("HR"))
+            {
+                HR = other.gameObject.GetComponent<HRDesk>();
             }
            
             if (other.gameObject.CompareTag("Racks"))

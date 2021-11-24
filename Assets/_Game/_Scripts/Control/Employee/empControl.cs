@@ -45,7 +45,8 @@ namespace FashionM.Control
             {
                 if (other.gameObject.GetComponent<clientControl>().NeedItem != StoreNumberStored || other.gameObject.GetComponent<clientControl>().NeedItem != GetComponent<empMovement>().ClientNeedItem)
                 {
-                    print(transform.name + " " + other.gameObject.GetComponent<clientControl>().NeedItem + " " + StoreNumberStored);
+                    //print(transform.name + " " + other.gameObject.GetComponent<clientControl>().NeedItem + " " + StoreNumberStored);
+
                     if (other.gameObject.GetComponent<clientControl>().startTreding && GetComponent<EmpStackingSystem>().ClothObject.Count >0)
                     {
                         StoreNumberStored = other.gameObject.GetComponent<clientControl>().NeedItem;
@@ -67,9 +68,9 @@ namespace FashionM.Control
                 {
                     if (other.gameObject.GetComponent<clientControl>().NeedItem != StoreNumberStored && !TradeStarted)
                     {
-                        StoreNumberStored = 0;
-                        GetComponent<empMovement>().ClientNeedItem = 0;
-                        if (GetComponent<empMovement>().ClientNeedItem <= 0)
+                        StoreNumberStored = -1;
+                        GetComponent<empMovement>().ClientNeedItem = -1;
+                        if (GetComponent<empMovement>().ClientNeedItem <= -1)
                         {
                             GetComponent<empMovement>().ClientNeedItem = other.gameObject.GetComponent<clientControl>().NeedItem;
                             TradeStarted = true;
@@ -106,14 +107,14 @@ namespace FashionM.Control
                 OR = other.gameObject.GetComponent<Stores>();
                 if (OR != null && !OR.isRackClosed)
                 {
-                    if(a>=0 && StoreNumberStored <= 0)
+                    if(a>=0 && StoreNumberStored <= -1)
                         a -= Time.deltaTime;
 
                     if (a <= 0)
                     {
                         a = 0.5f;
                         StoreNumberStored = OR.RackNumber;
-                        GetComponent<EmpStackingSystem>().addClothToStack(OR.RackNumber);
+                        GetComponent<EmpStackingSystem>().addClothToStack(OR.RackNumber, OR.mat);
                         GetComponent<empMovement>().isWalkingTowardStore = false;
                         GetComponent<empMovement>().isWalkingTowardClient = true;
                     }                    

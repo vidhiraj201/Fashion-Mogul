@@ -15,7 +15,7 @@ public class Watch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (manager.CustomerIncrement >= manager.customerGoal && !FindObjectOfType<GameManager>().DayOff)
+        if (manager.CustomerOut >= manager.customerGoal && !FindObjectOfType<GameManager>().DayOff)
         {
             manager.DayNightCycle.SetActive(true);
             if (manager.DayNightCycle.activeSelf)

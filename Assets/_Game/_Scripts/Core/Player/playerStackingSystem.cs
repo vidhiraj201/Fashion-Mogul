@@ -34,6 +34,7 @@ namespace FashionM.Core
                 /*ClothObject[Random.Range(0, ClothObject.Count)].GetComponent<Cloths>().throwCloth();*/
             }
         }
+
         //StackingObject.transform.position
         public void addClothToStack(float num, Material mat)
         {
@@ -45,6 +46,7 @@ namespace FashionM.Core
                 o.GetComponent<Cloths>().ClothIdentityNumber = num;
                 o.GetComponent<Cloths>().Collector = this.gameObject;
             }
+
             if (ClothObject.Count > 0)
             {
                 GameObject o = Instantiate(Cloths, ClothObject[ClothObject.Count-1].transform.position + new Vector3(0, 0.05f, 0), Quaternion.identity);
@@ -60,12 +62,18 @@ namespace FashionM.Core
         {            
             if (ClothObject.Count > 0)
             {
-                for (int i = 0; i <= ClothObject.Count - 1;)
+                for (int i = 0; i <= ClothObject.Count-1;)
                 {
+                    if(i >= ClothObject.Count-1 && ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber != other.gameObject.GetComponent<clientControl>().NeedItem)
+                    {
+                        return;
+                    }
+
                     if (ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber != other.gameObject.GetComponent<clientControl>().NeedItem)
                     {
                         i++;
                     }
+
                     if (ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber == other.gameObject.GetComponent<clientControl>().NeedItem)
                     {
                         other.gameObject.layer = 17;
@@ -73,7 +81,8 @@ namespace FashionM.Core
                         other.gameObject.GetComponent<clientControl>().playerIsNear = true;
                         other.gameObject.GetComponent<clientControl>().tredingComplete = true;
                         break;
-                    }                    
+                    }  
+
                 }
             }
         }

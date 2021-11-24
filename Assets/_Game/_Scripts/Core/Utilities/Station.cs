@@ -7,6 +7,7 @@ namespace FashionM.Core
 {
     public class Station : MonoBehaviour
     {
+        public LevelManagerStore lv;
         public GameObject clientPosition;
         public GameObject NewClients;       
 
@@ -51,12 +52,16 @@ namespace FashionM.Core
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                if(GM.MaxCoin >=MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
+                if(lv.rackOpen.Count>0)
                 {
-                    MaxCoinNeedToUnlock -= CoinReduceSpeed;
-                    GM.MaxCoin -= CoinReduceSpeed;
-                    StationPrice.text = "$" + MaxCoinNeedToUnlock;
+                    if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
+                    {
+                        MaxCoinNeedToUnlock -= CoinReduceSpeed;
+                        GM.MaxCoin -= CoinReduceSpeed;
+                        StationPrice.text = "$" + MaxCoinNeedToUnlock;
+                    }
                 }
+                
             }
         }
         private void OnCollisionExit(Collision collision)

@@ -16,14 +16,12 @@ namespace FashionM.Core
 
         private TextMeshProUGUI BName;
         private GameManager gm;
-        private HRDesk HD;
         private Image BUI;
 
         // Start is called before the first frame update
         void Start()
         {
             gm = FindObjectOfType<GameManager>();
-            HD = FindObjectOfType<HRDesk>();
             BUI = GetComponent<Image>();
             BName = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         }
@@ -58,11 +56,14 @@ namespace FashionM.Core
         {
             if(gm.MaxCoin >= EmployeeAmount)
             {
-                GameObject EMP =  Instantiate(Employee, HD.SpwanPoint.position, Quaternion.identity);
-                EMP.transform.parent = GameObject.Find("EmployeeCollection").transform;
-                EMP.GetComponent<FashionM.Movement.empMovement>().lv = HD.GetComponent<HRDesk>().LevelManager;
+                GameObject EMP =  Instantiate(Employee, FindObjectOfType<playerControl>().HR.SpwanPoint.position, Quaternion.identity);
+                EMP.transform.parent = FindObjectOfType<playerControl>().HR.Collection;
+                EMP.GetComponent<FashionM.Movement.empMovement>().lv = FindObjectOfType<playerControl>().HR.LevelManager;                
+                EMP.GetComponent<FashionM.Movement.empMovement>().initPos = FindObjectOfType<playerControl>().HR.SpwanPoint;                
                 gm.HireEmployee.GetComponent<Animator>().Play("Out");
                 gm.MaxCoin -= EmployeeAmount;
+                EmployeeAmount += 200;
+                gm.EmployeeCount += 1;
             }
         }
 

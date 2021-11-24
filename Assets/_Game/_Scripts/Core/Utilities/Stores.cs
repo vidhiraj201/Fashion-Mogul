@@ -11,17 +11,16 @@ namespace FashionM.Core
     public class Stores : MonoBehaviour
     {
 
-        public LevelManagerStore_1 lv;
-        private TextMeshPro StoreNameText;
+        public LevelManagerStore lv;
         public TextMeshPro RackPrice;
 
         public Image waitTimerUnlockUI;
+
         public GameObject StoreGFX;
         public GameObject PurchesGFX;
         public Material mat;
         //public Image waitTimerlockUI;
 
-        public string StoreName;
 
         public int RackNumber;
 
@@ -40,35 +39,33 @@ namespace FashionM.Core
 
 
         [Header("Logic For Store")]
-        public bool basicCloths;
-        public bool premiumCloths;
-        public bool exclusiveBrand;
-        public bool jewllry;
+        public bool Rack0;
+        public bool Rack1;
+        public bool Rack2;
+        public bool Rack3;
 
         private playerControl playerC;
         private GameManager gm;
-        void Start()
+
+
+        private void Awake()
+        {
+            gm = FindObjectOfType<GameManager>();
+            playerC = FindObjectOfType<playerControl>();
+        }
+        void Start()            
         {
             
-            playerC = FindObjectOfType<playerControl>();
-            StoreNameText = transform.GetChild(0).GetChild(0).GetComponent<TextMeshPro>();
             waitTimerUnlockUI.gameObject.SetActive(false);
             //1waitTimerlockUI.gameObject.SetActive(false);
             giveItemToPlayter = waitTimer;
             //loadWaitTimer = waitTimer;
             if (isRackClosed)
             {
-                StoreNameText.gameObject.SetActive(false);
                 RackPrice.text = "$" + MaxCoinNeedToUnlock.ToString();
                 StoreGFX.SetActive(false);
                 PurchesGFX.SetActive(true);
             }
-
-            if(storeIsOpen)
-                StoreNameText.text = StoreName;
-
-
-            gm = FindObjectOfType<GameManager>();
         }
 
         // Update is called once per frame
@@ -92,29 +89,32 @@ namespace FashionM.Core
 
         public void CheckStore()
         {
-            if (premiumCloths)
+            if (Rack0)
             {
-                lv.premiumCloths = true;
+                lv.Rack0 = true;
             }
-            if (exclusiveBrand)
+
+            if (Rack1)
             {
-                lv.exclusiveBrand = true;
+                lv.Rack1 = true;
             }
-            if (jewllry)
+            if (Rack2)
             {
-                lv.jewllry = true;
+                lv.Rack2 = true;
+            }
+            if (Rack3)
+            {
+                lv.Rack3 = true;
             }
         }
 
         public void whenPlayerIsOnRack()
         {            
-            StoreNameText.gameObject.SetActive(false);
             RackPrice.gameObject.SetActive(false);
-            StoreNameText.text = StoreName;
             StoreGFX.SetActive(true);
             PurchesGFX.SetActive(false);
             transform.localScale = new Vector3(transform.localScale.x, 0.75f, transform.localScale.z);
-            transform.localPosition = new Vector3(transform.localPosition.x, 3.5f, transform.localPosition.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, 3.29f, transform.localPosition.z);
             CheckStore();
             storeIsOpen = true;
         }
@@ -172,7 +172,7 @@ namespace FashionM.Core
         {
             if (collision.gameObject.CompareTag("Player") && isRackClosed)
             {
-                if(gm.MaxCoin >= MaxCoinNeedToUnlock || MaxCoinNeedToUnlock >= 0)
+                if (gm.MaxCoin >= MaxCoinNeedToUnlock || MaxCoinNeedToUnlock >= 0)
                 {
                     MaxCoinNeedToUnlock -= CoinReduceSpeed;
                     gm.MaxCoin -= CoinReduceSpeed;
