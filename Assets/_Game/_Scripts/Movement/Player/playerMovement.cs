@@ -7,6 +7,7 @@ namespace FashionM.Movement
 {
     public class playerMovement : MonoBehaviour
     {
+        [HideInInspector]public AudioManager AM;
         public Joystick joystick;
         public Animator playerAnimation;
         public float speed;
@@ -19,6 +20,7 @@ namespace FashionM.Movement
         public bool Hold;
         void Start()
         {
+            AM = FindObjectOfType<AudioManager>();
             controller = GetComponent<CharacterController>();
             cam = Camera.main.transform;
         }

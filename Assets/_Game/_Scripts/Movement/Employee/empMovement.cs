@@ -9,6 +9,7 @@ namespace FashionM.Movement
 {
     public class empMovement : MonoBehaviour
     {
+        [HideInInspector] public AudioManager AM;
         public LevelManagerStore lv;
         private NavMeshAgent agent;
         public Animator Anime;
@@ -38,6 +39,7 @@ namespace FashionM.Movement
             ClientNeedItem = -1;
             agent = GetComponent<NavMeshAgent>();
             gm = FindObjectOfType<GameManager>();
+            AM = FindObjectOfType<AudioManager>();
         }
 
 

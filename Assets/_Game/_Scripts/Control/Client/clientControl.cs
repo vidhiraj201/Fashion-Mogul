@@ -16,7 +16,8 @@ namespace FashionM.Control
     {
         public FashionM.Core.LevelManagerStore lv;
         public GameObject coin;
-        public TextMeshPro T1;
+        /*public TextMeshPro T1;*/
+        public Image Cloth;
         public Image waitTimerUI;
         public Transform UIHolder;
 
@@ -58,7 +59,16 @@ namespace FashionM.Control
                 coinSpwan = true;
             }
 
-            T1.text = NeedItem.ToString();
+            //T1.text = NeedItem.ToString();
+            if(NeedItem==0)
+                Cloth.sprite = lv.Rack_0;
+            if (NeedItem == 1)
+                Cloth.sprite = lv.Rack_1;
+            if (NeedItem == 2)
+                Cloth.sprite = lv.Rack_2;
+            if (NeedItem == 3)
+                Cloth.sprite = lv.Rack_3;
+
             if (tredingComplete)
             {
                 GetComponent<clientMovement>().PurchesUI.SetActive(false);
@@ -118,21 +128,16 @@ namespace FashionM.Control
 
         public void clientNeedItemRandomize()
         {
-            if (lv.rackOpen.Count == 0)
-                return;
-            if (lv.rackOpen.Count <= 1)
+/*            if (lv.rackOpen.Count <= 1)
             {
                 print("one Item");
                 NeedItem = lv.rackOpen[0];
             }
-
-            if (lv.rackOpen.Count >= 2)
+*/
+            if (lv.rackOpen.Count > 0)
             {
                 int a = Random.Range(lv.rackOpen[0], lv.rackOpen[lv.rackOpen.Count-1]);
                 NeedItem = lv.rackOpen[a];
-
-
-                print(NeedItem);
             }
         }
 

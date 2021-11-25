@@ -39,7 +39,8 @@ namespace FashionM.Movement
             
             moveTowardSlot();
 
-            PurchesUI.transform.forward = Camera.main.transform.forward;
+            //PurchesUI.transform.forward = -Camera.main.transform.forward;
+            PurchesUI.transform.LookAt(Camera.main.transform.position);
 
             if(reched && !GetComponent<clientControl>().tredingComplete)
             {

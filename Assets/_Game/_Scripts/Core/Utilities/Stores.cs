@@ -112,12 +112,14 @@ namespace FashionM.Core
         {            
             RackPrice.gameObject.SetActive(false);
             StoreGFX.SetActive(true);
-            PurchesGFX.SetActive(false);
+            PurchesGFX.GetComponent<MeshRenderer>().enabled = false;
+            Destroy(PurchesGFX, 1);
             transform.localScale = new Vector3(transform.localScale.x, 0.75f, transform.localScale.z);
             transform.localPosition = new Vector3(transform.localPosition.x, 3.29f, transform.localPosition.z);
             CheckStore();
             storeIsOpen = true;
         }
+
         
         public void giveItem()
         {
@@ -172,7 +174,7 @@ namespace FashionM.Core
         {
             if (collision.gameObject.CompareTag("Player") && isRackClosed)
             {
-                if (gm.MaxCoin >= MaxCoinNeedToUnlock || MaxCoinNeedToUnlock >= 0)
+                if (gm.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
                 {
                     MaxCoinNeedToUnlock -= CoinReduceSpeed;
                     gm.MaxCoin -= CoinReduceSpeed;

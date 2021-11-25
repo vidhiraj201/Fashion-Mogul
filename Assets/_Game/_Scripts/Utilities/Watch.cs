@@ -12,7 +12,8 @@ public class Watch : MonoBehaviour
         manager = FindObjectOfType<GameManager>();
     }
 
-    // Update is called once per frame
+    [Range(0,1)]
+    public float WinVolume;
     void Update()
     {
         if (manager.CustomerOut >= manager.customerGoal && !FindObjectOfType<GameManager>().DayOff)
@@ -23,6 +24,7 @@ public class Watch : MonoBehaviour
                 manager.DayNightCycle.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "$" + manager.MaxCoin.ToString();
             }
             manager.DayOff = true;
+            FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().EndOfDay, WinVolume);
         }
 
     }

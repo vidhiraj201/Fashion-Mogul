@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using FashionM.Control;
+using FashionM.Movement;
 
 namespace FashionM.Core 
 {
@@ -12,6 +13,9 @@ namespace FashionM.Core
         public GameObject Cloths;
 
         public Stores OR;
+
+        [Range(0,1)]
+        public float PickupDileverVolume;
 
         void Start()
         {
@@ -40,6 +44,7 @@ namespace FashionM.Core
         {
             if (ClothObject.Count <= 0)
             {
+                GetComponent<playerMovement>().AM.source.PlayOneShot(GetComponent<playerMovement>().AM.PandD, PickupDileverVolume);
                 GameObject o = Instantiate(Cloths, StackingObject.transform.position, Quaternion.identity);
                 o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;
                 o.transform.parent = StackingObject.transform;
@@ -49,6 +54,7 @@ namespace FashionM.Core
 
             if (ClothObject.Count > 0)
             {
+                GetComponent<playerMovement>().AM.source.PlayOneShot(GetComponent<playerMovement>().AM.PandD, PickupDileverVolume);
                 GameObject o = Instantiate(Cloths, ClothObject[ClothObject.Count-1].transform.position + new Vector3(0, 0.05f, 0), Quaternion.identity);
                 o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;
                 o.transform.parent = StackingObject.transform;
@@ -77,6 +83,7 @@ namespace FashionM.Core
                     if (ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber == other.gameObject.GetComponent<clientControl>().NeedItem)
                     {
                         other.gameObject.layer = 17;
+                        GetComponent<playerMovement>().AM.source.PlayOneShot(GetComponent<playerMovement>().AM.PandD, PickupDileverVolume);
                         ClothObject[i].GetComponent<Cloths>().throwCloth(other.gameObject.transform);                        
                         other.gameObject.GetComponent<clientControl>().playerIsNear = true;
                         other.gameObject.GetComponent<clientControl>().tredingComplete = true;

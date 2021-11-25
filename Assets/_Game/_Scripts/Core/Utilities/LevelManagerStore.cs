@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace FashionM.Core
 {
@@ -18,6 +19,12 @@ namespace FashionM.Core
         public bool Rack1;
         public bool Rack2;
         public bool Rack3;
+
+        [Header("Store UI")]
+        public Sprite Rack_0;
+        public Sprite Rack_1;
+        public Sprite Rack_2;
+        public Sprite Rack_3;
 
         [Header("Rack Open")]
         public List<int> rackOpen = new List<int>();

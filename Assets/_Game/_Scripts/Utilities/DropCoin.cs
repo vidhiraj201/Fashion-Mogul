@@ -16,7 +16,7 @@ namespace FashionM.Core
         }
         public void Destroy()
         {
-            Destroy(this.gameObject.transform.parent.gameObject);
+            Destroy(this.gameObject);
         }
 
         void Start()
@@ -31,7 +31,7 @@ namespace FashionM.Core
             if (StoreToPlayer)
             {
                 transform.GetComponent<Collider>().enabled = false;
-                transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0,200,0), 70 * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0,05,0), 50 * Time.deltaTime);
             }
         }
 
@@ -41,16 +41,23 @@ namespace FashionM.Core
             {
                 GetComponent<Rigidbody>().isKinematic = true;
             }
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                StoreToPlayer = true;
+                GetComponent<Rigidbody>().isKinematic = true;
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().MaxCoin += Coins;
+                Destroy(this.gameObject, 0.15f);
+            }
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
             {
+                StoreToPlayer = true;
                 GetComponent<Rigidbody>().isKinematic = true;
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().MaxCoin += Coins;
-                StoreToPlayer = true;
-                Destroy(this.gameObject.transform.parent.gameObject, 1.5f);
+                Destroy(this.gameObject, 0.15f);
             }
         }
 

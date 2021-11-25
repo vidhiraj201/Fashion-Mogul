@@ -13,10 +13,14 @@ namespace FashionM.Core
         public GameObject Cloths;
 
         public Stores OR;
+
+        [Range(0,1)]
+        public float PickupDileverVolume = 0.5f;
         public void addClothToStack(float num, Material mat)
         {
             if (ClothObject.Count <= 1)
             {
+                GetComponent<empMovement>().AM.source.PlayOneShot(GetComponent<empMovement>().AM.PandD, PickupDileverVolume);
                 GameObject o = Instantiate(Cloths, StackingObject.transform.position, Quaternion.identity);
                 o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;
                 o.transform.parent = StackingObject.transform;
@@ -36,6 +40,7 @@ namespace FashionM.Core
                     if (ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber == other.gameObject.GetComponent<clientControl>().NeedItem)
                     {
                         other.gameObject.layer = 17;
+                        GetComponent<empMovement>().AM.source.PlayOneShot(GetComponent<empMovement>().AM.PandD, PickupDileverVolume);
                         ClothObject[i].GetComponent<Cloths>().throwCloth(other.gameObject.transform);                        
                         other.gameObject.GetComponent<clientControl>().playerIsNear = true;
                         other.gameObject.GetComponent<clientControl>().tredingComplete = true;
