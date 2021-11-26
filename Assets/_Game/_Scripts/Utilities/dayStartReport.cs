@@ -20,7 +20,7 @@ public class dayStartReport : MonoBehaviour
             manager.dayStartUI.SetActive(true);
             if (manager.dayStartUI.activeSelf)
             {
-                manager.dayStartUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = manager.customerGoal.ToString() + " Customer";
+                manager.dayStartUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = manager.customerGoal.ToString();
             }
             FindObjectOfType<FashionM.Core.AudioManager>().source.PlayOneShot(FindObjectOfType<FashionM.Core.AudioManager>().EndOfDay, WinVolume);
         }

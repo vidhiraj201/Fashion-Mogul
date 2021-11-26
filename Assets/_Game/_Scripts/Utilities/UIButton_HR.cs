@@ -11,6 +11,7 @@ namespace FashionM.Core
     {
 
         public TextMeshProUGUI BAmount;
+        public TextMeshProUGUI EmpCountUI;
         public float EmployeeAmount;
         public GameObject Employee;
 
@@ -29,7 +30,7 @@ namespace FashionM.Core
         void Update()
         {
             ButtonUpdate();
-           
+            EmpCountUI.text = gm.EmployeeCount.ToString();
         }
 
         void ButtonUpdate()

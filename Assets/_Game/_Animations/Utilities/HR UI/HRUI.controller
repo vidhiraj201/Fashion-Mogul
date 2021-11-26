@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: USUI
+  m_Name: HRUI
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: out
@@ -48,7 +48,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b91970a50a1c3ac4ab0a217ef725473c, type: 2}
+  m_Motion: {fileID: 7400000, guid: fa46b6d65067bfd498a50467810354b5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -74,7 +74,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5e2bf3f6a2547f04bbe999f33d69952a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8ea7bd01cc29152489cf13efb9dc1de9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -11,18 +11,22 @@ namespace FashionM.Core
     {
         private GameManager gm;
         private playerControl PControl;      
-        private TextMeshProUGUI BName;        
+        private TextMeshProUGUI BName;
+        public TextMeshProUGUI amount;
         [SerializeField]int StationCountData;
         private void Awake()
         {
             gm = FindObjectOfType<GameManager>();
             PControl = FindObjectOfType<playerControl>();
             BName = transform.GetComponentInChildren<TextMeshProUGUI>();
-            BName.text = transform.name;
         }
 
         private void Update()
         {
+            if(PControl.SE != null)
+            {
+                amount.text = PControl.SE.MaxCoinNeedToUnlock.ToString();
+            }
         }
 
         public void DeductAmount()

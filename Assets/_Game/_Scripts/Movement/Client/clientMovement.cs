@@ -15,7 +15,7 @@ namespace FashionM.Movement
         public Animator Anime;
         public Transform End;
         public GameObject ClientPosition;
-        public GameObject PurchesUI;
+        //public GameObject PurchesUI;
         public float rotationSmooth = 0.01f;
         public float lookRotation = 90;
 
@@ -29,7 +29,7 @@ namespace FashionM.Movement
         {
             gm = FindObjectOfType<FashionM.Core.GameManager>();
             agent = GetComponent<NavMeshAgent>();
-            PurchesUI.SetActive(false);
+            //PurchesUI.SetActive(false);
             num = Random.Range(0, 2);
             customerSetup();
         }
@@ -42,7 +42,7 @@ namespace FashionM.Movement
             moveTowardSlot();
 
             //PurchesUI.transform.forward = -Camera.main.transform.forward;
-            PurchesUI.transform.LookAt(Camera.main.transform.position);
+            //PurchesUI.transform.LookAt(Camera.main.transform.position);
 
             if(reched && !GetComponent<clientControl>().clothTookFromEmpOrPlayer)
             {
@@ -57,25 +57,25 @@ namespace FashionM.Movement
 
         void customerSetup()
         {
-            if (transform.GetChild(2).transform.GetChild(0).gameObject.activeSelf)
+            if (transform.GetChild(1).transform.GetChild(0).gameObject.activeSelf)
             {
-                Anime = transform.GetChild(2).transform.GetChild(0).gameObject.GetComponent<Animator>();
+                Anime = transform.GetChild(1).transform.GetChild(0).gameObject.GetComponent<Animator>();
             }
-            if (transform.GetChild(2).transform.GetChild(1).gameObject.activeSelf)
+            if (transform.GetChild(1).transform.GetChild(1).gameObject.activeSelf)
             {
-                Anime = transform.GetChild(2).transform.GetChild(1).gameObject.GetComponent<Animator>();
+                Anime = transform.GetChild(1).transform.GetChild(1).gameObject.GetComponent<Animator>();
             }
 
             if (num == 0)
             {
-                transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(true);
-                transform.GetChild(2).transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(false);
             }
 
             if (num == 1)
             {
-                transform.GetChild(2).transform.GetChild(1).gameObject.SetActive(true);
-                transform.GetChild(2).transform.GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(1).transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(1).transform.GetChild(0).gameObject.SetActive(false);
 
             }
         }
@@ -114,7 +114,7 @@ namespace FashionM.Movement
                 if (agent.velocity.magnitude <= 0)
                 {
                     reched = true;
-                    PurchesUI.SetActive(true);
+                    //PurchesUI.SetActive(true);
 
                 }
             }
@@ -131,7 +131,6 @@ namespace FashionM.Movement
                 transform.GetComponent<ClientUitilities>().x = 0.7f;
                 reched = false;
                 Purchesed = false;
-                PurchesUI.SetActive(false);
                 transform.GetComponent<clientControl>().clientNeedItemRandomize();
                 transform.GetComponent<clientMovement>().Anime.ResetTrigger("Celeb");
                 num = Random.Range(0, 2);

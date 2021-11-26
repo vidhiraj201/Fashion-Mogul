@@ -12,6 +12,9 @@ namespace FashionM.Core
 
         public TextMeshProUGUI CoinCountText;
         public TextMeshProUGUI CustomerUI;
+        public TextMeshProUGUI DayCountUI;
+
+
         public List<GameObject> RightRoadFacingStations = new List<GameObject>();
         public List<GameObject> LeftRoadFacingStation = new List<GameObject>();
         public List<GameObject> LeftAndRightFacingStation = new List<GameObject>();
@@ -51,12 +54,23 @@ namespace FashionM.Core
         void Update()
         {
             coinControl();
-
+            DayCountUI.text = "Day " + (dayCount + 1);
             CustomerUI.text = CustomerOut + " / " + customerGoal;
-           /* if (Input.GetKeyDown(KeyCode.P))
+
+
+            if (dayStartUI.activeSelf)
+                dayStartUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);
+
+            if (dayCompleteUI.activeSelf)
             {
-                Instantiate(Employee, HD.position, Quaternion.identity).transform.parent = GameObject.Find("EmployeeCollection").transform;
-            }*/
+                dayCompleteUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);
+                dayCompleteUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = MaxCoin.ToString();
+            }
+
+            /* if (Input.GetKeyDown(KeyCode.P))
+             {
+                 Instantiate(Employee, HD.position, Quaternion.identity).transform.parent = GameObject.Find("EmployeeCollection").transform;
+             }*/
         }
 
         public void OnMouseDownData()
@@ -74,16 +88,18 @@ namespace FashionM.Core
                 CurrentCoin -= 1;
         }
 
+        public int dayCount;
         public void NextDayButton()
         {
             DayOff = false;
-            StartCoroutine(startDayDelay(0.35f));
+            StartCoroutine(startDayDelay(0.35f));            
             if (dayCompleteUI.activeSelf)
                 dayCompleteUI.GetComponent<Animator>().Play("Out");
 
             CustomerIn = 0;
             CustomerOut = 0;
             customerGoal = customerGoal * 2;
+            dayCount += 1;
         }
 
 

@@ -19,7 +19,7 @@ public class dayCompleteReport : MonoBehaviour
             manager.dayCompleteUI.SetActive(true);
             if (manager.dayCompleteUI.activeSelf)
             {
-                manager.dayCompleteUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "$" + manager.MaxCoin.ToString();
+                //manager.dayCompleteUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "$" + manager.MaxCoin.ToString();
             }
             manager.DayOff = true;
             FindObjectOfType<FashionM.Core.AudioManager>().source.PlayOneShot(FindObjectOfType<FashionM.Core.AudioManager>().EndOfDay, WinVolume);

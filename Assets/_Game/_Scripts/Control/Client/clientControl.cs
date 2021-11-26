@@ -15,11 +15,13 @@ namespace FashionM.Control
     public class clientControl : MonoBehaviour
     {
         public FashionM.Core.LevelManagerStore lv;
+        [HideInInspector]public clientMovement CM;
         public GameObject coin;
-        /*public TextMeshPro T1;*/
-        public Image Cloth;
         public Image waitTimerUI;
-        public Transform UIHolder;
+
+        /*public TextMeshPro T1;*/
+        /*public Image Cloth;*/
+        /*public Transform UIHolder;*/
 
 
 
@@ -44,6 +46,7 @@ namespace FashionM.Control
             timerToTakeItemFromPlayer = waitTimer;
             waitTimerUI.gameObject.SetActive(false);
             gm = FindObjectOfType<GameManager>();
+            CM = GetComponent<clientMovement>();
             clientNeedItemRandomize();
         }
 
@@ -66,7 +69,7 @@ namespace FashionM.Control
         {
             completeTreding();
             //waitTimerUI.transform.forward = Camera.main.transform.forward;
-            UIHolder.forward = Camera.main.transform.forward;
+            /*UIHolder.forward = Camera.main.transform.forward;*/
             
             if (TradeComp && !coinSpwan)
             {
@@ -75,21 +78,12 @@ namespace FashionM.Control
             }
 
             //T1.text = NeedItem.ToString();
-            if(NeedItem==0)
-                Cloth.sprite = lv.Rack_0;
-            if (NeedItem == 1)
-                Cloth.sprite = lv.Rack_1;
-            if (NeedItem == 2)
-                Cloth.sprite = lv.Rack_2;
-            if (NeedItem == 3)
-                Cloth.sprite = lv.Rack_3;
+           
 
-            if (clothTookFromEmpOrPlayer)
+           /* if (clothTookFromEmpOrPlayer)
             {
                 GetComponent<clientMovement>().PurchesUI.SetActive(false);
-
-                
-            }
+            }*/
 
             
 
