@@ -24,8 +24,11 @@ namespace FashionM.Core
                 x = 0.15f;
                 if (control.NeedItem == 0)
                 {
-                    DClothUp.SetActive(true);
-                    DClothDown.SetActive(false);
+                    if(DClothUp != null && DClothDown != null)
+                    {
+                        DClothUp.SetActive(true);
+                        DClothDown.SetActive(false);
+                    }
 
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(false);
@@ -35,9 +38,11 @@ namespace FashionM.Core
 
                 if (control.NeedItem == 1)
                 {
-                    DClothUp.SetActive(true);
-                    DClothDown.SetActive(false);
-
+                    if (DClothUp != null && DClothDown != null)
+                    {
+                        DClothUp.SetActive(true);
+                        DClothDown.SetActive(false);
+                    }
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(false);
                     Cloth2.SetActive(false);
@@ -45,9 +50,11 @@ namespace FashionM.Core
                 }
                 if (control.NeedItem == 2)
                 {
-                    DClothUp.SetActive(true);
-                    DClothDown.SetActive(false);
-
+                    if (DClothUp != null && DClothDown != null)
+                    {
+                        DClothUp.SetActive(true);
+                        DClothDown.SetActive(false);
+                    }
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(false);
                     Cloth2.SetActive(false);
@@ -56,9 +63,11 @@ namespace FashionM.Core
 
                 if (control.NeedItem == 2)
                 {
-                    DClothUp.SetActive(false);
-                    DClothDown.SetActive(true);
-
+                    if (DClothUp != null && DClothDown != null)
+                    {
+                        DClothUp.SetActive(false);
+                        DClothDown.SetActive(true);
+                    }
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(true);
                     Cloth2.SetActive(false);
@@ -92,10 +101,11 @@ namespace FashionM.Core
                 {
                     if (control.NeedItem == 0)
                     {
-
-                        DClothUp.SetActive(false);
-                        DClothDown.SetActive(false);
-
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(false);
+                            DClothDown.SetActive(false);
+                        }
                         Cloth0.SetActive(true);
                         Cloth1.SetActive(false);
                         Cloth2.SetActive(false);
@@ -104,10 +114,11 @@ namespace FashionM.Core
 
                     if (control.NeedItem == 1)
                     {
-
-                        DClothUp.SetActive(false);
-                        DClothDown.SetActive(false);
-
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(false);
+                            DClothDown.SetActive(false);
+                        }
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(false);
@@ -115,10 +126,11 @@ namespace FashionM.Core
                     }
                     if (control.NeedItem == 2)
                     {
-
-                        DClothUp.SetActive(false);
-                        DClothDown.SetActive(false);
-
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(false);
+                            DClothDown.SetActive(false);
+                        }
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(false);
                         Cloth2.SetActive(true);
@@ -127,10 +139,11 @@ namespace FashionM.Core
 
                     if (control.NeedItem == 2)
                     {
-
-                        DClothUp.SetActive(false);
-                        DClothDown.SetActive(false);
-
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(false);
+                            DClothDown.SetActive(false);
+                        }
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(false);

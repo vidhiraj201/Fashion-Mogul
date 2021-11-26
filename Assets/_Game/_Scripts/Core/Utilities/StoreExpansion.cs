@@ -91,8 +91,10 @@ namespace FashionM.Core
                 {
                     isPlayerNear = false;
                     UIUnlock = WaitTimer;
+                    Spwan();
                     WaitTimerUnlockUI.gameObject.SetActive(true);
-                    GM.UnlockStoreExpansionUI.SetActive(true);
+
+                    //GM.UnlockStoreExpansionUI.SetActive(true);
                 }
             }
         }
@@ -123,6 +125,32 @@ namespace FashionM.Core
             if (GM.UnlockStoreExpansionUI.activeSelf)
                 GM.UnlockStoreExpansionUI.GetComponent<Animator>().Play("Out");
 
+        }
+
+        [Header("Temp")]
+        public int StationCountData;
+        public void Spwan()
+        {
+            if (facingSide == 1)
+            {
+                if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
+                {
+                    Instantiate(GM.LeftRoadFacingStation[StationCountData], new Vector3(PlacingPosition.x, PlacingPosition.y, PlacingPosition.z), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
+                    GM.MaxCoin -= MaxCoinNeedToUnlock;
+                    MaxCoinNeedToUnlock = 0;
+                    GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");
+                }
+            }
+            if (facingSide == 2)
+            {
+                if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
+                {
+                    Instantiate(GM.RightRoadFacingStations[StationCountData], new Vector3(PlacingPosition.x, PlacingPosition.y, PlacingPosition.z), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
+                    GM.MaxCoin -= MaxCoinNeedToUnlock;
+                    MaxCoinNeedToUnlock = 0;
+                    GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");
+                }
+            }
         }
     }
 }

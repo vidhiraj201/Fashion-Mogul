@@ -6,6 +6,7 @@ using TMPro;
 public class dayStartReport : MonoBehaviour
 {
     FashionM.Core.GameManager manager;
+    
     void Start()
     {
         manager = FindObjectOfType<FashionM.Core.GameManager>();
@@ -22,7 +23,7 @@ public class dayStartReport : MonoBehaviour
             {
                 manager.dayStartUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = manager.customerGoal.ToString();
             }
-            FindObjectOfType<FashionM.Core.AudioManager>().source.PlayOneShot(FindObjectOfType<FashionM.Core.AudioManager>().EndOfDay, WinVolume);
+           //findObjectOfType<FashionM.Core.AudioManager>().source.PlayOneShot(FindObjectOfType<FashionM.Core.AudioManager>().EndOfDay, WinVolume);
         }
 
     }

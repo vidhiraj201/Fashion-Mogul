@@ -35,6 +35,7 @@ namespace FashionM.Core
         public GameObject HireEmployee;
         public GameObject dayCompleteUI;
         public GameObject dayStartUI;
+        public GameObject InfintyUI;
 
 
         public bool DayStart;
@@ -47,6 +48,7 @@ namespace FashionM.Core
             HireEmployee.SetActive(false);
             dayCompleteUI.SetActive(false);
             dayStartUI.SetActive(false);
+            InfintyUI.SetActive(false);
             watch = FindObjectOfType<dayCompleteReport>();
         }
 
@@ -112,6 +114,7 @@ namespace FashionM.Core
         public void StartDayButton()
         {
             DayStart = true;
+            InfintyUI.SetActive(true);
             if (dayStartUI.activeSelf)
                 dayStartUI.GetComponent<Animator>().Play("Out");
         }

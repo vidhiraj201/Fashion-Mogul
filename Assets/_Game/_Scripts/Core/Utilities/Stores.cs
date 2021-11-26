@@ -47,7 +47,7 @@ namespace FashionM.Core
         private playerControl playerC;
         private GameManager gm;
 
-
+        public float Y = 3.29f;
         private void Awake()
         {
             gm = FindObjectOfType<GameManager>();
@@ -115,7 +115,7 @@ namespace FashionM.Core
             PurchesGFX.GetComponent<MeshRenderer>().enabled = false;
             Destroy(PurchesGFX, 1);
             transform.localScale = new Vector3(transform.localScale.x, 0.75f, transform.localScale.z);
-            transform.localPosition = new Vector3(transform.localPosition.x, 3.29f, transform.localPosition.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, Y, transform.localPosition.z);
             CheckStore();
             storeIsOpen = true;
         }
