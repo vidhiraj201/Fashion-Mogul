@@ -11,7 +11,7 @@ namespace FashionM.Movement
     {
         [HideInInspector] public AudioManager AM;
         public LevelManagerStore lv;
-        private NavMeshAgent agent;
+        [HideInInspector]public NavMeshAgent agent;
         public Animator Anime;
 
         [Header("Target Position")]

@@ -25,6 +25,7 @@ namespace FashionM.Control
 
         public bool startTreding = false;
         public bool TradeComp;
+        public bool clothTookFromEmpOrPlayer = false;  
         public bool tredingComplete = false;  
         public int NeedItem;
 
@@ -48,8 +49,22 @@ namespace FashionM.Control
 
         //Customer Count from Level Manager Added
         [HideInInspector]public bool CCountAdded;
+
+        [HideInInspector] public float t = 0.5f;
+        public void completeTreding()
+        {
+            if (clothTookFromEmpOrPlayer && t >= 0)
+                t -= Time.deltaTime;
+            if (t <= 0)
+            {
+                t = 0;
+                tredingComplete = true;
+            }
+        }
+
         private void Update()
         {
+            completeTreding();
             //waitTimerUI.transform.forward = Camera.main.transform.forward;
             UIHolder.forward = Camera.main.transform.forward;
             
@@ -69,7 +84,7 @@ namespace FashionM.Control
             if (NeedItem == 3)
                 Cloth.sprite = lv.Rack_3;
 
-            if (tredingComplete)
+            if (clothTookFromEmpOrPlayer)
             {
                 GetComponent<clientMovement>().PurchesUI.SetActive(false);
 
@@ -103,7 +118,9 @@ namespace FashionM.Control
         private void FixedUpdate()
         {
             if (gm.CustomerIn <= gm.customerGoal)
+            {
                 StopeWalking = false;
+            }
 
             if (gm.CustomerIn >= gm.customerGoal && !CCountAdded)
             {
@@ -151,7 +168,7 @@ namespace FashionM.Control
                     CCountAdded = true;
                 }
 
-                if (CCountAdded && tredingComplete)
+                if (CCountAdded && clothTookFromEmpOrPlayer)
                 {
                     gm.CustomerOut += 1;
                     CCountAdded = false;

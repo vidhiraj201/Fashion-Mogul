@@ -14,11 +14,12 @@ namespace FashionM.Control
         public Transform EmpCol;
         void Start()
         {
+            x = 0.7f;
         }
         
         void FixedUpdate()
         {
-            if(!GetComponent<clientControl>().tredingComplete && GetComponent<clientMovement>().reched)
+            if(!GetComponent<clientControl>().clothTookFromEmpOrPlayer && GetComponent<clientMovement>().reched)
                 checkForEmp();
         }
         private void Update()
@@ -26,19 +27,23 @@ namespace FashionM.Control
             EmpMove();
         }
 
-        public float x = 0.3f;
+        public float x = 0.7f;
         public void EmpMove()
         {
-            if (locked && GetComponent<clientMovement>().reched )
+            if (locked && GetComponent<clientMovement>().reched && !GetComponent<clientControl>().TradeComp)
             {
                 if(Target.GetComponent<empMovement>().ClientNeedItem<=-1)
                     Target.GetComponent<empMovement>().isWalkingTowardClient = true;                
             }
 
-            if (locked && GetComponent<clientControl>().tredingComplete)
-            {                
-                if (x >= 0)
+            if (locked && GetComponent<clientControl>().clothTookFromEmpOrPlayer)
+            {
+                Target.GetComponent<empMovement>().agent.SetDestination(Target.transform.position);
+                Target.GetComponent<empMovement>().isWalkingTowardClient = false;
+
+                if (x >= 0 && GetComponent<clientControl>().TradeComp)
                     x -= Time.deltaTime;
+
                 if (x <= 0)
                 {
                     x = 0;

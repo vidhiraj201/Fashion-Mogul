@@ -9,6 +9,7 @@ namespace FashionM.Movement
     public class clientMovement : MonoBehaviour
     {
         //private clientCollection CC;
+        private FashionM.Core.GameManager gm;
         private NavMeshAgent agent;
 
         public Animator Anime;
@@ -26,6 +27,7 @@ namespace FashionM.Movement
         // Start is called before the first frame update
         void Start()
         {
+            gm = FindObjectOfType<FashionM.Core.GameManager>();
             agent = GetComponent<NavMeshAgent>();
             PurchesUI.SetActive(false);
             num = Random.Range(0, 2);
@@ -42,7 +44,7 @@ namespace FashionM.Movement
             //PurchesUI.transform.forward = -Camera.main.transform.forward;
             PurchesUI.transform.LookAt(Camera.main.transform.position);
 
-            if(reched && !GetComponent<clientControl>().tredingComplete)
+            if(reched && !GetComponent<clientControl>().clothTookFromEmpOrPlayer)
             {
                 transform.rotation = Quaternion.Euler(0, lookRotation, 0);
             }
@@ -92,10 +94,10 @@ namespace FashionM.Movement
 
 
 
-            if (ClientPosition != null && !transform.GetComponent<clientControl>().tredingComplete && !transform.GetComponent<clientControl>().StopeWalking)
+            if (ClientPosition != null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer && !transform.GetComponent<clientControl>().StopeWalking && gm.DayStart)
                 agent.SetDestination(ClientPosition.transform.position);
 
-            if (ClientPosition == null && !transform.GetComponent<clientControl>().tredingComplete || transform.GetComponent<clientControl>().StopeWalking)
+            if (ClientPosition == null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer || transform.GetComponent<clientControl>().StopeWalking || !gm.DayStart)
                 agent.SetDestination(transform.position);
 
             if (transform.GetComponent<clientControl>().TradeComp)
@@ -116,15 +118,17 @@ namespace FashionM.Movement
 
                 }
             }
-            if (transform.GetComponent<clientControl>().tredingComplete && other.gameObject.CompareTag("End"))
+            if (transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer && other.gameObject.CompareTag("End"))
             {
+                transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer = false;
                 transform.GetComponent<clientControl>().tredingComplete = false;
                 transform.GetComponent<clientControl>().TradeComp = false;
                 transform.GetComponent<clientControl>().startTreding = false;
                 transform.GetComponent<clientControl>().coinSpwan = false;
                 transform.GetComponent<clientControl>().CCountAdded = false;
+                transform.GetComponent<clientControl>().t = 0.5f;
                 transform.GetComponent<ClientUitilities>().empList.Clear();
-                transform.GetComponent<ClientUitilities>().x = 0.3f;
+                transform.GetComponent<ClientUitilities>().x = 0.7f;
                 reched = false;
                 Purchesed = false;
                 PurchesUI.SetActive(false);

@@ -8,7 +8,7 @@ namespace FashionM.Core
     public class GameManager : MonoBehaviour
     {
         private float CurrentCoin;
-        private Watch watch;
+        private dayCompleteReport watch;
 
         public TextMeshProUGUI CoinCountText;
         public TextMeshProUGUI CustomerUI;
@@ -30,9 +30,11 @@ namespace FashionM.Core
         public GameObject TapUI;
         public GameObject UnlockStoreExpansionUI;
         public GameObject HireEmployee;
-        public GameObject DayNightCycle;
-        
+        public GameObject dayCompleteUI;
+        public GameObject dayStartUI;
 
+
+        public bool DayStart;
         public bool DayOff;
 
         void Start()
@@ -40,8 +42,9 @@ namespace FashionM.Core
             TapUI.SetActive(true);
             UnlockStoreExpansionUI.SetActive(false);
             HireEmployee.SetActive(false);
-            DayNightCycle.SetActive(false);
-            watch = FindObjectOfType<Watch>();
+            dayCompleteUI.SetActive(false);
+            dayStartUI.SetActive(false);
+            watch = FindObjectOfType<dayCompleteReport>();
         }
 
         
@@ -74,13 +77,27 @@ namespace FashionM.Core
         public void NextDayButton()
         {
             DayOff = false;
-            if (DayNightCycle.activeSelf)
-                DayNightCycle.GetComponent<Animator>().Play("Out");
+            StartCoroutine(startDayDelay(0.35f));
+            if (dayCompleteUI.activeSelf)
+                dayCompleteUI.GetComponent<Animator>().Play("Out");
 
             CustomerIn = 0;
             CustomerOut = 0;
             customerGoal = customerGoal * 2;
         }
 
+
+        IEnumerator startDayDelay(float t)
+        {
+            yield return new WaitForSeconds(t);
+            DayStart = false;
+        }
+
+        public void StartDayButton()
+        {
+            DayStart = true;
+            if (dayStartUI.activeSelf)
+                dayStartUI.GetComponent<Animator>().Play("Out");
+        }
     }
 }

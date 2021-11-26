@@ -86,7 +86,7 @@ namespace FashionM.Core
                         GetComponent<playerMovement>().AM.source.PlayOneShot(GetComponent<playerMovement>().AM.PandD, PickupDileverVolume);
                         ClothObject[i].GetComponent<Cloths>().throwCloth(other.gameObject.transform);                        
                         other.gameObject.GetComponent<clientControl>().playerIsNear = true;
-                        other.gameObject.GetComponent<clientControl>().tredingComplete = true;
+                        other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer = true;
                         break;
                     }  
 

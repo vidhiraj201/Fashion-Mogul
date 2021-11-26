@@ -33,8 +33,14 @@ namespace FashionM.Core {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
             if (shoot)
             {
-                transform.position = Vector3.MoveTowards(transform.position, lastPos.position - new Vector3(0, 5, 0), DropSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, lastPos.position - new Vector3(0, -2, 0), DropSpeed * Time.deltaTime);
+
                 Destroy(this.gameObject, 1.5f);
+
+                if(transform.position == lastPos.position - new Vector3(0, -2, 0))
+                {
+                    Destroy(gameObject);
+                }
             }
         }
 
