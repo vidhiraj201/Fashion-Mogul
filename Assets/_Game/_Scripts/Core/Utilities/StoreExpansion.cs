@@ -157,10 +157,10 @@ namespace FashionM.Core
                 UIUnlock = WaitTimer;
             }
             if (StoreUpgradesPrice.gameObject.activeSelf)
-                StoreUpgradesPrice.gameObject.SetActive(true);
+                StoreUpgradesPrice.gameObject.SetActive(false);
 
             if (StoreUpgradesPrice_1.gameObject.activeSelf)
-                StoreUpgradesPrice_1.gameObject.SetActive(true);
+                StoreUpgradesPrice_1.gameObject.SetActive(false);
 
             if (WaitTimerUnlockUI.gameObject.activeSelf)
                 WaitTimerUnlockUI.gameObject.SetActive(false);
@@ -180,6 +180,7 @@ namespace FashionM.Core
         {
             if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
             {
+                FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
                 Instantiate(ToSpwan, PlacingPosition, Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
                 GM.MaxCoin -= MaxCoinNeedToUnlock;
                 MaxCoinNeedToUnlock = 0;

@@ -984,7 +984,7 @@ MonoBehaviour:
   xPos: 0
   zPos: 0
   PlacingRotation: {x: 0, y: 0, z: 0}
-  PlacingPosition: {x: 0, y: 0, z: -55.5}
+  PlacingPosition: {x: 0, y: 0, z: -55.2}
   BoundCenter: {x: 1.05, y: 0, z: -3.2772}
   BoundSize: {x: 3.103, y: 1, z: 7.5545}
   X: 0

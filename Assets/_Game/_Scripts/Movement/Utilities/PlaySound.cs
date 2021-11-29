@@ -18,7 +18,7 @@ namespace FashionM.Movement {
 
         public void hitWalk()
         {
-            AM.source.PlayOneShot(AM.Footsteps, volume);
+            //AM.source.PlayOneShot(AM.Footsteps, volume);
         }
     }
 }

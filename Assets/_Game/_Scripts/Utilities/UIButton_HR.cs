@@ -57,6 +57,7 @@ namespace FashionM.Core
         {
             if(gm.MaxCoin >= EmployeeAmount)
             {
+                FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
                 GameObject EMP =  Instantiate(Employee, FindObjectOfType<playerControl>().HR.SpwanPoint.position, Quaternion.identity);
                 EMP.transform.parent = FindObjectOfType<playerControl>().HR.Collection;
                 EMP.GetComponent<FashionM.Movement.empMovement>().lv = FindObjectOfType<playerControl>().HR.LevelManager;                

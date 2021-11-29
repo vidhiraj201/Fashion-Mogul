@@ -16,6 +16,7 @@ public class dayCompleteReport : MonoBehaviour
     {
         if (manager.CustomerOut >= manager.customerGoal && !manager.DayOff)
         {
+            FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
             manager.dayCompleteUI.SetActive(true);
             if (manager.dayCompleteUI.activeSelf)
             {

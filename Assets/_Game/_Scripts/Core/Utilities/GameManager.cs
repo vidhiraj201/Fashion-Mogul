@@ -64,12 +64,12 @@ namespace FashionM.Core
 
 
             if (dayStartUI.activeSelf)
-                dayStartUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);
+                dayStartUI.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);
 
             if (dayCompleteUI.activeSelf)
             {
-                dayCompleteUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);
-                dayCompleteUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = MaxCoin.ToString();
+                dayCompleteUI.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);
+                dayCompleteUI.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = MaxCoin.ToString();
             }
 
             /* if (Input.GetKeyDown(KeyCode.P))
@@ -99,7 +99,7 @@ namespace FashionM.Core
             DayOff = false;
             StartCoroutine(startDayDelay(0.35f));            
             if (dayCompleteUI.activeSelf)
-                dayCompleteUI.GetComponent<Animator>().Play("Out");
+                dayCompleteUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");
 
             CustomerIn = 0;
             CustomerOut = 0;
@@ -116,10 +116,12 @@ namespace FashionM.Core
 
         public void StartDayButton()
         {
+            FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = false;            
+
             DayStart = true;
             InfintyUI.SetActive(true);
             if (dayStartUI.activeSelf)
-                dayStartUI.GetComponent<Animator>().Play("Out");
+                dayStartUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");
         }
     }
 }

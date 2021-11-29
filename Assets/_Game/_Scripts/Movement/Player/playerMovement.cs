@@ -18,6 +18,8 @@ namespace FashionM.Movement
         private Transform cam;
 
         public bool Hold;
+
+        public bool isWalk;
         void Start()
         {
             AM = FindObjectOfType<AudioManager>();
@@ -32,23 +34,32 @@ namespace FashionM.Movement
             playerAnimation.SetBool("hold", Hold);
         }
 
-        [SerializeField]private Vector3 direction;
-        [SerializeField]private Vector3 RbVelocity;
+        [HideInInspector]public Vector3 direction;
+       // [SerializeField]private Vector3 RbVelocity;
         void movement()
         {
-            RbVelocity = GetComponent<Rigidbody>().velocity;
+            ///RbVelocity = GetComponent<Rigidbody>().velocity;
 
             if (GetComponent<playerStackingSystem>().ClothObject.Count > 0)
                 Hold = true;
             if (GetComponent<playerStackingSystem>().ClothObject.Count <= 0)
                 Hold = false;
-
+            
             float x = joystick.Vertical;
             float z = -joystick.Horizontal;
-
-            direction = new Vector3(x, 0, z).normalized;
-
-            playerAnimation.SetFloat("vertical", Mathf.Abs(direction.magnitude));
+            if (!isWalk)
+            {
+                playerAnimation.enabled = true;
+                direction = new Vector3(x, 0, z).normalized;
+                playerAnimation.SetFloat("vertical", Mathf.Abs(direction.magnitude));
+            }
+            if (isWalk)
+            {
+                direction = Vector3.zero;
+                StartCoroutine(stopAnimation(0.2f));
+                
+            }
+            
             
             if (direction.magnitude > 0.1f)
             {
@@ -59,6 +70,13 @@ namespace FashionM.Movement
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * new Vector3(1, 0, 1);
                 controller.Move(moveDir.normalized * speed*Time.deltaTime);
             }                        
+        }
+
+        IEnumerator stopAnimation(float t)
+        {
+            playerAnimation.SetFloat("vertical", 0);
+            yield return new WaitForSeconds(t);
+            playerAnimation.enabled = false;
         }
     }
 }

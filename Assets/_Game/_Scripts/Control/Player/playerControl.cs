@@ -30,6 +30,12 @@ namespace FashionM.Control
                 Text.text = "".ToString();*/
 
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Coin"))
+                FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().CollectMoney, 0.3f);
+        }
         private void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Client"))
@@ -45,6 +51,9 @@ namespace FashionM.Control
                 }*/
             }
 
+         /*   if (other.gameObject.CompareTag("Coin"))
+                FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().CollectMoney, .5f);
+*/
             if (other.gameObject.CompareTag("HR"))
             {
                 HR = other.gameObject.GetComponent<HRDesk>();

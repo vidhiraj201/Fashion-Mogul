@@ -36,6 +36,7 @@ namespace FashionM.Core
         {
             if (MaxCoinNeedToUnlock <= 0)
             {
+                FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
                 transform.GetComponent<MeshRenderer>().enabled = false;
                 clientPosition.SetActive(true);
                 NewClients.SetActive(true);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CoinCollector : MonoBehaviour
 {
     public List<GameObject> coins = new List<GameObject>();
+    private bool ring;
     // Start is called before the first frame update
     void Start()
     {

@@ -33,6 +33,7 @@ namespace FashionM.Core
                 transform.GetComponent<Collider>().enabled = false;
                 transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0,05,0), 50 * Time.deltaTime);
             }
+
         }
 
         private void OnCollisionEnter(Collision collision)

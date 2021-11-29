@@ -109,7 +109,8 @@ namespace FashionM.Core
         }
 
         public void whenPlayerIsOnRack()
-        {            
+        {
+            FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
             RackPrice.gameObject.SetActive(false);
             StoreGFX.SetActive(true);
             PurchesGFX.GetComponent<MeshRenderer>().enabled = false;
