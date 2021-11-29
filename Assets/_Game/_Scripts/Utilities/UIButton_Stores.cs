@@ -35,7 +35,7 @@ namespace FashionM.Core
             {
                 if (gm.MaxCoin >= PControl.SE.MaxCoinNeedToUnlock && PControl.SE.MaxCoinNeedToUnlock >= 0)
                 {
-                    Instantiate(gm.LeftAndRightFacingStation[StationCountData], new Vector3(PControl.SE.PlacingPosition.x, PControl.SE.PlacingPosition.y, PControl.SE.PlacingPosition.z), Quaternion.Euler(PControl.SE.PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
+                    Instantiate(gm.LeftAndRightFacingStation[StationCountData], PControl.SE.lv.transform.position+new Vector3(PControl.SE.xPos,0,0), Quaternion.Euler(PControl.SE.PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
                     gm.MaxCoin -= PControl.SE.MaxCoinNeedToUnlock;
                     PControl.SE.MaxCoinNeedToUnlock = 0;
                     gm.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");
@@ -47,7 +47,7 @@ namespace FashionM.Core
             {
                 if (gm.MaxCoin >= PControl.SE.MaxCoinNeedToUnlock && PControl.SE.MaxCoinNeedToUnlock >= 0)
                 {
-                    Instantiate(gm.LeftRoadFacingStation[StationCountData], new Vector3(PControl.SE.PlacingPosition.x, PControl.SE.PlacingPosition.y, PControl.SE.PlacingPosition.z), Quaternion.Euler(PControl.SE.PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
+                    Instantiate(gm.LeftRoadFacingStation[StationCountData], PControl.SE.lv.transform.position - new Vector3(PControl.SE.xPos, 0, 0), Quaternion.Euler(PControl.SE.PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
                     gm.MaxCoin -= PControl.SE.MaxCoinNeedToUnlock;
                     PControl.SE.MaxCoinNeedToUnlock = 0;
                     gm.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");
@@ -59,7 +59,7 @@ namespace FashionM.Core
             {
                 if (gm.MaxCoin >= PControl.SE.MaxCoinNeedToUnlock && PControl.SE.MaxCoinNeedToUnlock >= 0)
                 {
-                    Instantiate(gm.RightRoadFacingStations[StationCountData], new Vector3(PControl.SE.PlacingPosition.x, PControl.SE.PlacingPosition.y, PControl.SE.PlacingPosition.z), Quaternion.Euler(PControl.SE.PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
+                    Instantiate(gm.RightRoadFacingStations[StationCountData], PControl.SE.lv.transform.position - new Vector3(0, 0, PControl.SE.zPos), Quaternion.Euler(PControl.SE.PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
                     gm.MaxCoin -= PControl.SE.MaxCoinNeedToUnlock;
                     PControl.SE.MaxCoinNeedToUnlock = 0;
                     gm.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");
@@ -71,7 +71,7 @@ namespace FashionM.Core
             {
                 if (gm.MaxCoin >= PControl.SE.MaxCoinNeedToUnlock && PControl.SE.MaxCoinNeedToUnlock >= 0)
                 {
-                    Instantiate(gm.NoRoadFacingStation[StationCountData], new Vector3(PControl.SE.PlacingPosition.x, PControl.SE.PlacingPosition.y, PControl.SE.PlacingPosition.z), Quaternion.Euler(PControl.SE.PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
+                    Instantiate(gm.NoRoadFacingStation[StationCountData], PControl.SE.lv.transform.position - new Vector3(PControl.SE.xPos, 0, PControl.SE.zPos), Quaternion.Euler(PControl.SE.PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
                     gm.MaxCoin -= PControl.SE.MaxCoinNeedToUnlock;
                     PControl.SE.MaxCoinNeedToUnlock = 0;
                     gm.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");

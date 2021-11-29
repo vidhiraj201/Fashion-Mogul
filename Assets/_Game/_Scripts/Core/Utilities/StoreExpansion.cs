@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 using TMPro;
 
@@ -8,6 +9,7 @@ namespace FashionM.Core
 {
    public class StoreExpansion : MonoBehaviour
     {
+        public LevelManagerStore lv;
         public TextMeshPro StoreStatus;
         public TextMeshPro StoreUpgradesPrice;
 
@@ -22,12 +24,12 @@ namespace FashionM.Core
 
         public float CoinReduceSpeed = 1;
         public float MaxCoinNeedToUnlock;
-        public GameObject Bounds;
+        private GameObject Bounds;
 
         private GameManager GM;
 
-        
-        public Vector3 PlacingPosition;
+        public float xPos;
+        public float zPos;
         public Vector3 PlacingRotation;
 
         [Header ("Collider Bound")]
@@ -37,13 +39,15 @@ namespace FashionM.Core
         // Start is called before the first frame update
         void Start()
         {
-
             GM = FindObjectOfType<GameManager>();
-            Bounds = GameObject.Find("Bound");
+            Bounds = GM.Bound;
             StoreStatus.text = "Store Locked";
             StoreUpgradesPrice.text = "$" + MaxCoinNeedToUnlock;
             WaitTimerUnlockUI.gameObject.SetActive(false);
             UIUnlock = WaitTimer;
+
+            xPos = -55.5f;
+            zPos = 55.5f;
         }
 
         public bool X, Z;
@@ -51,12 +55,18 @@ namespace FashionM.Core
         // Update is called once per frame
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                GameObject.Find("Expanded Store").GetComponent<NavMeshSurface>().BuildNavMesh();
+            }
+
+
             if (MaxCoinNeedToUnlock <= 0)
             {
                 /*Bounds.transform.localScale = new Vector3(24,10,131);
                 Bounds.transform.localPosition = new Vector3(-35.76f,39.3f,-36.45f);*/
 
-                if (X)
+            /*    if (X)
                 {
                     Bounds.GetComponent<BoxCollider>().center = new Vector3(BoundCenter.x, Bounds.GetComponent<BoxCollider>().center.y, Bounds.GetComponent<BoxCollider>().center.z); 
                     Bounds.GetComponent<BoxCollider>().size = new Vector3(BoundSize.x, Bounds.GetComponent<BoxCollider>().size.y, Bounds.GetComponent<BoxCollider>().size.z); 
@@ -66,7 +76,7 @@ namespace FashionM.Core
                 {
                     Bounds.GetComponent<BoxCollider>().center = new Vector3(Bounds.GetComponent<BoxCollider>().center.x, Bounds.GetComponent<BoxCollider>().center.y, BoundCenter.z ); 
                     Bounds.GetComponent<BoxCollider>().size = new Vector3(Bounds.GetComponent<BoxCollider>().size.x, Bounds.GetComponent<BoxCollider>().size.y, BoundSize.z); 
-                }
+                }*/
 
                 transform.GetComponent<MeshRenderer>().enabled = false;
                 Destroy(this.gameObject);
@@ -91,10 +101,10 @@ namespace FashionM.Core
                 {
                     isPlayerNear = false;
                     UIUnlock = WaitTimer;
-                    Spwan();
+                    //Spwan();
                     WaitTimerUnlockUI.gameObject.SetActive(true);
+                    GM.UnlockStoreExpansionUI.SetActive(true);
 
-                    //GM.UnlockStoreExpansionUI.SetActive(true);
                 }
             }
         }
@@ -129,7 +139,7 @@ namespace FashionM.Core
 
         [Header("Temp")]
         public int StationCountData;
-        public void Spwan()
+       /* public void Spwan()
         {
             if (facingSide == 1)
             {
@@ -138,7 +148,7 @@ namespace FashionM.Core
                     Instantiate(GM.LeftRoadFacingStation[StationCountData], new Vector3(PlacingPosition.x, PlacingPosition.y, PlacingPosition.z), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
                     GM.MaxCoin -= MaxCoinNeedToUnlock;
                     MaxCoinNeedToUnlock = 0;
-                    GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");
+                    GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");                    
                 }
             }
             if (facingSide == 2)
@@ -148,9 +158,9 @@ namespace FashionM.Core
                     Instantiate(GM.RightRoadFacingStations[StationCountData], new Vector3(PlacingPosition.x, PlacingPosition.y, PlacingPosition.z), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
                     GM.MaxCoin -= MaxCoinNeedToUnlock;
                     MaxCoinNeedToUnlock = 0;
-                    GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");
+                    GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");                    
                 }
             }
-        }
+        }*/
     }
 }

@@ -37,9 +37,12 @@ namespace FashionM.Core
         public GameObject dayStartUI;
         public GameObject InfintyUI;
 
-
+        [Header("Day Session")]
         public bool DayStart;
         public bool DayOff;
+
+        [Header("")]
+        public GameObject Bound;
 
         void Start()
         {

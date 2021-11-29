@@ -13,7 +13,6 @@ namespace FashionM.Movement
         private NavMeshAgent agent;
 
         public Animator Anime;
-        public Transform End;
         public GameObject ClientPosition;
         //public GameObject PurchesUI;
         public float rotationSmooth = 0.01f;
@@ -101,7 +100,7 @@ namespace FashionM.Movement
                 agent.SetDestination(transform.position);
 
             if (transform.GetComponent<clientControl>().TradeComp)
-                agent.SetDestination(End.position);
+                agent.SetDestination(GetComponent<clientControl>().lv.END.position);
 
             Anime.SetFloat("speed", agent.velocity.magnitude);
         }

@@ -8,6 +8,8 @@ namespace FashionM.Core
     public class LevelManagerStore : MonoBehaviour
     {
         private GameManager gm;
+
+        public Transform END;
         [Header("Store Objects")]
         public GameObject AiPosForRack0;
         public GameObject AiPosForRack1;
