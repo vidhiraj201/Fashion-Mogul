@@ -101,9 +101,9 @@ namespace FashionM.Core
                 {
                     isPlayerNear = false;
                     UIUnlock = WaitTimer;
-                    //Spwan();
+                    Spwan();
                     WaitTimerUnlockUI.gameObject.SetActive(true);
-                    GM.UnlockStoreExpansionUI.SetActive(true);
+                    //GM.UnlockStoreExpansionUI.SetActive(true);
 
                 }
             }
@@ -139,13 +139,13 @@ namespace FashionM.Core
 
         [Header("Temp")]
         public int StationCountData;
-       /* public void Spwan()
+        public void Spwan()
         {
             if (facingSide == 1)
             {
                 if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
                 {
-                    Instantiate(GM.LeftRoadFacingStation[StationCountData], new Vector3(PlacingPosition.x, PlacingPosition.y, PlacingPosition.z), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
+                    Instantiate(GM.LeftRoadFacingStation[StationCountData], lv.transform.position - new Vector3(xPos, 0, 0), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
                     GM.MaxCoin -= MaxCoinNeedToUnlock;
                     MaxCoinNeedToUnlock = 0;
                     GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");                    
@@ -155,12 +155,12 @@ namespace FashionM.Core
             {
                 if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
                 {
-                    Instantiate(GM.RightRoadFacingStations[StationCountData], new Vector3(PlacingPosition.x, PlacingPosition.y, PlacingPosition.z), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
+                    Instantiate(GM.RightRoadFacingStations[StationCountData], lv.transform.position - new Vector3(0, 0, zPos), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
                     GM.MaxCoin -= MaxCoinNeedToUnlock;
                     MaxCoinNeedToUnlock = 0;
                     GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");                    
                 }
             }
-        }*/
+        }
     }
 }

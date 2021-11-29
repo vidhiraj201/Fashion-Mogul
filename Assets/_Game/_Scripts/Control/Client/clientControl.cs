@@ -139,15 +139,31 @@ namespace FashionM.Control
 
         public void clientNeedItemRandomize()
         {
-/*            if (lv.rackOpen.Count <= 1)
-            {
-                print("one Item");
-                NeedItem = lv.rackOpen[0];
-            }
-*/
-            if (lv.rackOpen.Count > 0)
+           /* if (lv.rackOpen.Count > 0 && lv.rackOpen.Count < 4)
             {
                 int a = Random.Range(lv.rackOpen[0], lv.rackOpen[lv.rackOpen.Count-1]);
+                NeedItem = lv.rackOpen[a];
+            }*/
+
+            if (lv.rackOpen.Count == 1)
+            {
+                //int a = Random.Range(0,2);
+                NeedItem = lv.rackOpen[0];
+            }
+            if (lv.rackOpen.Count == 2)
+            {
+                int a = Random.Range(0,2);
+                NeedItem = lv.rackOpen[a];
+            }
+
+            if (lv.rackOpen.Count == 3)
+            {
+                int a = Random.Range(0,3);
+                NeedItem = lv.rackOpen[a];
+            }
+            if (lv.rackOpen.Count > 3)
+            {
+                int a = Random.Range(0, 4);
                 NeedItem = lv.rackOpen[a];
             }
         }

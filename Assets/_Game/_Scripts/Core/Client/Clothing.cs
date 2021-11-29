@@ -22,7 +22,7 @@ namespace FashionM.Core
             {
                 poof = false;
                 x = 0.15f;
-                if (control.NeedItem == 0)
+                if (control.NeedItem == control.lv.RackNumber0.RackNumber)
                 {
                     if(DClothUp != null && DClothDown != null)
                     {
@@ -36,7 +36,7 @@ namespace FashionM.Core
                     Cloth3.SetActive(true);
                 }
 
-                if (control.NeedItem == 1)
+                if (control.NeedItem == control.lv.RackNumber1.RackNumber)
                 {
                     if (DClothUp != null && DClothDown != null)
                     {
@@ -48,7 +48,7 @@ namespace FashionM.Core
                     Cloth2.SetActive(false);
                     Cloth3.SetActive(true);
                 }
-                if (control.NeedItem == 2)
+                if (control.NeedItem == control.lv.RackNumber2.RackNumber)
                 {
                     if (DClothUp != null && DClothDown != null)
                     {
@@ -61,7 +61,7 @@ namespace FashionM.Core
                     Cloth3.SetActive(true);
                 }
 
-                if (control.NeedItem == 2)
+                if (control.NeedItem == control.lv.RackNumber3.RackNumber)
                 {
                     if (DClothUp != null && DClothDown != null)
                     {
@@ -84,9 +84,6 @@ namespace FashionM.Core
         {
             if (poof && x >= 0)
                 x -= Time.deltaTime;
-
-
-
             if (control.tredingComplete)
             {
                 if (!poof)
@@ -99,7 +96,7 @@ namespace FashionM.Core
                 }
                 if (x<=0)
                 {
-                    if (control.NeedItem == 0)
+                    if (control.NeedItem == control.lv.RackNumber0.RackNumber)
                     {
                         if (DClothUp != null && DClothDown != null)
                         {
@@ -112,7 +109,7 @@ namespace FashionM.Core
                         Cloth3.SetActive(true);
                     }
 
-                    if (control.NeedItem == 1)
+                    if (control.NeedItem == control.lv.RackNumber1.RackNumber)
                     {
                         if (DClothUp != null && DClothDown != null)
                         {
@@ -124,7 +121,7 @@ namespace FashionM.Core
                         Cloth2.SetActive(false);
                         Cloth3.SetActive(true);
                     }
-                    if (control.NeedItem == 2)
+                    if (control.NeedItem == control.lv.RackNumber2.RackNumber)
                     {
                         if (DClothUp != null && DClothDown != null)
                         {
@@ -137,7 +134,7 @@ namespace FashionM.Core
                         Cloth3.SetActive(true);
                     }
 
-                    if (control.NeedItem == 2)
+                    if (control.NeedItem == control.lv.RackNumber3.RackNumber)
                     {
                         if (DClothUp != null && DClothDown != null)
                         {

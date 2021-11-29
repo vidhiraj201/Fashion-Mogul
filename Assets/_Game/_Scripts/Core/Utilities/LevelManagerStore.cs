@@ -28,6 +28,12 @@ namespace FashionM.Core
         public Sprite Rack_2;
         public Sprite Rack_3;
 
+        [Header("Shops")]
+        public Stores RackNumber0;
+        public Stores RackNumber1;
+        public Stores RackNumber2;
+        public Stores RackNumber3;
+
         [Header("Rack Open")]
         public List<int> rackOpen = new List<int>();
         void Start()
@@ -41,14 +47,14 @@ namespace FashionM.Core
         }
         void RackNumberAdding()
         {
-            if (Rack0 && !rackOpen.Contains(0))
-                rackOpen.Add(0);
-            if (Rack1 && !rackOpen.Contains(1))
-                rackOpen.Add(1);
-            if (Rack2 && !rackOpen.Contains(2))
-                rackOpen.Add(2);
-            if (Rack3 && !rackOpen.Contains(3))
-                rackOpen.Add(3);
+            if (Rack0 && !rackOpen.Contains(RackNumber0.RackNumber))
+                rackOpen.Add(RackNumber0.RackNumber);
+            if (Rack1 && !rackOpen.Contains(RackNumber1.RackNumber))
+                rackOpen.Add(RackNumber1.RackNumber);
+            if (Rack2 && !rackOpen.Contains(RackNumber2.RackNumber))
+                rackOpen.Add(RackNumber2.RackNumber);
+            if (Rack3 && !rackOpen.Contains(RackNumber3.RackNumber))
+                rackOpen.Add(RackNumber3.RackNumber);
         }
     }
 

@@ -707,8 +707,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311783065120077980}
   m_LocalRotation: {x: -0.5, y: -0.50000006, z: -0.49999994, w: 0.50000006}
-  m_LocalPosition: {x: -10.07, y: 1, z: -9.74}
-  m_LocalScale: {x: 112.8, y: 112.8, z: 112.8}
+  m_LocalPosition: {x: -7.9622, y: 1, z: -7.6684}
+  m_LocalScale: {x: 106.83288, y: 102.77208, z: 112.8}
   m_Children: []
   m_Father: {fileID: 4063447252915032955}
   m_RootOrder: 8
@@ -2899,7 +2899,7 @@ MonoBehaviour:
   Rack1: 0
   Rack2: 0
   Rack3: 0
-  Y: 0
+  Y: 4.26
 --- !u!1 &4063447251784708142
 GameObject:
   m_ObjectHideFlags: 0
@@ -4778,7 +4778,7 @@ MonoBehaviour:
   Rack1: 0
   Rack2: 0
   Rack3: 1
-  Y: 0
+  Y: 4.26
 --- !u!1 &4063447252123179565
 GameObject:
   m_ObjectHideFlags: 0
@@ -5689,8 +5689,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.688793, y: 15.253511, z: 5.309432}
-  m_Center: {x: -0.06499038, y: 3.6419446, z: -0.88994306}
+  m_Size: {x: 8.528935, y: 15.253511, z: 5.309432}
+  m_Center: {x: 0.0061360956, y: 3.6419451, z: -0.8899431}
 --- !u!114 &4063447252458759534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5723,7 +5723,7 @@ MonoBehaviour:
   Rack1: 0
   Rack2: 1
   Rack3: 0
-  Y: 0
+  Y: 4.26
 --- !u!1 &4063447252471868736
 GameObject:
   m_ObjectHideFlags: 0
@@ -7456,6 +7456,10 @@ MonoBehaviour:
   Rack_1: {fileID: 21300000, guid: d4929b561f96d304483941d91c104363, type: 3}
   Rack_2: {fileID: 21300000, guid: cf0dbb5e00ce08d44abdae6c69a071ce, type: 3}
   Rack_3: {fileID: 21300000, guid: 2aae817dc634f114db53dedb642f443a, type: 3}
+  RackNumber0: {fileID: 4063447251745897171}
+  RackNumber1: {fileID: 4063447253248489683}
+  RackNumber2: {fileID: 4063447252458759534}
+  RackNumber3: {fileID: 4063447252102680875}
   rackOpen: 
 --- !u!114 &1604345454857833844
 MonoBehaviour:
@@ -7629,7 +7633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4063447253023293707
 Transform:
   m_ObjectHideFlags: 0
@@ -8383,7 +8387,7 @@ MonoBehaviour:
   Rack1: 1
   Rack2: 0
   Rack3: 0
-  Y: 0
+  Y: 4.26
 --- !u!1 &4063447253282940784
 GameObject:
   m_ObjectHideFlags: 0
@@ -8513,7 +8517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4063447253459525824
 Transform:
   m_ObjectHideFlags: 0
@@ -12540,6 +12544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433e526da34487b419d242dd2802980c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lv: {fileID: 7836404138084676344}
   StoreStatus: {fileID: 8019010498928544917}
   StoreUpgradesPrice: {fileID: 8019010499194798142}
   WaitTimerUnlockUI: {fileID: 8019010497231703604}
@@ -12547,8 +12552,8 @@ MonoBehaviour:
   facingSide: 2
   CoinReduceSpeed: 1
   MaxCoinNeedToUnlock: 700
-  Bounds: {fileID: 0}
-  PlacingPosition: {x: 0, y: 0, z: -55.1}
+  xPos: 0
+  zPos: -55.5
   PlacingRotation: {x: 0, y: 0, z: 0}
   BoundCenter: {x: 0.119, y: 0, z: -0.221}
   BoundSize: {x: 1, y: 1, z: 1.196}
@@ -12615,7 +12620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8019010497531595905
 Transform:
   m_ObjectHideFlags: 0
@@ -12875,6 +12880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433e526da34487b419d242dd2802980c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lv: {fileID: 7836404138084676344}
   StoreStatus: {fileID: 8019010498803013064}
   StoreUpgradesPrice: {fileID: 8019010497457008540}
   WaitTimerUnlockUI: {fileID: 8019010498737378585}
@@ -12882,8 +12888,8 @@ MonoBehaviour:
   facingSide: 1
   CoinReduceSpeed: 1
   MaxCoinNeedToUnlock: 700
-  Bounds: {fileID: 0}
-  PlacingPosition: {x: 55, y: 0, z: 0}
+  xPos: 55.5
+  zPos: 0
   PlacingRotation: {x: 0, y: 0, z: 0}
   BoundCenter: {x: 1.267, y: 0, z: -0.221}
   BoundSize: {x: 3.89764, y: 1, z: 1.196}
@@ -13725,7 +13731,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8019010498843549204
 Transform:
   m_ObjectHideFlags: 0
@@ -18092,6 +18098,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6733177361254619370, guid: 07d839854d965c04f8fcc53ce4954977,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6733177361254619370, guid: 07d839854d965c04f8fcc53ce4954977,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -18172,6 +18183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -541592641364115695, guid: 07d839854d965c04f8fcc53ce4954977,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -541592641364115695, guid: 07d839854d965c04f8fcc53ce4954977,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
@@ -18199,6 +18215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casual Jeans_Rack_New
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 07d839854d965c04f8fcc53ce4954977,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 07d839854d965c04f8fcc53ce4954977,
         type: 3}
