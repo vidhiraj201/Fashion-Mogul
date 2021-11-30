@@ -8,6 +8,9 @@ namespace FashionM.Control
     {
         private FashionM.Core.GameManager gm;
         private FashionM.Core.Stores st;
+
+        public GameObject Clients,ClientPosition, SlotExpnasion;
+        
         void Start()
         {
             gm = FindObjectOfType<FashionM.Core.GameManager>();
@@ -20,6 +23,9 @@ namespace FashionM.Control
             if(gm.dayCount == 1)
             {
                 st.MaxCoinNeedToUnlock = 0;
+                Clients.SetActive(true);
+                ClientPosition.SetActive(true);
+                SlotExpnasion.SetActive(false);
             }
         }
     }

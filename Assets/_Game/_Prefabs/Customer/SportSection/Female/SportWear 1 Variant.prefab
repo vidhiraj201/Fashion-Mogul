@@ -458,6 +458,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7846506020161533368}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4520203232176346565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5935356477182091389, guid: dad955b2b4b08e44dbf8441384d3dc86,
+    type: 3}
+  m_PrefabInstance: {fileID: 7846506020161533368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2827847247843177159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5465940246521907071, guid: dad955b2b4b08e44dbf8441384d3dc86,
@@ -507,6 +513,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1393198919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927955107992307945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8916a28f594814aa7cc4ea199eaa92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1
 --- !u!114 &1393198920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +541,7 @@ MonoBehaviour:
   Cloth: {fileID: 8697055430060019403}
   UIHolder: {fileID: 1774012154273106506}
   HolderPositionOffset: {x: 0, y: 0, z: 0}
---- !u!114 &1393198919
+--- !u!114 &6406147843407904725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -531,28 +550,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6927955107992307945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8916a28f594814aa7cc4ea199eaa92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: 1
---- !u!114 &1393198918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6927955107992307945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35346048f8f5a45418bcd5e495e2a600, type: 3}
+  m_Script: {fileID: 11500000, guid: bf398a69229db5045a07e4337ac6ee08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
-  DClothUp: {fileID: 0}
-  DClothDown: {fileID: 0}
-  Cloth0: {fileID: 731824086527487785}
-  Cloth1: {fileID: 6876875770231081785}
+  DCloth: {fileID: 4520203232176346565}
+  Cloth0: {fileID: 3823665661470287737}
+  Cloth1: {fileID: 731824086527487785}
   Cloth2: {fileID: 4103552184279367283}
-  Cloth3: {fileID: 3823665661470287737}
+  Cloth3: {fileID: 6876875770231081785}
   Poof: {fileID: 6208548956274597627, guid: 08290a1e52bf35445a7e9e65a6800943, type: 3}
   poofPos: {fileID: 4767134089990825962}

@@ -442,6 +442,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2401085907795911291}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8290213965080789510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5935356477182091389, guid: 9288d8523f6ffc8488bf95888186d550,
+    type: 3}
+  m_PrefabInstance: {fileID: 2401085907795911291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6478711185446745349 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8699652204047898494, guid: 9288d8523f6ffc8488bf95888186d550,
@@ -525,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 1
---- !u!114 &699723018774368107
+--- !u!114 &3808617077304369346
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -534,12 +540,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3284029269177671466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35346048f8f5a45418bcd5e495e2a600, type: 3}
+  m_Script: {fileID: 11500000, guid: 889407d619482a340bc876f396a9b978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 0}
-  DClothUp: {fileID: 0}
-  DClothDown: {fileID: 0}
+  DCloth: {fileID: 8290213965080789510}
   Cloth0: {fileID: 6478711185446745349}
   Cloth1: {fileID: 3273526122380053521}
   Cloth2: {fileID: 9163285712329541072}

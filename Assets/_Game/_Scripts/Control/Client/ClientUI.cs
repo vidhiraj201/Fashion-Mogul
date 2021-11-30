@@ -11,11 +11,11 @@ namespace FashionM.Control
         public Transform UIHolder;
         public Vector3 HolderPositionOffset;
 
-        private clientControl CC;
+        public clientControl CC;
+
         // Start is called before the first frame update
         void Start()
         {
-            CC = GetComponent<FashionM.Core.Clothing>().control;
             UIHolder.gameObject.SetActive(false);
         }
 

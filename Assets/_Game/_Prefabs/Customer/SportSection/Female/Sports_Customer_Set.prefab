@@ -304,6 +304,7 @@ MonoBehaviour:
   StopeWalking: 0
   CCountAdded: 0
   t: 0.5
+  particalExplod: 0
 --- !u!114 &4609156323456653629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,7 +444,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7200747804488320875}
     m_Modifications:
-    - target: {fileID: 1393198918, guid: ee1d8e2edf13ea94da3496bf92418799, type: 3}
+    - target: {fileID: 1393198920, guid: ee1d8e2edf13ea94da3496bf92418799, type: 3}
+      propertyPath: CC
+      value: 
+      objectReference: {fileID: 2396003003692307866}
+    - target: {fileID: 6406147843407904725, guid: ee1d8e2edf13ea94da3496bf92418799,
+        type: 3}
       propertyPath: control
       value: 
       objectReference: {fileID: 2396003003692307866}
@@ -515,6 +521,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6157217508668949427}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1682823991746208857 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4767134089990825962, guid: ee1d8e2edf13ea94da3496bf92418799,
+    type: 3}
+  m_PrefabInstance: {fileID: 6157217508668949427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7604232106068256142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -522,11 +534,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7200747804488320875}
     m_Modifications:
+    - target: {fileID: 2765248009647673374, guid: c1f1220ea666fe34da414776e5ba34b9,
+        type: 3}
+      propertyPath: control
+      value: 
+      objectReference: {fileID: 2396003003692307866}
+    - target: {fileID: 2765248009647673374, guid: c1f1220ea666fe34da414776e5ba34b9,
+        type: 3}
+      propertyPath: poofPos
+      value: 
+      objectReference: {fileID: 1682823991746208857}
     - target: {fileID: 6083322403233400460, guid: c1f1220ea666fe34da414776e5ba34b9,
         type: 3}
       propertyPath: m_Name
       value: SportWear 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6536226108311251803, guid: c1f1220ea666fe34da414776e5ba34b9,
+        type: 3}
+      propertyPath: CC
+      value: 
+      objectReference: {fileID: 2396003003692307866}
     - target: {fileID: 6856622483640376374, guid: c1f1220ea666fe34da414776e5ba34b9,
         type: 3}
       propertyPath: m_RootOrder
@@ -582,11 +609,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7627325751190947407, guid: c1f1220ea666fe34da414776e5ba34b9,
-        type: 3}
-      propertyPath: control
-      value: 
-      objectReference: {fileID: 2396003003692307866}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1f1220ea666fe34da414776e5ba34b9, type: 3}
 --- !u!4 &3936204475534342584 stripped

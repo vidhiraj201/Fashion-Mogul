@@ -86,23 +86,24 @@ namespace FashionM.Movement
             {
                /* if (ClientNeedItem <= 0)
                     return;*/
-                if (ClientNeedItem == 0)
+
+                if (ClientNeedItem == lv.rackOpen[0])
                 {
                     TargetToStore = lv.AiPosForRack0;
                     isWalkingTowardStore = true;
                 }
 
-                if (ClientNeedItem == 1)
+                if (lv.rackOpen.Count > 2 )
                 {
                     TargetToStore = lv.AiPosForRack1;
                     isWalkingTowardStore = true;
                 }
-                if (ClientNeedItem == 2)
+                if (lv.rackOpen.Count > 3 )
                 {
                     TargetToStore = lv.AiPosForRack2;
                     isWalkingTowardStore = true;
                 }
-                if (ClientNeedItem == 3)
+                if (lv.rackOpen.Count > 4 )
                 {
                     TargetToStore = lv.AiPosForRack3;
                     isWalkingTowardStore = true;

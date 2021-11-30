@@ -41,8 +41,16 @@ namespace FashionM.Control
         private GameManager gm;
 
         public bool StopeWalking;
+        public void Awake()
+        {
+            if(lv.rackOpen.Count>0)
+                NeedItem = lv.rackOpen[0];
+        }
         private void Start()
         {
+            if (lv.rackOpen.Count > 0) 
+                NeedItem = lv.rackOpen[0];
+
             timerToTakeItemFromPlayer = waitTimer;
             waitTimerUI.gameObject.SetActive(false);
             gm = FindObjectOfType<GameManager>();
@@ -64,7 +72,7 @@ namespace FashionM.Control
                 tredingComplete = true;
             }
         }
-
+        private bool afterStart = false;
         private void Update()
         {
             completeTreding();
@@ -78,14 +86,18 @@ namespace FashionM.Control
             }
 
             //T1.text = NeedItem.ToString();
-           
 
-           /* if (clothTookFromEmpOrPlayer)
+
+            /* if (clothTookFromEmpOrPlayer)
+             {
+                 GetComponent<clientMovement>().PurchesUI.SetActive(false);
+             }*/
+
+            if (lv.rackOpen.Count > 0&& !afterStart)
             {
-                GetComponent<clientMovement>().PurchesUI.SetActive(false);
-            }*/
-
-            
+                clientNeedItemRandomize();
+                afterStart = true;
+            }
 
             if (playerIsNear)
             {
@@ -167,7 +179,7 @@ namespace FashionM.Control
                 NeedItem = lv.rackOpen[a];
             }
         }
-
+        [HideInInspector] public bool particalExplod;
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("DoorChecker"))
@@ -187,7 +199,13 @@ namespace FashionM.Control
                 if (gm.CustomerIn >= gm.customerGoal+1)
                     StopeWalking = true;
             }
-
+            if (!gm.isFinalTutorialOver)
+            {
+                if (FindObjectOfType<tutorialUI>().StartCustomer.Count < 3 && !FindObjectOfType<tutorialUI>().StartCustomer.Contains(this.transform.gameObject))
+                {
+                    FindObjectOfType<tutorialUI>().StartCustomer.Add(this.transform.gameObject);
+                }
+            }
             
         }
 

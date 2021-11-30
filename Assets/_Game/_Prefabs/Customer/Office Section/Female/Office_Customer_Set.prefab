@@ -404,6 +404,7 @@ MonoBehaviour:
   StopeWalking: 0
   CCountAdded: 0
   t: 0.5
+  particalExplod: 0
 --- !u!114 &1659425939043508275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,6 +444,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5412840364729155173}
     m_Modifications:
+    - target: {fileID: 1369614713265173716, guid: 8b3bca86af320ca458c0882d3af3affa,
+        type: 3}
+      propertyPath: CC
+      value: 
+      objectReference: {fileID: 698097874935327892}
     - target: {fileID: 2173209933320266596, guid: 8b3bca86af320ca458c0882d3af3affa,
         type: 3}
       propertyPath: control
@@ -508,11 +514,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: OfficeWare 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8722020770447759153, guid: 8b3bca86af320ca458c0882d3af3affa,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b3bca86af320ca458c0882d3af3affa, type: 3}
 --- !u!4 &8027090968586795614 stripped
@@ -528,6 +529,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5412840364729155173}
     m_Modifications:
+    - target: {fileID: 1420294837, guid: a5e6385e50ece2a4cb5f5e5126f2359a, type: 3}
+      propertyPath: CC
+      value: 
+      objectReference: {fileID: 698097874935327892}
     - target: {fileID: 1420294839, guid: a5e6385e50ece2a4cb5f5e5126f2359a, type: 3}
       propertyPath: control
       value: 

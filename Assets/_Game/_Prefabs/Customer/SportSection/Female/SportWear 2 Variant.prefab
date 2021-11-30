@@ -463,6 +463,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6389803781804669917}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &789180980717591456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5935356477182091389, guid: dad955b2b4b08e44dbf8441384d3dc86,
+    type: 3}
+  m_PrefabInstance: {fileID: 6389803781804669917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1402817539181460642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5465940246521907071, guid: dad955b2b4b08e44dbf8441384d3dc86,
@@ -512,6 +518,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1608781128299504932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083322403233400460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8916a28f594814aa7cc4ea199eaa92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1
+--- !u!114 &2765248009647673374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083322403233400460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf398a69229db5045a07e4337ac6ee08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  control: {fileID: 0}
+  DCloth: {fileID: 789180980717591456}
+  Cloth0: {fileID: 97149142460049692}
+  Cloth1: {fileID: 4498727868897993036}
+  Cloth2: {fileID: 917601758696763414}
+  Cloth3: {fileID: 7721092925870196060}
+  Poof: {fileID: 6208548956274597627, guid: 08290a1e52bf35445a7e9e65a6800943, type: 3}
+  poofPos: {fileID: 0}
 --- !u!114 &6536226108311251803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,37 +566,3 @@ MonoBehaviour:
   Cloth: {fileID: 3745899105173913319}
   UIHolder: {fileID: 7993148922079850664}
   HolderPositionOffset: {x: 0, y: 0, z: 0}
---- !u!114 &1608781128299504932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083322403233400460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e8916a28f594814aa7cc4ea199eaa92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: 1
---- !u!114 &7627325751190947407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083322403233400460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35346048f8f5a45418bcd5e495e2a600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  control: {fileID: 0}
-  DClothUp: {fileID: 0}
-  DClothDown: {fileID: 0}
-  Cloth0: {fileID: 4498727868897993036}
-  Cloth1: {fileID: 7721092925870196060}
-  Cloth2: {fileID: 917601758696763414}
-  Cloth3: {fileID: 97149142460049692}
-  Poof: {fileID: 6208548956274597627, guid: 08290a1e52bf35445a7e9e65a6800943, type: 3}
-  poofPos: {fileID: 7161736595047267568}

@@ -195,6 +195,7 @@ MonoBehaviour:
   StopeWalking: 0
   CCountAdded: 0
   t: 0.5
+  particalExplod: 0
 --- !u!114 &8788456028640621471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,9 +427,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2733663579391782345}
     m_Modifications:
-    - target: {fileID: 699723018774368107, guid: 59fc4c5e30b99fe4186e698e98ca9bdc,
+    - target: {fileID: 332409599938810583, guid: 59fc4c5e30b99fe4186e698e98ca9bdc,
         type: 3}
-      propertyPath: control
+      propertyPath: CC
       value: 
       objectReference: {fileID: 7440383610919321400}
     - target: {fileID: 2799241791786861968, guid: 59fc4c5e30b99fe4186e698e98ca9bdc,
@@ -491,6 +492,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BeachWear 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3808617077304369346, guid: 59fc4c5e30b99fe4186e698e98ca9bdc,
+        type: 3}
+      propertyPath: control
+      value: 
+      objectReference: {fileID: 7440383610919321400}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59fc4c5e30b99fe4186e698e98ca9bdc, type: 3}
 --- !u!4 &590216632937755643 stripped
@@ -506,6 +512,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2733663579391782345}
     m_Modifications:
+    - target: {fileID: 1306074389948093454, guid: 8980938e0a54f3548b941144da70e9f3,
+        type: 3}
+      propertyPath: CC
+      value: 
+      objectReference: {fileID: 7440383610919321400}
     - target: {fileID: 3748857622322577936, guid: 8980938e0a54f3548b941144da70e9f3,
         type: 3}
       propertyPath: m_Name
@@ -566,7 +577,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6103657746209834461, guid: 8980938e0a54f3548b941144da70e9f3,
+    - target: {fileID: 6067847056019553589, guid: 8980938e0a54f3548b941144da70e9f3,
         type: 3}
       propertyPath: control
       value: 

@@ -866,6 +866,8 @@ MonoBehaviour:
   Cloth1: {fileID: 2823357815817047959}
   Cloth2: {fileID: 1777327307852143029}
   Cloth3: {fileID: 6797014854862032953}
+  isCasual: 1
+  isOffice: 0
   Poof: {fileID: 6208548956274597627, guid: 08290a1e52bf35445a7e9e65a6800943, type: 3}
   poofPos: {fileID: 2221627354147887824}
 --- !u!114 &2621929204312999919

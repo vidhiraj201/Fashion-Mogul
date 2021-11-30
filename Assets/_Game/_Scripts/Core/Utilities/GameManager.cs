@@ -41,6 +41,7 @@ namespace FashionM.Core
         public bool DayStart;
         public bool DayOff;
         public bool isTutorialOver;
+        public bool isFinalTutorialOver;
 
         [Header("")]
         public GameObject Bound;
@@ -80,7 +81,7 @@ namespace FashionM.Core
              }*/
             if(!DayStart && !DayOff && !x && isTutorialOver)
             {
-                StartCoroutine(StartGame(2.1f));
+                StartCoroutine(StartGame(1.2f));
                 x = true;
             }
         }
@@ -90,13 +91,17 @@ namespace FashionM.Core
         {
             if (dayCount <= 0)
             {
-                customerGoal = 3;
+                customerGoal = 2;
             }
             if (dayCount == 1)
             {
+                customerGoal = 3;
+            }
+            if (dayCount == 2)
+            {
                 customerGoal = 10;
             }
-            if (dayCount >= 2)
+            if (dayCount >= 3)
             {
                 customerGoal = 20;
             }
@@ -119,6 +124,7 @@ namespace FashionM.Core
         public int dayCount;
         public void NextDayButton()
         {
+            isFinalTutorialOver = true;
             DayOff = false;
             x = false;
             StartCoroutine(startDayDelay(0.35f));            
@@ -131,7 +137,18 @@ namespace FashionM.Core
             dayCount += 1;
         }
 
+        public void StartDay()
+        {
 
+            StartCoroutine(FstTutorialOver(0.2f));
+        }
+
+        IEnumerator FstTutorialOver(float t)
+        {
+            FindObjectOfType<tutorialUI>().GetComponent<Animator>().Play("4");
+            yield return new WaitForSeconds(t);
+            isTutorialOver = true;
+        }
         IEnumerator startDayDelay(float t)
         {
             yield return new WaitForSeconds(t);
@@ -151,11 +168,7 @@ namespace FashionM.Core
             dayStartUI.GetComponent<Animator>().Play("In");
             FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
             yield return new WaitForSeconds(t);
-            dayStartUI.GetComponent<Animator>().Play("Out");
-            DayStart = true;
-            FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = false;
-            InfintyUI.SetActive(true);
-
+            dayStartUI.GetComponent<Animator>().Play("Out");            
         }
     }
 }

@@ -15,6 +15,8 @@ namespace FashionM.Control
         public Stores OR;
         public StoreExpansion SE;
         [HideInInspector] public HRDesk HR;
+
+        public Transform Arrow; 
         private void Start()
         {
             //Text = transform.GetChild(1).GetComponent<TextMeshPro>();
@@ -23,12 +25,22 @@ namespace FashionM.Control
 
         private void Update()
         {
-           /* if(StoreNumberStored>=1)
-                Text.text = StoreNumberStored.ToString();
+            /* if(StoreNumberStored>=1)
+                 Text.text = StoreNumberStored.ToString();
 
-            if (StoreNumberStored <= 0)
-                Text.text = "".ToString();*/
+             if (StoreNumberStored <= 0)
+                 Text.text = "".ToString();*/
+            tutorial();
 
+        }
+
+        [HideInInspector] public bool particalExplod;
+        void tutorial()
+        {
+            if (FindObjectOfType<GameManager>().DayStart && Arrow!=null)
+            {
+                Arrow.gameObject.SetActive(true);
+            }
         }
 
         private void OnTriggerEnter(Collider other)

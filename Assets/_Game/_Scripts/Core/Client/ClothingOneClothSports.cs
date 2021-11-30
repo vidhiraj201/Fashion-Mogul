@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace FashionM.Core
 {
-    public class Clothing : MonoBehaviour
+    public class ClothingOneClothSports : MonoBehaviour
     {
         public FashionM.Control.clientControl control;
 
-        public GameObject DClothUp,DClothDown, Cloth0, Cloth1, Cloth2, Cloth3;
+        public GameObject DCloth, Cloth0, Cloth1, Cloth2, Cloth3;
 
         private bool poof;
 
@@ -24,57 +24,45 @@ namespace FashionM.Core
                 x = 0.15f;
                 if (control.NeedItem == control.lv.RackNumber0.RackNumber)
                 {
-                    if(DClothUp != null && DClothDown != null)
-                    {
-                        DClothUp.SetActive(true);
-                        DClothDown.SetActive(false);
-                    }
+                    //DCloth.SetActive(false);
 
+                    DCloth.SetActive(true);
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(false);
                     Cloth2.SetActive(false);
-                    Cloth3.SetActive(true);
+                    Cloth3.SetActive(false);
                 }
 
                 if (control.NeedItem == control.lv.RackNumber1.RackNumber)
                 {
-                    if (DClothUp != null && DClothDown != null)
-                    {
-                        DClothUp.SetActive(true);
-                        DClothDown.SetActive(false);
-                    }
+                    //DCloth.SetActive(false);
+                    DCloth.SetActive(true);
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(false);
                     Cloth2.SetActive(false);
-                    Cloth3.SetActive(true);
+                    Cloth3.SetActive(false);
                 }
                 if (control.NeedItem == control.lv.RackNumber2.RackNumber)
                 {
-                    if (DClothUp != null && DClothDown != null)
-                    {
-                        DClothUp.SetActive(true);
-                        DClothDown.SetActive(false);
-                    }
+                    //DCloth.SetActive(false);
+                    DCloth.SetActive(true);
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(false);
                     Cloth2.SetActive(false);
-                    Cloth3.SetActive(true);
+                    Cloth3.SetActive(false);
                 }
 
                 if (control.NeedItem == control.lv.RackNumber3.RackNumber)
                 {
-                    if (DClothUp != null && DClothDown != null)
-                    {
-                        DClothUp.SetActive(false);
-                        DClothDown.SetActive(true);
-                    }
+                    //DCloth.SetActive(false);
+                    DCloth.SetActive(true);
                     Cloth0.SetActive(false);
-                    Cloth1.SetActive(true);
+                    Cloth1.SetActive(false);
                     Cloth2.SetActive(false);
                     Cloth3.SetActive(false);
                 }
             }
-                clothChange();
+            clothChange();
         }
 
         public ParticleSystem Poof;
@@ -94,62 +82,45 @@ namespace FashionM.Core
                     Destroy(poofObj, 1);
                     poof = true;
                 }
-                if (x<=0)
+                if (x <= 0)
                 {
                     if (control.NeedItem == control.lv.RackNumber0.RackNumber)
                     {
-                        if (DClothUp != null && DClothDown != null)
-                        {
-                            DClothUp.SetActive(false);
-                            DClothDown.SetActive(false);
-                        }
+                        DCloth.SetActive(true);
                         Cloth0.SetActive(true);
                         Cloth1.SetActive(false);
                         Cloth2.SetActive(false);
-                        Cloth3.SetActive(true);
+                        Cloth3.SetActive(false);
                     }
 
                     if (control.NeedItem == control.lv.RackNumber1.RackNumber)
                     {
-                        if (DClothUp != null && DClothDown != null)
-                        {
-                            DClothUp.SetActive(false);
-                            DClothDown.SetActive(false);
-                        }
+                        DCloth.SetActive(true);
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(false);
-                        Cloth3.SetActive(true);
+                        Cloth3.SetActive(false);
                     }
                     if (control.NeedItem == control.lv.RackNumber2.RackNumber)
                     {
-                        if (DClothUp != null && DClothDown != null)
-                        {
-                            DClothUp.SetActive(false);
-                            DClothDown.SetActive(false);
-                        }
+                        DCloth.SetActive(true);
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(false);
                         Cloth2.SetActive(true);
-                        Cloth3.SetActive(true);
+                        Cloth3.SetActive(false);
                     }
 
                     if (control.NeedItem == control.lv.RackNumber3.RackNumber)
                     {
-                        if (DClothUp != null && DClothDown != null)
-                        {
-                            DClothUp.SetActive(false);
-                            DClothDown.SetActive(false);
-                        }
+                        DCloth.SetActive(true);
                         Cloth0.SetActive(false);
-                        Cloth1.SetActive(true);
+                        Cloth1.SetActive(false);
                         Cloth2.SetActive(false);
                         Cloth3.SetActive(true);
                     }
                 }
             }
 
-                
         }
     }
 }

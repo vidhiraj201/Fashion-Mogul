@@ -842,6 +842,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1369614713265173716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722020770447759153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5b7fd5e105bc341b7a73c8c79420ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cloth: {fileID: 7132769938426141801}
+  UIHolder: {fileID: 4980231976196445559}
+  HolderPositionOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &2173209933320266596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +876,8 @@ MonoBehaviour:
   Cloth1: {fileID: 132538651645162821}
   Cloth2: {fileID: 7197739560524529638}
   Cloth3: {fileID: 192319047658316207}
+  isCasual: 0
+  isOffice: 1
   Poof: {fileID: 6208548956274597627, guid: 08290a1e52bf35445a7e9e65a6800943, type: 3}
   poofPos: {fileID: 3014305192596127005}
 --- !u!114 &4052421755944709454
@@ -876,18 +893,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 1
---- !u!114 &1369614713265173716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8722020770447759153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a5b7fd5e105bc341b7a73c8c79420ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cloth: {fileID: 7132769938426141801}
-  UIHolder: {fileID: 4980231976196445559}
-  HolderPositionOffset: {x: 0, y: 0, z: 0}

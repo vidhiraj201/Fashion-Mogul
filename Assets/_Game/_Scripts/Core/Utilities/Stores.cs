@@ -10,7 +10,7 @@ namespace FashionM.Core
 {
     public class Stores : MonoBehaviour
     {
-
+        public int RackCodeNumber;
         public LevelManagerStore lv;
         public TextMeshPro RackPrice;
 
@@ -18,6 +18,7 @@ namespace FashionM.Core
 
         public GameObject StoreGFX;
         public GameObject PurchesGFX;
+        public GameObject Cloth;
         public Material mat;
         //public Image waitTimerlockUI;
 
@@ -134,7 +135,7 @@ namespace FashionM.Core
                 if (giveItemToPlayter <= 0)
                 {
                     playerC.StoreNumberStored = RackNumber;
-                    playerC.GetComponent<playerStackingSystem>().addClothToStack(RackNumber, mat);
+                    playerC.GetComponent<playerStackingSystem>().addClothToStack(RackNumber, mat, Cloth);
                     playerIsNear = false;
                     giveItemToPlayter = waitTimer;
                     waitTimerUnlockUI.gameObject.SetActive(false);

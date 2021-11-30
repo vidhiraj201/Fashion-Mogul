@@ -14,6 +14,31 @@ namespace FashionM.Core
 
         public Stores OR;
 
+        [Header("Casual")]
+        public GameObject TShirt;
+        public GameObject Shirt;
+        public GameObject Jacket;
+        public GameObject Jeans;
+        [Header("Beach")]
+        public GameObject Hat;
+        public GameObject Slipper;
+        public GameObject Sunglass;
+        public GameObject Bikani;
+        [Header("Office")]
+        public GameObject OFShirt;
+        public GameObject Shoes;
+        public GameObject Suit;
+        public GameObject Trouser;
+        [Header("Sport")]
+        public GameObject STShirt;
+        public GameObject Cap;
+        public GameObject Shorts;
+        public GameObject SShoes;
+
+
+
+
+
         [Range(0,1)]
         public float PickupDileverVolume;
 
@@ -40,13 +65,13 @@ namespace FashionM.Core
         }
 
         //StackingObject.transform.position
-        public void addClothToStack(float num, Material mat)
+        public void addClothToStack(float num, Material mat, GameObject cloth)
         {
             if (ClothObject.Count <= 0)
             {
                 GetComponent<playerMovement>().AM.source.PlayOneShot(GetComponent<playerMovement>().AM.PandD, PickupDileverVolume);
-                GameObject o = Instantiate(Cloths, StackingObject.transform.position, Quaternion.identity);
-                o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;
+                GameObject o = Instantiate(cloth, StackingObject.transform.position, Quaternion.identity);
+                /*o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;*/
                 o.transform.parent = StackingObject.transform;
                 o.GetComponent<Cloths>().ClothIdentityNumber = num;
                 o.GetComponent<Cloths>().Collector = this.gameObject;
@@ -55,8 +80,8 @@ namespace FashionM.Core
             if (ClothObject.Count > 0)
             {
                 GetComponent<playerMovement>().AM.source.PlayOneShot(GetComponent<playerMovement>().AM.PandD, PickupDileverVolume);
-                GameObject o = Instantiate(Cloths, ClothObject[ClothObject.Count-1].transform.position + new Vector3(0, 0.05f, 0), Quaternion.identity);
-                o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;
+                GameObject o = Instantiate(cloth, ClothObject[ClothObject.Count-1].transform.position + new Vector3(0, 0.05f, 0), Quaternion.identity);
+                /*o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;*/
                 o.transform.parent = StackingObject.transform;
                 o.GetComponent<Cloths>().ClothIdentityNumber = num;
                 o.GetComponent<Cloths>().Collector = this.gameObject;
