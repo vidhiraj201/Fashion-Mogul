@@ -4112,7 +4112,7 @@ MonoBehaviour:
   NewClients: {fileID: 8852862990195550679}
   StationPrice: {fileID: 3312067451804073221}
   CoinReduceSpeed: 5
-  MaxCoinNeedToUnlock: 300
+  MaxCoinNeedToUnlock: 800
 --- !u!1 &3312067451928172456
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,7 +4358,7 @@ MonoBehaviour:
   giveItemToPlayter: 3
   waitTimer: 1
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 100
+  MaxCoinNeedToUnlock: 400
   playerIsNear: 0
   EmpIsNear: 0
   isRackClosed: 1
@@ -4954,7 +4954,7 @@ MonoBehaviour:
   giveItemToPlayter: 2
   waitTimer: 1
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 100
+  MaxCoinNeedToUnlock: 300
   playerIsNear: 0
   EmpIsNear: 0
   isRackClosed: 1
@@ -7667,7 +7667,7 @@ MonoBehaviour:
   giveItemToPlayter: 1
   waitTimer: 1
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 100
+  MaxCoinNeedToUnlock: 500
   playerIsNear: 0
   EmpIsNear: 0
   isRackClosed: 1
@@ -8250,7 +8250,7 @@ MonoBehaviour:
   NewClients: {fileID: 8852862991189969018}
   StationPrice: {fileID: 3312067451912333010}
   CoinReduceSpeed: 5
-  MaxCoinNeedToUnlock: 300
+  MaxCoinNeedToUnlock: 500
 --- !u!1 &3312067453374144852
 GameObject:
   m_ObjectHideFlags: 0
@@ -8365,7 +8365,7 @@ MonoBehaviour:
   NewClients: {fileID: 8852862989523573725}
   StationPrice: {fileID: 3312067452218531997}
   CoinReduceSpeed: 5
-  MaxCoinNeedToUnlock: 300
+  MaxCoinNeedToUnlock: 200
 --- !u!1 &3312067453382761137
 GameObject:
   m_ObjectHideFlags: 0
@@ -12946,7 +12946,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3571013231305329146
 Transform:
@@ -12956,8 +12956,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8705705364179327741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2857, y: -0, z: 1.6609}
-  m_LocalScale: {x: 5.500613, y: 1, z: 5.523317}
+  m_LocalPosition: {x: -2.4992, y: -0, z: 1.6609}
+  m_LocalScale: {x: 5.543518, y: 1, z: 5.523317}
   m_Children: []
   m_Father: {fileID: 3312067452781692178}
   m_RootOrder: 18

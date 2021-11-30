@@ -722,7 +722,7 @@ MonoBehaviour:
   NewClients: {fileID: 6735235020761543591}
   StationPrice: {fileID: 744537191482910581}
   CoinReduceSpeed: 5
-  MaxCoinNeedToUnlock: 300
+  MaxCoinNeedToUnlock: 600
 --- !u!1 &744537191473216672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,7 +1559,7 @@ MonoBehaviour:
   giveItemToPlayter: 3
   waitTimer: 1
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 100
+  MaxCoinNeedToUnlock: 500
   playerIsNear: 0
   EmpIsNear: 0
   isRackClosed: 1
@@ -1902,7 +1902,7 @@ MonoBehaviour:
   giveItemToPlayter: 2
   waitTimer: 1
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 100
+  MaxCoinNeedToUnlock: 300
   playerIsNear: 0
   EmpIsNear: 0
   isRackClosed: 1
@@ -4288,7 +4288,7 @@ MonoBehaviour:
   giveItemToPlayter: 1
   waitTimer: 1
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 100
+  MaxCoinNeedToUnlock: 800
   playerIsNear: 0
   EmpIsNear: 0
   isRackClosed: 1
@@ -4691,7 +4691,7 @@ MonoBehaviour:
   NewClients: {fileID: 6735235021164806573}
   StationPrice: {fileID: 744537191896824557}
   CoinReduceSpeed: 5
-  MaxCoinNeedToUnlock: 300
+  MaxCoinNeedToUnlock: 500
 --- !u!1 &744537192945074369
 GameObject:
   m_ObjectHideFlags: 0
@@ -5251,7 +5251,7 @@ MonoBehaviour:
   NewClients: {fileID: 6735235021908038154}
   StationPrice: {fileID: 744537191473216674}
   CoinReduceSpeed: 5
-  MaxCoinNeedToUnlock: 300
+  MaxCoinNeedToUnlock: 400
 --- !u!1 &744537193031660264
 GameObject:
   m_ObjectHideFlags: 0
@@ -14923,7 +14923,7 @@ GameObject:
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6571341691928037348
 Transform:

@@ -114,7 +114,7 @@ namespace FashionM.Control
                     {
                         a = 0.5f;
                         StoreNumberStored = OR.RackNumber;
-                        GetComponent<EmpStackingSystem>().addClothToStack(OR.RackNumber, OR.mat);
+                        GetComponent<EmpStackingSystem>().addClothToStack(OR.RackNumber, OR.mat,OR.Cloth);
                         GetComponent<empMovement>().isWalkingTowardStore = false;
                         GetComponent<empMovement>().isWalkingTowardClient = true;
                     }                    

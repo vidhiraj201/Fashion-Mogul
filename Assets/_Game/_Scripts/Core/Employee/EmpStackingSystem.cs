@@ -16,13 +16,13 @@ namespace FashionM.Core
 
         [Range(0,1)]
         public float PickupDileverVolume = 0.5f;
-        public void addClothToStack(float num, Material mat)
+        public void addClothToStack(float num, Material mat, GameObject obj)
         {
             if (ClothObject.Count <= 1)
             {
                 GetComponent<empMovement>().AM.source.PlayOneShot(GetComponent<empMovement>().AM.PandD, PickupDileverVolume);
-                GameObject o = Instantiate(Cloths, StackingObject.transform.position, Quaternion.identity);
-                o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;
+                GameObject o = Instantiate(obj, StackingObject.transform.position, Quaternion.identity);
+                /*o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;*/
                 o.transform.parent = StackingObject.transform;
                 o.GetComponent<Cloths>().ClothIdentityNumber = num;
                 o.GetComponent<Cloths>().Collector = this.gameObject;

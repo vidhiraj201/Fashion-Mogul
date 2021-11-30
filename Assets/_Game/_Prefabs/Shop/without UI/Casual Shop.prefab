@@ -8712,11 +8712,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2b6dbe5ce40814e9ee8ece02123b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RackCodeNumber: 0
   lv: {fileID: 3152067057529403420}
   RackPrice: {fileID: 9158817500123061983}
   waitTimerUnlockUI: {fileID: 9158817500908583108}
   StoreGFX: {fileID: 9158817500951268282}
   PurchesGFX: {fileID: 9158817499980212008}
+  Cloth: {fileID: 9013404090430272993, guid: f6528aa6751d4a140ba1c5c616122cb2, type: 3}
   mat: {fileID: 2100000, guid: 665e4e7019804b542956559ea5f05ecb, type: 2}
   RackNumber: 2
   giveItemToPlayter: 2
@@ -9752,11 +9754,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2b6dbe5ce40814e9ee8ece02123b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RackCodeNumber: 0
   lv: {fileID: 3152067057529403420}
   RackPrice: {fileID: 9158817501341150871}
   waitTimerUnlockUI: {fileID: 9158817499921443160}
   StoreGFX: {fileID: 9158817499719147358}
   PurchesGFX: {fileID: 9158817501244229526}
+  Cloth: {fileID: 6231347520858944402, guid: 1aeaf9605b2d7dc4e80c7560d38ccad6, type: 3}
   mat: {fileID: 2100000, guid: c505d09ab16e324478abfad41705c2c8, type: 2}
   RackNumber: 3
   giveItemToPlayter: 3
@@ -11831,11 +11835,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2b6dbe5ce40814e9ee8ece02123b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RackCodeNumber: 0
   lv: {fileID: 3152067057529403420}
   RackPrice: {fileID: 9158817501230193505}
   waitTimerUnlockUI: {fileID: 9158817501549331713}
   StoreGFX: {fileID: 9158817500925180803}
   PurchesGFX: {fileID: 9158817501180290009}
+  Cloth: {fileID: 7157128605831286726, guid: 60b8aac190d31cb40aaa3c1b43467f87, type: 3}
   mat: {fileID: 2100000, guid: 6cf899aaacd9d644984072911aa9a6ae, type: 2}
   RackNumber: 0
   giveItemToPlayter: 0
@@ -13396,11 +13402,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2b6dbe5ce40814e9ee8ece02123b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RackCodeNumber: 0
   lv: {fileID: 3152067057529403420}
   RackPrice: {fileID: 9158817500575855520}
   waitTimerUnlockUI: {fileID: 9158817500844777362}
   StoreGFX: {fileID: 9158817501034511926}
   PurchesGFX: {fileID: 9158817501419589028}
+  Cloth: {fileID: 3803139299451678195, guid: 4e217484ca5399e41966ac8321499ccb, type: 3}
   mat: {fileID: 2100000, guid: 2d39446bbbfe98045a33bb2d99d3c47b, type: 2}
   RackNumber: 1
   giveItemToPlayter: 1
