@@ -16188,6 +16188,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8447649672279175595, guid: 5062e6c0b923b3a4cac4d4238c3dceb0,
         type: 3}
+      propertyPath: lookRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447649672279175595, guid: 5062e6c0b923b3a4cac4d4238c3dceb0,
+        type: 3}
       propertyPath: ClientPosition
       value: 
       objectReference: {fileID: 4902104563091822186}
@@ -16563,6 +16568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8447649672279175595, guid: 5062e6c0b923b3a4cac4d4238c3dceb0,
         type: 3}
+      propertyPath: lookRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447649672279175595, guid: 5062e6c0b923b3a4cac4d4238c3dceb0,
+        type: 3}
       propertyPath: ClientPosition
       value: 
       objectReference: {fileID: 4902104563628414233}
@@ -16650,6 +16660,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Office_Customer_Set  (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447649672279175595, guid: 5062e6c0b923b3a4cac4d4238c3dceb0,
+        type: 3}
+      propertyPath: lookRotation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8447649672279175595, guid: 5062e6c0b923b3a4cac4d4238c3dceb0,
         type: 3}
@@ -16830,6 +16845,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Office_Customer_Set  (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8447649672279175595, guid: 5062e6c0b923b3a4cac4d4238c3dceb0,
+        type: 3}
+      propertyPath: lookRotation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8447649672279175595, guid: 5062e6c0b923b3a4cac4d4238c3dceb0,
         type: 3}

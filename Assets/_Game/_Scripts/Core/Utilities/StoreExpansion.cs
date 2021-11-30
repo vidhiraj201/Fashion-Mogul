@@ -50,9 +50,9 @@ namespace FashionM.Core
             StoreUpgradesPrice.text = "$" + MaxCoinNeedToUnlock;
             StoreUpgradesPrice_1.text = "$" + MaxCoinNeedToUnlock;
 
-
+/*
             StoreUpgradesPrice.gameObject.SetActive(false);
-            StoreUpgradesPrice_1.gameObject.SetActive(false);
+            StoreUpgradesPrice_1.gameObject.SetActive(false);*/
             WaitTimerUnlockUI.gameObject.SetActive(false);
             WaitTimerUnlockUI_1.gameObject.SetActive(false);
 
@@ -134,8 +134,8 @@ namespace FashionM.Core
             if (collision.gameObject.CompareTag("Player"))
             {
                 isPlayerNear = true;
-                StoreUpgradesPrice.gameObject.SetActive(true);
-                StoreUpgradesPrice_1.gameObject.SetActive(true);
+/*                StoreUpgradesPrice.gameObject.SetActive(true);
+                StoreUpgradesPrice_1.gameObject.SetActive(true);*/
             }
         }
 
@@ -156,11 +156,11 @@ namespace FashionM.Core
                 isPlayerNear = false;                
                 UIUnlock = WaitTimer;
             }
-            if (StoreUpgradesPrice.gameObject.activeSelf)
+/*            if (StoreUpgradesPrice.gameObject.activeSelf)
                 StoreUpgradesPrice.gameObject.SetActive(false);
 
             if (StoreUpgradesPrice_1.gameObject.activeSelf)
-                StoreUpgradesPrice_1.gameObject.SetActive(false);
+                StoreUpgradesPrice_1.gameObject.SetActive(false);*/
 
             if (WaitTimerUnlockUI.gameObject.activeSelf)
                 WaitTimerUnlockUI.gameObject.SetActive(false);

@@ -187,6 +187,8 @@ namespace FashionM.Control
                 if (gm.CustomerIn >= gm.customerGoal+1)
                     StopeWalking = true;
             }
+
+            
         }
 
         private void OnCollisionExit(Collision collision)

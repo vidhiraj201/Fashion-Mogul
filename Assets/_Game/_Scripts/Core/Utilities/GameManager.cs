@@ -40,6 +40,7 @@ namespace FashionM.Core
         [Header("Day Session")]
         public bool DayStart;
         public bool DayOff;
+        public bool isTutorialOver;
 
         [Header("")]
         public GameObject Bound;
@@ -50,21 +51,22 @@ namespace FashionM.Core
             UnlockStoreExpansionUI.SetActive(false);
             HireEmployee.SetActive(false);
             dayCompleteUI.SetActive(false);
-            dayStartUI.SetActive(false);
+            //dayStartUI.SetActive(false);
             InfintyUI.SetActive(false);
             watch = FindObjectOfType<dayCompleteReport>();
         }
 
-        
+        bool x;
         void Update()
         {
+            customerGoalGenrator();
             coinControl();
             DayCountUI.text = "Day " + (dayCount + 1);
             CustomerUI.text = CustomerOut + " / " + customerGoal;
 
 
-            if (dayStartUI.activeSelf)
-                dayStartUI.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);
+            /*if (dayStartUI.activeSelf)
+                dayStartUI.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);*/
 
             if (dayCompleteUI.activeSelf)
             {
@@ -76,8 +78,29 @@ namespace FashionM.Core
              {
                  Instantiate(Employee, HD.position, Quaternion.identity).transform.parent = GameObject.Find("EmployeeCollection").transform;
              }*/
+            if(!DayStart && !DayOff && !x && isTutorialOver)
+            {
+                StartCoroutine(StartGame(2.1f));
+                x = true;
+            }
         }
 
+
+        void customerGoalGenrator()
+        {
+            if (dayCount <= 0)
+            {
+                customerGoal = 3;
+            }
+            if (dayCount == 1)
+            {
+                customerGoal = 10;
+            }
+            if (dayCount >= 2)
+            {
+                customerGoal = 20;
+            }
+        }
         public void OnMouseDownData()
         {
                 TapUI.SetActive(false);
@@ -85,7 +108,7 @@ namespace FashionM.Core
 
         void coinControl()
         {
-            CoinCountText.text = CurrentCoin.ToString();
+            CoinCountText.text = CurrentCoin.ToString("F0");
 
             if (MaxCoin > CurrentCoin)
                 CurrentCoin += 1;
@@ -97,13 +120,14 @@ namespace FashionM.Core
         public void NextDayButton()
         {
             DayOff = false;
+            x = false;
             StartCoroutine(startDayDelay(0.35f));            
             if (dayCompleteUI.activeSelf)
                 dayCompleteUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");
 
             CustomerIn = 0;
             CustomerOut = 0;
-            customerGoal = customerGoal * 2;
+            /*customerGoal = customerGoal * 2;*/
             dayCount += 1;
         }
 
@@ -114,14 +138,24 @@ namespace FashionM.Core
             DayStart = false;
         }
 
-        public void StartDayButton()
+      /* public void StartDayButton()
         {
             FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = false;            
 
             DayStart = true;
             InfintyUI.SetActive(true);
-            if (dayStartUI.activeSelf)
-                dayStartUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");
+        }*/
+
+        IEnumerator StartGame(float t)
+        {
+            dayStartUI.GetComponent<Animator>().Play("In");
+            FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
+            yield return new WaitForSeconds(t);
+            dayStartUI.GetComponent<Animator>().Play("Out");
+            DayStart = true;
+            FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = false;
+            InfintyUI.SetActive(true);
+
         }
     }
 }

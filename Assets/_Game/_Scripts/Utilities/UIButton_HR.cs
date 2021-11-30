@@ -13,6 +13,7 @@ namespace FashionM.Core
         public TextMeshProUGUI BAmount;
         public TextMeshProUGUI EmpCountUI;
         public float EmployeeAmount;
+        public float EmployeeAmountMulti;
         public GameObject Employee;
 
         private TextMeshProUGUI BName;
@@ -35,7 +36,7 @@ namespace FashionM.Core
 
         void ButtonUpdate()
         {
-            BAmount.text = EmployeeAmount.ToString();
+            BAmount.text = EmployeeAmount.ToString("F0");
 
             if (gm.MaxCoin >= EmployeeAmount)
             {
@@ -64,7 +65,7 @@ namespace FashionM.Core
                 EMP.GetComponent<FashionM.Movement.empMovement>().initPos = FindObjectOfType<playerControl>().HR.SpwanPoint;                
                 gm.HireEmployee.GetComponent<Animator>().Play("Out");
                 gm.MaxCoin -= EmployeeAmount;
-                EmployeeAmount += 200;
+                EmployeeAmount = EmployeeAmount * EmployeeAmountMulti;
                 gm.EmployeeCount += 1;
             }
         }

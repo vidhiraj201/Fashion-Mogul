@@ -16,7 +16,7 @@ public class dayStartReport : MonoBehaviour
     public float WinVolume;
     void Update()
     {
-        if (!manager.DayStart && !manager.DayOff)
+       /* if (!manager.DayStart && !manager.DayOff)
         {
             FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
             manager.dayStartUI.SetActive(true);
@@ -25,7 +25,7 @@ public class dayStartReport : MonoBehaviour
                 manager.dayStartUI.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = manager.customerGoal.ToString();
             }
            //findObjectOfType<FashionM.Core.AudioManager>().source.PlayOneShot(FindObjectOfType<FashionM.Core.AudioManager>().EndOfDay, WinVolume);
-        }
+        }*/
 
     }
 }

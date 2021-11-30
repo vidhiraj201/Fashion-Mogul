@@ -8910,7 +8910,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4691691367308230386}
   m_LocalRotation: {x: -0.49991274, y: 0.50008726, z: 0.49991274, w: 0.50008726}
-  m_LocalPosition: {x: -25.8, y: 13.2, z: 1.58}
+  m_LocalPosition: {x: -25.8, y: 13.2, z: 0.61}
   m_LocalScale: {x: 218.62, y: 8.20193, z: 100}
   m_Children: []
   m_Father: {fileID: 7237275161359269334}
@@ -15687,6 +15687,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2003465999363826183, guid: 2892d7a9c0d6ee241978af2f3efecdd9,
         type: 3}
+      propertyPath: lookRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003465999363826183, guid: 2892d7a9c0d6ee241978af2f3efecdd9,
+        type: 3}
       propertyPath: ClientPosition
       value: 
       objectReference: {fileID: 7179922313086045210}
@@ -16174,6 +16179,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2003465999363826183, guid: 2892d7a9c0d6ee241978af2f3efecdd9,
         type: 3}
+      propertyPath: lookRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003465999363826183, guid: 2892d7a9c0d6ee241978af2f3efecdd9,
+        type: 3}
       propertyPath: ClientPosition
       value: 
       objectReference: {fileID: 7179922312912336454}
@@ -16480,6 +16490,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 2003465999363826183, guid: 2892d7a9c0d6ee241978af2f3efecdd9,
         type: 3}
+      propertyPath: lookRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003465999363826183, guid: 2892d7a9c0d6ee241978af2f3efecdd9,
+        type: 3}
       propertyPath: ClientPosition
       value: 
       objectReference: {fileID: 7179922314768659867}
@@ -16574,6 +16589,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3184942389687740692, guid: 8a62396ecdd432e4aae9b5a2851b68c7,
         type: 3}
+    - target: {fileID: 2003465999363826183, guid: 2892d7a9c0d6ee241978af2f3efecdd9,
+        type: 3}
+      propertyPath: lookRotation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2003465999363826183, guid: 2892d7a9c0d6ee241978af2f3efecdd9,
         type: 3}
       propertyPath: ClientPosition

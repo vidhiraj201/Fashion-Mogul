@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 9ea6ac70fb491cc4ebfebbf92a055e2d
+guid: 71b2ea7b724dc3b4ab98fd80c15d87c7
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: mixamo.com
+    second: Running
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: Running
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 42
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -47,7 +47,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -58,23 +58,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.47328246
-        functionName: hitWalk
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0e8916a28f594814aa7cc4ea199eaa92,
-          type: 3}
-        floatParameter: 0.5
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.98799354
-        functionName: hitWalk
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 0e8916a28f594814aa7cc4ea199eaa92,
-          type: 3}
-        floatParameter: 0.5
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -143,7 +127,7 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
