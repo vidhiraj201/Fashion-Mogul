@@ -94,8 +94,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.2194605, y: 9.521985, z: 2.8199644}
-  m_Center: {x: 0.009633541, y: 4.7855086, z: 0.15494227}
+  m_Size: {x: 1.2660344, y: 9.521985, z: 2.0491092}
+  m_Center: {x: -0.020794988, y: 4.7855086, z: 0.54036987}
 --- !u!195 &5617175501116341470
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -110,7 +110,7 @@ NavMeshAgent:
   m_Acceleration: 200
   avoidancePriority: 50
   m_AngularSpeed: 240
-  m_StoppingDistance: 2
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -159,6 +159,7 @@ MonoBehaviour:
   OR: {fileID: 0}
   TradeStarted: 0
   StoreNumberStored: -1
+  customer: {fileID: 0}
 --- !u!114 &5095380442194621593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +175,8 @@ MonoBehaviour:
   ClothObject: []
   StackingObject: {fileID: 3879145784571781498}
   Cloths: {fileID: 8668948465460680198, guid: 266c3b2dc354b9f4d98ac07059cc95b1, type: 3}
+  paricalEffect: {fileID: 6208548956259026843, guid: ff670372577cb0d45a0c1733abcdcdbc,
+    type: 3}
   OR: {fileID: 0}
   PickupDileverVolume: 0.15
 --- !u!54 &7661029292166700219

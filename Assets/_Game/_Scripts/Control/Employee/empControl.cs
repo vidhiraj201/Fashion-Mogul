@@ -37,7 +37,12 @@ namespace FashionM.Control
                 transform.gameObject.layer = 11;
 
             }
+
+            if (GetComponent<empControl>().StoreNumberStored > 0 && GetComponent<EmpStackingSystem>().ClothObject.Count <= 0)
+                GetComponent<empControl>().StoreNumberStored = -1;
         }
+
+        public GameObject customer;
         private void OnCollisionEnter(Collision other)
         {
 
@@ -45,13 +50,9 @@ namespace FashionM.Control
             {
                 if (other.gameObject.GetComponent<clientControl>().NeedItem != StoreNumberStored || other.gameObject.GetComponent<clientControl>().NeedItem != GetComponent<empMovement>().ClientNeedItem)
                 {
-                    //print(transform.name + " " + other.gameObject.GetComponent<clientControl>().NeedItem + " " + StoreNumberStored);
-
-                    if (other.gameObject.GetComponent<clientControl>().startTreding && GetComponent<EmpStackingSystem>().ClothObject.Count >0)
-                    {
-                        StoreNumberStored = other.gameObject.GetComponent<clientControl>().NeedItem;
-                        GetComponent<EmpStackingSystem>().ClothObject[0].GetComponent<Cloths>().ClothIdentityNumber = other.gameObject.GetComponent<clientControl>().NeedItem; 
-                    }
+                    StoreNumberStored = -1;
+                    GetComponent<EmpStackingSystem>().poofCloth();
+                    GetComponent<empMovement>().ClientNeedItem = other.gameObject.GetComponent<clientControl>().NeedItem;
                 }
             }
 
@@ -61,15 +62,24 @@ namespace FashionM.Control
 
             if (other.gameObject.CompareTag("Client"))
             {
-                triggerWhenNearClient(other);
+                customer = other.gameObject;
+                //triggerWhenNearClient(other);
                 GetComponent<EmpStackingSystem>().RemoveCloth(other);
 
+                if (other.gameObject.GetComponent<clientControl>().tredingComplete)
+                {
+                    GetComponent<empMovement>().ClientNeedItem = -1;
+                }
+
+
+           /*     GetComponent<empMovement>().ClientNeedItem = -1;
                 if (other.gameObject.GetComponent<clientControl>().startTreding)
                 {
                     if (other.gameObject.GetComponent<clientControl>().NeedItem != StoreNumberStored && !TradeStarted)
                     {
                         StoreNumberStored = -1;
-                        GetComponent<empMovement>().ClientNeedItem = -1;
+                        //GetComponent<empMovement>().ClientNeedItem = -1;
+
                         if (GetComponent<empMovement>().ClientNeedItem <= -1)
                         {
                             GetComponent<empMovement>().ClientNeedItem = other.gameObject.GetComponent<clientControl>().NeedItem;
@@ -79,9 +89,9 @@ namespace FashionM.Control
                         GetComponent<empMovement>().isWalkingTowardClient = false;
                     }
                 }
+*/
 
 
-                
             }
 
             if (other.gameObject.CompareTag("Racks"))

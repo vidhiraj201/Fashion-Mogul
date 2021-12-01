@@ -36,9 +36,15 @@ namespace FashionM.Core
 
         [Header("Rack Open")]
         public List<int> rackOpen = new List<int>();
+
+        private void Awake()
+        {
+            RackNumberAdding();
+        }
         void Start()
         {
             gm = FindObjectOfType<GameManager>();
+            RackNumberAdding();
         }
 
         void Update()

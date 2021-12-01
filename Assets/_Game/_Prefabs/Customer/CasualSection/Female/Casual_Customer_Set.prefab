@@ -150,8 +150,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7510915, y: 8.592733, z: 2.7516785}
-  m_Center: {x: 0.011790276, y: 3.7633467, z: -0.005393982}
+  m_Size: {x: 1.4293754, y: 8.592733, z: 0.98130417}
+  m_Center: {x: 0.05423081, y: 3.7633467, z: -0.11452675}
 --- !u!195 &3347003679926855214
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3347003679926855213}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.38
+  m_Radius: 0.64
   m_Speed: 12
   m_Acceleration: 10
   avoidancePriority: 50
@@ -211,6 +211,7 @@ MonoBehaviour:
   waitTimerUI: {fileID: 4126169743168056819}
   startTreding: 0
   TradeComp: 0
+  LeaveEmp: 0
   clothTookFromEmpOrPlayer: 0
   tredingComplete: 0
   NeedItem: 0
@@ -621,17 +622,17 @@ PrefabInstance:
     - target: {fileID: 2826602879263536271, guid: 05a503300ca8fd24e92a251dcea6e77d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 4.45
       objectReference: {fileID: 0}
     - target: {fileID: 2826602879263536271, guid: 05a503300ca8fd24e92a251dcea6e77d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2826602879263536271, guid: 05a503300ca8fd24e92a251dcea6e77d,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 2826602879263536271, guid: 05a503300ca8fd24e92a251dcea6e77d,
         type: 3}
@@ -641,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 2826602879263536271, guid: 05a503300ca8fd24e92a251dcea6e77d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.26
+      value: 14.48
       objectReference: {fileID: 0}
     - target: {fileID: 2826602879263536271, guid: 05a503300ca8fd24e92a251dcea6e77d,
         type: 3}
@@ -691,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 2826602879263536272, guid: 05a503300ca8fd24e92a251dcea6e77d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05a503300ca8fd24e92a251dcea6e77d, type: 3}

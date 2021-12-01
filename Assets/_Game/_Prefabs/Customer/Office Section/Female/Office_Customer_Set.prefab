@@ -332,8 +332,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7510915, y: 8.592733, z: 2.7516785}
-  m_Center: {x: 0.011790276, y: 3.7633467, z: -0.005393982}
+  m_Size: {x: 1.1726907, y: 8.592733, z: 1.2873802}
+  m_Center: {x: -0.05476874, y: 3.7633467, z: 0.004114151}
 --- !u!195 &8447649672279175593
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -343,7 +343,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8447649672279175594}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.38
+  m_Radius: 0.7
   m_Speed: 12
   m_Acceleration: 10
   avoidancePriority: 50
@@ -393,6 +393,7 @@ MonoBehaviour:
   waitTimerUI: {fileID: 7065583794680314484}
   startTreding: 0
   TradeComp: 0
+  LeaveEmp: 0
   clothTookFromEmpOrPlayer: 0
   tredingComplete: 0
   NeedItem: 0
@@ -529,6 +530,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5412840364729155173}
     m_Modifications:
+    - target: {fileID: 618381799, guid: a5e6385e50ece2a4cb5f5e5126f2359a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1420294837, guid: a5e6385e50ece2a4cb5f5e5126f2359a, type: 3}
       propertyPath: CC
       value: 
@@ -537,6 +542,16 @@ PrefabInstance:
       propertyPath: control
       value: 
       objectReference: {fileID: 698097874935327892}
+    - target: {fileID: 4021737126865550410, guid: a5e6385e50ece2a4cb5f5e5126f2359a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7899815905934227946, guid: a5e6385e50ece2a4cb5f5e5126f2359a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8595294596982477117, guid: a5e6385e50ece2a4cb5f5e5126f2359a,
         type: 3}
       propertyPath: m_Name

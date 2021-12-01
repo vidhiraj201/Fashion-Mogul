@@ -57,8 +57,8 @@ namespace FashionM.Core
                 {
                     if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
                     {
-                        MaxCoinNeedToUnlock -= CoinReduceSpeed;
-                        GM.MaxCoin -= CoinReduceSpeed;
+                        MaxCoinNeedToUnlock -= CoinReduceSpeed*5;
+                        GM.MaxCoin -= CoinReduceSpeed*5;
                         StationPrice.text = "$" + MaxCoinNeedToUnlock;
                     }
                 }

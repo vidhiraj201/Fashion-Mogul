@@ -1076,7 +1076,7 @@ MonoBehaviour:
   WaitTimer: 1
   facingSide: 0
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 3500
+  MaxCoinNeedToUnlock: 20000
   xPos: 0
   zPos: 0
   PlacingRotation: {x: 0, y: 0, z: 0}

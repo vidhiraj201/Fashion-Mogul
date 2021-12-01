@@ -22,6 +22,7 @@ namespace FashionM.Core
 
 
         public float MaxCoin;
+        public float CountMultiplier;
 
         public float EmployeeCount;
 
@@ -116,9 +117,9 @@ namespace FashionM.Core
             CoinCountText.text = CurrentCoin.ToString("F0");
 
             if (MaxCoin > CurrentCoin)
-                CurrentCoin += 1;
+                CurrentCoin += CountMultiplier;
             if (MaxCoin < CurrentCoin)
-                CurrentCoin -= 1;
+                CurrentCoin -= CountMultiplier;
         }
 
         public int dayCount;

@@ -32,6 +32,7 @@ namespace FashionM.Core
                 GetComponent<Animator>().Play(i.ToString());
             }
 
+
         }
         int num = 0;
         private GameObject Target;

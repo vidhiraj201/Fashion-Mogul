@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 3.5
-  Coins: 20
+  Coins: 10
 --- !u!82 &7999122384407537026
 AudioSource:
   m_ObjectHideFlags: 0

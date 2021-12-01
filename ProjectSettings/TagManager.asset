@@ -16,6 +16,7 @@ TagManager:
   - Ground
   - HR
   - DoorChecker
+  - Destroy
   layers:
   - Default
   - TransparentFX

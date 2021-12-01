@@ -123,8 +123,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7510915, y: 8.592733, z: 2.7516785}
-  m_Center: {x: 0.011790276, y: 3.7633467, z: -0.005393982}
+  m_Size: {x: 1.2649462, y: 8.592733, z: 1.1497269}
+  m_Center: {x: -0.09436309, y: 3.7633467, z: -0.0021781921}
 --- !u!195 &2003465999363826181
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2003465999363826182}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.38
+  m_Radius: 0.7
   m_Speed: 12
   m_Acceleration: 10
   avoidancePriority: 50
@@ -184,6 +184,7 @@ MonoBehaviour:
   waitTimerUI: {fileID: 935717578426247640}
   startTreding: 0
   TradeComp: 0
+  LeaveEmp: 0
   clothTookFromEmpOrPlayer: 0
   tredingComplete: 0
   NeedItem: 0

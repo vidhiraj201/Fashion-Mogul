@@ -23,10 +23,12 @@ namespace FashionM.Control
         /*public Image Cloth;*/
         /*public Transform UIHolder;*/
 
+        private GameObject ar;
 
 
         public bool startTreding = false;
         public bool TradeComp;
+        public bool LeaveEmp;
         public bool clothTookFromEmpOrPlayer = false;  
         public bool tredingComplete = false;  
         public int NeedItem;
@@ -56,6 +58,15 @@ namespace FashionM.Control
             gm = FindObjectOfType<GameManager>();
             CM = GetComponent<clientMovement>();
             clientNeedItemRandomize();
+            try
+            {
+                ar = transform.GetChild(2).gameObject;
+            }
+            catch
+            {
+
+            }
+           
         }
 
         //Customer Count from Level Manager Added
@@ -73,6 +84,8 @@ namespace FashionM.Control
             }
         }
         private bool afterStart = false;
+
+        float l=0.5f;
         private void Update()
         {
             completeTreding();
@@ -85,6 +98,8 @@ namespace FashionM.Control
                 coinSpwan = true;
             }
 
+            if (gm.dayCount > 0 && ar != null)
+                Destroy(ar);
             //T1.text = NeedItem.ToString();
 
 
@@ -92,6 +107,16 @@ namespace FashionM.Control
              {
                  GetComponent<clientMovement>().PurchesUI.SetActive(false);
              }*/
+
+            if(!LeaveEmp && TradeComp && l>0)
+            {
+                l -= Time.deltaTime;
+                if (l <= 0)
+                {
+                    l = 0.5f;
+                    LeaveEmp = true;
+                }
+            }
 
             if (lv.rackOpen.Count > 0&& !afterStart)
             {
@@ -113,6 +138,7 @@ namespace FashionM.Control
                 if (timerToTakeItemFromPlayer <= 0)
                 {
                     TradeComp = true;
+                    gameObject.layer = 17;
                     //GetComponent<ClientUitilities>().stopTrade();
                     playerIsNear = false;
                     //waitTimerUI.gameObject.SetActive(false);

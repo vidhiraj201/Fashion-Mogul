@@ -32,11 +32,10 @@ namespace FashionM.Control
             if(CC.CM.reched && !CC.clothTookFromEmpOrPlayer)
                 UIHolder.gameObject.SetActive(true);
 
-            
         }
 
         void ClothApply()
-        {
+        {            
             if (CC.NeedItem == 0)
                 Cloth.sprite = CC.lv.Rack_0;
             if (CC.NeedItem == 1)

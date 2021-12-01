@@ -12,30 +12,9 @@ namespace FashionM.Core
         public GameObject StackingObject;
         public GameObject Cloths;
 
-        public Stores OR;
+        public GameObject paricalEffect;
 
-        [Header("Casual")]
-        public GameObject TShirt;
-        public GameObject Shirt;
-        public GameObject Jacket;
-        public GameObject Jeans;
-        [Header("Beach")]
-        public GameObject Hat;
-        public GameObject Slipper;
-        public GameObject Sunglass;
-        public GameObject Bikani;
-        [Header("Office")]
-        public GameObject OFShirt;
-        public GameObject Shoes;
-        public GameObject Suit;
-        public GameObject Trouser;
-        [Header("Sport")]
-        public GameObject STShirt;
-        public GameObject Cap;
-        public GameObject Shorts;
-        public GameObject SShoes;
-
-
+        public Stores OR;        
 
 
 
@@ -62,8 +41,40 @@ namespace FashionM.Core
 
                 /*ClothObject[Random.Range(0, ClothObject.Count)].GetComponent<Cloths>().throwCloth();*/
             }
+            if (ClothObject.Count <= 0)
+                poof = false;
         }
+        bool poof;
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Destroy"))
+            {
+                if (!poof && ClothObject.Count > 0)
+                {
+                    Destroy(Instantiate(paricalEffect, StackingObject.transform.position, Quaternion.identity), 2);
+                    poof = true;
+                }
 
+                if (ClothObject.Count > 0)
+                    {
+                        for (int i = 0; i <= ClothObject.Count - 1; i++)
+                        {
+                            if (ClothObject[i] != null)
+                            {
+                            Destroy(ClothObject[i]);
+                            }
+
+                            if (ClothObject[i] == null)
+                            {
+                                ClothObject.Remove(ClothObject[i]);
+                            }
+                        }
+                }
+
+             
+            }
+                
+        }
         //StackingObject.transform.position
         public void addClothToStack(float num, Material mat, GameObject cloth)
         {

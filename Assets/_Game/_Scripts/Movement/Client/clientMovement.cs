@@ -119,7 +119,9 @@ namespace FashionM.Movement
             }
             if (transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer && other.gameObject.CompareTag("End"))
             {
+                gameObject.layer = 10;
                 transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer = false;
+                transform.GetComponent<clientControl>().LeaveEmp = false;
                 transform.GetComponent<clientControl>().tredingComplete = false;
                 transform.GetComponent<clientControl>().TradeComp = false;
                 transform.GetComponent<clientControl>().startTreding = false;

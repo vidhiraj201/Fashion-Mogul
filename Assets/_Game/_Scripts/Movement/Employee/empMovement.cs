@@ -55,9 +55,14 @@ namespace FashionM.Movement
                 Hold = false;
         }
 
-        void moveAndRotateTowardsTarget()
+        private void FixedUpdate()
         {
             movementTowardsTarget();
+        }
+
+        void moveAndRotateTowardsTarget()
+        {
+            
             if (agent.velocity.magnitude > 0.1f)
             {                
                 float targetAngle = Mathf.Atan2(agent.velocity.x, agent.velocity.z) * Mathf.Rad2Deg;
@@ -80,35 +85,39 @@ namespace FashionM.Movement
                 agent.SetDestination(TargetToStore.transform.position);
 
             if (!GetComponent<empControl>().Occupied)
+            {
                 agent.SetDestination(initPos.position);
 
-           if(GetComponent<empControl>().StoreNumberStored <= -1)
-            {
-               /* if (ClientNeedItem <= 0)
-                    return;*/
-
-                if (ClientNeedItem == lv.rackOpen[0])
-                {
-                    TargetToStore = lv.AiPosForRack0;
-                    isWalkingTowardStore = true;
-                }
-
-                if (lv.rackOpen.Count > 2 )
-                {
-                    TargetToStore = lv.AiPosForRack1;
-                    isWalkingTowardStore = true;
-                }
-                if (lv.rackOpen.Count > 3 )
-                {
-                    TargetToStore = lv.AiPosForRack2;
-                    isWalkingTowardStore = true;
-                }
-                if (lv.rackOpen.Count > 4 )
-                {
-                    TargetToStore = lv.AiPosForRack3;
-                    isWalkingTowardStore = true;
-                }
             }
+
+         /*   if()*/
+         
+            if (ClientNeedItem < 0 && GetComponent<empControl>().StoreNumberStored <= -1)
+                return;
+
+            if (ClientNeedItem == 0 && GetComponent<empControl>().StoreNumberStored <= -1 )
+            {
+                TargetToStore = lv.AiPosForRack0;
+                isWalkingTowardStore = true;
+            }
+
+            if (ClientNeedItem == 1 && GetComponent<empControl>().StoreNumberStored <= -1)
+            {
+                TargetToStore = lv.AiPosForRack1;
+                isWalkingTowardStore = true;
+            }
+            if (ClientNeedItem == 2 && GetComponent<empControl>().StoreNumberStored <= -1)
+            {
+                TargetToStore = lv.AiPosForRack2;
+                isWalkingTowardStore = true;
+            }
+            if (ClientNeedItem == 3 && GetComponent<empControl>().StoreNumberStored <= -1)
+            {
+                TargetToStore = lv.AiPosForRack3;
+                isWalkingTowardStore = true;
+            }
+
+
         }
 
     }

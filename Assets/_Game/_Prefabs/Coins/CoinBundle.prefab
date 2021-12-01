@@ -221,7 +221,7 @@ PrefabInstance:
     - target: {fileID: 4799419098529090435, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
         type: 3}
       propertyPath: Coins
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4799419098529090461, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
         type: 3}
@@ -311,7 +311,7 @@ PrefabInstance:
     - target: {fileID: 4799419098529090435, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
         type: 3}
       propertyPath: Coins
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4799419098529090461, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
         type: 3}
@@ -387,6 +387,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799419098529090435, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
+        type: 3}
+      propertyPath: Coins
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4799419098529090461, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
         type: 3}
@@ -476,7 +481,7 @@ PrefabInstance:
     - target: {fileID: 4799419098529090435, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
         type: 3}
       propertyPath: Coins
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4799419098529090461, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
         type: 3}
@@ -566,7 +571,7 @@ PrefabInstance:
     - target: {fileID: 4799419098529090435, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
         type: 3}
       propertyPath: Coins
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4799419098529090461, guid: 81eff56d3f2cded43b5d25f8c6b8b976,
         type: 3}
