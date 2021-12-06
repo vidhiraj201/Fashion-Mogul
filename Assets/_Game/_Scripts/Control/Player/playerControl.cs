@@ -37,7 +37,7 @@ namespace FashionM.Control
         [HideInInspector] public bool particalExplod;
         void tutorial()
         {
-            if (FindObjectOfType<GameManager>().DayStart && Arrow!=null)
+            if (FindObjectOfType<GameManager>().DayStart && Arrow!=null && !FindObjectOfType<FashionM.Core.GameManager>().isFinalTutorialOver)
             {
                 Arrow.gameObject.SetActive(true);
             }

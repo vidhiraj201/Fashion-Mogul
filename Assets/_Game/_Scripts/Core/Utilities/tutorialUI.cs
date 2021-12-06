@@ -11,21 +11,31 @@ namespace FashionM.Core
         public List<GameObject> StartCustomer = new List<GameObject>();
         public GameObject particalEffect;
         public Transform aro;
+
+        public void Awake()
+        {
+            GetComponent<Animator>().enabled = false;
+        }
         void Start()
         {
+
             gm = FindObjectOfType<GameManager>();
-            GetComponent<Animator>().Play("0");
+            if (!gm.isTutorialOver)
+            {
+                GetComponent<Animator>().enabled = true;
+                GetComponent<Animator>().Play("0");
+            }
             aro = FindObjectOfType<FashionM.Control.playerControl>().Arrow;
             i = 1;
         }
 
         void Update()
         {
-            if (StartCustomer.Count == 2 && num<=2)
+            if (StartCustomer.Count == 2 && num<=2 && !gm.isFinalTutorialOver)
             {
                 newTutorialStart();
             }
-            if (Input.GetMouseButtonDown(0) && !gm.isTutorialOver && i<=2)
+            if (Input.GetMouseButtonDown(0) && !gm.isTutorialOver && i<=2 && !gm.isTutorialOver)
 
             {
                 i ++;

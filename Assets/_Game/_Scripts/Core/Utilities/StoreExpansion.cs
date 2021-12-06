@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using TMPro;
@@ -9,6 +11,11 @@ namespace FashionM.Core
 {
    public class StoreExpansion : MonoBehaviour
     {
+
+        private UniqueID uniqueID;
+        private ExpandedStoreData expdData;
+
+
         public LevelManagerStore lv;
         public TextMeshPro StoreStatus;
 
@@ -41,9 +48,17 @@ namespace FashionM.Core
         public Vector3 BoundCenter;
         public Vector3 BoundSize;
 
+
+        private void Awake()
+        {
+        }
+
         // Start is called before the first frame update
         void Start()
         {
+
+            uniqueID = GetComponent<UniqueID>();
+            expdData = FindObjectOfType<ExpandedStoreData>();
             GM = FindObjectOfType<GameManager>();
             Bounds = GM.Bound;
             //StoreStatus.text = "Store Locked";
@@ -60,10 +75,20 @@ namespace FashionM.Core
 
             xPos = -55.5f;
             zPos = 55.5f;
+
+
+            if (expdData.storedStore.Contains(uniqueID.ID))
+            {
+                Spwan();
+                //MaxCoinNeedToUnlock = 0;
+                Destroy(this.gameObject);
+                return;
+            }
+
+
         }
 
         public bool X, Z;
-
         // Update is called once per frame
         void Update()
         {
@@ -88,13 +113,12 @@ namespace FashionM.Core
                     {
                         Bounds.GetComponent<BoxCollider>().center = new Vector3(Bounds.GetComponent<BoxCollider>().center.x, Bounds.GetComponent<BoxCollider>().center.y, BoundCenter.z ); 
                         Bounds.GetComponent<BoxCollider>().size = new Vector3(Bounds.GetComponent<BoxCollider>().size.x, Bounds.GetComponent<BoxCollider>().size.y, BoundSize.z); 
-                    }
-
-                //transform.GetComponent<MeshRenderer>().enabled = false;
+                    }                
                 Destroy(this.gameObject);
             }
             OpenUI();
         }
+
 
         /*public void HitButton()
         {
@@ -119,6 +143,7 @@ namespace FashionM.Core
                 {
                     isPlayerNear = false;
                     UIUnlock = WaitTimer;
+                    expdData.storedStore.Add(uniqueID.ID);
                     Spwan();
                   /*  WaitTimerUnlockUI.gameObject.SetActive(false);
                     if (WaitTimerUnlockUI_1 != null)
@@ -176,42 +201,42 @@ namespace FashionM.Core
         [Header("Temp")]
         public int StationCountData;
         public GameObject ToSpwan;
+     
         public void Spwan()
         {
             if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
             {
                 FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
-                Instantiate(ToSpwan, PlacingPosition, Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
-                GM.MaxCoin -= MaxCoinNeedToUnlock;
-                MaxCoinNeedToUnlock = 0;
-                //GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");
+                GameObject ToSpwanData = Instantiate(ToSpwan, PlacingPosition, Quaternion.Euler(PlacingRotation));
+                ToSpwanData.transform.parent = GameObject.Find("Expanded Store").transform;
+                if (!expdData.ExpandedData.Contains(ToSpwanData))
+                {
+                    expdData.ExpandedData.Add(ToSpwanData);
+                }
+
+                if (!expdData.storedStore.Contains(uniqueID.ID))
+                {
+                    GM.MaxCoin -= MaxCoinNeedToUnlock;
+                    MaxCoinNeedToUnlock = 0;
+                }
+
+                if (expdData.storedStore.Contains(uniqueID.ID))
+                {
+                    //GM.MaxCoin -= MaxCoinNeedToUnlock;
+                    MaxCoinNeedToUnlock = 0;
+                    if (X)
+                    {
+                        Bounds.GetComponent<BoxCollider>().center = new Vector3(BoundCenter.x, Bounds.GetComponent<BoxCollider>().center.y, Bounds.GetComponent<BoxCollider>().center.z);
+                        Bounds.GetComponent<BoxCollider>().size = new Vector3(BoundSize.x, Bounds.GetComponent<BoxCollider>().size.y, Bounds.GetComponent<BoxCollider>().size.z);
+                    }
+
+                    if (Z)
+                    {
+                        Bounds.GetComponent<BoxCollider>().center = new Vector3(Bounds.GetComponent<BoxCollider>().center.x, Bounds.GetComponent<BoxCollider>().center.y, BoundCenter.z);
+                        Bounds.GetComponent<BoxCollider>().size = new Vector3(Bounds.GetComponent<BoxCollider>().size.x, Bounds.GetComponent<BoxCollider>().size.y, BoundSize.z);
+                    }
+                }                
             }
-
-
-
-
-
-
-            /* if (facingSide == 1)
-             {
-                 if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
-                 {
-                     Instantiate(GM.LeftRoadFacingStation[StationCountData], lv.transform.position - new Vector3(xPos, 0, 0), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
-                     GM.MaxCoin -= MaxCoinNeedToUnlock;
-                     MaxCoinNeedToUnlock = 0;
-                     GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");                    
-                 }
-             }
-             if (facingSide == 2)
-             {
-                 if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
-                 {
-                     Instantiate(GM.RightRoadFacingStations[StationCountData], lv.transform.position - new Vector3(0, 0, zPos), Quaternion.Euler(PlacingRotation)).transform.parent = GameObject.Find("Expanded Store").transform;
-                     GM.MaxCoin -= MaxCoinNeedToUnlock;
-                     MaxCoinNeedToUnlock = 0;
-                     GM.UnlockStoreExpansionUI.gameObject.GetComponent<Animator>().Play("Out");                    
-                 }
-             }*/
         }
     }
 }

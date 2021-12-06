@@ -49,7 +49,8 @@ namespace FashionM.Core
 
         void Start()
         {
-            TapUI.SetActive(true);
+            if(!isTutorialOver)
+                TapUI.SetActive(true);
             UnlockStoreExpansionUI.SetActive(false);
             HireEmployee.SetActive(false);
             dayCompleteUI.SetActive(false);
@@ -128,6 +129,15 @@ namespace FashionM.Core
             isFinalTutorialOver = true;
             DayOff = false;
             x = false;
+            try
+            {
+                FindObjectOfType<playerStackingSystem>().resetStacking();
+                FindObjectOfType<EmpStackingSystem>().poofCloth();
+            }
+            catch
+            {
+
+            }
             StartCoroutine(startDayDelay(0.35f));            
             if (dayCompleteUI.activeSelf)
                 dayCompleteUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");
@@ -140,13 +150,12 @@ namespace FashionM.Core
 
         public void StartDay()
         {
-
             StartCoroutine(FstTutorialOver(0.2f));
         }
 
         IEnumerator FstTutorialOver(float t)
         {
-            FindObjectOfType<tutorialUI>().GetComponent<Animator>().Play("4");
+            FindObjectOfType<tutorialUI>().GetComponent<Animator>().Play("1");
             yield return new WaitForSeconds(t);
             isTutorialOver = true;
         }

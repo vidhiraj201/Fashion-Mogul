@@ -49,31 +49,36 @@ namespace FashionM.Core
         {
             if (other.gameObject.CompareTag("Destroy"))
             {
-                if (!poof && ClothObject.Count > 0)
-                {
-                    Destroy(Instantiate(paricalEffect, StackingObject.transform.position, Quaternion.identity), 2);
-                    poof = true;
-                }
-
-                if (ClothObject.Count > 0)
-                    {
-                        for (int i = 0; i <= ClothObject.Count - 1; i++)
-                        {
-                            if (ClothObject[i] != null)
-                            {
-                            Destroy(ClothObject[i]);
-                            }
-
-                            if (ClothObject[i] == null)
-                            {
-                                ClothObject.Remove(ClothObject[i]);
-                            }
-                        }
-                }
-
-             
+                resetStacking();
             }
                 
+        }
+
+
+        public void resetStacking()
+        {
+            if (!poof && ClothObject.Count > 0)
+            {
+                Destroy(Instantiate(paricalEffect, StackingObject.transform.position, Quaternion.identity), 2);
+                poof = true;
+            }
+
+            if (ClothObject.Count > 0)
+            {
+                for (int i = 0; i <= ClothObject.Count - 1; i++)
+                {
+                    if (ClothObject[i] != null)
+                    {
+                        Destroy(ClothObject[i]);
+                    }
+
+                    if (ClothObject[i] == null)
+                    {
+                        ClothObject.Remove(ClothObject[i]);
+                    }
+                }
+            }
+
         }
         //StackingObject.transform.position
         public void addClothToStack(float num, Material mat, GameObject cloth)

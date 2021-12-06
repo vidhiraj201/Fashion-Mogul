@@ -20,6 +20,8 @@ namespace FashionM.Movement
         public bool Hold;
 
         public bool isWalk;
+       
+
         void Start()
         {
             AM = FindObjectOfType<AudioManager>();
