@@ -17,6 +17,7 @@ public class dayCompleteReport : MonoBehaviour
         if (manager.CustomerOut >= manager.customerGoal && !manager.DayOff)
         {
             StartCoroutine(DayOffLag(0.2f));
+            FindObjectOfType<FashionM.Core.AudioManager>().source.PlayOneShot(FindObjectOfType<FashionM.Core.AudioManager>().EndOfDay, WinVolume);
         }
 
     }
@@ -33,15 +34,15 @@ public class dayCompleteReport : MonoBehaviour
 
         }
         FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
+        manager.DayOff = true;
         yield return new WaitForSeconds(t);
         manager.dayCompleteUI.SetActive(true);
         manager.DayStart = false;
-        manager.DayOff = true;
-        FindObjectOfType<FashionM.Core.AudioManager>().source.PlayOneShot(FindObjectOfType<FashionM.Core.AudioManager>().EndOfDay, WinVolume);
         if (manager.dayCompleteUI.activeSelf)
         {
             //manager.dayCompleteUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "$" + manager.MaxCoin.ToString();
         }
+        
 
     }
 }

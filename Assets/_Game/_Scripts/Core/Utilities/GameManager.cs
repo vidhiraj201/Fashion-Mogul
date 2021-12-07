@@ -8,6 +8,7 @@ namespace FashionM.Core
     public class GameManager : MonoBehaviour
     {
         private float CurrentCoin;
+        public float dailyAmount;
         private dayCompleteReport watch;
 
         public Animator Cinemachine;
@@ -76,7 +77,7 @@ namespace FashionM.Core
             if (dayCompleteUI.activeSelf)
             {
                 dayCompleteUI.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);
-                dayCompleteUI.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = MaxCoin.ToString();
+                dayCompleteUI.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = dailyAmount.ToString();
             }
 
             /* if (Input.GetKeyDown(KeyCode.P))
@@ -136,6 +137,7 @@ namespace FashionM.Core
 
             if (MaxCoin > CurrentCoin)
                 CurrentCoin += CountMultiplier;
+
             if (MaxCoin < CurrentCoin)
                 CurrentCoin -= CountMultiplier;
         }
@@ -149,10 +151,10 @@ namespace FashionM.Core
             StartCoroutine(startDayDelay(0.35f));            
             if (dayCompleteUI.activeSelf)
                 dayCompleteUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");
+            FindObjectOfType<SaveManager>().time = 0;
 
             CustomerIn = 0;
-            CustomerOut = 0;
-            /*customerGoal = customerGoal * 2;*/
+            CustomerOut = 0;        
             dayCount += 1;
         }
 
@@ -180,6 +182,7 @@ namespace FashionM.Core
 
             }
             DayStart = false;
+            dailyAmount = 0;
         }
 
       /* public void StartDayButton()

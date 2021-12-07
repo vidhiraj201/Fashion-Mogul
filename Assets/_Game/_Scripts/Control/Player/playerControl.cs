@@ -14,7 +14,7 @@ namespace FashionM.Control
         private GameManager manager;
         public Stores OR;
         public StoreExpansion SE;
-        [HideInInspector] public HRDesk HR;
+        public HRDesk HR;
 
         public Transform Arrow; 
         private void Start()
@@ -70,17 +70,18 @@ namespace FashionM.Control
             {
                 HR = other.gameObject.GetComponent<HRDesk>();
             }
-           
-            if (other.gameObject.CompareTag("Racks") /*&& GetComponent<FashionM.Movement.playerMovement>().direction.magnitude <= 0*/)
-            {
-                OR = other.gameObject.GetComponent<Stores>();
-                if (OR != null && !OR.isRackClosed)
-                    OR.playerIsNear = true;               
-            }           
+                
         }
 
         private void OnCollisionStay(Collision other)
         {
+
+            if (other.gameObject.CompareTag("Racks") && GetComponent<FashionM.Movement.playerMovement>().direction.magnitude < 0.1f)
+            {
+                OR = other.gameObject.GetComponent<Stores>();
+                if (OR != null && !OR.isRackClosed)
+                    OR.playerIsNear = true;
+            }
             /*     if (other.gameObject.CompareTag("Client"))
                  {
                      if (other.gameObject.GetComponent<clientControl>().NeedItem == StoreNumberStored)
@@ -92,7 +93,7 @@ namespace FashionM.Control
                      }
                  }*/
 
-            if (other.gameObject.CompareTag("Racks") /*&& GetComponent<FashionM.Movement.playerMovement>().direction.magnitude <= 0*/)
+            if (other.gameObject.CompareTag("Racks") && GetComponent<FashionM.Movement.playerMovement>().direction.magnitude < 0.1f)
             {
                 if (OR != null && !OR.isRackClosed && !OR.playerIsNear)
                     OR.playerIsNear = true;

@@ -42,22 +42,24 @@ namespace FashionM.Core
             {
                 GetComponent<Rigidbody>().isKinematic = true;
             }
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.gameObject.CompareTag("Player") && !GetComponent<Rigidbody>().isKinematic)
             {
                 StoreToPlayer = true;
                 GetComponent<Rigidbody>().isKinematic = true;
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().MaxCoin += Coins;
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().dailyAmount += Coins;
                 Destroy(this.gameObject, 0.15f);
             }
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Player"))
+            if (other.gameObject.CompareTag("Player") && GetComponent<Rigidbody>().isKinematic)
             {
                 StoreToPlayer = true;
                 GetComponent<Rigidbody>().isKinematic = true;
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().MaxCoin += Coins;
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().dailyAmount += Coins;
                 Destroy(this.gameObject, 0.15f);
             }
         }

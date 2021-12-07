@@ -180,7 +180,7 @@ namespace FashionM.Core
                 }
             }
 */
-            if (other.gameObject.CompareTag("Racks") /*&& GetComponent<FashionM.Movement.playerMovement>().direction.magnitude <= 0*/)
+            if (other.gameObject.CompareTag("Racks") && GetComponent<FashionM.Movement.playerMovement>().direction.magnitude < 0.1f)
             {
                 OR = other.gameObject.GetComponent<Stores>();
                 if (OR != null && !OR.isRackClosed)

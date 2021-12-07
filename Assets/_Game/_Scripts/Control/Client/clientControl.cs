@@ -42,7 +42,7 @@ namespace FashionM.Control
         [HideInInspector]public bool coinSpwan = false;
         private GameManager gm;
 
-        public bool StopeWalking;
+        public bool StopWalking;
         public void Awake()
         {
             if(lv.rackOpen.Count>0)
@@ -151,12 +151,12 @@ namespace FashionM.Control
         {
             if (gm.CustomerIn <= gm.customerGoal)
             {
-                StopeWalking = false;
+                StopWalking = false;
             }
 
             if (gm.CustomerIn >= gm.customerGoal && !CCountAdded)
             {
-                StopeWalking = true;
+                StopWalking = true;
                 //StartCoroutine(edlay(0.5f));
             }
 
@@ -223,7 +223,7 @@ namespace FashionM.Control
                 }
 
                 if (gm.CustomerIn >= gm.customerGoal+1)
-                    StopeWalking = true;
+                    StopWalking = true;
             }
             if (!gm.isFinalTutorialOver)
             {

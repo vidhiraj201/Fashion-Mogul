@@ -93,13 +93,13 @@ namespace FashionM.Movement
 
 
 
-            if (ClientPosition != null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer && !transform.GetComponent<clientControl>().StopeWalking && gm.DayStart)
+            if (ClientPosition != null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer && !transform.GetComponent<clientControl>().StopWalking && gm.DayStart)
                 agent.SetDestination(ClientPosition.transform.position);
 
-            if (ClientPosition == null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer || transform.GetComponent<clientControl>().StopeWalking || !gm.DayStart)
+            if (ClientPosition == null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer || transform.GetComponent<clientControl>().StopWalking || !gm.DayStart)
                 agent.SetDestination(transform.position);
 
-            if (transform.GetComponent<clientControl>().TradeComp)
+            if (transform.GetComponent<clientControl>().TradeComp || transform.GetComponent<clientControl>().StopWalking)
                 agent.SetDestination(GetComponent<clientControl>().lv.END.position);
 
             Anime.SetFloat("speed", agent.velocity.magnitude);

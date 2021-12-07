@@ -29,15 +29,18 @@ namespace FashionM.Movement
             cam = Camera.main.transform;
         }
 
+        [SerializeField] float magnitudeTest;
         void Update()
         {
             movement();
             transform.position = new Vector3(transform.position.x, 0, transform.position.z);
             playerAnimation.SetBool("hold", Hold);
+            magnitudeTest = direction.magnitude;
+
+            
         }
 
-        [HideInInspector]public Vector3 direction;
-       // [SerializeField]private Vector3 RbVelocity;
+        [HideInInspector]public Vector3 direction;       
         void movement()
         {
             ///RbVelocity = GetComponent<Rigidbody>().velocity;

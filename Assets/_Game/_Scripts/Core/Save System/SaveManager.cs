@@ -16,14 +16,14 @@ namespace FashionM.Core
         // Start is called before the first frame update
         void Awake()
         {
-            if(!File.Exists(Application.dataPath + "_Game/save.text"))
+            if(!File.Exists(Application.dataPath + "/save.text"))
             {
 
             }
 
             playerM = GameObject.Find("Player").GetComponent<Movement.playerMovement>();
             gameManager = GameObject.Find("GameManager").GetComponent<Core.GameManager>();
-            //Load();
+            Load();
 
            SaveGameData saveGame = new SaveGameData {};
             string saveString =  JsonUtility.ToJson(saveGame);
@@ -33,15 +33,23 @@ namespace FashionM.Core
             //print(loadedSaveGame.TotalAmount +" "+loadedSaveGame.playerPosition);
         }
 
-        private void OnApplicationQuit()
+/*        private void OnApplicationQuit()
         {
-            //Save();
-        }
+            //
+        }*/
 
-
+        public float time = 20;
         void Update()
         {
-
+            if (time >= 0)
+            {
+                time -= Time.deltaTime;
+            }
+            if (time <= 0)
+            {
+                Save();
+                time = 30;
+            }
         }
 
         private void Save()
@@ -62,15 +70,15 @@ namespace FashionM.Core
                 do3 = BOFT.do3
             };
             string saveString = JsonUtility.ToJson(saveGame);
-            File.WriteAllText(Application.dataPath + "/_Game/save.text", saveString);
+            File.WriteAllText(Application.dataPath + "/save.text", saveString);
             print("Game Saved");
         }
 
         private void Load()
         {
-            if(File.Exists(Application.dataPath + "_Game/save.text"))
+            if(File.Exists(Application.dataPath + "/save.text"))
             {
-                string saveString = File.ReadAllText(Application.dataPath + "/_Game/save.text");
+                string saveString = File.ReadAllText(Application.dataPath + "/save.text");
 
                 SaveGameData saveGame =  JsonUtility.FromJson<SaveGameData>(saveString);
                 gameManager.MaxCoin = saveGame.TotalAmount;

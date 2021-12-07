@@ -154,9 +154,9 @@ namespace FashionM.Core
             }
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionStay(Collision collision)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.gameObject.CompareTag("Player") && FindObjectOfType<FashionM.Movement.playerMovement>().direction.magnitude<0.1f)
             {
                 isPlayerNear = true;
 /*                StoreUpgradesPrice.gameObject.SetActive(true);
