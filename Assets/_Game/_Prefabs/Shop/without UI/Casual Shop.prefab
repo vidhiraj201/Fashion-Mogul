@@ -5339,7 +5339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1446029197202373176
 Transform:
   m_ObjectHideFlags: 0
@@ -26655,7 +26655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &430157031377178387
 Transform:
   m_ObjectHideFlags: 0
@@ -37021,7 +37021,7 @@ MonoBehaviour:
   mat: {fileID: 2100000, guid: 665e4e7019804b542956559ea5f05ecb, type: 2}
   RackNumber: 2
   giveItemToPlayter: 2
-  waitTimer: 1
+  waitTimer: 1.5
   CoinReduceSpeed: 1
   MaxCoinNeedToUnlock: 500
   playerIsNear: 0
@@ -38064,7 +38064,7 @@ MonoBehaviour:
   mat: {fileID: 2100000, guid: c505d09ab16e324478abfad41705c2c8, type: 2}
   RackNumber: 3
   giveItemToPlayter: 3
-  waitTimer: 1
+  waitTimer: 1.5
   CoinReduceSpeed: 1
   MaxCoinNeedToUnlock: 500
   playerIsNear: 0
@@ -40143,7 +40143,7 @@ MonoBehaviour:
   mat: {fileID: 2100000, guid: 6cf899aaacd9d644984072911aa9a6ae, type: 2}
   RackNumber: 0
   giveItemToPlayter: 0
-  waitTimer: 1
+  waitTimer: 1.5
   CoinReduceSpeed: 0
   MaxCoinNeedToUnlock: 0
   playerIsNear: 0
@@ -41711,7 +41711,7 @@ MonoBehaviour:
   mat: {fileID: 2100000, guid: 2d39446bbbfe98045a33bb2d99d3c47b, type: 2}
   RackNumber: 1
   giveItemToPlayter: 1
-  waitTimer: 1
+  waitTimer: 1.5
   CoinReduceSpeed: 1
   MaxCoinNeedToUnlock: 500
   playerIsNear: 0
@@ -42695,9 +42695,9 @@ MonoBehaviour:
   - {fileID: 9158817499442540424}
   - {fileID: 9158817499824659405}
   - {fileID: 9158817500078297375}
-  - {fileID: 9158817500623661603}
-  - {fileID: 9158817499889591217}
   - {fileID: 9158817500541599193}
+  - {fileID: 9158817499889591217}
+  - {fileID: 9158817500623661603}
   Day3:
   - {fileID: 9158817500221699830}
   Day4:

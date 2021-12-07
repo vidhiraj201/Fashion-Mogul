@@ -16,21 +16,26 @@ namespace FashionM.Core
         // Start is called before the first frame update
         void Awake()
         {
+            if(!File.Exists(Application.dataPath + "_Game/save.text"))
+            {
+
+            }
+
             playerM = GameObject.Find("Player").GetComponent<Movement.playerMovement>();
             gameManager = GameObject.Find("GameManager").GetComponent<Core.GameManager>();
-            Load();
+            //Load();
 
            SaveGameData saveGame = new SaveGameData {};
             string saveString =  JsonUtility.ToJson(saveGame);
-            print(saveString);
+            //print(saveString);
 
             SaveGameData loadedSaveGame = JsonUtility.FromJson<SaveGameData>(saveString);
-            print(loadedSaveGame.TotalAmount +" "+loadedSaveGame.playerPosition);
+            //print(loadedSaveGame.TotalAmount +" "+loadedSaveGame.playerPosition);
         }
 
         private void OnApplicationQuit()
         {
-            Save();
+            //Save();
         }
 
 
@@ -57,15 +62,15 @@ namespace FashionM.Core
                 do3 = BOFT.do3
             };
             string saveString = JsonUtility.ToJson(saveGame);
-            File.WriteAllText(Application.dataPath + "/save.text", saveString);
+            File.WriteAllText(Application.dataPath + "/_Game/save.text", saveString);
             print("Game Saved");
         }
 
         private void Load()
         {
-            if(File.Exists(Application.dataPath + "/save.text"))
+            if(File.Exists(Application.dataPath + "_Game/save.text"))
             {
-                string saveString = File.ReadAllText(Application.dataPath + "/save.text");
+                string saveString = File.ReadAllText(Application.dataPath + "/_Game/save.text");
 
                 SaveGameData saveGame =  JsonUtility.FromJson<SaveGameData>(saveString);
                 gameManager.MaxCoin = saveGame.TotalAmount;
@@ -80,7 +85,6 @@ namespace FashionM.Core
             }
         }
  
-
 
         Vector3 playerPosition()
         {

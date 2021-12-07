@@ -214,15 +214,17 @@ namespace FashionM.Core
                     expdData.ExpandedData.Add(ToSpwanData);
                 }
 
-                if (!expdData.storedStore.Contains(uniqueID.ID))
+                if (!expdData.storedStore.Contains(uniqueID.ID) )
                 {
+                    print("Calling this !");
                     GM.MaxCoin -= MaxCoinNeedToUnlock;
                     MaxCoinNeedToUnlock = 0;
                 }
 
                 if (expdData.storedStore.Contains(uniqueID.ID))
                 {
-                    //GM.MaxCoin -= MaxCoinNeedToUnlock;
+                    print("Calling this");
+                    GM.MaxCoin -= MaxCoinNeedToUnlock;
                     MaxCoinNeedToUnlock = 0;
                     if (X)
                     {

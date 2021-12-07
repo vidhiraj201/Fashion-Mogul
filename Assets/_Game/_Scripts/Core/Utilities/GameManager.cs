@@ -10,6 +10,8 @@ namespace FashionM.Core
         private float CurrentCoin;
         private dayCompleteReport watch;
 
+        public Animator Cinemachine;
+
         public TextMeshProUGUI CoinCountText;
         public TextMeshProUGUI CustomerUI;
         public TextMeshProUGUI DayCountUI;
@@ -86,6 +88,21 @@ namespace FashionM.Core
                 StartCoroutine(StartGame(1.2f));
                 x = true;
             }
+
+
+            if (!DayStart)
+            {
+                try
+                {
+                    FindObjectOfType<playerStackingSystem>().resetStacking();
+                    FindObjectOfType<EmpStackingSystem>().poofCloth();
+                }
+                catch
+                {
+
+                }
+            }
+
         }
 
 
@@ -128,16 +145,7 @@ namespace FashionM.Core
         {
             isFinalTutorialOver = true;
             DayOff = false;
-            x = false;
-            try
-            {
-                FindObjectOfType<playerStackingSystem>().resetStacking();
-                FindObjectOfType<EmpStackingSystem>().poofCloth();
-            }
-            catch
-            {
-
-            }
+            x = false;            
             StartCoroutine(startDayDelay(0.35f));            
             if (dayCompleteUI.activeSelf)
                 dayCompleteUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");
@@ -162,6 +170,15 @@ namespace FashionM.Core
         IEnumerator startDayDelay(float t)
         {
             yield return new WaitForSeconds(t);
+            try
+            {
+                FindObjectOfType<playerStackingSystem>().resetStacking();
+                FindObjectOfType<EmpStackingSystem>().poofCloth();
+            }
+            catch
+            {
+
+            }
             DayStart = false;
         }
 
@@ -177,8 +194,9 @@ namespace FashionM.Core
         {
             dayStartUI.GetComponent<Animator>().Play("In");
             FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
-            yield return new WaitForSeconds(t);
-            dayStartUI.GetComponent<Animator>().Play("Out");            
+            yield return new WaitForSeconds(t);            
+            dayStartUI.GetComponent<Animator>().Play("Out");    
+            
         }
     }
 }

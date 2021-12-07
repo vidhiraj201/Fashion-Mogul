@@ -71,7 +71,7 @@ namespace FashionM.Control
                 HR = other.gameObject.GetComponent<HRDesk>();
             }
            
-            if (other.gameObject.CompareTag("Racks"))
+            if (other.gameObject.CompareTag("Racks") /*&& GetComponent<FashionM.Movement.playerMovement>().direction.magnitude <= 0*/)
             {
                 OR = other.gameObject.GetComponent<Stores>();
                 if (OR != null && !OR.isRackClosed)
@@ -92,7 +92,7 @@ namespace FashionM.Control
                      }
                  }*/
 
-            if (other.gameObject.CompareTag("Racks"))
+            if (other.gameObject.CompareTag("Racks") /*&& GetComponent<FashionM.Movement.playerMovement>().direction.magnitude <= 0*/)
             {
                 if (OR != null && !OR.isRackClosed && !OR.playerIsNear)
                     OR.playerIsNear = true;

@@ -166,7 +166,7 @@ namespace FashionM.Core
        
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.CompareTag("Player") && isRackClosed)
+            if (collision.gameObject.CompareTag("Player") && isRackClosed && collision.gameObject.GetComponent<FashionM.Movement.playerMovement>().direction.magnitude <= 0)
             {
                 PlayerIsOnClosedRack = true;                    
             }
@@ -176,7 +176,7 @@ namespace FashionM.Core
         {
             if (collision.gameObject.CompareTag("Player") && isRackClosed)
             {
-                if (gm.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
+                if (gm.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0 && collision.gameObject.GetComponent<FashionM.Movement.playerMovement>().direction.magnitude<=0)
                 {
                     MaxCoinNeedToUnlock -= CoinReduceSpeed*20;
                     gm.MaxCoin -= CoinReduceSpeed*20;

@@ -167,7 +167,7 @@ namespace FashionM.Core
                 }
             }
         }
-        private void OnCollisionEnter(Collision other)
+        private void OnCollisionStay(Collision other)
         {
             /*if (other.gameObject.CompareTag("Client"))
             {
@@ -180,7 +180,7 @@ namespace FashionM.Core
                 }
             }
 */
-            if (other.gameObject.CompareTag("Racks"))
+            if (other.gameObject.CompareTag("Racks") /*&& GetComponent<FashionM.Movement.playerMovement>().direction.magnitude <= 0*/)
             {
                 OR = other.gameObject.GetComponent<Stores>();
                 if (OR != null && !OR.isRackClosed)
