@@ -40,10 +40,15 @@ namespace FashionM.Movement
             
             moveTowardSlot();
 
+            if (reched && !GetComponent<clientControl>().startTreding)
+            {
+                gameObject.layer = 10;
+                GetComponent<clientControl>().startTreding = true;
+            }
             //PurchesUI.transform.forward = -Camera.main.transform.forward;
             //PurchesUI.transform.LookAt(Camera.main.transform.position);
 
-            if(reched && !GetComponent<clientControl>().clothTookFromEmpOrPlayer)
+            if (reched && !GetComponent<clientControl>().clothTookFromEmpOrPlayer)
             {
                 transform.rotation = Quaternion.Euler(0, lookRotation, 0);
             }

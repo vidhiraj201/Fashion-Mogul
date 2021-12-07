@@ -138,17 +138,18 @@ namespace FashionM.Control
                 if (timerToTakeItemFromPlayer <= 0)
                 {
                     TradeComp = true;
-                    gameObject.layer = 17;
                     //GetComponent<ClientUitilities>().stopTrade();
                     playerIsNear = false;
                     //waitTimerUI.gameObject.SetActive(false);
                     timerToTakeItemFromPlayer = waitTimer;
+                    //gameObject.layer = 17;
                 }
             }
         }
 
         private void FixedUpdate()
         {
+            CheckForCustomer();
             if (gm.CustomerIn <= gm.customerGoal)
             {
                 StopWalking = false;
@@ -168,11 +169,7 @@ namespace FashionM.Control
             {
                 gameObject.layer = 17;
             }
-            if (GetComponent<clientMovement>().reched && !startTreding)
-            {
-                gameObject.layer = 10;
-                startTreding = true;
-            }
+            
         }
 
         public void clientNeedItemRandomize()
@@ -206,25 +203,42 @@ namespace FashionM.Control
             }
         }
         [HideInInspector] public bool particalExplod;
+
+
+        public void CheckForCustomer()
+        {
+            if(gm.Customer.Count > gm.customerGoal || gm.CustomerIn > gm.customerGoal)
+            {
+                gm.Customer[gm.Customer.Count - 1].GetComponent<clientControl>().StopWalking = true;
+
+                //gm.Customer.Remove(gm.Customer[gm.Customer.Count - 1]);
+            }
+
+          /*  if (gm.CustomerIn >= gm.customerGoal + 1)
+                StopWalking = true;*/
+        }
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("DoorChecker"))
             {
-                if (!CCountAdded)
+                if(!gm.Customer.Contains(this.gameObject) && !CCountAdded)
                 {
                     gm.CustomerIn += 1;
                     CCountAdded = true;
+                    gm.Customer.Add(this.gameObject);
                 }
 
-                if (CCountAdded && clothTookFromEmpOrPlayer)
+                if (CCountAdded && clothTookFromEmpOrPlayer && gm.Customer.Contains(this.gameObject))
                 {
                     gm.CustomerOut += 1;
+                    gm.Customer.Remove(this.gameObject);
                     CCountAdded = false;
                 }
+/*
 
                 if (gm.CustomerIn >= gm.customerGoal+1)
                     StopWalking = true;
-            }
+*/            }
             if (!gm.isFinalTutorialOver)
             {
                 if (FindObjectOfType<tutorialUI>().StartCustomer.Count < 3 && !FindObjectOfType<tutorialUI>().StartCustomer.Contains(this.transform.gameObject))

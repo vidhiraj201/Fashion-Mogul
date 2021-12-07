@@ -12523,6 +12523,7 @@ MonoBehaviour:
   CoinCountText: {fileID: 1321967205}
   CustomerUI: {fileID: 534690876}
   DayCountUI: {fileID: 488353100}
+  Customer: []
   RightRoadFacingStations:
   - {fileID: 3312067453382761137, guid: e1cbf0c3f85b3054b89128325006ebc3, type: 3}
   LeftRoadFacingStation:
@@ -14844,15 +14845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casual Shop
       objectReference: {fileID: 0}
-    - target: {fileID: 9158817500552824380, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9158817500552824381, guid: 6b52198032c0f2b41a747d715278142d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9158817500552824381, guid: 6b52198032c0f2b41a747d715278142d,
         type: 3}

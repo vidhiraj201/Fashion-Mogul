@@ -18,6 +18,8 @@ namespace FashionM.Core
         public TextMeshProUGUI DayCountUI;
 
 
+        public List<GameObject> Customer = new List<GameObject>();
+
         public List<GameObject> RightRoadFacingStations = new List<GameObject>();
         public List<GameObject> LeftRoadFacingStation = new List<GameObject>();
         public List<GameObject> LeftAndRightFacingStation = new List<GameObject>();

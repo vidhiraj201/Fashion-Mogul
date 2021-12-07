@@ -53,7 +53,7 @@ namespace FashionM.Core
 
                     if (ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber == other.gameObject.GetComponent<clientControl>().NeedItem)
                     {
-                        other.gameObject.layer = 17;
+                        //other.gameObject.layer = 17;
 
                         GetComponent<empMovement>().AM.source.PlayOneShot(GetComponent<empMovement>().AM.PandD, PickupDileverVolume);
                         ClothObject[i].GetComponent<Cloths>().throwCloth(other.gameObject.transform);    

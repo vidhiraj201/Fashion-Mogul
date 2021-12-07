@@ -123,7 +123,7 @@ namespace FashionM.Core
 
                     if (ClothObject[i].GetComponent<Cloths>().ClothIdentityNumber == other.gameObject.GetComponent<clientControl>().NeedItem)
                     {
-                        other.gameObject.layer = 17;
+                        //other.gameObject.layer = 17;
                         GetComponent<playerMovement>().AM.source.PlayOneShot(GetComponent<playerMovement>().AM.PandD, PickupDileverVolume);
                         ClothObject[i].GetComponent<Cloths>().throwCloth(other.gameObject.transform);                        
                         other.gameObject.GetComponent<clientControl>().playerIsNear = true;
