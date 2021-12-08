@@ -155,20 +155,15 @@ public class BlackOutsForTutorial : MonoBehaviour
         }
         if (gm.dayCount >= 3 && Day4.Count > 0 && do3 && !itrationDone_3 && !gm.DayOff && gm.DayStart)
         {
-            for (int i = 0; i <= Day4.Count - 1;)
+            for (int i = 0; i <= Day4.Count - 1;i++)
             {
-                try
+                if (Day4[i] != null && !Day4[i].GetComponent<FashionM.Core.StoreExpansion>().enabled)
                 {
-                    Day4[i].SetActive(true);
-                    i++;
-                    if (i >= 3)
-                        itrationDone_3 = true;
+                    Day4[i].GetComponent<FashionM.Core.StoreExpansion>().enabled = true;
+                    Day4[i].transform.GetChild(0).gameObject.SetActive(true);
                 }
-                catch
-                {
-
-                }
-
+                if (i >= Day4.Count - 1)
+                    itrationDone_3 = true;
             }
         }
     }
@@ -211,7 +206,7 @@ public class BlackOutsForTutorial : MonoBehaviour
     IEnumerator day4(float delay)
     {
         yield return new WaitForSeconds(0.5f);
-        for (int i = 0; i <= Day4.Count - 1;)
+        for (int i = 0; i <= Day4.Count - 1; i++)
         {
             yield return new WaitForSeconds(delay);
             if (Day4[i] != null && !Day4[i].GetComponent<FashionM.Core.StoreExpansion>().enabled)
@@ -220,10 +215,10 @@ public class BlackOutsForTutorial : MonoBehaviour
                 Day4[i].transform.GetChild(0).gameObject.SetActive(true);
                 //Day4[i].SetActive(true);
                 Destroy(Instantiate(particalPoofBig, Day4[i].transform.localPosition + new Vector3(0, 1f, 0), Quaternion.Euler(90, 0, 0)), 1.5f);
-                i++;
+                if (i >= Day4.Count-1)
+                    do3 = true;
             }
-            if (i >= Day4.Count )
-                do3 = true;
+            
         }
     }
 
