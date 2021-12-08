@@ -14,7 +14,7 @@ public class dayCompleteReport : MonoBehaviour
     public float WinVolume;
     void Update()
     {
-        if (manager.CustomerOut >= manager.customerGoal && !manager.DayOff)
+        if (manager.CustomerOut >= manager.TotalCustomerGoal && !manager.DayOff)
         {
             StartCoroutine(DayOffLag(0.2f));
             FindObjectOfType<FashionM.Core.AudioManager>().source.PlayOneShot(FindObjectOfType<FashionM.Core.AudioManager>().EndOfDay, WinVolume);

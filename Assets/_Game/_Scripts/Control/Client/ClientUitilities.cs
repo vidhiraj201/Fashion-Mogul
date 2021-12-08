@@ -28,7 +28,7 @@ namespace FashionM.Control
         {
             if (empList.Count >= 1)
             {
-                if (!GetComponent<clientControl>().clothTookFromEmpOrPlayer && GetComponent<clientMovement>().reched)
+                if (!GetComponent<clientControl>().clothTookFromEmpOrPlayer && GetComponent<clientMovement>().reched && Target==null)
                 {
                     checkForEmp();
                 }
@@ -117,7 +117,10 @@ namespace FashionM.Control
                 if (empList.Count >= 1 && Target == null)
                 {
                     int x = Random.Range(0, empList.Count);
-                    Target = empList[x];
+                if (!empList[x].GetComponent<empControl>().Occupied)
+                {
+                    Target = empList[x];                
+                }
                 }
 
                 if (Target != null)

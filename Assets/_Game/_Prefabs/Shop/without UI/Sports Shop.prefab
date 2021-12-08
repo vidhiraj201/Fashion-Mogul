@@ -8905,6 +8905,8 @@ MonoBehaviour:
   RackNumber2: {fileID: 4422426763052716792}
   RackNumber3: {fileID: 4422426763435009725}
   rackOpen: 
+  Customers: []
+  a: 1.5
 --- !u!114 &1011484422355006994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10611,7 +10613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4422426763052716794}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 21.8, y: 1.29, z: -11.8}
+  m_LocalPosition: {x: 22.15, y: 1.29, z: -10.63}
   m_LocalScale: {x: 0.75, y: 0.01, z: 0.75}
   m_Children:
   - {fileID: 4422426763207194935}
@@ -13165,8 +13167,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.764847, y: 3.1107988, z: 6.81968}
-  m_Center: {x: 1.5277481, y: 1.5643315, z: -7.351581}
+  m_Size: {x: 4.6778183, y: 3.1107988, z: 6.7326517}
+  m_Center: {x: 2.7026176, y: 1.5643315, z: -7.308067}
 --- !u!1 &4422426763867060753
 GameObject:
   m_ObjectHideFlags: 0
@@ -13372,7 +13374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4422426763914563978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.88, y: 0, z: -12.3}
+  m_LocalPosition: {x: 17.08, y: 0, z: -10.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4422426762063896029}

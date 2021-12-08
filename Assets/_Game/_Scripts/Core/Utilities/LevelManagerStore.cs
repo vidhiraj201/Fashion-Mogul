@@ -37,6 +37,8 @@ namespace FashionM.Core
         [Header("Rack Open")]
         public List<int> rackOpen = new List<int>();
 
+        public List<GameObject> Customers = new List<GameObject>();
+
         private void Awake()
         {
             RackNumberAdding();
@@ -45,11 +47,17 @@ namespace FashionM.Core
         {
             gm = FindObjectOfType<GameManager>();
             RackNumberAdding();
+
+            for(int i = 0; i <= Customers.Count - 1; i++)
+            {
+                Customers[i].GetComponent<FashionM.Control.clientControl>().StopWalking = false;
+            }
         }
 
         void Update()
         {
             RackNumberAdding();
+            customerInRow();
         }
         void RackNumberAdding()
         {
@@ -62,6 +70,50 @@ namespace FashionM.Core
             if (Rack3 && !rackOpen.Contains(RackNumber3.RackNumber))
                 rackOpen.Add(RackNumber3.RackNumber);
         }
+
+        public float a = 1.5f;
+        int i;
+        void customerInRow()
+        {
+            if(gm.customerGoal>0 && Customers.Count >= 0)
+            {
+                if (a >= 0)
+                    a -= Time.deltaTime;
+
+                if (a <= 0)
+                {
+                    if (i <= Customers.Count-1)
+                    {
+                        Customers[i].GetComponent<FashionM.Control.clientControl>().StopWalking = false;
+                        i++;
+                        a = 1.5f;
+                    }
+                }
+            }
+
+            if(Customers.Count >= 0 && gm.customerGoal>0)
+            {
+                for (int i = 0; i <= Customers.Count - 1; i++)
+                {
+                    Customers[i].GetComponent<FashionM.Control.clientControl>().StopWalking = false;
+                }
+            }
+
+            if (Customers.Count >= 0 && i == Customers.Count - 1 && gm.customerGoal > 0)
+            {
+                i = 0;
+            }
+
+            if (Customers.Count < 0)
+            {
+                a = 1.5f;
+            }
+        }
+
+
     }
+
+
+
 
 }

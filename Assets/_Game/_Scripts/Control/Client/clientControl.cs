@@ -50,6 +50,14 @@ namespace FashionM.Control
         }
         private void Start()
         {
+
+            StopWalking = true;
+
+            if (!lv.Customers.Contains(this.gameObject))
+                lv.Customers.Add(this.gameObject);
+
+
+
             if (lv.rackOpen.Count > 0) 
                 NeedItem = lv.rackOpen[0];
 
@@ -149,26 +157,26 @@ namespace FashionM.Control
 
         private void FixedUpdate()
         {
-            CheckForCustomer();
-            if (gm.CustomerIn <= gm.customerGoal)
+           // CheckForCustomer();
+           if (gm.customerGoal <= 0 && !CCountAdded)
             {
-                StopWalking = false;
+                StopWalking = true;
             }
 
-            if (gm.CustomerIn >= gm.customerGoal && !CCountAdded)
+          /*  if (gm.CustomerIn >= gm.customerGoal && !CCountAdded)
             {
                 StopWalking = true;
                 //StartCoroutine(edlay(0.5f));
-            }
+            }*/
 
 /*
             if (NeedItem == 0 && !tredingComplete)
                 clientNeedItemRandomize();*/
 
-            if (!GetComponent<clientMovement>().reched)
+            /*if (!GetComponent<clientMovement>().reched)
             {
                 gameObject.layer = 17;
-            }
+            }*/
             
         }
 
@@ -205,40 +213,51 @@ namespace FashionM.Control
         [HideInInspector] public bool particalExplod;
 
 
-        public void CheckForCustomer()
+        /*public void CheckForCustomer()
         {
-            if(gm.Customer.Count > gm.customerGoal || gm.CustomerIn > gm.customerGoal)
+            if(gm.customerGoal <= 0 && gm.Customer.Count > 0)
             {
                 gm.Customer[gm.Customer.Count - 1].GetComponent<clientControl>().StopWalking = true;
 
                 //gm.Customer.Remove(gm.Customer[gm.Customer.Count - 1]);
             }
 
-          /*  if (gm.CustomerIn >= gm.customerGoal + 1)
-                StopWalking = true;*/
-        }
+           
+        }*/
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.CompareTag("DoorChecker"))
             {
-                if(!gm.Customer.Contains(this.gameObject) && !CCountAdded)
+                if(gm.customerGoal > 0 && !CCountAdded && lv.Customers.Contains(this.gameObject))
                 {
                     gm.CustomerIn += 1;
+                    gm.customerGoal -= 1;
                     CCountAdded = true;
-                    gm.Customer.Add(this.gameObject);
+                    lv.Customers.Remove(this.gameObject);
+                    
                 }
 
-                if (CCountAdded && clothTookFromEmpOrPlayer && gm.Customer.Contains(this.gameObject))
+                if (CCountAdded && clothTookFromEmpOrPlayer)
                 {
-                    gm.CustomerOut += 1;
-                    gm.Customer.Remove(this.gameObject);
-                    CCountAdded = false;
-                }
-/*
-
-                if (gm.CustomerIn >= gm.customerGoal+1)
                     StopWalking = true;
-*/            }
+                    gm.CustomerOut += 1;
+                    CCountAdded = false;
+
+                    if (!lv.Customers.Contains(this.gameObject))
+                    {
+                        lv.Customers.Add(this.gameObject);
+                    }
+                }
+
+/*                if (gm.CustomerIn > gm.customerGoal)
+                    StopWalking = true;*/
+
+                /*
+
+                                if (gm.CustomerIn >= gm.customerGoal+1)
+                                    StopWalking = true;
+                */
+            }
             if (!gm.isFinalTutorialOver)
             {
                 if (FindObjectOfType<tutorialUI>().StartCustomer.Count < 3 && !FindObjectOfType<tutorialUI>().StartCustomer.Contains(this.transform.gameObject))

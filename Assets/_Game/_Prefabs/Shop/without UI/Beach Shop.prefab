@@ -6935,6 +6935,8 @@ MonoBehaviour:
   RackNumber2: {fileID: 744537191819815287}
   RackNumber3: {fileID: 744537191664180530}
   rackOpen: 
+  Customers: []
+  a: 1.5
 --- !u!114 &7606591070393294237
 MonoBehaviour:
   m_ObjectHideFlags: 0

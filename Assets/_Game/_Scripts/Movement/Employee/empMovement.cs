@@ -45,6 +45,7 @@ namespace FashionM.Movement
 
         void Update()
         {
+            movementTowardsTarget();
             moveAndRotateTowardsTarget();
 
             Anime.SetBool("hold", Hold);
@@ -55,14 +56,13 @@ namespace FashionM.Movement
                 Hold = false;
         }
 
-        private void FixedUpdate()
-        {
-            movementTowardsTarget();
-        }
-
         void moveAndRotateTowardsTarget()
         {
-            
+            if (agent.velocity.magnitude < 0.1f)
+            {
+                /*GetComponent<empControl>().StoreNumberStored = -1;*/
+            }
+
             if (agent.velocity.magnitude > 0.1f)
             {                
                 float targetAngle = Mathf.Atan2(agent.velocity.x, agent.velocity.z) * Mathf.Rad2Deg;
@@ -90,7 +90,6 @@ namespace FashionM.Movement
 
             }
 
-         /*   if()*/
          
             if (ClientNeedItem < 0 && GetComponent<empControl>().StoreNumberStored <= -1)
                 return;

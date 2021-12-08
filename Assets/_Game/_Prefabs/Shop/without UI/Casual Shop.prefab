@@ -37086,8 +37086,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.7636037, y: 15.253511, z: 4.9333334}
-  m_Center: {x: 0.13408566, y: 3.6419451, z: -2.2738302}
+  m_Size: {x: 4.7636037, y: 15.253511, z: 5.319572}
+  m_Center: {x: 0.13408566, y: 3.6419451, z: -2.4669497}
 --- !u!114 &9158817499442540426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37112,7 +37112,7 @@ MonoBehaviour:
   giveItemToPlayter: 2
   waitTimer: 1.15
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 500
+  MaxCoinNeedToUnlock: 1000
   playerIsNear: 0
   EmpIsNear: 0
   isRackClosed: 1
@@ -38129,8 +38129,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.6197515, y: 9.29478, z: 4.9784293}
-  m_Center: {x: 0.045201298, y: 0.954371, z: -2.3057284}
+  m_Size: {x: 4.6197515, y: 9.29478, z: 5.585377}
+  m_Center: {x: 0.0452013, y: 0.954371, z: -2.6092026}
 --- !u!114 &9158817499824659407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38155,7 +38155,7 @@ MonoBehaviour:
   giveItemToPlayter: 3
   waitTimer: 1.15
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 500
+  MaxCoinNeedToUnlock: 1000
   playerIsNear: 0
   EmpIsNear: 0
   isRackClosed: 1
@@ -40154,7 +40154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9158817500185000713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.58, y: 0, z: -12.6}
+  m_LocalPosition: {x: 18.15, y: 0, z: -11.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9158817500600246447}
@@ -40208,8 +40208,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.273018, y: 13.935214, z: 3.9873753}
-  m_Center: {x: -0.52085525, y: 2.519834, z: -3.4355133}
+  m_Size: {x: 6.273018, y: 13.935214, z: 5.8362355}
+  m_Center: {x: -0.52085525, y: 2.519834, z: -4.359944}
 --- !u!114 &9158817500189290551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40548,7 +40548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9158817500328612295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.27, y: 0, z: 11.2}
+  m_LocalPosition: {x: 18.45, y: 0, z: 11.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9158817500600246447}
@@ -41776,8 +41776,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.2715173, y: 11.291226, z: 5.3032475}
-  m_Center: {x: -0.07220745, y: 0.68590754, z: -3.8829706}
+  m_Size: {x: 6.2715173, y: 11.291226, z: 7.84543}
+  m_Center: {x: -0.07220744, y: 0.68590754, z: -5.1540613}
 --- !u!114 &9158817500834148919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41802,7 +41802,7 @@ MonoBehaviour:
   giveItemToPlayter: 1
   waitTimer: 1.15
   CoinReduceSpeed: 1
-  MaxCoinNeedToUnlock: 500
+  MaxCoinNeedToUnlock: 1000
   playerIsNear: 0
   EmpIsNear: 0
   isRackClosed: 1
@@ -42652,6 +42652,8 @@ MonoBehaviour:
   RackNumber2: {fileID: 9158817499442540426}
   RackNumber3: {fileID: 9158817499824659407}
   rackOpen: 
+  Customers: []
+  a: 2
 --- !u!114 &5853874614473607056
 MonoBehaviour:
   m_ObjectHideFlags: 0

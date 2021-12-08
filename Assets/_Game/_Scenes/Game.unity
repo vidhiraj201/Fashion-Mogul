@@ -108,15 +108,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.1
-    agentHeight: 2
+    agentRadius: 0.2
+    agentHeight: 3
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.2
     ledgeDropHeight: 1
     maxJumpAcrossDistance: 1
     minRegionArea: 0.2
     manualCellSize: 0
-    cellSize: 0.033333335
+    cellSize: 0.06666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -2116,7 +2116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378397214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.8668, y: -0.1, z: -44.3}
+  m_LocalPosition: {x: 48.8668, y: -0.01, z: -44.3}
   m_LocalScale: {x: 30, y: 1, z: 30}
   m_Children: []
   m_Father: {fileID: 515743557}
@@ -12534,6 +12534,7 @@ MonoBehaviour:
   CountMultiplier: 10
   EmployeeCount: 0
   customerGoal: 0
+  TotalCustomerGoal: 0
   CustomerIn: 0
   CustomerOut: 0
   TapUI: {fileID: 1074431779}

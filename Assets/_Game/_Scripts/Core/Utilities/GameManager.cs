@@ -32,6 +32,7 @@ namespace FashionM.Core
         public float EmployeeCount;
 
         public float customerGoal;
+        public float TotalCustomerGoal;
         public float CustomerIn;
         public float CustomerOut;
 
@@ -54,7 +55,8 @@ namespace FashionM.Core
 
         void Start()
         {
-            if(!isTutorialOver)
+            customerGoalGenrator();
+            if (!isTutorialOver)
                 TapUI.SetActive(true);
             UnlockStoreExpansionUI.SetActive(false);
             HireEmployee.SetActive(false);
@@ -67,10 +69,10 @@ namespace FashionM.Core
         bool x;
         void Update()
         {
-            customerGoalGenrator();
+            
             coinControl();
             DayCountUI.text = "Day " + (dayCount + 1);
-            CustomerUI.text = CustomerOut + " / " + customerGoal;
+            CustomerUI.text = CustomerOut + " / " + TotalCustomerGoal;
 
 
             /*if (dayStartUI.activeSelf)
@@ -111,23 +113,32 @@ namespace FashionM.Core
 
         void customerGoalGenrator()
         {
-            if (dayCount <= 0)
+            if (dayCount <= 0 && customerGoal <= 0 )
             {
                 customerGoal = 2;
+                TotalCustomerGoal = 2;
             }
-            if (dayCount == 1)
-            {
-                customerGoal = 3;
-            }
-            if (dayCount == 2)
+            if (dayCount == 1 && customerGoal <= 0)
             {
                 customerGoal = 10;
+                TotalCustomerGoal = 10;
             }
-            if (dayCount >= 3)
+            if (dayCount >= 2 && customerGoal <= 0)
             {
                 customerGoal = 20;
+                TotalCustomerGoal = 20;
             }
+/*            if (dayCount >= 3 && customerGoal <= 0)
+            {
+                customerGoal = 20;
+                TotalCustomerGoal = 20;
+            }*/
         }
+
+
+
+
+
         public void OnMouseDownData()
         {
                 TapUI.SetActive(false);
@@ -158,6 +169,7 @@ namespace FashionM.Core
             CustomerIn = 0;
             CustomerOut = 0;        
             dayCount += 1;
+            
         }
 
         public void StartDay()
@@ -183,6 +195,7 @@ namespace FashionM.Core
             {
 
             }
+            customerGoalGenrator();
             DayStart = false;
             dailyAmount = 0;
         }

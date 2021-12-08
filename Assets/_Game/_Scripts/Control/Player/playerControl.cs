@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using FashionM.Core;
+using FashionM.Movement;
 
 
 namespace FashionM.Control
@@ -52,6 +53,7 @@ namespace FashionM.Control
         {
             if (other.gameObject.CompareTag("Client"))
             {
+                if(other.gameObject.GetComponent<clientMovement>().reched && !other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer)
                 GetComponent<playerStackingSystem>().RemoveCloth(other);
 
             /*    if (other.gameObject.GetComponent<clientControl>().NeedItem == StoreNumberStored )
@@ -82,6 +84,12 @@ namespace FashionM.Control
                 if (OR != null && !OR.isRackClosed)
                     OR.playerIsNear = true;
             }
+
+
+            if (other.gameObject.CompareTag("HR"))
+            {
+                HR = other.gameObject.GetComponent<HRDesk>();
+            }
             /*     if (other.gameObject.CompareTag("Client"))
                  {
                      if (other.gameObject.GetComponent<clientControl>().NeedItem == StoreNumberStored)
@@ -108,6 +116,7 @@ namespace FashionM.Control
         private void OnCollisionExit(Collision collision)
         {
             SE = null;
+            HR = null;
         }
     }
 }
