@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GameDataSection : MonoBehaviour
+[System.Serializable]
+public class GameDataSection 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int Section_1;
+    public int Section_2;
+    public int Section_3;
 
-    // Update is called once per frame
-    void Update()
+    public GameDataSection()
     {
-        
+        Section_1 = 1500;
+        Section_2 = 2500;
+        Section_3 = 5000;
     }
 }

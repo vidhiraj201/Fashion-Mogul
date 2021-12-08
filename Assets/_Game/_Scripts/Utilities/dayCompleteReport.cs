@@ -17,9 +17,10 @@ public class dayCompleteReport : MonoBehaviour
         if (manager.CustomerOut >= manager.TotalCustomerGoal && !manager.DayOff)
         {
             manager.isFinalTutorialOver = true;
-            FindObjectOfType<SavingAndLoading>().SaveGame();
+            
             try
             {
+                FindObjectOfType<SavingAndLoading>().SaveGame();
                 FindObjectOfType<SavingAndLoadingCasual>().SaveGame();
             }
             catch

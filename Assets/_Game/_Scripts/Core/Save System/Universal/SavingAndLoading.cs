@@ -23,6 +23,7 @@ public class SavingAndLoading : MonoBehaviour
     {
         gameData.totalMoney = (int)gm.MaxCoin;
         gameData.DayCount = (gm.dayCount + 1);
+        gameData.totalEmployeeCount = (int)gm.EmployeeCount;        
         gameData.isTutorialOver = gm.isTutorialOver;
         gameData.isFinalTutorialOver = gm.isFinalTutorialOver;
         gameData.do1 = BOFT.do1;
@@ -35,6 +36,7 @@ public class SavingAndLoading : MonoBehaviour
     {
         gm.MaxCoin = gameData.totalMoney;
         gm.dayCount = gameData.DayCount;
+        gm.EmployeeCount = gameData.totalEmployeeCount;
          gm.isTutorialOver = gameData.isTutorialOver ;
          gm.isFinalTutorialOver = gameData.isFinalTutorialOver;
         BOFT.do1 = gameData.do1 ;

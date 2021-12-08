@@ -83,7 +83,7 @@ namespace FashionM.Core
 
 
             if (MaxCoinNeedToUnlock <= 0)
-            {
+            {                
                     if (X)
                     {
                         Bounds.GetComponent<BoxCollider>().center = new Vector3(BoundCenter.x, Bounds.GetComponent<BoxCollider>().center.y, Bounds.GetComponent<BoxCollider>().center.z); 
@@ -94,13 +94,20 @@ namespace FashionM.Core
                     {
                         Bounds.GetComponent<BoxCollider>().center = new Vector3(Bounds.GetComponent<BoxCollider>().center.x, Bounds.GetComponent<BoxCollider>().center.y, BoundCenter.z ); 
                         Bounds.GetComponent<BoxCollider>().size = new Vector3(Bounds.GetComponent<BoxCollider>().size.x, Bounds.GetComponent<BoxCollider>().size.y, BoundSize.z); 
-                    }                
-                Destroy(this.gameObject);
+                    }
+
+                StartCoroutine(Deactive());
             }
             OpenUI();
         }
 
-
+        IEnumerator Deactive()
+        {
+            FindObjectOfType<SavingAndLoadingSection>().SaveGames();
+            yield return new WaitForSeconds(0.1f);
+            Spwan();
+            this.gameObject.SetActive(false);
+        }
 
         public void OpenUI()
         {
@@ -120,8 +127,9 @@ namespace FashionM.Core
                 {
                     isPlayerNear = false;
                     UIUnlock = WaitTimer;
-                    Spwan();
-                    }
+                    GM.MaxCoin -= MaxCoinNeedToUnlock;
+                    MaxCoinNeedToUnlock = 0;
+                }
             }
         }
 
@@ -173,9 +181,7 @@ namespace FashionM.Core
             {
                 FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
                 GameObject ToSpwanData = Instantiate(ToSpwan, PlacingPosition, Quaternion.Euler(PlacingRotation));
-                ToSpwanData.transform.parent = GameObject.Find("Expanded Store").transform;
-                GM.MaxCoin -= MaxCoinNeedToUnlock;
-                MaxCoinNeedToUnlock = 0;      
+                ToSpwanData.transform.parent = GameObject.Find("Expanded Store").transform;                   
             }
         }
     }

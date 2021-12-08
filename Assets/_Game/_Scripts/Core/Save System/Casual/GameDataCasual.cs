@@ -13,8 +13,12 @@ public class GameDataCasual
     public bool S3;
     public bool S4;
 
+    public int empCount;
+    
     public GameDataCasual()
     {
+        empCount = 0;
+        
         unlock1 = false;
         unlock2 = false;
         unlock3 = false;

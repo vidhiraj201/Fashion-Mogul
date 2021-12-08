@@ -47,7 +47,6 @@ namespace FashionM.Core
             {
                 try
                 {
-                    FindObjectOfType<SavingAndLoadingCasual>().SaveGame();
                     open = true;
                 }
                 catch

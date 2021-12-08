@@ -1022,7 +1022,7 @@ Transform:
   m_GameObject: {fileID: 1651609476911778535}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.81, y: 1, z: 2.89}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1651609476917174708}
   m_Father: {fileID: 9158817501053906723}
@@ -1182,7 +1182,7 @@ Transform:
   m_GameObject: {fileID: 1651609477005291707}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.81, y: 1, z: -2.49}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1651609477016607720}
   m_Father: {fileID: 9158817501053906723}
@@ -1342,7 +1342,7 @@ Transform:
   m_GameObject: {fileID: 1651609477582085978}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -2.64, y: 1.06, z: 2.78}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1651609477589054473}
   m_Father: {fileID: 9158817500302188974}
@@ -1502,7 +1502,7 @@ Transform:
   m_GameObject: {fileID: 1651609477805449001}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -2.43, y: 1.06, z: -2.54}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1651609477833356410}
   m_Father: {fileID: 9158817500727522054}
@@ -1662,7 +1662,7 @@ Transform:
   m_GameObject: {fileID: 1651609478521588116}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.81, y: 1, z: 2.89}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1651609478528590535}
   m_Father: {fileID: 9158817501059845103}
@@ -1822,7 +1822,7 @@ Transform:
   m_GameObject: {fileID: 1651609478576239462}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 2.81, y: 1, z: -2.49}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1651609478599776309}
   m_Father: {fileID: 9158817501059845103}
@@ -2027,7 +2027,7 @@ Transform:
   m_GameObject: {fileID: 1651609478665922596}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -2.64, y: 1.06, z: 2.78}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1651609478642205559}
   m_Father: {fileID: 9158817500727522054}
@@ -39711,6 +39711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9158817500103143377}
+  - component: {fileID: 1281507378}
   m_Layer: 0
   m_Name: EmployeeCollection
   m_TagString: Untagged
@@ -39732,6 +39733,23 @@ Transform:
   m_Father: {fileID: 9158817500552824381}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1281507378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158817500103143376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841763bae2da9254cb3d4441cb60668e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Employee: []
+  EmployeeCountData: 0
+  EmployeetoSpwan: {fileID: 5617175501116341469, guid: 715adf8e112c21540b0990c2da486c19,
+    type: 3}
+  HR: {fileID: 9158817500221699720}
 --- !u!1 &9158817500108569290
 GameObject:
   m_ObjectHideFlags: 0
@@ -40677,7 +40695,7 @@ Transform:
   m_GameObject: {fileID: 9158817500335838626}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -2.43, y: 1.06, z: -2.54}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 9158817500359163633}
   m_Father: {fileID: 9158817500302188974}
@@ -42908,6 +42926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd4fd553b89c6e499509518a1713fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  empC: {fileID: 1281507378}
   Rack0: {fileID: 9158817500189290551}
   Rack1: {fileID: 9158817500834148919}
   Rack2: {fileID: 9158817499442540426}
@@ -42916,7 +42935,7 @@ MonoBehaviour:
   S2: {fileID: 9158817500623661624}
   S3: {fileID: 9158817499889591219}
   S4: {fileID: 9158817500541599195}
-  GDS:
+  GDC:
     unlock1: 0
     unlock2: 0
     unlock3: 0
@@ -42925,6 +42944,7 @@ MonoBehaviour:
     S2: 0
     S3: 0
     S4: 0
+    empCount: 0
 --- !u!1 &9158817501180290009
 GameObject:
   m_ObjectHideFlags: 0

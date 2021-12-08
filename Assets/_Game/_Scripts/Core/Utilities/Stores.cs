@@ -87,7 +87,6 @@ namespace FashionM.Core
             if(MaxCoinNeedToUnlock <= 0 && !unlock)
             {
                 unlock = true;
-                FindObjectOfType<SavingAndLoadingCasual>().SaveGame();
             }
             if (unlock)
             {                

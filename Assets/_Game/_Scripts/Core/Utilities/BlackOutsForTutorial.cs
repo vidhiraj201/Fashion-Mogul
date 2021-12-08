@@ -88,7 +88,7 @@ public class BlackOutsForTutorial : MonoBehaviour
                 {
                     Day2[i].SetActive(true);
                     i++;
-                    if (i == Day2.Count - 1)
+                    if (i >= Day2.Count - 1)
                         itrationDone_1 = true;
                 }
                 catch
@@ -173,15 +173,23 @@ public class BlackOutsForTutorial : MonoBehaviour
     IEnumerator day2(float delay)
     {
         yield return new WaitForSeconds(0.5f);
-        for (int i = 0; i <= Day2.Count - 1;i++)
+        for (int i = 0; i <= Day2.Count - 2;i++)
         {
             yield return new WaitForSeconds(delay);
             if (Day2[i] != null && !Day2[i].activeSelf)
             {
                 Day2[i].SetActive(true);
                 Destroy(Instantiate(particalPoof, Day2[i].transform.position + new Vector3(0,1f,0), Quaternion.Euler(90, 0, 0)), 1.5f);
-                if (i == Day2.Count-1)
+
+
+
+
+
+                if (i >= Day2.Count - 2)
+                {
                     do1 = true;
+                    break;
+                }
             }
             
         }
