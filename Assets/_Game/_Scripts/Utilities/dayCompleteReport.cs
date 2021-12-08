@@ -16,6 +16,17 @@ public class dayCompleteReport : MonoBehaviour
     {
         if (manager.CustomerOut >= manager.TotalCustomerGoal && !manager.DayOff)
         {
+            manager.isFinalTutorialOver = true;
+            FindObjectOfType<SavingAndLoading>().SaveGame();
+            try
+            {
+                FindObjectOfType<SavingAndLoadingCasual>().SaveGame();
+            }
+            catch
+            {
+
+            }
+            
             StartCoroutine(DayOffLag(0.2f));
             FindObjectOfType<FashionM.Core.AudioManager>().source.PlayOneShot(FindObjectOfType<FashionM.Core.AudioManager>().EndOfDay, WinVolume);
         }

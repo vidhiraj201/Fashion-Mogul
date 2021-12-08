@@ -37213,6 +37213,7 @@ MonoBehaviour:
   Rack2: 1
   Rack3: 0
   Y: 3.5
+  unlock: 0
 --- !u!1 &9158817499455645604
 GameObject:
   m_ObjectHideFlags: 0
@@ -38256,6 +38257,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 1
   Y: 3.2
+  unlock: 0
 --- !u!1 &9158817499835859486
 GameObject:
   m_ObjectHideFlags: 0
@@ -40335,6 +40337,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 0
   Y: 3.24
+  unlock: 1
 --- !u!1 &9158817500221699830
 GameObject:
   m_ObjectHideFlags: 0
@@ -41903,6 +41906,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 0
   Y: 4.14
+  unlock: 1
 --- !u!114 &646809626
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ namespace FashionM.Core
         public GameObject PurchesGFX;
         public GameObject Cloth;
         public Material mat;
-        //public Image waitTimerlockUI;
+        
 
 
         public int RackNumber;
@@ -58,9 +58,9 @@ namespace FashionM.Core
         {
             
             waitTimerUnlockUI.gameObject.SetActive(false);
-            //1waitTimerlockUI.gameObject.SetActive(false);
+            
             giveItemToPlayter = waitTimer;
-            //loadWaitTimer = waitTimer;
+            
             if (isRackClosed)
             {
                 RackPrice.text = "$" + MaxCoinNeedToUnlock.ToString();
@@ -69,6 +69,7 @@ namespace FashionM.Core
             }
         }
 
+        public bool unlock;
         // Update is called once per frame
         void Update()
         {
@@ -76,13 +77,22 @@ namespace FashionM.Core
             {
                 whenPlayerIsOnRack();                
             }
-            /*if(isRackClosed && !storeIsOpen)
-                whenPlayerIsOnRack();*/
 
 
             if (MaxCoinNeedToUnlock <= 0 && isRackClosed)
-                isRackClosed = false;
 
+            {               
+                isRackClosed = false;             
+            }
+            if(MaxCoinNeedToUnlock <= 0 && !unlock)
+            {
+                unlock = true;
+                FindObjectOfType<SavingAndLoadingCasual>().SaveGame();
+            }
+            if (unlock)
+            {                
+                MaxCoinNeedToUnlock = 0;
+            }
             if (!isRackClosed && storeIsOpen)
                 giveItem();
 
@@ -143,26 +153,6 @@ namespace FashionM.Core
             }
         }
 
-        /*float loadWaitTimer;
-        bool loadedUI;*/
-        /*public void loadUSUI()
-        {
-            waitTimerlockUI.transform.forward = -Camera.main.transform.forward;
-
-            if (PlayerIsOnClosedRack && !loadedUI)
-            {                
-                loadWaitTimer -= Time.deltaTime;
-                waitTimerlockUI.gameObject.SetActive(true);
-                waitTimerlockUI.fillAmount = loadWaitTimer / waitTimer;
-                if (loadWaitTimer <= 0 )
-                {
-                    loadWaitTimer = waitTimer;
-                    gm.UnlockStoreExpansionUI.SetActive(true);                    
-                    waitTimerlockUI.gameObject.SetActive(false);
-                    loadedUI = true;
-                }
-            }
-        }*/
        
         private void OnCollisionEnter(Collision collision)
         {
@@ -197,13 +187,7 @@ namespace FashionM.Core
 
             if (PlayerIsOnClosedRack)
             {
-                /*loadWaitTimer = waitTimer;
-                waitTimerlockUI.fillAmount = loadWaitTimer / waitTimer;
-                waitTimerlockUI.gameObject.SetActive(false);*/
                 PlayerIsOnClosedRack = false;
-               /* loadedUI = false;
-                if (gm.UnlockStoreExpansionUI.activeSelf)
-                    gm.UnlockStoreExpansionUI.GetComponent<Animator>().Play("Out");*/
             }
 
         }

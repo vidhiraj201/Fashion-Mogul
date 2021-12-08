@@ -13,7 +13,6 @@ namespace FashionM.Core
     {
 
         private UniqueID uniqueID;
-        private ExpandedStoreData expdData;
 
 
         public LevelManagerStore lv;
@@ -58,16 +57,12 @@ namespace FashionM.Core
         {
 
             uniqueID = GetComponent<UniqueID>();
-            expdData = FindObjectOfType<ExpandedStoreData>();
             GM = FindObjectOfType<GameManager>();
             Bounds = GM.Bound;
             //StoreStatus.text = "Store Locked";
             StoreUpgradesPrice.text = "$" + MaxCoinNeedToUnlock;
             StoreUpgradesPrice_1.text = "$" + MaxCoinNeedToUnlock;
 
-/*
-            StoreUpgradesPrice.gameObject.SetActive(false);
-            StoreUpgradesPrice_1.gameObject.SetActive(false);*/
             WaitTimerUnlockUI.gameObject.SetActive(false);
             WaitTimerUnlockUI_1.gameObject.SetActive(false);
 
@@ -76,20 +71,9 @@ namespace FashionM.Core
             xPos = -55.5f;
             zPos = 55.5f;
 
-
-            if (expdData.storedStore.Contains(uniqueID.ID))
-            {
-                Spwan();
-                //MaxCoinNeedToUnlock = 0;
-                Destroy(this.gameObject);
-                return;
-            }
-
-
         }
 
         public bool X, Z;
-        // Update is called once per frame
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.B))
@@ -100,9 +84,6 @@ namespace FashionM.Core
 
             if (MaxCoinNeedToUnlock <= 0)
             {
-                /*Bounds.transform.localScale = new Vector3(24,10,131);
-                Bounds.transform.localPosition = new Vector3(-35.76f,39.3f,-36.45f);*/
-
                     if (X)
                     {
                         Bounds.GetComponent<BoxCollider>().center = new Vector3(BoundCenter.x, Bounds.GetComponent<BoxCollider>().center.y, Bounds.GetComponent<BoxCollider>().center.z); 
@@ -120,10 +101,6 @@ namespace FashionM.Core
         }
 
 
-        /*public void HitButton()
-        {
-            MaxCoinNeedToUnlock = 0;
-        }*/
 
         public void OpenUI()
         {
@@ -143,13 +120,7 @@ namespace FashionM.Core
                 {
                     isPlayerNear = false;
                     UIUnlock = WaitTimer;
-                    expdData.storedStore.Add(uniqueID.ID);
                     Spwan();
-                  /*  WaitTimerUnlockUI.gameObject.SetActive(false);
-                    if (WaitTimerUnlockUI_1 != null)
-                        WaitTimerUnlockUI_1.gameObject.SetActive(false);*/
-                        //GM.UnlockStoreExpansionUI.SetActive(true);
-
                     }
             }
         }
@@ -159,8 +130,7 @@ namespace FashionM.Core
             if (collision.gameObject.CompareTag("Player") && FindObjectOfType<FashionM.Movement.playerMovement>().direction.magnitude<0.1f)
             {
                 isPlayerNear = true;
-/*                StoreUpgradesPrice.gameObject.SetActive(true);
-                StoreUpgradesPrice_1.gameObject.SetActive(true);*/
+
             }
         }
 
@@ -181,11 +151,6 @@ namespace FashionM.Core
                 isPlayerNear = false;                
                 UIUnlock = WaitTimer;
             }
-/*            if (StoreUpgradesPrice.gameObject.activeSelf)
-                StoreUpgradesPrice.gameObject.SetActive(false);
-
-            if (StoreUpgradesPrice_1.gameObject.activeSelf)
-                StoreUpgradesPrice_1.gameObject.SetActive(false);*/
 
             if (WaitTimerUnlockUI.gameObject.activeSelf)
                 WaitTimerUnlockUI.gameObject.SetActive(false);
@@ -209,35 +174,8 @@ namespace FashionM.Core
                 FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
                 GameObject ToSpwanData = Instantiate(ToSpwan, PlacingPosition, Quaternion.Euler(PlacingRotation));
                 ToSpwanData.transform.parent = GameObject.Find("Expanded Store").transform;
-                if (!expdData.ExpandedData.Contains(ToSpwanData))
-                {
-                    expdData.ExpandedData.Add(ToSpwanData);
-                }
-
-                if (!expdData.storedStore.Contains(uniqueID.ID) )
-                {
-                    print("Calling this !");
-                    GM.MaxCoin -= MaxCoinNeedToUnlock;
-                    MaxCoinNeedToUnlock = 0;
-                }
-
-                if (expdData.storedStore.Contains(uniqueID.ID))
-                {
-                    print("Calling this");
-                    GM.MaxCoin -= MaxCoinNeedToUnlock;
-                    MaxCoinNeedToUnlock = 0;
-                    if (X)
-                    {
-                        Bounds.GetComponent<BoxCollider>().center = new Vector3(BoundCenter.x, Bounds.GetComponent<BoxCollider>().center.y, Bounds.GetComponent<BoxCollider>().center.z);
-                        Bounds.GetComponent<BoxCollider>().size = new Vector3(BoundSize.x, Bounds.GetComponent<BoxCollider>().size.y, Bounds.GetComponent<BoxCollider>().size.z);
-                    }
-
-                    if (Z)
-                    {
-                        Bounds.GetComponent<BoxCollider>().center = new Vector3(Bounds.GetComponent<BoxCollider>().center.x, Bounds.GetComponent<BoxCollider>().center.y, BoundCenter.z);
-                        Bounds.GetComponent<BoxCollider>().size = new Vector3(Bounds.GetComponent<BoxCollider>().size.x, Bounds.GetComponent<BoxCollider>().size.y, BoundSize.z);
-                    }
-                }                
+                GM.MaxCoin -= MaxCoinNeedToUnlock;
+                MaxCoinNeedToUnlock = 0;      
             }
         }
     }

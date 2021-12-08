@@ -33,21 +33,21 @@ public class BlackOutsForTutorial : MonoBehaviour
         itrationDone_2 = false;
         itrationDone_3 = false;
 
-        if (Day2.Count > 0)
+        if (Day2.Count > 0 && !do1)
         {
             for(int i = 0; i <= Day2.Count - 1; i++)
             {
                 Day2[i].SetActive(false);
             }
         }
-        if (Day3.Count > 0)
+        if (Day3.Count > 0 && !do2)
         {
             for (int i = 0; i <= Day3.Count - 1; i++)
             {
                 Day3[i].SetActive(false);
             }
         }
-        if (Day4.Count > 0)
+        if (Day4.Count > 0 && !do3)
         {
             for (int i = 0; i <= Day4.Count - 1; i++)
             {

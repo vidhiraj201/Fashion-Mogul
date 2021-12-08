@@ -157,14 +157,12 @@ namespace FashionM.Core
 
         public int dayCount;
         public void NextDayButton()
-        {
-            isFinalTutorialOver = true;
+        {           
             DayOff = false;
             x = false;            
             StartCoroutine(startDayDelay(0.35f));            
             if (dayCompleteUI.activeSelf)
                 dayCompleteUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");
-            FindObjectOfType<SaveManager>().time = 0;
 
             CustomerIn = 0;
             CustomerOut = 0;        
@@ -198,6 +196,7 @@ namespace FashionM.Core
             customerGoalGenrator();
             DayStart = false;
             dailyAmount = 0;
+            
         }
 
       /* public void StartDayButton()
