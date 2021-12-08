@@ -5659,7 +5659,6 @@ GameObject:
   - component: {fileID: 3203291430030993387}
   - component: {fileID: 910896010}
   - component: {fileID: 910896009}
-  - component: {fileID: 366101785}
   m_Layer: 0
   m_Name: Locaked Office
   m_TagString: StoreExp
@@ -5733,18 +5732,6 @@ MonoBehaviour:
   Z: 1
   StationCountData: 0
   ToSpwan: {fileID: 3312067453382761137, guid: e1cbf0c3f85b3054b89128325006ebc3, type: 3}
---- !u!114 &366101785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2828172853860154705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20c21d7a7f04b64f8c072122affb630, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3422870977352917720
 GameObject:
   m_ObjectHideFlags: 0

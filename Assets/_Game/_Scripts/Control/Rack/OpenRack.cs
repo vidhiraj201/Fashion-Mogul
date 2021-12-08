@@ -25,7 +25,8 @@ namespace FashionM.Control
                 st.MaxCoinNeedToUnlock = 0;
                 Clients.SetActive(true);
                 ClientPosition.SetActive(true);
-                SlotExpnasion.SetActive(false);
+                if(SlotExpnasion !=null)
+                    SlotExpnasion.GetComponent<FashionM.Core.Station>().MaxCoinNeedToUnlock = 0;
             }
         }
     }

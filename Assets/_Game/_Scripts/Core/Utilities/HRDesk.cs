@@ -36,7 +36,7 @@ namespace FashionM.Core
         void OpenUI()
         {
             waitTimerUI.transform.forward = -Camera.main.transform.forward;
-            if (isPlayerNear)
+            if (isPlayerNear && FindObjectOfType<FashionM.Control.playerControl>().HR != null)
             {
                 LoadUITimer -= Time.deltaTime;
                 waitTimerUI.gameObject.SetActive(true);

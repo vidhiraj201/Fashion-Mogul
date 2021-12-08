@@ -816,7 +816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5611957476699812850
 Transform:
   m_ObjectHideFlags: 0
@@ -825,7 +825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006916147784445206}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.07, y: 0.68, z: 13.48}
+  m_LocalPosition: {x: -5.59, y: 0.68, z: 13.48}
   m_LocalScale: {x: 6, y: 0.1, z: 6}
   m_Children:
   - {fileID: 2533483152474867643}
@@ -911,7 +911,8 @@ MonoBehaviour:
   NewClients: {fileID: 2898026559633053300}
   StationPrice: {fileID: 3245626610604252487}
   CoinReduceSpeed: 5
-  MaxCoinNeedToUnlock: 300
+  MaxCoinNeedToUnlock: 0
+  open: 1
 --- !u!1 &1326451512444083923
 GameObject:
   m_ObjectHideFlags: 0
@@ -38790,6 +38791,7 @@ MonoBehaviour:
   StationPrice: {fileID: 9158817499913658760}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &9158817499913658870
 GameObject:
   m_ObjectHideFlags: 0
@@ -41180,6 +41182,7 @@ MonoBehaviour:
   StationPrice: {fileID: 9158817499520203792}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &9158817500552824380
 GameObject:
   m_ObjectHideFlags: 0
@@ -41740,7 +41743,8 @@ MonoBehaviour:
   NewClients: {fileID: 2898026560210769143}
   StationPrice: {fileID: 9158817499885091423}
   CoinReduceSpeed: 5
-  MaxCoinNeedToUnlock: 250
+  MaxCoinNeedToUnlock: 0
+  open: 1
 --- !u!1 &9158817500727522053
 GameObject:
   m_ObjectHideFlags: 0
@@ -42676,6 +42680,7 @@ GameObject:
   - component: {fileID: 1061144116077440212}
   - component: {fileID: 3978474437499460980}
   - component: {fileID: 271505561}
+  - component: {fileID: 853823450}
   m_Layer: 0
   m_Name: LR Casual Environment
   m_TagString: Untagged
@@ -42891,6 +42896,35 @@ MonoBehaviour:
   itrationDone_1: 0
   itrationDone_2: 0
   itrationDone_3: 0
+--- !u!114 &853823450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158817501159201182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd4fd553b89c6e499509518a1713fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rack0: {fileID: 9158817500189290551}
+  Rack1: {fileID: 9158817500834148919}
+  Rack2: {fileID: 9158817499442540426}
+  Rack3: {fileID: 9158817499824659407}
+  S1: {fileID: 7628517820445952416}
+  S2: {fileID: 9158817500623661624}
+  S3: {fileID: 9158817499889591219}
+  S4: {fileID: 9158817500541599195}
+  GDS:
+    unlock1: 0
+    unlock2: 0
+    unlock3: 0
+    unlock4: 0
+    S1: 0
+    S2: 0
+    S3: 0
+    S4: 0
 --- !u!1 &9158817501180290009
 GameObject:
   m_ObjectHideFlags: 0

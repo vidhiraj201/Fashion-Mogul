@@ -10535,7 +10535,6 @@ GameObject:
   - component: {fileID: 1633337714670838486}
   - component: {fileID: 1047622166839489504}
   - component: {fileID: 1047622166839489503}
-  - component: {fileID: 490759834}
   m_Layer: 0
   m_Name: Locaked Sport
   m_TagString: StoreExp
@@ -10609,18 +10608,6 @@ MonoBehaviour:
   Z: 1
   StationCountData: 0
   ToSpwan: {fileID: 4422426762013735758, guid: ae785ca0e4a1f7544a35640dac2ac5b1, type: 3}
---- !u!114 &490759834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2153027746195077228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20c21d7a7f04b64f8c072122affb630, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &781729211409354466
 PrefabInstance:
   m_ObjectHideFlags: 0

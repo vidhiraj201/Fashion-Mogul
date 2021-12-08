@@ -173,34 +173,34 @@ public class BlackOutsForTutorial : MonoBehaviour
     IEnumerator day2(float delay)
     {
         yield return new WaitForSeconds(0.5f);
-        for (int i = 0; i <= Day2.Count - 1;)
+        for (int i = 0; i <= Day2.Count - 1;i++)
         {
             yield return new WaitForSeconds(delay);
             if (Day2[i] != null && !Day2[i].activeSelf)
             {
                 Day2[i].SetActive(true);
                 Destroy(Instantiate(particalPoof, Day2[i].transform.position + new Vector3(0,1f,0), Quaternion.Euler(90, 0, 0)), 1.5f);
-                i++;
+                if (i == Day2.Count-1)
+                    do1 = true;
             }
-            if (i == Day2.Count)
-                do1 = true;
+            
         }
 
     }
     IEnumerator day3(float delay)
     {
         yield return new WaitForSeconds(0.5f);
-        for (int i = 0; i <= Day3.Count - 1;)
+        for (int i = 0; i <= Day3.Count - 1; i++)
         {
             yield return new WaitForSeconds(delay);
             if (Day3[i] != null && !Day3[i].activeSelf)
             {
                 Day3[i].SetActive(true);
                 Destroy(Instantiate(particalPoof, Day3[i].transform.localPosition + new Vector3(0, 1f, 0), Quaternion.Euler(90,0,0)), 1.5f);
-                i++;
+                if (i >= Day3.Count-1)
+                    do2 = true;
             }
-            if (i >= Day3.Count )
-                do2 = true;
+            
         }
     }
     IEnumerator day4(float delay)
@@ -217,8 +217,7 @@ public class BlackOutsForTutorial : MonoBehaviour
                 Destroy(Instantiate(particalPoofBig, Day4[i].transform.localPosition + new Vector3(0, 1f, 0), Quaternion.Euler(90, 0, 0)), 1.5f);
                 if (i >= Day4.Count-1)
                     do3 = true;
-            }
-            
+            }            
         }
     }
 

@@ -5659,7 +5659,6 @@ GameObject:
   - component: {fileID: 6758198988704945011}
   - component: {fileID: 8838312165261413299}
   - component: {fileID: 194633888}
-  - component: {fileID: 1719847786}
   m_Layer: 0
   m_Name: Locaked Beach
   m_TagString: StoreExp
@@ -5733,18 +5732,6 @@ MonoBehaviour:
   Z: 0
   StationCountData: 0
   ToSpwan: {fileID: 744537192945074369, guid: 746f0c978598d2c468c8ab8cb2e81360, type: 3}
---- !u!114 &1719847786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6233582771170298313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20c21d7a7f04b64f8c072122affb630, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6790840814344345152
 GameObject:
   m_ObjectHideFlags: 0
