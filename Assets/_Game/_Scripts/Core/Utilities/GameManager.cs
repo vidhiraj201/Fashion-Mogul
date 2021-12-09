@@ -50,6 +50,7 @@ namespace FashionM.Core
         public bool DayOff;
         public bool isTutorialOver;
         public bool isFinalTutorialOver;
+        public bool day2TutorialOver;
 
         [Header("")]
         public GameObject Bound;
@@ -121,19 +122,24 @@ namespace FashionM.Core
             }
             if (dayCount == 1 && customerGoal <= 0)
             {
+                customerGoal = 2;
+                TotalCustomerGoal = 2;
+            }
+            if (dayCount == 2 && customerGoal <= 0)
+            {
                 customerGoal = 10;
                 TotalCustomerGoal = 10;
             }
-            if (dayCount >= 2 && customerGoal <= 0)
+            if (dayCount >= 3 && customerGoal <= 0)
             {
                 customerGoal = 20;
                 TotalCustomerGoal = 20;
             }
-/*            if (dayCount >= 3 && customerGoal <= 0)
-            {
-                customerGoal = 20;
-                TotalCustomerGoal = 20;
-            }*/
+            /*            if (dayCount >= 3 && customerGoal <= 0)
+                        {
+                            customerGoal = 20;
+                            TotalCustomerGoal = 20;
+                        }*/
         }
 
 

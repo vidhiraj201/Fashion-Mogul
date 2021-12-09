@@ -27,10 +27,12 @@ public class SavingAndLoading : MonoBehaviour
         gameData.EmployeeAmount = (int)gm.EmployeeAmount;
         gameData.isTutorialOver = gm.isTutorialOver;
         gameData.isFinalTutorialOver = gm.isFinalTutorialOver;
+        gameData.do0 = BOFT.do0;
         gameData.do1 = BOFT.do1;
         gameData.do2 = BOFT.do2;
         gameData.do3 = BOFT.do3;
         SaveManager.Save(gameData);
+        print("Universal Data Saved");
     }
 
     public void LoadGame()
@@ -41,6 +43,7 @@ public class SavingAndLoading : MonoBehaviour
         gm.EmployeeAmount = gameData.EmployeeAmount;
          gm.isTutorialOver = gameData.isTutorialOver ;
          gm.isFinalTutorialOver = gameData.isFinalTutorialOver;
+        BOFT.do0 = gameData.do0 ;
         BOFT.do1 = gameData.do1 ;
         BOFT.do2 = gameData.do2 ;
         BOFT.do3 = gameData.do3 ;

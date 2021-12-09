@@ -124,7 +124,7 @@ namespace FashionM.Core
             RackPrice.gameObject.SetActive(false);
             StoreGFX.SetActive(true);
             PurchesGFX.GetComponent<MeshRenderer>().enabled = false;
-            Destroy(PurchesGFX, 1);
+            Destroy(PurchesGFX, 0.2f);
             transform.localScale = new Vector3(transform.localScale.x, 0.75f, transform.localScale.z);
             transform.localPosition = new Vector3(transform.localPosition.x, Y, transform.localPosition.z);
             CheckStore();

@@ -20,9 +20,9 @@ namespace FashionM.Control
         // Update is called once per frame
         void Update()
         {
-            if(gm.dayCount >= 1)
+            if(gm.dayCount >= 2)
             {
-                st.MaxCoinNeedToUnlock = 0;
+                /*st.MaxCoinNeedToUnlock = 0;*/
                 Clients.SetActive(true);
                 ClientPosition.SetActive(true);
                 if(SlotExpnasion !=null)

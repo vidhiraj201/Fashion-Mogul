@@ -105,7 +105,7 @@ public class SavingAndLoadingSport : MonoBehaviour
 
 
         SaveManagerSport.Save(GDS);
-        print("Racks Saved");
+        print("Sports Saved");
     }
 
     public void LoadGame()

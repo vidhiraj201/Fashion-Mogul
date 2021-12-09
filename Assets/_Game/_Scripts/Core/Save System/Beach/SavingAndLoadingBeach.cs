@@ -104,7 +104,7 @@ public class SavingAndLoadingBeach : MonoBehaviour
 
 
         SaveManagerBeach.Save(GDB);
-        print("Racks Saved");
+        print("Beach Saved");
     }
 
     public void LoadGame()

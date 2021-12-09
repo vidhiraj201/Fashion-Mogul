@@ -86,16 +86,16 @@ void Racks()
 
     public void SaveGame()
     {
-        if(!S1.gameObject.activeSelf)
+        if(!S1.gameObject.activeSelf && S1.MaxCoinNeedToUnlock<=0)
             GDC.S1 = true;
 
-        if(!S2.gameObject.activeSelf)
+        if(!S2.gameObject.activeSelf && S2.MaxCoinNeedToUnlock <= 0)
             GDC.S2 = true;
 
-        if(!S3.gameObject.activeSelf)
+        if(!S3.gameObject.activeSelf && S3.MaxCoinNeedToUnlock <= 0)
             GDC.S3 = true;
 
-        if(!S4.gameObject.activeSelf)
+        if(!S4.gameObject.activeSelf && S4.MaxCoinNeedToUnlock <= 0 )
             GDC.S4 = true;
 
         GDC.unlock1 = Rack0.unlock;
@@ -105,7 +105,7 @@ void Racks()
 
 
         SaveManagerCasual.Save(GDC);
-        print("Racks Saved");
+        print("Casual Saved");
     }
 
     public void LoadGame()

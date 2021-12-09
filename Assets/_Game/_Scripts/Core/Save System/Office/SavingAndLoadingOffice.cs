@@ -105,7 +105,7 @@ public class SavingAndLoadingOffice : MonoBehaviour
 
 
         SaveManagerOffice.Save(GDO);
-        print("Racks Saved");
+        print("Office Saved");
     }
 
     public void LoadGame()

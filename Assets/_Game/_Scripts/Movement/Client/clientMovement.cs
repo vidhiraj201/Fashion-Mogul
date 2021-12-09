@@ -130,6 +130,7 @@ namespace FashionM.Movement
                     transform.GetComponent<clientControl>().lv.Customers.Add(this.gameObject);*/
                 
                 transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer = false;                
+                transform.GetComponent<clientControl>().particalExplod = false;                
                 transform.GetComponent<clientControl>().LeaveEmp = false;
                 transform.GetComponent<clientControl>().tredingComplete = false;
                 transform.GetComponent<clientControl>().TradeComp = false;

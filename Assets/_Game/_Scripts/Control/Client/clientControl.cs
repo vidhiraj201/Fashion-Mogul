@@ -97,24 +97,20 @@ namespace FashionM.Control
         private void Update()
         {
             completeTreding();
-            //waitTimerUI.transform.forward = Camera.main.transform.forward;
-            /*UIHolder.forward = Camera.main.transform.forward;*/
-            
+            if (gm.dayCount == 1)
+            {
+                NeedItem = 1;
+            }
+
+
             if (TradeComp && !coinSpwan)
             {
                 Instantiate(coin, new Vector3(transform.position.x,transform.position.y + CoinDropOffset, transform.position.z), Quaternion.identity);
                 coinSpwan = true;
             }
 
-            if (gm.dayCount > 0 && ar != null)
+            if (gm.dayCount > 2 && ar != null)
                 Destroy(ar);
-            //T1.text = NeedItem.ToString();
-
-
-            /* if (clothTookFromEmpOrPlayer)
-             {
-                 GetComponent<clientMovement>().PurchesUI.SetActive(false);
-             }*/
 
             if(!LeaveEmp && TradeComp && l>0)
             {
@@ -141,74 +137,57 @@ namespace FashionM.Control
                 {
                     GetComponent<clientMovement>().Anime.SetTrigger("Celeb");
                 }
-                //waitTimerUI.gameObject.SetActive(true);
-                //waitTimerUI.fillAmount = timerToTakeItemFromPlayer / waitTimer;
+
                 if (timerToTakeItemFromPlayer <= 0)
                 {
                     TradeComp = true;
-                    //GetComponent<ClientUitilities>().stopTrade();
+
                     playerIsNear = false;
-                    //waitTimerUI.gameObject.SetActive(false);
+
                     timerToTakeItemFromPlayer = waitTimer;
-                    //gameObject.layer = 17;
+
                 }
             }
         }
 
         private void FixedUpdate()
         {
-           // CheckForCustomer();
+
            if (gm.customerGoal <= 0 && !CCountAdded)
             {
                 StopWalking = true;
             }
-
-          /*  if (gm.CustomerIn >= gm.customerGoal && !CCountAdded)
-            {
-                StopWalking = true;
-                //StartCoroutine(edlay(0.5f));
-            }*/
-
-/*
-            if (NeedItem == 0 && !tredingComplete)
-                clientNeedItemRandomize();*/
-
-            /*if (!GetComponent<clientMovement>().reched)
-            {
-                gameObject.layer = 17;
-            }*/
             
         }
 
         public void clientNeedItemRandomize()
         {
-           /* if (lv.rackOpen.Count > 0 && lv.rackOpen.Count < 4)
+            if (gm.dayCount != 1)
             {
-                int a = Random.Range(lv.rackOpen[0], lv.rackOpen[lv.rackOpen.Count-1]);
-                NeedItem = lv.rackOpen[a];
-            }*/
+                if (lv.rackOpen.Count == 1)
+                {
+                    NeedItem = lv.rackOpen[0];
+                }
+                if (lv.rackOpen.Count == 2)
+                {
+                    int a = Random.Range(0, 2);
+                    NeedItem = lv.rackOpen[a];
+                }
 
-            if (lv.rackOpen.Count == 1)
-            {
-                //int a = Random.Range(0,2);
-                NeedItem = lv.rackOpen[0];
-            }
-            if (lv.rackOpen.Count == 2)
-            {
-                int a = Random.Range(0,2);
-                NeedItem = lv.rackOpen[a];
+                if (lv.rackOpen.Count == 3)
+                {
+                    int a = Random.Range(0, 3);
+                    NeedItem = lv.rackOpen[a];
+                }
+                if (lv.rackOpen.Count > 3)
+                {
+                    int a = Random.Range(0, 4);
+                    NeedItem = lv.rackOpen[a];
+                }
             }
 
-            if (lv.rackOpen.Count == 3)
-            {
-                int a = Random.Range(0,3);
-                NeedItem = lv.rackOpen[a];
-            }
-            if (lv.rackOpen.Count > 3)
-            {
-                int a = Random.Range(0, 4);
-                NeedItem = lv.rackOpen[a];
-            }
+            
+            
         }
         [HideInInspector] public bool particalExplod;
 
@@ -249,16 +228,10 @@ namespace FashionM.Control
                     }
                 }
 
-/*                if (gm.CustomerIn > gm.customerGoal)
-                    StopWalking = true;*/
-
-                /*
-
-                                if (gm.CustomerIn >= gm.customerGoal+1)
-                                    StopWalking = true;
-                */
             }
-            if (!gm.isFinalTutorialOver)
+            
+
+            if (!gm.day2TutorialOver)
             {
                 if (FindObjectOfType<tutorialUI>().StartCustomer.Count < 3 && !FindObjectOfType<tutorialUI>().StartCustomer.Contains(this.transform.gameObject))
                 {
@@ -268,6 +241,10 @@ namespace FashionM.Control
             
         }
 
+        public GameObject remove()
+        {
+            return this.gameObject;
+        }
         private void OnCollisionExit(Collision collision)
         {
 
