@@ -15,12 +15,7 @@ public class EmployeeCounting : MonoBehaviour
 
     private void Start()
     {
-
-        if (EmployeeCountData > 0)
-        {
-            spwnEmployee();
-        }
-        spwnDelay(0.2f);
+        StartCoroutine(spwnDelay(0.2f));
     }
 
     IEnumerator spwnDelay(float t)
@@ -60,6 +55,7 @@ public class EmployeeCounting : MonoBehaviour
                 if (EmployeeCountData > 0 && EmployeeCountData == SavingAndLoading.GetComponent<SavingAndLoadingCasual>().GDC.empCount && !spawnEmps)
                 {
                     spwnEmployee();
+                   /* StartCoroutine(spawn(0.15f));*/
                 }
                 
             }
@@ -75,6 +71,13 @@ public class EmployeeCounting : MonoBehaviour
             spwnEmployee();
         }
         
+    }
+
+
+    IEnumerator spawn(float t)
+    {
+        yield return new WaitForSeconds(t);
+        spwnEmployee();
     }
     public void spwnEmployee()
     {

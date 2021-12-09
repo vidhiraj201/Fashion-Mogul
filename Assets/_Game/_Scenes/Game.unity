@@ -7087,7 +7087,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BAmount: {fileID: 1957296058}
   EmpCountUI: {fileID: 1689265506}
-  EmployeeAmount: 500
   EmployeeAmountMulti: 1.2
   Employee: {fileID: 5617175501116341469, guid: 715adf8e112c21540b0990c2da486c19,
     type: 3}
@@ -12415,6 +12414,7 @@ MonoBehaviour:
   MaxCoin: 0
   CountMultiplier: 10
   EmployeeCount: 0
+  EmployeeAmount: 500
   customerGoal: 0
   TotalCustomerGoal: 0
   CustomerIn: 0
@@ -12474,6 +12474,7 @@ MonoBehaviour:
     totalMoney: 0
     DayCount: 0
     totalEmployeeCount: 0
+    EmployeeAmount: 500
     isTutorialOver: 0
     isFinalTutorialOver: 0
     do1: 0

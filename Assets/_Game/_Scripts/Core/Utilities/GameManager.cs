@@ -27,9 +27,10 @@ namespace FashionM.Core
 
 
         public float MaxCoin;
-        public float CountMultiplier;
 
+        public float CountMultiplier;
         public float EmployeeCount;
+        public float EmployeeAmount;
 
         public float customerGoal;
         public float TotalCustomerGoal;

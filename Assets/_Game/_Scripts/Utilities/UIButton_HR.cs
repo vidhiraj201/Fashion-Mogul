@@ -12,7 +12,7 @@ namespace FashionM.Core
 
         public TextMeshProUGUI BAmount;
         public TextMeshProUGUI EmpCountUI;
-        public float EmployeeAmount;
+        /*public float EmployeeAmount;*/
         public float EmployeeAmountMulti;
         public GameObject Employee;
 
@@ -36,9 +36,9 @@ namespace FashionM.Core
 
         void ButtonUpdate()
         {
-            BAmount.text = EmployeeAmount.ToString("F0");
+            BAmount.text = gm.EmployeeAmount.ToString("F0");
 
-            if (gm.MaxCoin >= EmployeeAmount)
+            if (gm.MaxCoin >= gm.EmployeeAmount)
             {
                 BUI.color = new Color32(255, 255, 255, 255);
                 BName.color = new Color32(255, 255, 255, 255);
@@ -46,7 +46,7 @@ namespace FashionM.Core
                 transform.GetComponent<Button>().enabled = true;
             }
 
-            if (gm.MaxCoin < EmployeeAmount)
+            if (gm.MaxCoin < gm.EmployeeAmount)
             {
                 BUI.color = new Color32(202, 202, 202, 160);
                 BName.color = new Color32(202, 202, 202, 160);
@@ -56,7 +56,7 @@ namespace FashionM.Core
         }
         public void hireEmployee()
         {
-            if(gm.MaxCoin >= EmployeeAmount)
+            if(gm.MaxCoin >= gm.EmployeeAmount)
             {
                 FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
                 GameObject EMP =  Instantiate(Employee, FindObjectOfType<playerControl>().HR.SpwanPoint.position, Quaternion.identity);
@@ -64,8 +64,8 @@ namespace FashionM.Core
                 EMP.GetComponent<FashionM.Movement.empMovement>().lv = FindObjectOfType<playerControl>().HR.LevelManager;                
                 EMP.GetComponent<FashionM.Movement.empMovement>().initPos = FindObjectOfType<playerControl>().HR.SpwanPoint;                
                 gm.HireEmployee.GetComponent<Animator>().Play("Out");
-                gm.MaxCoin -= EmployeeAmount;
-                EmployeeAmount = EmployeeAmount * EmployeeAmountMulti;
+                gm.MaxCoin -= gm.EmployeeAmount;
+                gm.EmployeeAmount = gm.EmployeeAmount * EmployeeAmountMulti;
                 gm.EmployeeCount += 1;
             }
         }

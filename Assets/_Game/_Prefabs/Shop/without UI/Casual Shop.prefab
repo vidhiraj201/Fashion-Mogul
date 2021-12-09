@@ -39747,9 +39747,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Employee: []
   EmployeeCountData: 0
+  currentEmpCount: 0
   EmployeetoSpwan: {fileID: 5617175501116341469, guid: 715adf8e112c21540b0990c2da486c19,
     type: 3}
+  SavingAndLoading: {fileID: 9158817501159201182}
   HR: {fileID: 9158817500221699720}
+  spawnEmps: 0
 --- !u!1 &9158817500108569290
 GameObject:
   m_ObjectHideFlags: 0
