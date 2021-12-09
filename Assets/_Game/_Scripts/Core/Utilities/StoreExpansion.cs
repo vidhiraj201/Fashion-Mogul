@@ -114,21 +114,20 @@ namespace FashionM.Core
             WaitTimerUnlockUI.transform.forward = -Camera.main.transform.forward;
             if (isPlayerNear)
             {
-                UIUnlock -= Time.deltaTime;
-                
-
-                WaitTimerUnlockUI.gameObject.SetActive(true);
-                WaitTimerUnlockUI_1.gameObject.SetActive(true);
-
-
-                WaitTimerUnlockUI_1.fillAmount = UIUnlock / WaitTimer;
-                WaitTimerUnlockUI.fillAmount = UIUnlock / WaitTimer;
+                if(GM.MaxCoin>= MaxCoinNeedToUnlock)
+                {
+                    UIUnlock -= Time.deltaTime;
+                    WaitTimerUnlockUI.gameObject.SetActive(true);
+                    WaitTimerUnlockUI_1.gameObject.SetActive(true);
+                    WaitTimerUnlockUI_1.fillAmount = UIUnlock / WaitTimer;
+                    WaitTimerUnlockUI.fillAmount = UIUnlock / WaitTimer;
+                }                
                 if (UIUnlock <= 0)
                 {
-                    isPlayerNear = false;
-                    UIUnlock = WaitTimer;
                     GM.MaxCoin -= MaxCoinNeedToUnlock;
                     MaxCoinNeedToUnlock = 0;
+                    isPlayerNear = false;
+                    UIUnlock = WaitTimer;
                 }
             }
         }

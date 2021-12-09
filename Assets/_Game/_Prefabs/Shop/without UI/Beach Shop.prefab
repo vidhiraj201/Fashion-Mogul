@@ -678,6 +678,7 @@ MonoBehaviour:
   StationPrice: {fileID: 744537191482910581}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &744537191473216672
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,6 +1527,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 1
   Y: 4.26
+  unlock: 0
 --- !u!1 &744537191683953006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,6 +1871,7 @@ MonoBehaviour:
   Rack2: 1
   Rack3: 0
   Y: 4.93
+  unlock: 0
 --- !u!1 &744537191831871833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,6 +2881,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 744537192228759852}
+  - component: {fileID: 2100888524}
   m_Layer: 0
   m_Name: EmployeeCollection
   m_TagString: Untagged
@@ -2899,6 +2903,26 @@ Transform:
   m_Father: {fileID: 744537192945074368}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100888524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744537192228759853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841763bae2da9254cb3d4441cb60668e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Employee: []
+  EmployeeCountData: 0
+  currentEmpCount: 0
+  EmployeetoSpwan: {fileID: 5617175501116341469, guid: 715adf8e112c21540b0990c2da486c19,
+    type: 3}
+  SavingAndLoading: {fileID: 744537193550339939}
+  HR: {fileID: 744537192344563829}
+  spawnEmps: 0
 --- !u!1 &744537192234800942
 GameObject:
   m_ObjectHideFlags: 0
@@ -3260,6 +3284,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 0
   Y: 4.27
+  unlock: 0
 --- !u!1 &744537192344563723
 GameObject:
   m_ObjectHideFlags: 0
@@ -4225,6 +4250,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 0
   Y: 4.53
+  unlock: 0
 --- !u!1 &744537192698747245
 GameObject:
   m_ObjectHideFlags: 0
@@ -4619,6 +4645,7 @@ MonoBehaviour:
   StationPrice: {fileID: 744537191896824557}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &744537192945074369
 GameObject:
   m_ObjectHideFlags: 0
@@ -5180,6 +5207,7 @@ MonoBehaviour:
   StationPrice: {fileID: 744537191473216674}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &744537193031660264
 GameObject:
   m_ObjectHideFlags: 0
@@ -6862,6 +6890,7 @@ GameObject:
   - component: {fileID: 7426090470778311475}
   - component: {fileID: 3991463311979156168}
   - component: {fileID: 3897297709009320046}
+  - component: {fileID: 2100888523}
   m_Layer: 0
   m_Name: LR Beach Environment
   m_TagString: Untagged
@@ -7047,6 +7076,37 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
   m_Area: 0
+--- !u!114 &2100888523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744537193550339939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23d9ec40d6d1524192a2b4953bb644e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  empC: {fileID: 2100888524}
+  Rack0: {fileID: 744537192314058442}
+  Rack1: {fileID: 744537192671638730}
+  Rack2: {fileID: 744537191819815287}
+  Rack3: {fileID: 744537191664180530}
+  S1: {fileID: 2058839742194175837}
+  S2: {fileID: 744537193016863941}
+  S3: {fileID: 744537191460840782}
+  S4: {fileID: 744537192934832934}
+  GDB:
+    unlock1: 0
+    unlock2: 0
+    unlock3: 0
+    unlock4: 0
+    S1: 0
+    S2: 0
+    S3: 0
+    S4: 0
+    empCount: 0
 --- !u!1 &866868458964058734
 GameObject:
   m_ObjectHideFlags: 0
@@ -39279,6 +39339,7 @@ MonoBehaviour:
   StationPrice: {fileID: 6360577360416529338}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 300
+  open: 0
 --- !u!1 &8786059557741342558
 GameObject:
   m_ObjectHideFlags: 0
@@ -49485,15 +49546,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47d733aa9ca5e364baf5a2eb391fcff8, type: 3}
---- !u!1 &1933367439565613840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 47d733aa9ca5e364baf5a2eb391fcff8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1591418427221759553}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1269843424088764842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47d733aa9ca5e364baf5a2eb391fcff8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1591418427221759553}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1933367439565613840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 47d733aa9ca5e364baf5a2eb391fcff8,
     type: 3}
   m_PrefabInstance: {fileID: 1591418427221759553}
   m_PrefabAsset: {fileID: 0}

@@ -7429,6 +7429,7 @@ MonoBehaviour:
   StationPrice: {fileID: 4422426763131289954}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &4422426762013735758
 GameObject:
   m_ObjectHideFlags: 0
@@ -7990,6 +7991,7 @@ MonoBehaviour:
   StationPrice: {fileID: 4422426763496212269}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &4422426762188279415
 GameObject:
   m_ObjectHideFlags: 0
@@ -8154,6 +8156,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 0
   Y: 4.9
+  unlock: 0
 --- !u!1 &4422426762305905378
 GameObject:
   m_ObjectHideFlags: 0
@@ -8876,6 +8879,7 @@ GameObject:
   - component: {fileID: 22751989272723765}
   - component: {fileID: 463785964854328499}
   - component: {fileID: 7674758900939948377}
+  - component: {fileID: 1599220423581348647}
   m_Layer: 0
   m_Name: LR Sport Environment
   m_TagString: Untagged
@@ -9061,6 +9065,37 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
   m_Area: 0
+--- !u!114 &1599220423581348647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4422426762620626156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c9c2b2e6313474aaf876fcc0fde66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  empC: {fileID: 119830646109271179}
+  Rack0: {fileID: 4422426763800251717}
+  Rack1: {fileID: 4422426762295562053}
+  Rack2: {fileID: 4422426763052716792}
+  Rack3: {fileID: 4422426763435009725}
+  S1: {fileID: 3141483674705097938}
+  S2: {fileID: 4422426762086618954}
+  S3: {fileID: 4422426763500166849}
+  S4: {fileID: 4422426762005102761}
+  GDS:
+    unlock1: 0
+    unlock2: 0
+    unlock3: 0
+    unlock4: 0
+    S1: 0
+    S2: 0
+    S3: 0
+    S4: 0
+    empCount: 0
 --- !u!1 &4422426762641415851
 GameObject:
   m_ObjectHideFlags: 0
@@ -10717,6 +10752,7 @@ MonoBehaviour:
   Rack2: 1
   Rack3: 0
   Y: 4.26
+  unlock: 0
 --- !u!1 &4422426763065826006
 GameObject:
   m_ObjectHideFlags: 0
@@ -11580,6 +11616,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 1
   Y: 4.26
+  unlock: 0
 --- !u!1 &4422426763444780908
 GameObject:
   m_ObjectHideFlags: 0
@@ -11941,6 +11978,7 @@ MonoBehaviour:
   StationPrice: {fileID: 4422426763522170106}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &4422426763522169988
 GameObject:
   m_ObjectHideFlags: 0
@@ -12689,6 +12727,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4422426763713319587}
+  - component: {fileID: 119830646109271179}
   m_Layer: 0
   m_Name: EmployeeCollection
   m_TagString: Untagged
@@ -12710,6 +12749,26 @@ Transform:
   m_Father: {fileID: 4422426762013735759}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &119830646109271179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4422426763713319586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841763bae2da9254cb3d4441cb60668e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Employee: []
+  EmployeeCountData: 0
+  currentEmpCount: 0
+  EmployeetoSpwan: {fileID: 5617175501116341469, guid: 715adf8e112c21540b0990c2da486c19,
+    type: 3}
+  SavingAndLoading: {fileID: 4422426762620626156}
+  HR: {fileID: 4422426763830692858}
+  spawnEmps: 0
 --- !u!1 &4422426763717330872
 GameObject:
   m_ObjectHideFlags: 0
@@ -13146,6 +13205,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 0
   Y: 4.27
+  unlock: 0
 --- !u!1 &4422426763830692740
 GameObject:
   m_ObjectHideFlags: 0
@@ -24423,6 +24483,7 @@ MonoBehaviour:
   StationPrice: {fileID: 8020896078151311413}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 300
+  open: 0
 --- !u!1 &5753794979509826134
 GameObject:
   m_ObjectHideFlags: 0

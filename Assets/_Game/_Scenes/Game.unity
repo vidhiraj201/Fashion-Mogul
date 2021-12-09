@@ -1209,7 +1209,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 5151805998119161818}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 948385259}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92a01ea99ecd11c4d84d8ee912b51c8e, type: 3}
@@ -6065,12 +6065,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941092411}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &948385259 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9158817501159201182, guid: 6b52198032c0f2b41a747d715278142d,
-    type: 3}
-  m_PrefabInstance: {fileID: 5151805998119161818}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &994096685
 GameObject:
   m_ObjectHideFlags: 0
@@ -12399,6 +12393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0f6b5bd289ba448bfe09b7b8872600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentCoin: 0
   dailyAmount: 0
   Cinemachine: {fileID: 128027450}
   CoinCountText: {fileID: 1321967205}
@@ -12411,7 +12406,7 @@ MonoBehaviour:
   - {fileID: 744537192945074369, guid: 746f0c978598d2c468c8ab8cb2e81360, type: 3}
   LeftAndRightFacingStation: []
   NoRoadFacingStation: []
-  MaxCoin: 0
+  MaxCoin: 2500
   CountMultiplier: 10
   EmployeeCount: 0
   EmployeeAmount: 500
@@ -15286,14 +15281,6 @@ PrefabInstance:
       propertyPath: Day4.Array.data[2]
       value: 
       objectReference: {fileID: 592535032}
-    - target: {fileID: 1281507378, guid: 6b52198032c0f2b41a747d715278142d, type: 3}
-      propertyPath: SavingAndLoading
-      value: 
-      objectReference: {fileID: 948385259}
-    - target: {fileID: 1281507378, guid: 6b52198032c0f2b41a747d715278142d, type: 3}
-      propertyPath: EmployeeCountData
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9158817500552824380, guid: 6b52198032c0f2b41a747d715278142d,
         type: 3}
       propertyPath: m_Name

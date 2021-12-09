@@ -22,6 +22,9 @@ public class dayCompleteReport : MonoBehaviour
             {
                 FindObjectOfType<SavingAndLoading>().SaveGame();
                 FindObjectOfType<SavingAndLoadingCasual>().SaveGame();
+                FindObjectOfType<SavingAndLoadingBeach>().SaveGame();
+                FindObjectOfType<SavingAndLoadingOffice>().SaveGame();
+                FindObjectOfType<SavingAndLoadingSport>().SaveGame();
             }
             catch
             {

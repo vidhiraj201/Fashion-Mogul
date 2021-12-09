@@ -12249,6 +12249,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 0
   Y: 4.27
+  unlock: 0
 --- !u!1 &3312067451575757435
 GameObject:
   m_ObjectHideFlags: 0
@@ -12326,6 +12327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3312067451592733532}
+  - component: {fileID: 1584008850}
   m_Layer: 0
   m_Name: EmployeeCollection
   m_TagString: Untagged
@@ -12347,6 +12349,26 @@ Transform:
   m_Father: {fileID: 3312067453382761136}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584008850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312067451592733533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841763bae2da9254cb3d4441cb60668e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Employee: []
+  EmployeeCountData: 0
+  currentEmpCount: 0
+  EmployeetoSpwan: {fileID: 5617175501116341469, guid: 715adf8e112c21540b0990c2da486c19,
+    type: 3}
+  SavingAndLoading: {fileID: 3312067452781692179}
+  HR: {fileID: 3312067451575757317}
+  spawnEmps: 0
 --- !u!1 &3312067451596580423
 GameObject:
   m_ObjectHideFlags: 0
@@ -13769,6 +13791,7 @@ MonoBehaviour:
   StationPrice: {fileID: 3312067451804073221}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &3312067451928172456
 GameObject:
   m_ObjectHideFlags: 0
@@ -14025,6 +14048,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 1
   Y: 4.26
+  unlock: 0
 --- !u!1 &3312067452014298067
 GameObject:
   m_ObjectHideFlags: 0
@@ -14622,6 +14646,7 @@ MonoBehaviour:
   Rack2: 1
   Rack3: 0
   Y: 4.26
+  unlock: 0
 --- !u!1 &3312067452287417129
 GameObject:
   m_ObjectHideFlags: 0
@@ -16303,6 +16328,7 @@ GameObject:
   - component: {fileID: 7728825910515976969}
   - component: {fileID: 6044668185426539133}
   - component: {fileID: 4470062739633853730}
+  - component: {fileID: 1584008849}
   m_Layer: 0
   m_Name: L Office Environment
   m_TagString: Untagged
@@ -16487,6 +16513,37 @@ MonoBehaviour:
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
   m_Area: 0
+--- !u!114 &1584008849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312067452781692179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9e592a67ebd8e34db3511e1a674fddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  empC: {fileID: 1584008850}
+  Rack0: {fileID: 3312067451545447610}
+  Rack1: {fileID: 3312067453127732922}
+  Rack2: {fileID: 3312067452274307847}
+  Rack3: {fileID: 3312067451985332034}
+  S1: {fileID: 4265336262912447789}
+  S2: {fileID: 3312067453321475765}
+  S3: {fileID: 3312067451916320574}
+  S4: {fileID: 3312067453374144854}
+  GDO:
+    unlock1: 0
+    unlock2: 0
+    unlock3: 0
+    unlock4: 0
+    S1: 0
+    S2: 0
+    S3: 0
+    S4: 0
+    empCount: 0
 --- !u!1 &3312067452810359727
 GameObject:
   m_ObjectHideFlags: 0
@@ -17310,6 +17367,7 @@ MonoBehaviour:
   Rack2: 0
   Rack3: 0
   Y: 5
+  unlock: 0
 --- !u!1 &3312067453154537352
 GameObject:
   m_ObjectHideFlags: 0
@@ -17884,6 +17942,7 @@ MonoBehaviour:
   StationPrice: {fileID: 3312067451912333010}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &3312067453374144852
 GameObject:
   m_ObjectHideFlags: 0
@@ -17999,6 +18058,7 @@ MonoBehaviour:
   StationPrice: {fileID: 3312067452218531997}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 250
+  open: 0
 --- !u!1 &3312067453382761137
 GameObject:
   m_ObjectHideFlags: 0
@@ -39700,6 +39760,7 @@ MonoBehaviour:
   StationPrice: {fileID: 9216260421190222282}
   CoinReduceSpeed: 5
   MaxCoinNeedToUnlock: 300
+  open: 0
 --- !u!1 &6953390450868924035
 GameObject:
   m_ObjectHideFlags: 0
@@ -50201,15 +50262,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47d733aa9ca5e364baf5a2eb391fcff8, type: 3}
---- !u!4 &3908157666024811482 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47d733aa9ca5e364baf5a2eb391fcff8,
-    type: 3}
-  m_PrefabInstance: {fileID: 3582096516734356529}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4429079249610125664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 47d733aa9ca5e364baf5a2eb391fcff8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3582096516734356529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3908157666024811482 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 47d733aa9ca5e364baf5a2eb391fcff8,
     type: 3}
   m_PrefabInstance: {fileID: 3582096516734356529}
   m_PrefabAsset: {fileID: 0}

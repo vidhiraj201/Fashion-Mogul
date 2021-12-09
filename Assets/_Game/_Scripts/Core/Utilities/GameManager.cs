@@ -7,7 +7,7 @@ namespace FashionM.Core
 {
     public class GameManager : MonoBehaviour
     {
-        private float CurrentCoin;
+        public float CurrentCoin;
         public float dailyAmount;
         private dayCompleteReport watch;
 
@@ -147,12 +147,16 @@ namespace FashionM.Core
 
         void coinControl()
         {
+            CurrentCoin = Mathf.Clamp(CurrentCoin, 0, MaxCoin);
+            MaxCoin = Mathf.Clamp(MaxCoin, 0, Mathf.Infinity);
+
+
             CoinCountText.text = CurrentCoin.ToString("F0");
 
             if (MaxCoin > CurrentCoin)
                 CurrentCoin += CountMultiplier;
 
-            if (MaxCoin < CurrentCoin)
+            if (MaxCoin < CurrentCoin && MaxCoin>=0)
                 CurrentCoin -= CountMultiplier;
         }
 
