@@ -58,6 +58,7 @@ namespace FashionM.Core
         {
             if(gm.MaxCoin >= gm.EmployeeAmount)
             {
+                
                 FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
                 GameObject EMP =  Instantiate(Employee, FindObjectOfType<playerControl>().HR.SpwanPoint.position, Quaternion.identity);
                 EMP.transform.parent = FindObjectOfType<playerControl>().HR.Collection;
@@ -67,6 +68,7 @@ namespace FashionM.Core
                 gm.MaxCoin -= gm.EmployeeAmount;
                 gm.EmployeeAmount = gm.EmployeeAmount * EmployeeAmountMulti;
                 gm.EmployeeCount += 1;
+                FindObjectOfType<AnalyticalDataStorage>().EmployeeHire((int)gm.EmployeeCount);
             }
         }
 

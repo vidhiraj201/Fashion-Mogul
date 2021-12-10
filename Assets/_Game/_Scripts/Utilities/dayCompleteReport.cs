@@ -21,6 +21,7 @@ public class dayCompleteReport : MonoBehaviour
             try
             {
                 FindObjectOfType<SaveGame>().save = 0;
+                FindObjectOfType<AnalyticalDataStorage>().dayEndData(manager.dayCount, (int)manager.CustomerOut);
             }
             catch
             {

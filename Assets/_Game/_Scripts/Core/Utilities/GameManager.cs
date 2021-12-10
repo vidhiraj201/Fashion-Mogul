@@ -223,7 +223,8 @@ namespace FashionM.Core
             dayStartUI.GetComponent<Animator>().Play("In");
             FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
             yield return new WaitForSeconds(t);            
-            dayStartUI.GetComponent<Animator>().Play("Out");    
+            dayStartUI.GetComponent<Animator>().Play("Out");
+            FindObjectOfType<AnalyticalDataStorage>().dayStartData(dayCount, (int)customerGoal);
             
         }
     }
