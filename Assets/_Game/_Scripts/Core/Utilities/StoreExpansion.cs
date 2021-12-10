@@ -83,30 +83,37 @@ namespace FashionM.Core
 
 
             if (MaxCoinNeedToUnlock <= 0)
-            {                
-                    if (X)
-                    {
-                        Bounds.GetComponent<BoxCollider>().center = new Vector3(BoundCenter.x, Bounds.GetComponent<BoxCollider>().center.y, Bounds.GetComponent<BoxCollider>().center.z); 
-                        Bounds.GetComponent<BoxCollider>().size = new Vector3(BoundSize.x, Bounds.GetComponent<BoxCollider>().size.y, Bounds.GetComponent<BoxCollider>().size.z); 
-                    }
+            {
+                Deactive();
+                if (X)
+                {
+                    Bounds.GetComponent<BoxCollider>().center = new Vector3(BoundCenter.x, Bounds.GetComponent<BoxCollider>().center.y, Bounds.GetComponent<BoxCollider>().center.z);
+                    Bounds.GetComponent<BoxCollider>().size = new Vector3(BoundSize.x, Bounds.GetComponent<BoxCollider>().size.y, Bounds.GetComponent<BoxCollider>().size.z);
+                }
 
-                    if (Z)
-                    {
-                        Bounds.GetComponent<BoxCollider>().center = new Vector3(Bounds.GetComponent<BoxCollider>().center.x, Bounds.GetComponent<BoxCollider>().center.y, BoundCenter.z ); 
-                        Bounds.GetComponent<BoxCollider>().size = new Vector3(Bounds.GetComponent<BoxCollider>().size.x, Bounds.GetComponent<BoxCollider>().size.y, BoundSize.z); 
-                    }
-
-                StartCoroutine(Deactive());
+                if (Z)
+                {
+                    Bounds.GetComponent<BoxCollider>().center = new Vector3(Bounds.GetComponent<BoxCollider>().center.x, Bounds.GetComponent<BoxCollider>().center.y, BoundCenter.z);
+                    Bounds.GetComponent<BoxCollider>().size = new Vector3(Bounds.GetComponent<BoxCollider>().size.x, Bounds.GetComponent<BoxCollider>().size.y, BoundSize.z);
+                }
             }
+
             OpenUI();
         }
 
-        IEnumerator Deactive()
+        float it = 0.1f;
+        void Deactive()
         {
-            FindObjectOfType<SavingAndLoadingSection>().SaveGames();
-            yield return new WaitForSeconds(0.1f);
-            Spwan();
-            this.gameObject.SetActive(false);
+            try
+            {
+                FindObjectOfType<SavingAndLoadingSection>().SaveGames();
+                Spwan();
+                this.gameObject.SetActive(false);
+            }
+            catch
+            {
+                print(this.transform.name + " Failed to Save and Spwan");
+            }
         }
 
         public void OpenUI()
@@ -126,8 +133,11 @@ namespace FashionM.Core
                 {
                     GM.MaxCoin -= MaxCoinNeedToUnlock;
                     MaxCoinNeedToUnlock = 0;
-                    isPlayerNear = false;
-                    UIUnlock = WaitTimer;
+                    if (MaxCoinNeedToUnlock <= 0)
+                    {
+                        isPlayerNear = false;
+                        UIUnlock = WaitTimer;
+                    }                    
                 }
             }
         }
@@ -137,7 +147,6 @@ namespace FashionM.Core
             if (collision.gameObject.CompareTag("Player") && FindObjectOfType<FashionM.Movement.playerMovement>().direction.magnitude<0.1f)
             {
                 isPlayerNear = true;
-
             }
         }
 
@@ -176,12 +185,9 @@ namespace FashionM.Core
      
         public void Spwan()
         {
-            if (GM.MaxCoin >= MaxCoinNeedToUnlock && MaxCoinNeedToUnlock >= 0)
-            {
-                FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
-                GameObject ToSpwanData = Instantiate(ToSpwan, PlacingPosition, Quaternion.Euler(PlacingRotation));
-                ToSpwanData.transform.parent = GameObject.Find("Expanded Store").transform;                   
-            }
+            FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
+            GameObject ToSpwanData = Instantiate(ToSpwan, PlacingPosition, Quaternion.Euler(PlacingRotation));
+            ToSpwanData.transform.parent = GameObject.Find("Expanded Store").transform;
         }
     }
 }

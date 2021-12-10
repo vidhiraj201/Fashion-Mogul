@@ -6065,8 +6065,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Store_1: {fileID: 2033563788}
-  Store_2: {fileID: 592535033}
-  Store_3: {fileID: 26172993}
+  Store_2: {fileID: 26172993}
+  Store_3: {fileID: 592535033}
   GDS:
     Section_1: 1500
     Section_2: 2500

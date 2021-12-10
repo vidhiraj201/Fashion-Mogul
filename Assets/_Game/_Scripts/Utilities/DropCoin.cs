@@ -45,7 +45,7 @@ namespace FashionM.Core
             if (collision.gameObject.CompareTag("Player") && !GetComponent<Rigidbody>().isKinematic)
             {
                 StoreToPlayer = true;
-                GetComponent<Rigidbody>().isKinematic = true;
+                //GetComponent<Rigidbody>().isKinematic = true;
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().MaxCoin += Coins;
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().dailyAmount += Coins;
                 Destroy(this.gameObject, 0.15f);
@@ -57,7 +57,7 @@ namespace FashionM.Core
             if (other.gameObject.CompareTag("Player") && GetComponent<Rigidbody>().isKinematic)
             {
                 StoreToPlayer = true;
-                GetComponent<Rigidbody>().isKinematic = true;
+                //GetComponent<Rigidbody>().isKinematic = true;
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().MaxCoin += Coins;
                 GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().dailyAmount += Coins;
                 Destroy(this.gameObject, 0.15f);
