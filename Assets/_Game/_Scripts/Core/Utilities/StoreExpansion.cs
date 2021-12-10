@@ -161,21 +161,29 @@ namespace FashionM.Core
 
         private void OnCollisionExit(Collision collision)
         {
-            
-            if (isPlayerNear)
+            try
             {
-                isPlayerNear = false;                
-                UIUnlock = WaitTimer;
+                if (isPlayerNear)
+                {
+                    isPlayerNear = false;
+                    UIUnlock = WaitTimer;
+                }
+
+                if (WaitTimerUnlockUI.gameObject.activeSelf)
+                    WaitTimerUnlockUI.gameObject.SetActive(false);
+
+                if (WaitTimerUnlockUI_1 != null && WaitTimerUnlockUI_1.gameObject.activeSelf)
+                    WaitTimerUnlockUI_1.gameObject.SetActive(false);
+
+                if (GM.UnlockStoreExpansionUI.activeSelf)
+                    GM.UnlockStoreExpansionUI.GetComponent<Animator>().Play("Out");
+
+            }
+            catch
+            {
+
             }
 
-            if (WaitTimerUnlockUI.gameObject.activeSelf)
-                WaitTimerUnlockUI.gameObject.SetActive(false);
-
-            if(WaitTimerUnlockUI_1 != null &&WaitTimerUnlockUI_1.gameObject.activeSelf)
-                WaitTimerUnlockUI_1.gameObject.SetActive(false);
-
-            if (GM.UnlockStoreExpansionUI.activeSelf)
-                GM.UnlockStoreExpansionUI.GetComponent<Animator>().Play("Out");
 
         }
 

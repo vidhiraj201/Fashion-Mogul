@@ -107,7 +107,7 @@ namespace FashionM.Control
                     OR.playerIsNear = true;
             }
 
-            if (other.gameObject.CompareTag("StoreExp"))
+            if (other.gameObject.CompareTag("StoreExp") && manager.dayCount>=4)
             {
                 SE = other.gameObject.GetComponent<StoreExpansion>();
             }

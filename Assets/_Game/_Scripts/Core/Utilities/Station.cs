@@ -64,7 +64,7 @@ namespace FashionM.Core
         }
         private void OnCollisionStay(Collision collision)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<FashionM.Movement.playerMovement>().direction.magnitude <= 0)
             {
                 if(lv.rackOpen.Count>0)
                 {
