@@ -8,6 +8,12 @@ public class AnalyticalDataStorage : MonoBehaviour
     string itemType = "Test";
     string itemId = "Test";
     string cartType = "Test";
+
+    private void Awake()
+    {
+        print("Analytic Called");
+        GameAnalytics.Initialize();
+    }
     public void SentData(int amount)
     {
         GameAnalytics.NewBusinessEvent(currency, amount, itemType, itemId, cartType);

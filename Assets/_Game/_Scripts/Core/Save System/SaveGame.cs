@@ -9,9 +9,10 @@ public class SaveGame : MonoBehaviour
 
    public float save;
 
+
     private void Start()
     {
-        save = saveGame;
+        save = saveGame;        
     }
     void Update()
     {
