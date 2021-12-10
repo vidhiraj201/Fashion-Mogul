@@ -101,11 +101,11 @@ namespace FashionM.Core
             OpenUI();
         }
 
-        float it = 0.1f;
         void Deactive()
         {
             try
             {
+                FindObjectOfType<AnalyticalDataStorage>().SentData((int)MaxCoinNeedToUnlock);
                 FindObjectOfType<SavingAndLoadingSection>().SaveGames();
                 Spwan();
                 this.gameObject.SetActive(false);
