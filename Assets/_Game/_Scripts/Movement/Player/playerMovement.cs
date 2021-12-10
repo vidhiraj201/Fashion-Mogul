@@ -49,9 +49,13 @@ namespace FashionM.Movement
                 Hold = true;
             if (GetComponent<playerStackingSystem>().ClothObject.Count <= 0)
                 Hold = false;
-            
+
+
+            float x = Input.GetAxisRaw("Vertical");
+            float z = -Input.GetAxisRaw("Horizontal");
+/*
             float x = joystick.Vertical;
-            float z = -joystick.Horizontal;
+            float z = -joystick.Horizontal;*/
             if (!isWalk)
             {
                 playerAnimation.enabled = true;
@@ -70,10 +74,10 @@ namespace FashionM.Movement
             {
                 FindObjectOfType<GameManager>().OnMouseDownData();
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle+45, ref turnSmoothVelocity, rotationSmooth);
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, rotationSmooth);
                 transform.rotation = Quaternion.Euler(0, angle, 0);
-                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * new Vector3(1, 0, 1);
-                controller.Move(moveDir.normalized * speed*Time.deltaTime);
+                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                controller.Move(moveDir.normalized * speed * Time.deltaTime);
             }                        
         }
 

@@ -19,6 +19,6 @@ public class USUI : MonoBehaviour
     {
         FindObjectOfType<FashionM.Core.GameManager>().DayStart = true;
         FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = false;
-        FindObjectOfType<FashionM.Core.GameManager>().InfintyUI.SetActive(true);
+        //FindObjectOfType<FashionM.Core.GameManager>().InfintyUI.SetActive(true);
     }
 }

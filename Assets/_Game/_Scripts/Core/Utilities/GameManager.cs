@@ -42,7 +42,7 @@ namespace FashionM.Core
         public GameObject UnlockStoreExpansionUI;
         public GameObject HireEmployee;
         public GameObject dayCompleteUI;
-        public GameObject dayStartUI;
+        public GameObject customerUI;
         public GameObject InfintyUI;
 
         [Header("Day Session")]
@@ -220,11 +220,13 @@ namespace FashionM.Core
 
         IEnumerator StartGame(float t)
         {
-            dayStartUI.GetComponent<Animator>().Play("In");
-            FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
-            yield return new WaitForSeconds(t);            
-            dayStartUI.GetComponent<Animator>().Play("Out");    
-            
+            //customerUI.GetComponent<Animator>().Play("In");
+            //FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
+            yield return new WaitForSeconds(t);
+            DayStart = true;
+           // FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = false;
+            //customerUI.GetComponent<Animator>().Play("Out");    
+
         }
     }
 }

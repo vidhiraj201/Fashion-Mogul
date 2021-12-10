@@ -105,7 +105,7 @@ namespace FashionM.Core
         {
             try
             {
-                FindObjectOfType<AnalyticalDataStorage>().SentData((int)MaxCoinNeedToUnlock);
+                //FindObjectOfType<AnalyticalDataStorage>().SentData((int)MaxCoinNeedToUnlock);
                 FindObjectOfType<SavingAndLoadingSection>().SaveGames();
                 Spwan();
                 this.gameObject.SetActive(false);

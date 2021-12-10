@@ -29,12 +29,12 @@ namespace FashionM.Core
        
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            /*if (Input.GetKeyDown(KeyCode.S))
             {
                 GameObject C = Instantiate(Cloths, StackingObject.transform.position, Quaternion.Euler(0,0,0));
                 C.transform.parent = StackingObject.transform;
                 C.transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
+            }*/
             if (Input.GetKeyDown(KeyCode.D))
             {
                 //RemoveCloth(1);
