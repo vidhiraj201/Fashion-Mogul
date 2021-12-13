@@ -172,8 +172,8 @@ namespace FashionM.Core
                             DClothUp.SetActive(false);
                             DClothDown.SetActive(false);
                         }
-                        Cloth0.SetActive(false);
-                        Cloth1.SetActive(true);
+                        Cloth0.SetActive(true);
+                        Cloth1.SetActive(false);
                         Cloth2.SetActive(false);
                         Cloth3.SetActive(true);
                     }

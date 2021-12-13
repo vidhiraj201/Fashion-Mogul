@@ -83,8 +83,8 @@ namespace FashionM.Control
             Target.GetComponent<empMovement>().isWalkingTowardClient = false;
             Target.GetComponent<empMovement>().gameObject.layer = 9;
             Target.GetComponent<empControl>().Occupied = false;
+            Target.GetComponent<empControl>().StoreNumberStored = -1;
             Target.GetComponent<empMovement>().ClientNeedItem = -1;
-            /*transform.GetComponent<clientControl>().NeedItem = 0;*/
             transform.gameObject.layer = 10;
             Target = null;
             locked = false;

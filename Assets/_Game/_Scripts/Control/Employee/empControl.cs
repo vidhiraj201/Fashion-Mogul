@@ -60,11 +60,12 @@ namespace FashionM.Control
 
 
 
-            if (other.gameObject.CompareTag("Client"))
+            if (other.gameObject.CompareTag("Client") )
             {
                 customer = other.gameObject;
-                //triggerWhenNearClient(other);
-                GetComponent<EmpStackingSystem>().RemoveCloth(other);
+
+                if(!other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer)
+                    GetComponent<EmpStackingSystem>().RemoveCloth(other);
 
                 if (other.gameObject.GetComponent<clientControl>().tredingComplete)
                 {
