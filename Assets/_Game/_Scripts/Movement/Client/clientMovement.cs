@@ -33,7 +33,9 @@ namespace FashionM.Movement
             customerSetup();
         }
 
-       
+
+        float x = 180;
+        float xDelay = 0.2f;
         void Update()
         {
 
@@ -51,6 +53,17 @@ namespace FashionM.Movement
             if (reched && !GetComponent<clientControl>().clothTookFromEmpOrPlayer)
             {
                 transform.rotation = Quaternion.Euler(0, lookRotation, 0);
+            }
+            if(GetComponent<clientControl>().tredingComplete && !GetComponent<clientControl>().TradeComp && x>=0 && xDelay>0)
+            {
+                xDelay -= Time.deltaTime;
+                if (xDelay <= 0)
+                {
+                    xDelay = 0;
+                    x -= 10;
+                    transform.rotation = Quaternion.Euler(0, x, 0);
+                }
+                
             }
         }
 

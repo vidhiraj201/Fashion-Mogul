@@ -19,6 +19,7 @@ namespace FashionM.Control
             UIHolder.gameObject.SetActive(false);
         }
 
+        public bool one = false;
         // Update is called once per frame
         void Update()
         {
@@ -29,11 +30,25 @@ namespace FashionM.Control
             if (CC.clothTookFromEmpOrPlayer)
                 UIHolder.gameObject.SetActive(false);
 
-            if(CC.CM.reched && !CC.clothTookFromEmpOrPlayer)
-                UIHolder.gameObject.SetActive(true);
+            if (one)
+            {
+                if (CC.CM.reched && !CC.clothTookFromEmpOrPlayer)
+                    UIHolder.gameObject.SetActive(true);
+            }
 
+            if (!one)
+            {
+                if (CC.CM.reched && !CC.clothTookFromEmpOrPlayer)
+                    StartCoroutine(delayINUI(1.5f));
+            }
         }
 
+
+        IEnumerator delayINUI(float t)
+        {
+            yield return new WaitForSeconds(t);
+            UIHolder.gameObject.SetActive(true);
+        }
         void ClothApply()
         {            
             if (CC.NeedItem == 0)

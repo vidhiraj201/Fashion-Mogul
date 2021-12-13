@@ -53,8 +53,9 @@ namespace FashionM.Control
         {
             if (other.gameObject.CompareTag("Client"))
             {
-                if(other.gameObject.GetComponent<clientMovement>().reched && !other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer)
-                GetComponent<playerStackingSystem>().RemoveCloth(other);
+                if (other.gameObject.GetComponent<clientMovement>().reched && !other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer)
+                    StartCoroutine(removeCloth(0.3f, other));
+                
 
             /*    if (other.gameObject.GetComponent<clientControl>().NeedItem == StoreNumberStored )
                 {
@@ -73,6 +74,12 @@ namespace FashionM.Control
                 HR = other.gameObject.GetComponent<HRDesk>();
             }
                 
+        }
+
+        IEnumerator removeCloth(float t, Collision other)
+        {
+            yield return new WaitForSeconds(t);
+            GetComponent<playerStackingSystem>().RemoveCloth(other);
         }
 
         private void OnCollisionStay(Collision other)

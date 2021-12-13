@@ -85,6 +85,7 @@ namespace FashionM.Core
         {
             if (ClothObject.Count <= 0)
             {
+                Destroy(Instantiate(paricalEffect, GetComponent<Scene3>().poof.position, Quaternion.identity), 1);
                 GetComponent<playerMovement>().AM.source.PlayOneShot(GetComponent<playerMovement>().AM.PandD, PickupDileverVolume);
                 GameObject o = Instantiate(cloth, StackingObject.transform.position, Quaternion.identity);
                 /*o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;*/
@@ -93,16 +94,16 @@ namespace FashionM.Core
                 o.GetComponent<Cloths>().Collector = this.gameObject;
             }
 
-            if (ClothObject.Count > 0)
+            /*if (ClothObject.Count > 0)
             {
                 GetComponent<playerMovement>().AM.source.PlayOneShot(GetComponent<playerMovement>().AM.PandD, PickupDileverVolume);
                 GameObject o = Instantiate(cloth, ClothObject[ClothObject.Count-1].transform.position + new Vector3(0, 0.05f, 0), Quaternion.identity);
-                /*o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;*/
+                *//*o.transform.GetChild(0).GetComponent<MeshRenderer>().material = mat;*//*
                 o.transform.parent = StackingObject.transform;
                 o.GetComponent<Cloths>().ClothIdentityNumber = num;
                 o.GetComponent<Cloths>().Collector = this.gameObject;
             }
-
+*/
         }
 
         public void RemoveCloth(Collision other)
