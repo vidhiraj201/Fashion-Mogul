@@ -9,6 +9,7 @@ namespace FashionM.Core
     {
         public float CurrentCoin;
         public float dailyAmount;
+
         private dayCompleteReport watch;
 
         public Animator Cinemachine;
@@ -25,6 +26,7 @@ namespace FashionM.Core
         public List<GameObject> LeftAndRightFacingStation = new List<GameObject>();
         public List<GameObject> NoRoadFacingStation = new List<GameObject>();
 
+        public Material whileTutorial;
 
         public float MaxCoin;
 

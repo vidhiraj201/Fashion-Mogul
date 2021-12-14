@@ -6,6 +6,8 @@ using FashionM.Core;
 public class BlackOutsForTutorial : MonoBehaviour
 {
 
+
+
     public GameObject particalPoof;
     
     public GameObject particalPoofBig;
