@@ -45,8 +45,8 @@ namespace FashionM.Control
         public bool StopWalking;
         public void Awake()
         {
-            if(lv.rackOpen.Count>0)
-                NeedItem = lv.rackOpen[0];
+           /* if (lv.rackOpen.Count > 0)
+                clientNeedItemRandomize();*/
         }
         private void Start()
         {
@@ -65,7 +65,7 @@ namespace FashionM.Control
             waitTimerUI.gameObject.SetActive(false);
             gm = FindObjectOfType<GameManager>();
             CM = GetComponent<clientMovement>();
-            clientNeedItemRandomize();
+            //clientNeedItemRandomize();
             try
             {
                 ar = transform.GetChild(2).gameObject;
@@ -92,7 +92,7 @@ namespace FashionM.Control
             }
         }
         private bool afterStart = false;
-
+        float k = 0.5f;
         float l=0.5f;
         private void Update()
         {
@@ -124,8 +124,13 @@ namespace FashionM.Control
 
             if (lv.rackOpen.Count > 0&& !afterStart)
             {
-                clientNeedItemRandomize();
-                afterStart = true;
+                if (k >= 0)
+                    k -= Time.deltaTime;
+                if (k <= 0)
+                {
+                    clientNeedItemRandomize();
+                    afterStart = true;
+                }                
             }
 
             if (playerIsNear)
@@ -209,6 +214,7 @@ namespace FashionM.Control
             {
                 if(gm.customerGoal > 0 && !CCountAdded && lv.Customers.Contains(this.gameObject))
                 {
+                    //clientNeedItemRandomize();
                     gm.CustomerIn += 1;
                     gm.customerGoal -= 1;
                     CCountAdded = true;

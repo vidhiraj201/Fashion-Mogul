@@ -45,28 +45,25 @@ namespace FashionM.Control
         public GameObject customer;
         private void OnCollisionEnter(Collision other)
         {
-
-            if (other.gameObject.CompareTag("Client"))
-            {
-                if (other.gameObject.GetComponent<clientControl>().NeedItem != StoreNumberStored || other.gameObject.GetComponent<clientControl>().NeedItem != GetComponent<empMovement>().ClientNeedItem)
-                {
-                    StoreNumberStored = -1;
-                    GetComponent<EmpStackingSystem>().poofCloth();
-                    GetComponent<empMovement>().ClientNeedItem = other.gameObject.GetComponent<clientControl>().NeedItem;
-                }
-            }
-
-
-
-
-
             if (other.gameObject.CompareTag("Client") )
             {
                 customer = other.gameObject;
 
-                if(!other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer)
-                    GetComponent<EmpStackingSystem>().RemoveCloth(other);
+                if(!other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer && other.gameObject.GetComponent<clientMovement>().reched)
+                {                    
+                    if (other.gameObject.GetComponent<clientControl>().NeedItem != StoreNumberStored || other.gameObject.GetComponent<clientControl>().NeedItem != GetComponent<empMovement>().ClientNeedItem)
+                    {
+                        StoreNumberStored = -1;
+                        GetComponent<EmpStackingSystem>().poofCloth();
+                        GetComponent<empMovement>().ClientNeedItem = other.gameObject.GetComponent<clientControl>().NeedItem;
+                    }
+                }
 
+                if (!other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer && other.gameObject.GetComponent<clientMovement>().reched)
+                {
+                    GetComponent<EmpStackingSystem>().RemoveCloth(other);
+                }
+                
                 if (other.gameObject.GetComponent<clientControl>().tredingComplete)
                 {
                     GetComponent<empMovement>().ClientNeedItem = -1;

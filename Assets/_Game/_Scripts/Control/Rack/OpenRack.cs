@@ -9,7 +9,7 @@ namespace FashionM.Control
         private FashionM.Core.GameManager gm;
         private FashionM.Core.Stores st;
 
-        public GameObject Clients,ClientPosition, SlotExpnasion;
+        public GameObject Clients,ClientPosition, SlotExpnasion, aura;
         
         void Start()
         {
@@ -20,9 +20,14 @@ namespace FashionM.Control
         // Update is called once per frame
         void Update()
         {
+            if (gm.dayCount >= 1)
+            {
+                st.MaxCoinNeedToUnlock = 0;
+            }
+
             if(gm.dayCount >= 2)
             {
-                /*st.MaxCoinNeedToUnlock = 0;*/
+                aura.SetActive(false);
                 Clients.SetActive(true);
                 ClientPosition.SetActive(true);
                 if(SlotExpnasion !=null)
