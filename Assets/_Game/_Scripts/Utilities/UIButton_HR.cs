@@ -42,15 +42,15 @@ namespace FashionM.Core
             {
                 BUI.color = new Color32(255, 255, 255, 255);
                 BName.color = new Color32(255, 255, 255, 255);
-                BAmount.color = new Color32(255, 255, 255, 255);
+                BAmount.color = new Color32(0, 0, 0, 255);
                 transform.GetComponent<Button>().enabled = true;
             }
 
             if (gm.MaxCoin < gm.EmployeeAmount)
             {
-                BUI.color = new Color32(202, 202, 202, 160);
-                BName.color = new Color32(202, 202, 202, 160);
-                BAmount.color = new Color32(202, 202, 202, 160);
+                BUI.color = new Color32(202, 202, 202, 130);
+                BName.color = new Color32(255, 255, 255, 255);
+                BAmount.color = new Color32(0, 0, 0, 200);
                 transform.GetComponent<Button>().enabled = false;
             }
         }
@@ -72,5 +72,10 @@ namespace FashionM.Core
             }
         }
 
+        public void closeUI()
+        {
+            if (gm.HireEmployee.activeSelf)
+                gm.HireEmployee.GetComponent<Animator>().Play("Out");
+        }
     }
 }

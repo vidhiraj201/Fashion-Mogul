@@ -119,7 +119,13 @@ public class BlackOutsForTutorial : MonoBehaviour
             gm.Cinemachine.Play("Casual");
             try
             {
-                StartCoroutine(day2(0.7f));
+                gm.ChangeTheColor = true;
+                if (gm.ColorChanged)
+                    StartCoroutine(day2(0.7f));
+
+                if (!gm.ColorChanged)
+                    poofEffectOnColorChange();
+                
                 FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
                 FindObjectOfType<FashionM.Core.EmpStackingSystem>().poofCloth();
             }
@@ -135,6 +141,8 @@ public class BlackOutsForTutorial : MonoBehaviour
             {
                 try
                 {
+                    gm.ChangeTheColor = true;
+                    gm.ColorChanged = true;
                     Day2[i].SetActive(true);
                     i++;
                     if (i >= Day2.Count - 1)
@@ -184,7 +192,6 @@ public class BlackOutsForTutorial : MonoBehaviour
             }
         }
     }
-
     public void DO_3()
     {
         if (gm.dayCount == 4 && Day4.Count > 0 && !do3 && !itrationDone_3 && !gm.DayOff && gm.DayStart)
@@ -235,10 +242,9 @@ public class BlackOutsForTutorial : MonoBehaviour
             }
         }
     }
-
     IEnumerator day2(float delay)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f);      
         for (int i = 0; i <= Day2.Count - 2;i++)
         {
             yield return new WaitForSeconds(delay);
@@ -292,4 +298,23 @@ public class BlackOutsForTutorial : MonoBehaviour
         }
     }
 
+    [SerializeField]float k = 1.5f;
+    void poofEffectOnColorChange()
+    {
+        
+        if (k >= 0)
+            k -= Time.deltaTime;
+        if(k<= k / 2)
+        {
+            if (gm.poofForColor != null && !gm.poofForColor.activeSelf && gm.dayCount == 2)
+            {
+                gm.poofForColor.SetActive(true);
+                FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
+            }
+        }
+        if (k <= 0)
+        {
+            gm.ColorChanged = true;
+        }
+    }
 }

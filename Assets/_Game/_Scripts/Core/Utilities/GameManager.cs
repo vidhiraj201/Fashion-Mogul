@@ -53,10 +53,12 @@ namespace FashionM.Core
         public bool isTutorialOver;
         public bool isFinalTutorialOver;
         public bool day2TutorialOver;
+        public bool ColorChanged;
+        public bool ChangeTheColor;
 
         [Header("")]
         public GameObject Bound;
-
+        public GameObject poofForColor;
         void Start()
         {
             customerGoalGenrator();

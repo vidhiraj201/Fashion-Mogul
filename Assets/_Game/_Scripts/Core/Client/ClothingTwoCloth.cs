@@ -25,16 +25,33 @@ namespace FashionM.Core
                 x = 0.15f;
                 if (control.NeedItem == control.lv.RackNumber0.RackNumber)
                 {
-                    if(DClothUp != null && DClothDown != null)
+                    if (isOffice)
                     {
-                        DClothUp.SetActive(true);
-                        DClothDown.SetActive(false);
-                    }
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(true);
+                            DClothDown.SetActive(false);
+                        }
 
-                    Cloth0.SetActive(false);
-                    Cloth1.SetActive(false);
-                    Cloth2.SetActive(false);
-                    Cloth3.SetActive(true);
+                        Cloth0.SetActive(false);
+                        Cloth1.SetActive(true);
+                        Cloth2.SetActive(false);
+                        Cloth3.SetActive(true);
+                    }
+                    if (isCasual)
+                    {
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(true);
+                            DClothDown.SetActive(false);
+                        }
+
+                        Cloth0.SetActive(false);
+                        Cloth1.SetActive(false);
+                        Cloth2.SetActive(false);
+                        Cloth3.SetActive(true);
+                    }
+                    
                 }
 
                 if (control.NeedItem == control.lv.RackNumber1.RackNumber)
@@ -66,28 +83,62 @@ namespace FashionM.Core
                 }
                 if (control.NeedItem == control.lv.RackNumber2.RackNumber)
                 {
-                    if (DClothUp != null && DClothDown != null)
+                    if (isCasual)
                     {
-                        DClothUp.SetActive(true);
-                        DClothDown.SetActive(false);
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(true);
+                            DClothDown.SetActive(false);
+                        }
+                        Cloth0.SetActive(false);
+                        Cloth1.SetActive(false);
+                        Cloth2.SetActive(false);
+                        Cloth3.SetActive(true);
                     }
-                    Cloth0.SetActive(false);
-                    Cloth1.SetActive(false);
-                    Cloth2.SetActive(false);
-                    Cloth3.SetActive(true);
+                    if (isOffice)
+                    {
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(true);
+                            DClothDown.SetActive(false);
+                        }
+                        Cloth0.SetActive(false);
+                        Cloth1.SetActive(true);
+                        Cloth2.SetActive(false);
+                        Cloth3.SetActive(true);
+                    }
+
+
+                   
                 }
 
                 if (control.NeedItem == control.lv.RackNumber3.RackNumber)
                 {
-                    if (DClothUp != null && DClothDown != null)
+                    if (isCasual)
                     {
-                        DClothUp.SetActive(false);
-                        DClothDown.SetActive(true);
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(false);
+                            DClothDown.SetActive(true);
+                        }
+                        Cloth0.SetActive(true);
+                        Cloth1.SetActive(false);
+                        Cloth2.SetActive(false);
+                        Cloth3.SetActive(false);
                     }
-                    Cloth0.SetActive(true);
-                    Cloth1.SetActive(false);
-                    Cloth2.SetActive(false);
-                    Cloth3.SetActive(false);
+
+                    if (isOffice)
+                    {
+                        if (DClothUp != null && DClothDown != null)
+                        {
+                            DClothUp.SetActive(false);
+                            DClothDown.SetActive(true);
+                        }
+                        Cloth0.SetActive(true);
+                        Cloth1.SetActive(true);
+                        Cloth2.SetActive(false);
+                        Cloth3.SetActive(false);
+                    }
                 }
             }
                 clothChange();
@@ -114,15 +165,30 @@ namespace FashionM.Core
                 {
                     if (control.NeedItem == control.lv.RackNumber0.RackNumber)
                     {
-                        if (DClothUp != null && DClothDown != null)
+                        if (isOffice)
                         {
-                            DClothUp.SetActive(false);
-                            DClothDown.SetActive(false);
+                            if (DClothUp != null && DClothDown != null)
+                            {
+                                DClothUp.SetActive(false);
+                                DClothDown.SetActive(false);
+                            }
+                            Cloth0.SetActive(true);
+                            Cloth1.SetActive(true);
+                            Cloth2.SetActive(false);
+                            Cloth3.SetActive(true);
                         }
-                        Cloth0.SetActive(true);
-                        Cloth1.SetActive(false);
-                        Cloth2.SetActive(false);
-                        Cloth3.SetActive(true);
+                        if (isCasual)
+                        {
+                            if (DClothUp != null && DClothDown != null)
+                            {
+                                DClothUp.SetActive(false);
+                                DClothDown.SetActive(false);
+                            }
+                            Cloth0.SetActive(true);
+                            Cloth1.SetActive(false);
+                            Cloth2.SetActive(false);
+                            Cloth3.SetActive(true);
+                        }                       
                     }
 
                     if (control.NeedItem == control.lv.RackNumber1.RackNumber)
@@ -154,28 +220,60 @@ namespace FashionM.Core
                     }
                     if (control.NeedItem == control.lv.RackNumber2.RackNumber)
                     {
-                        if (DClothUp != null && DClothDown != null)
+                        if (isOffice)
                         {
-                            DClothUp.SetActive(false);
-                            DClothDown.SetActive(false);
+                            if (DClothUp != null && DClothDown != null)
+                            {
+                                DClothUp.SetActive(false);
+                                DClothDown.SetActive(false);
+                            }
+                            Cloth0.SetActive(false);
+                            Cloth1.SetActive(true);
+                            Cloth2.SetActive(true);
+                            Cloth3.SetActive(true);
                         }
-                        Cloth0.SetActive(false);
-                        Cloth1.SetActive(false);
-                        Cloth2.SetActive(true);
-                        Cloth3.SetActive(true);
+                        if (isCasual)
+                        {
+                            if (DClothUp != null && DClothDown != null)
+                            {
+                                DClothUp.SetActive(false);
+                                DClothDown.SetActive(false);
+                            }
+                            Cloth0.SetActive(false);
+                            Cloth1.SetActive(false);
+                            Cloth2.SetActive(true);
+                            Cloth3.SetActive(true);
+                        }
+                      
                     }
 
                     if (control.NeedItem == control.lv.RackNumber3.RackNumber)
                     {
-                        if (DClothUp != null && DClothDown != null)
+                        if (isCasual)
                         {
-                            DClothUp.SetActive(false);
-                            DClothDown.SetActive(false);
+                            if (DClothUp != null && DClothDown != null)
+                            {
+                                DClothUp.SetActive(false);
+                                DClothDown.SetActive(false);
+                            }
+                            Cloth0.SetActive(true);
+                            Cloth1.SetActive(false);
+                            Cloth2.SetActive(false);
+                            Cloth3.SetActive(true);
                         }
-                        Cloth0.SetActive(true);
-                        Cloth1.SetActive(false);
-                        Cloth2.SetActive(false);
-                        Cloth3.SetActive(true);
+                        if (isOffice)
+                        {
+                            if (DClothUp != null && DClothDown != null)
+                            {
+                                DClothUp.SetActive(false);
+                                DClothDown.SetActive(false);
+                            }
+                            Cloth0.SetActive(true);
+                            Cloth1.SetActive(true);
+                            Cloth2.SetActive(false);
+                            Cloth3.SetActive(true);
+                        }
+                      
                     }
                 }
             }

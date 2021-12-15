@@ -44,20 +44,27 @@ namespace FashionM.Core
                 if (LoadUITimer <= 0)
                 {
                     isPlayerNear = false;
-                    LoadUITimer = UILoadWaitTimer;  
+                    LoadUITimer = UILoadWaitTimer;
                     waitTimerUI.gameObject.SetActive(false);
                     gm.HireEmployee.SetActive(true);
                 }
             }
         }
 
-        private void OnCollisionStay(Collision collision)
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Player") /*&& FindObjectOfType<FashionM.Movement.playerMovement>().direction.magnitude < 0.1f*/)
+            {
+                isPlayerNear = true;
+            }
+        }
+       /* private void OnCollisionStay(Collision collision)
         {
             if (collision.gameObject.CompareTag("Player") && FindObjectOfType<FashionM.Movement.playerMovement>().direction.magnitude < 0.1f)
             {
                 isPlayerNear = true;
             }
-        }
+        }*/
 
         private void OnCollisionExit(Collision collision)
         {

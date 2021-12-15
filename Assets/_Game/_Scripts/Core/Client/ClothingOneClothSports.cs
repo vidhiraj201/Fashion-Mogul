@@ -32,7 +32,7 @@ namespace FashionM.Core
 
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(false);
-                    Cloth2.SetActive(false);
+                    Cloth2.SetActive(true);
                     Cloth3.SetActive(false);
                 }
 
@@ -45,7 +45,7 @@ namespace FashionM.Core
                     }
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(false);
-                    Cloth2.SetActive(false);
+                    Cloth2.SetActive(true);
                     Cloth3.SetActive(false);
                 }
                 if (control.NeedItem == control.lv.RackNumber2.RackNumber)
@@ -70,7 +70,7 @@ namespace FashionM.Core
                     }
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(true);
-                    Cloth2.SetActive(false);
+                    Cloth2.SetActive(true);
                     Cloth3.SetActive(false);
                 }
             }
@@ -105,7 +105,7 @@ namespace FashionM.Core
                         }
                         Cloth0.SetActive(true);
                         Cloth1.SetActive(false);
-                        Cloth2.SetActive(false);
+                        Cloth2.SetActive(true);
                         Cloth3.SetActive(false);
                     }
 
@@ -118,7 +118,7 @@ namespace FashionM.Core
                         }
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
-                        Cloth2.SetActive(false);
+                        Cloth2.SetActive(true);
                         Cloth3.SetActive(false);
 
                     }
@@ -144,7 +144,7 @@ namespace FashionM.Core
                         }
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
-                        Cloth2.SetActive(false);
+                        Cloth2.SetActive(true);
                         Cloth3.SetActive(true);
                     }
                 }

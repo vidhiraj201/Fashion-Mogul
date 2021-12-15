@@ -9,8 +9,10 @@ public class TutColChanger : MonoBehaviour
     private MeshRenderer MS;
     public Material afterTutorial;
 
-    public bool single;
 
+    bool changeScene;
+
+    public bool single;
     public bool pose;
     public bool chair;
     public List<Material> materials = new List<Material>();
@@ -21,17 +23,30 @@ public class TutColChanger : MonoBehaviour
         whileTutorial = gm.whileTutorial;
         MS = GetComponent<MeshRenderer>();
     }
+
+    float i = 1f;
     void Update()
     {
+        if (!changeScene && gm.dayCount == 2 && gm.ChangeTheColor)
+        {
+            if (i >= 0)
+                i -= Time.deltaTime;
+
+            if (i <= 0)
+                changeScene = true;
+        }
         if (single)
         {
+            
             if (gm.dayCount <= 1)
             {
                 MS.material = whileTutorial;
             }
-            if (gm.dayCount > 1)
+            if (changeScene)
             {
                 MS.material = afterTutorial;
+                Destroy(GetComponent<TutColChanger>());
+
             }
         }
         if (!single)
@@ -42,11 +57,12 @@ public class TutColChanger : MonoBehaviour
                 mats[0] = whileTutorial;
                 MS.materials = mats;
             }
-            if (gm.dayCount > 1)
+            if (changeScene)
             {
                 var mats = MS.materials;
                 mats[0] = afterTutorial;
                 MS.materials = mats;
+                Destroy(GetComponent<TutColChanger>());
             }
         }
 
@@ -61,7 +77,7 @@ public class TutColChanger : MonoBehaviour
                 mats[3] = whileTutorial;
                 MS.materials = mats;
             }
-            if (gm.dayCount > 1)
+            if (changeScene)
             {
                 var mats = MS.materials;
                 mats[0] = materials[0];
@@ -69,6 +85,7 @@ public class TutColChanger : MonoBehaviour
                 mats[2] = materials[2];
                 mats[3] = materials[3];
                 MS.materials = mats;
+                Destroy(GetComponent<TutColChanger>());
             }
         }
 
@@ -81,13 +98,15 @@ public class TutColChanger : MonoBehaviour
                 mats[1] = whileTutorial;
                 MS.materials = mats;
             }
-            if (gm.dayCount > 1)
+            if (changeScene)
             {
                 var mats = MS.materials;
                 mats[0] = materials[0];
                 mats[1] = materials[1];
                 MS.materials = mats;
+                Destroy(GetComponent<TutColChanger>());
             }
-        }
+        }       
     }
+
 }
