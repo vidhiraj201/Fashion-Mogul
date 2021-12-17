@@ -46780,7 +46780,7 @@ MonoBehaviour:
   mat: {fileID: 2100000, guid: 6cf899aaacd9d644984072911aa9a6ae, type: 2}
   RackNumber: 0
   giveItemToPlayter: 0
-  waitTimer: 1.15
+  waitTimer: 1.1
   CoinReduceSpeed: 0
   MaxCoinNeedToUnlock: 0
   playerIsNear: 0
@@ -48364,8 +48364,8 @@ MonoBehaviour:
   Cloth: {fileID: 3803139299451678195, guid: 4e217484ca5399e41966ac8321499ccb, type: 3}
   mat: {fileID: 2100000, guid: 2d39446bbbfe98045a33bb2d99d3c47b, type: 2}
   RackNumber: 1
-  giveItemToPlayter: 1
-  waitTimer: 1.15
+  giveItemToPlayter: 0.2
+  waitTimer: 1.1
   CoinReduceSpeed: 1
   MaxCoinNeedToUnlock: 200
   playerIsNear: 0

@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ad6697ad058594489a7dfa28ee4a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelOpening: 6
+  levelOpening: 10
   sectionName: Sports
 --- !u!1 &68447662
 GameObject:
@@ -3735,7 +3735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ad6697ad058594489a7dfa28ee4a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelOpening: 7
+  levelOpening: 15
   sectionName: Office
 --- !u!1 &601819528
 GameObject:
@@ -10300,7 +10300,7 @@ MonoBehaviour:
   AM: {fileID: 0}
   joystick: {fileID: 8170153792157338567}
   playerAnimation: {fileID: 789379611}
-  speed: 20
+  speed: 12
   rotationSmooth: 0.01
   Hold: 0
   isWalk: 0
@@ -15412,11 +15412,6 @@ PrefabInstance:
       propertyPath: Day4.Array.data[2]
       value: 
       objectReference: {fileID: 592535032}
-    - target: {fileID: 9158817500189290551, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: waitTimer
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 9158817500552824380, guid: 6b52198032c0f2b41a747d715278142d,
         type: 3}
       propertyPath: m_Name
@@ -15476,16 +15471,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9158817500834148919, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: waitTimer
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9158817500834148919, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: giveItemToPlayter
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b52198032c0f2b41a747d715278142d, type: 3}
