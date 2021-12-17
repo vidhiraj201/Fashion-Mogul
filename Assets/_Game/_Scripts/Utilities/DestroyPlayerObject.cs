@@ -6,7 +6,7 @@ public class DestroyPlayerObject : MonoBehaviour
 {
     public void d()
     {
-        try
+       /* try
         {
             FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
             FindObjectOfType<FashionM.Core.EmpStackingSystem>().poofCloth();
@@ -14,6 +14,6 @@ public class DestroyPlayerObject : MonoBehaviour
         catch
         {
 
-        }
+        }*/
     }
 }

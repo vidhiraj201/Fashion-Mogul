@@ -15,8 +15,15 @@ public class dayCompleteReport : MonoBehaviour
     void Update()
     {
         if (manager.CustomerOut >= manager.TotalCustomerGoal && !manager.DayOff)
-        {
             manager.isFinalTutorialOver = true;
+
+
+
+
+
+        if (manager.customerServed >= manager.TotalCustomerGoal && !manager.DayOff)
+        {
+            //manager.isFinalTutorialOver = true;
             
             try
             {
@@ -36,18 +43,10 @@ public class dayCompleteReport : MonoBehaviour
 
     IEnumerator DayOffLag(float t)
     {
-        try
-        {
-            FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
-            FindObjectOfType<FashionM.Core.EmpStackingSystem>().poofCloth();
-        }
-        catch
-        {
-
-        }
-        FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
+        //FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
         manager.DayOff = true;
-        yield return new WaitForSeconds(t);
+        yield return new WaitForSeconds(t);        
+        manager.CustomerOut -= manager.TotalCustomerGoal;
         manager.dayCompleteUI.SetActive(true);
         manager.DayStart = false;
         if (manager.dayCompleteUI.activeSelf)

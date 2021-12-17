@@ -79,17 +79,28 @@ namespace FashionM.Control
 
         //Customer Count from Level Manager Added
         [HideInInspector]public bool CCountAdded;
-
+        [HideInInspector] public bool CCountAdd;
         [HideInInspector] public float t = 0.5f;
         public void completeTreding()
         {
             if (clothTookFromEmpOrPlayer && t >= 0)
+            {
+
                 t -= Time.deltaTime;
+            }
             if (t <= 0)
             {
                 t = 0;
                 tredingComplete = true;
             }
+
+            if (clothTookFromEmpOrPlayer && !CCountAdd)
+            {
+                gm.customerServed += 1;
+                CCountAdd = true;
+            }
+
+
         }
         private bool afterStart = false;
         float k = 0.5f;
@@ -158,7 +169,7 @@ namespace FashionM.Control
         private void FixedUpdate()
         {
 
-           if (gm.customerGoal <= 0 && !CCountAdded)
+           if (/*gm.customerGoal <= 0 &&*/ !CCountAdded)
             {
                 StopWalking = true;
             }
@@ -212,11 +223,11 @@ namespace FashionM.Control
         {
             if (other.gameObject.CompareTag("DoorChecker"))
             {
-                if(gm.customerGoal > 0 && !CCountAdded && lv.Customers.Contains(this.gameObject))
+                if(/*gm.customerGoal > 0 &&*/ !CCountAdded && lv.Customers.Contains(this.gameObject))
                 {
                     //clientNeedItemRandomize();
                     gm.CustomerIn += 1;
-                    gm.customerGoal -= 1;
+               /*     gm.customerGoal -= 1;*/
                     CCountAdded = true;
                     lv.Customers.Remove(this.gameObject);
                     
@@ -226,6 +237,7 @@ namespace FashionM.Control
                 {
                     StopWalking = true;
                     gm.CustomerOut += 1;
+                    gm.CustomerIn -= 1;
                     CCountAdded = false;
 
                     if (!lv.Customers.Contains(this.gameObject))

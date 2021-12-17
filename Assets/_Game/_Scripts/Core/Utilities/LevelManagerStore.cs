@@ -57,7 +57,7 @@ namespace FashionM.Core
         void Update()
         {
             RackNumberAdding();
-            customerInRow();
+            //customerInRow();
         }
         void RackNumberAdding()
         {

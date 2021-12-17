@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace FashionM.Core
 {
@@ -17,6 +18,7 @@ namespace FashionM.Core
         public TextMeshProUGUI CoinCountText;
         public TextMeshProUGUI CustomerUI;
         public TextMeshProUGUI DayCountUI;
+        public TextMeshProUGUI DayCountUI_1;
 
 
         public List<GameObject> Customer = new List<GameObject>();
@@ -38,6 +40,7 @@ namespace FashionM.Core
         public float TotalCustomerGoal;
         public float CustomerIn;
         public float CustomerOut;
+        public float customerServed;
 
         [Header("UI")]
         public GameObject TapUI;
@@ -46,6 +49,7 @@ namespace FashionM.Core
         public GameObject dayCompleteUI;
         public GameObject dayStartUI;
         public GameObject InfintyUI;
+        public Slider customerCountData; 
 
         [Header("Day Session")]
         public bool DayStart;
@@ -77,23 +81,29 @@ namespace FashionM.Core
         {
             
             coinControl();
-            DayCountUI.text = "Day " + (dayCount + 1);
-            CustomerUI.text = CustomerOut + " / " + TotalCustomerGoal;
+            DayCountUI.text = (dayCount + 1).ToString();
+            
+            if(dayCount>0)
+                DayCountUI_1.text = (dayCount ).ToString();
 
+            CustomerUI.text = customerServed + " / " + TotalCustomerGoal;
+            customerCountData.maxValue = TotalCustomerGoal;
+            customerCountData.value = customerServed;
 
             /*if (dayStartUI.activeSelf)
                 dayStartUI.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);*/
 
-            if (dayCompleteUI.activeSelf)
+          /*  if (dayCompleteUI.activeSelf)
             {
                 dayCompleteUI.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);
                 dayCompleteUI.transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = dailyAmount.ToString();
             }
-
+*/
             /* if (Input.GetKeyDown(KeyCode.P))
              {
                  Instantiate(Employee, HD.position, Quaternion.identity).transform.parent = GameObject.Find("EmployeeCollection").transform;
              }*/
+
             if(!DayStart && !DayOff && !x && isTutorialOver)
             {
                 StartCoroutine(StartGame(1.2f));
@@ -101,7 +111,7 @@ namespace FashionM.Core
             }
 
 
-            if (!DayStart)
+            /*if (!DayStart)
             {
                 try
                 {
@@ -112,38 +122,28 @@ namespace FashionM.Core
                 {
 
                 }
-            }
+            }*/
 
         }
 
 
         void customerGoalGenrator()
         {
-            if (dayCount <= 0 && customerGoal <= 0 )
+            if (dayCount <= 0 /*&& customerGoal <= 0*/ )
             {
-                customerGoal = 2;
+                //customerGoal = 2;
                 TotalCustomerGoal = 2;
             }
-            if (dayCount == 1 && customerGoal <= 0)
+            if (dayCount == 1/* && customerGoal <= 0*/)
             {
-                customerGoal = 2;
+                //customerGoal = 2;
                 TotalCustomerGoal = 2;
             }
-            if (dayCount == 2 && customerGoal <= 0)
+            if (dayCount == 2 /*&& customerGoal <= 0*/)
             {
-                customerGoal = 10;
-                TotalCustomerGoal = 10;
+                //customerGoal = 5;
+                TotalCustomerGoal = 5;
             }
-            if (dayCount >= 3 && customerGoal <= 0)
-            {
-                customerGoal = 20;
-                TotalCustomerGoal = 20;
-            }
-            /*            if (dayCount >= 3 && customerGoal <= 0)
-                        {
-                            customerGoal = 20;
-                            TotalCustomerGoal = 20;
-                        }*/
         }
 
 
@@ -173,15 +173,21 @@ namespace FashionM.Core
         public int dayCount;
         public void NextDayButton()
         {           
-            DayOff = false;
-            x = false;            
-            StartCoroutine(startDayDelay(0.35f));            
-            if (dayCompleteUI.activeSelf)
-                dayCompleteUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");
-
-            CustomerIn = 0;
-            CustomerOut = 0;        
             dayCount += 1;
+            DayOff = false;
+            x = false;
+            //StartCoroutine(startDayDelay(0.35f));
+            customerServed -= TotalCustomerGoal;
+            StartDayButton();
+            dailyAmount = 0;
+            if (dayCompleteUI.activeSelf)
+                dayCompleteUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");       
+            if (dayCount >= 2 )
+            {
+                TotalCustomerGoal = TotalCustomerGoal * 2;
+/*                customerGoal = TotalCustomerGoal;*/
+            }            
+            customerGoalGenrator();
             
         }
 
@@ -195,11 +201,12 @@ namespace FashionM.Core
             FindObjectOfType<tutorialUI>().GetComponent<Animator>().Play("1");
             yield return new WaitForSeconds(t);
             isTutorialOver = true;
+            DayStart = true;
         }
         IEnumerator startDayDelay(float t)
         {
             yield return new WaitForSeconds(t);
-            try
+            /*try
             {
                 FindObjectOfType<playerStackingSystem>().resetStacking();
                 FindObjectOfType<EmpStackingSystem>().poofCloth();
@@ -207,28 +214,28 @@ namespace FashionM.Core
             catch
             {
 
-            }
-            customerGoalGenrator();
-            DayStart = false;
+            }*/
+            //customerGoalGenrator();
+            //DayStart = false;
             dailyAmount = 0;
             
         }
 
-      /* public void StartDayButton()
+       public void StartDayButton()
         {
-            FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = false;            
+            //FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = false;            
 
             DayStart = true;
             InfintyUI.SetActive(true);
-        }*/
+        }
 
         IEnumerator StartGame(float t)
         {
-            dayStartUI.GetComponent<Animator>().Play("In");
-            FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
+            //dayStartUI.GetComponent<Animator>().Play("In");
+            //FindObjectOfType<FashionM.Movement.playerMovement>().isWalk = true;
             yield return new WaitForSeconds(t);            
-            dayStartUI.GetComponent<Animator>().Play("Out");
-            FindObjectOfType<AnalyticalDataStorage>().dayStartData(dayCount, (int)customerGoal);
+            //dayStartUI.GetComponent<Animator>().Play("Out");
+            //FindObjectOfType<AnalyticalDataStorage>().dayStartData(dayCount, (int)customerGoal);
             
         }
     }

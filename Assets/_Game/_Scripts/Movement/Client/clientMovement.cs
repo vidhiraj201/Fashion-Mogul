@@ -96,15 +96,24 @@ namespace FashionM.Movement
             }
 
 
+            if (gm.dayCount<=1)
+            {
+                if (ClientPosition != null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer /*&& !transform.GetComponent<clientControl>().StopWalking*/ && gm.DayStart)
+                    agent.SetDestination(ClientPosition.transform.position);
 
+                if (ClientPosition == null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer /*|| transform.GetComponent<clientControl>().StopWalking*/ || !gm.DayStart)
+                    agent.SetDestination(transform.position);
+            }
+            if (gm.dayCount > 1)
+            {
+                if (ClientPosition != null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer /*&& !transform.GetComponent<clientControl>().StopWalking*/ /*&& gm.DayStart*/)
+                    agent.SetDestination(ClientPosition.transform.position);
 
-            if (ClientPosition != null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer && !transform.GetComponent<clientControl>().StopWalking && gm.DayStart)
-                agent.SetDestination(ClientPosition.transform.position);
+                if (ClientPosition == null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer /*|| transform.GetComponent<clientControl>().StopWalking*//* || !gm.DayStart*/)
+                    agent.SetDestination(transform.position);
+            }
 
-            if (ClientPosition == null && !transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer || transform.GetComponent<clientControl>().StopWalking || !gm.DayStart)
-                agent.SetDestination(transform.position);
-
-            if (transform.GetComponent<clientControl>().TradeComp || transform.GetComponent<clientControl>().StopWalking)
+            if (transform.GetComponent<clientControl>().TradeComp /*|| transform.GetComponent<clientControl>().StopWalking*/)
                 agent.SetDestination(GetComponent<clientControl>().lv.END.position);
 
             Anime.SetFloat("speed", agent.velocity.magnitude);
@@ -130,6 +139,7 @@ namespace FashionM.Movement
                     transform.GetComponent<clientControl>().lv.Customers.Add(this.gameObject);*/
                 
                 transform.GetComponent<clientControl>().clothTookFromEmpOrPlayer = false;                
+                transform.GetComponent<clientControl>().CCountAdd = false;                
                 transform.GetComponent<clientControl>().particalExplod = false;                
                 transform.GetComponent<clientControl>().LeaveEmp = false;
                 transform.GetComponent<clientControl>().tredingComplete = false;

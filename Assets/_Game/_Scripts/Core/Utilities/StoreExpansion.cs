@@ -85,7 +85,7 @@ namespace FashionM.Core
             if (MaxCoinNeedToUnlock <= 0)
             {
                 Deactive();
-                if (X)
+               /* if (X)
                 {
                     Bounds.GetComponent<BoxCollider>().center = new Vector3(BoundCenter.x, Bounds.GetComponent<BoxCollider>().center.y, Bounds.GetComponent<BoxCollider>().center.z);
                     Bounds.GetComponent<BoxCollider>().size = new Vector3(BoundSize.x, Bounds.GetComponent<BoxCollider>().size.y, Bounds.GetComponent<BoxCollider>().size.z);
@@ -95,20 +95,20 @@ namespace FashionM.Core
                 {
                     Bounds.GetComponent<BoxCollider>().center = new Vector3(Bounds.GetComponent<BoxCollider>().center.x, Bounds.GetComponent<BoxCollider>().center.y, BoundCenter.z);
                     Bounds.GetComponent<BoxCollider>().size = new Vector3(Bounds.GetComponent<BoxCollider>().size.x, Bounds.GetComponent<BoxCollider>().size.y, BoundSize.z);
-                }
+                }*/
             }
 
-            OpenUI();
+            //OpenUI();
         }
 
         void Deactive()
         {
+            Spwan();
+            this.gameObject.SetActive(false);
             try
             {
                 FindObjectOfType<AnalyticalDataStorage>().StoreExpansionSentData(transform);
-                FindObjectOfType<SavingAndLoadingSection>().SaveGames();
-                Spwan();
-                this.gameObject.SetActive(false);
+                FindObjectOfType<SavingAndLoadingSection>().SaveGames();                
             }
             catch
             {
