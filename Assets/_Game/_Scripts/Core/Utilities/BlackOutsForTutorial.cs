@@ -196,7 +196,7 @@ public class BlackOutsForTutorial : MonoBehaviour
     {
         if (gm.dayCount == 4 && Day4.Count > 0 && !do3 && !itrationDone_3 && !gm.DayOff && gm.DayStart)
         {
-            gm.Cinemachine.Play("4Sec");
+            //gm.Cinemachine.Play("4Sec");
             try
             {
                 StartCoroutine(day4(0.7f));
@@ -290,8 +290,8 @@ public class BlackOutsForTutorial : MonoBehaviour
                 Day4[i].GetComponent<FashionM.Core.StoreExpansion>().enabled = true;
                 Day4[i].transform.GetChild(0).gameObject.SetActive(true);
                 //Day4[i].SetActive(true);
-                Destroy(Instantiate(particalPoofBig, Day4[i].transform.localPosition + new Vector3(0, 1f, 0), Quaternion.Euler(90, 0, 0)), 1.5f);
-                FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
+                //Destroy(Instantiate(particalPoofBig, Day4[i].transform.localPosition + new Vector3(0, 1f, 0), Quaternion.Euler(90, 0, 0)), 1.5f);
+                //FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
                 if (i >= Day4.Count-1)
                     do3 = true;
             }            
