@@ -23,13 +23,14 @@ public class AnalyticalDataStorage : MonoBehaviour
 
     public void dayStartData(int dayDataCount, int customerIncoming)
     {
-        
-        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Day : "+(dayDataCount + 1) +" Total Customer : "+ customerIncoming);
+        //GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Day : " + (dayDataCount + 1) + " Total Customer : " + customerIncoming);
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Day : ",(dayDataCount + 1));
         print("DAY START DATA SENT TO _GAME ANALYTICS_");
     }
     public void dayEndData(int dayDataCount, int customerServed)
     {
-        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "Day : " + (dayDataCount + 1) + " Total Customer Served : " + customerServed);
+        //GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "Day : " + (dayDataCount + 1) + " Total Customer Served : " + customerServed);
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "Day : " , (dayDataCount + 1));
         print("DAY END DATA SENT TO _GAME ANALYTICS_");
     }
 }
