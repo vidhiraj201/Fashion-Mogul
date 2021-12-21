@@ -9,8 +9,12 @@ public class AnalyticalDataStorage : MonoBehaviour
     GAProgressionStatus levelStatus;
     private void Awake()
     {        
-        GameAnalytics.Initialize();
         FB.Init();        
+    }
+
+    private void Start()
+    {
+        GameAnalytics.Initialize();
     }
     public void StoreExpansionSentData(Transform t)
     {
@@ -37,7 +41,7 @@ public class AnalyticalDataStorage : MonoBehaviour
     public void dayEndData(int dayDataCount, int customerServed)
     {
         int i = dayDataCount + 1;
-        GameAnalytics.NewProgressionEvent(levelStatus, i.ToString("D4"));
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, i.ToString("D4"));
         //GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "Day : " + (dayDataCount + 1) + " Total Customer Served : " + customerServed);
 
         /*GameAnalytics.NewDesignEvent("End Day : " + i);
