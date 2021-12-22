@@ -30,26 +30,26 @@ namespace FashionM.Core
                         if (DClothUp != null && DClothDown != null)
                         {
                             DClothUp.SetActive(true);
-                            DClothDown.SetActive(false);
+                            DClothDown.SetActive(true);
                         }
 
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(false);
-                        Cloth3.SetActive(true);
+                        Cloth3.SetActive(false);
                     }
                     if (isCasual)
                     {
                         if (DClothUp != null && DClothDown != null)
                         {
                             DClothUp.SetActive(true);
-                            DClothDown.SetActive(false);
+                            DClothDown.SetActive(true);
                         }
 
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(false);
                         Cloth2.SetActive(false);
-                        Cloth3.SetActive(true);
+                        Cloth3.SetActive(false); ;
                     }
                     
                 }
@@ -60,25 +60,25 @@ namespace FashionM.Core
                     {
                         if (DClothUp != null && DClothDown != null)
                         {
-                            DClothUp.SetActive(false);
-                            DClothDown.SetActive(false);
+                            DClothUp.SetActive(true);
+                            DClothDown.SetActive(true);
                         }
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(false);
-                        Cloth2.SetActive(true);
-                        Cloth3.SetActive(true);
+                        Cloth2.SetActive(false);
+                        Cloth3.SetActive(false);
                     }
                     if (isCasual)
                     {
                         if (DClothUp != null && DClothDown != null)
                         {
                             DClothUp.SetActive(true);
-                            DClothDown.SetActive(false);
+                            DClothDown.SetActive(true);
                         }
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(false);
                         Cloth2.SetActive(false);
-                        Cloth3.SetActive(true);
+                        Cloth3.SetActive(false);
                     }
                 }
                 if (control.NeedItem == control.lv.RackNumber2.RackNumber)
@@ -88,28 +88,26 @@ namespace FashionM.Core
                         if (DClothUp != null && DClothDown != null)
                         {
                             DClothUp.SetActive(true);
-                            DClothDown.SetActive(false);
+                            DClothDown.SetActive(true);
                         }
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(false);
                         Cloth2.SetActive(false);
-                        Cloth3.SetActive(true);
+                        Cloth3.SetActive(false);
                     }
                     if (isOffice)
                     {
                         if (DClothUp != null && DClothDown != null)
                         {
                             DClothUp.SetActive(true);
-                            DClothDown.SetActive(false);
+                            DClothDown.SetActive(true);
                         }
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(false);
-                        Cloth3.SetActive(true);
+                        Cloth3.SetActive(false);
                     }
 
-
-                   
                 }
 
                 if (control.NeedItem == control.lv.RackNumber3.RackNumber)
@@ -118,10 +116,10 @@ namespace FashionM.Core
                     {
                         if (DClothUp != null && DClothDown != null)
                         {
-                            DClothUp.SetActive(false);
+                            DClothUp.SetActive(true);
                             DClothDown.SetActive(true);
                         }
-                        Cloth0.SetActive(true);
+                        Cloth0.SetActive(false);
                         Cloth1.SetActive(false);
                         Cloth2.SetActive(false);
                         Cloth3.SetActive(false);
@@ -131,10 +129,10 @@ namespace FashionM.Core
                     {
                         if (DClothUp != null && DClothDown != null)
                         {
-                            DClothUp.SetActive(false);
+                            DClothUp.SetActive(true);
                             DClothDown.SetActive(true);
                         }
-                        Cloth0.SetActive(true);
+                        Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(false);
                         Cloth3.SetActive(false);
@@ -170,24 +168,24 @@ namespace FashionM.Core
                             if (DClothUp != null && DClothDown != null)
                             {
                                 DClothUp.SetActive(false);
-                                DClothDown.SetActive(false);
+                                DClothDown.SetActive(true);
                             }
                             Cloth0.SetActive(true);
-                            Cloth1.SetActive(true);
+                            Cloth1.SetActive(false);
                             Cloth2.SetActive(false);
-                            Cloth3.SetActive(true);
+                            Cloth3.SetActive(false);
                         }
                         if (isCasual)
                         {
                             if (DClothUp != null && DClothDown != null)
                             {
                                 DClothUp.SetActive(false);
-                                DClothDown.SetActive(false);
+                                DClothDown.SetActive(true);
                             }
                             Cloth0.SetActive(true);
                             Cloth1.SetActive(false);
                             Cloth2.SetActive(false);
-                            Cloth3.SetActive(true);
+                            Cloth3.SetActive(false);
                         }                       
                     }
 
@@ -197,25 +195,25 @@ namespace FashionM.Core
                         {
                             if (DClothUp != null && DClothDown != null)
                             {
-                                DClothUp.SetActive(false);
-                                DClothDown.SetActive(false);
+                                DClothUp.SetActive(true);
+                                DClothDown.SetActive(true);
                             }
                             Cloth0.SetActive(false);
                             Cloth1.SetActive(true);
-                            Cloth2.SetActive(true);
-                            Cloth3.SetActive(true);
+                            Cloth2.SetActive(false);
+                            Cloth3.SetActive(false);
                         }
                         if (isCasual)
                         {
                             if (DClothUp != null && DClothDown != null)
                             {
                                 DClothUp.SetActive(false);
-                                DClothDown.SetActive(false);
+                                DClothDown.SetActive(true);
                             }
                             Cloth0.SetActive(false);
                             Cloth1.SetActive(true);
                             Cloth2.SetActive(false);
-                            Cloth3.SetActive(true);
+                            Cloth3.SetActive(false);
                         }
                     }
                     if (control.NeedItem == control.lv.RackNumber2.RackNumber)
@@ -225,24 +223,24 @@ namespace FashionM.Core
                             if (DClothUp != null && DClothDown != null)
                             {
                                 DClothUp.SetActive(false);
-                                DClothDown.SetActive(false);
+                                DClothDown.SetActive(true);
                             }
                             Cloth0.SetActive(false);
-                            Cloth1.SetActive(true);
+                            Cloth1.SetActive(false);
                             Cloth2.SetActive(true);
-                            Cloth3.SetActive(true);
+                            Cloth3.SetActive(false);
                         }
                         if (isCasual)
                         {
                             if (DClothUp != null && DClothDown != null)
                             {
                                 DClothUp.SetActive(false);
-                                DClothDown.SetActive(false);
+                                DClothDown.SetActive(true);
                             }
                             Cloth0.SetActive(false);
                             Cloth1.SetActive(false);
                             Cloth2.SetActive(true);
-                            Cloth3.SetActive(true);
+                            Cloth3.SetActive(false);
                         }
                       
                     }
@@ -253,10 +251,10 @@ namespace FashionM.Core
                         {
                             if (DClothUp != null && DClothDown != null)
                             {
-                                DClothUp.SetActive(false);
+                                DClothUp.SetActive(true);
                                 DClothDown.SetActive(false);
                             }
-                            Cloth0.SetActive(true);
+                            Cloth0.SetActive(false);
                             Cloth1.SetActive(false);
                             Cloth2.SetActive(false);
                             Cloth3.SetActive(true);
@@ -265,11 +263,11 @@ namespace FashionM.Core
                         {
                             if (DClothUp != null && DClothDown != null)
                             {
-                                DClothUp.SetActive(false);
+                                DClothUp.SetActive(true);
                                 DClothDown.SetActive(false);
                             }
-                            Cloth0.SetActive(true);
-                            Cloth1.SetActive(true);
+                            Cloth0.SetActive(false);
+                            Cloth1.SetActive(false);
                             Cloth2.SetActive(false);
                             Cloth3.SetActive(true);
                         }

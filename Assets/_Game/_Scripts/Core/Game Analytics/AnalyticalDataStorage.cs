@@ -9,8 +9,12 @@ public class AnalyticalDataStorage : MonoBehaviour
     GAProgressionStatus levelStatus;
     private void Awake()
     {        
-        GameAnalytics.Initialize();
+        
         FB.Init();        
+    }
+    private void Start()
+    {
+        GameAnalytics.Initialize();
     }
     public void StoreExpansionSentData(Transform t)
     {

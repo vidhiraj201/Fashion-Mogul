@@ -10,6 +10,7 @@ namespace FashionM.Core
 {
     public class Stores : MonoBehaviour
     {
+        public float baseS;
         public int RackCodeNumber;
         public LevelManagerStore lv;
         public TextMeshPro RackPrice;
