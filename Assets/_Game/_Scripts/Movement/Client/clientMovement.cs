@@ -29,7 +29,7 @@ namespace FashionM.Movement
             gm = FindObjectOfType<FashionM.Core.GameManager>();
             agent = GetComponent<NavMeshAgent>();
             //PurchesUI.SetActive(false);
-            num = Random.Range(0, 2);
+            num = 0;
             customerSetup();
         }
 
@@ -78,6 +78,7 @@ namespace FashionM.Movement
             {
                 Anime = transform.GetChild(1).transform.GetChild(0).gameObject.GetComponent<Animator>();
             }
+
             if (transform.GetChild(1).transform.GetChild(1).gameObject.activeSelf)
             {
                 Anime = transform.GetChild(1).transform.GetChild(1).gameObject.GetComponent<Animator>();
@@ -157,7 +158,7 @@ namespace FashionM.Movement
                 Purchesed = false;
                 transform.GetComponent<clientControl>().clientNeedItemRandomize();
                 transform.GetComponent<clientMovement>().Anime.ResetTrigger("Celeb");
-                num = Random.Range(0, 2);
+                num = 0;
             }
                 
         }
