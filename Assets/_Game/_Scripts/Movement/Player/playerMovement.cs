@@ -51,11 +51,11 @@ namespace FashionM.Movement
                 Hold = false;
 
 
-            float x = Input.GetAxisRaw("Vertical");
-            float z = -Input.GetAxisRaw("Horizontal");
-/*
+            //float x = Input.GetAxisRaw("Vertical");
+            //float z = -Input.GetAxisRaw("Horizontal");
+
             float x = joystick.Vertical;
-            float z = -joystick.Horizontal;*/
+            float z = -joystick.Horizontal;
             if (!isWalk)
             {
                 playerAnimation.enabled = true;
