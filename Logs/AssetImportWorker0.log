@@ -136,3 +136,27 @@ Received Import Request.
 Start importing Assets/_Game/_Scenes/Scene 1.unity using Guid(875993918ef33754ea2649001d164a9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '400c2883c17de2f898390d5f75f091c9') in 0.014321 seconds 
   Import took 0.020611 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 108.710992 seconds.
+  path: Assets/_Game/_3DAssets/Casual Female With Animation/Animation
+  artifactKey: Guid(f84b395e70b22464b82e8a709929623f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Casual Female With Animation/Animation using Guid(f84b395e70b22464b82e8a709929623f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27eb7da7af903ba8fd85af4c45b16152') in 0.008334 seconds 
+  Import took 0.016972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.987631 seconds.
+  path: Assets/_Game/_3DAssets/Updated_Assets fbx
+  artifactKey: Guid(5ee635ff87d5bfc448d250bbea7aaf03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Updated_Assets fbx using Guid(5ee635ff87d5bfc448d250bbea7aaf03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c5b5ef68a8fd23640b799d5b9cfb9ad') in 0.010458 seconds 
+  Import took 0.017223 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.287879 seconds.
+  path: Assets/_Game/_Materials/New_mtls
+  artifactKey: Guid(947ad7273523cd14eb7c95399cf9bbbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Materials/New_mtls using Guid(947ad7273523cd14eb7c95399cf9bbbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d07e5c6129cb046eeea081084b69224') in 0.007382 seconds 
+  Import took 0.013419 seconds .
+
