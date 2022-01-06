@@ -5500,7 +5500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdaa3218956dc40a352b470aeac427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterTutorial: {fileID: 2100000, guid: 4ccb5235e45ccbc42b5dd79cc58dfe31, type: 2}
+  afterTutorial: {fileID: 2100000, guid: e7ada39b4872a9e4a8856fa062351df5, type: 2}
   single: 1
   pose: 0
   chair: 0
@@ -5809,7 +5809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdaa3218956dc40a352b470aeac427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterTutorial: {fileID: 2100000, guid: 4ccb5235e45ccbc42b5dd79cc58dfe31, type: 2}
+  afterTutorial: {fileID: 2100000, guid: eee829d5a816c784fa8e2cd9b257ccf4, type: 2}
   single: 1
   pose: 0
   chair: 0
@@ -20956,7 +20956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdaa3218956dc40a352b470aeac427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterTutorial: {fileID: 2100000, guid: 31b0d5dae1c644142899d6d69cce81c7, type: 2}
+  afterTutorial: {fileID: 2100000, guid: 333f2a3b32c24b34c932b3ccb411d145, type: 2}
   single: 1
   pose: 0
   chair: 0
@@ -31030,8 +31030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdaa3218956dc40a352b470aeac427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterTutorial: {fileID: -1255982633427224767, guid: 19aa3cf27ba02244ca946d4ef8177575,
-    type: 3}
+  afterTutorial: {fileID: 2100000, guid: eee829d5a816c784fa8e2cd9b257ccf4, type: 2}
   single: 0
   pose: 0
   chair: 0
@@ -31147,8 +31146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdaa3218956dc40a352b470aeac427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterTutorial: {fileID: -1255982633427224767, guid: 19aa3cf27ba02244ca946d4ef8177575,
-    type: 3}
+  afterTutorial: {fileID: 2100000, guid: eee829d5a816c784fa8e2cd9b257ccf4, type: 2}
   single: 0
   pose: 0
   chair: 0
@@ -32730,7 +32728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdaa3218956dc40a352b470aeac427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterTutorial: {fileID: 2100000, guid: 4ccb5235e45ccbc42b5dd79cc58dfe31, type: 2}
+  afterTutorial: {fileID: 2100000, guid: eee829d5a816c784fa8e2cd9b257ccf4, type: 2}
   single: 1
   pose: 0
   chair: 0
@@ -32844,7 +32842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdaa3218956dc40a352b470aeac427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterTutorial: {fileID: 2100000, guid: 4ccb5235e45ccbc42b5dd79cc58dfe31, type: 2}
+  afterTutorial: {fileID: 2100000, guid: eee829d5a816c784fa8e2cd9b257ccf4, type: 2}
   single: 1
   pose: 0
   chair: 0
@@ -37771,8 +37769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdaa3218956dc40a352b470aeac427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterTutorial: {fileID: -1255982633427224767, guid: 19aa3cf27ba02244ca946d4ef8177575,
-    type: 3}
+  afterTutorial: {fileID: 2100000, guid: eee829d5a816c784fa8e2cd9b257ccf4, type: 2}
   single: 0
   pose: 0
   chair: 0
@@ -37888,8 +37885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cdaa3218956dc40a352b470aeac427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afterTutorial: {fileID: -1255982633427224767, guid: 19aa3cf27ba02244ca946d4ef8177575,
-    type: 3}
+  afterTutorial: {fileID: 2100000, guid: eee829d5a816c784fa8e2cd9b257ccf4, type: 2}
   single: 0
   pose: 0
   chair: 0
@@ -48713,7 +48709,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &9158817500866633594
 MonoBehaviour:
   m_ObjectHideFlags: 0
