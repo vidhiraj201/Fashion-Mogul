@@ -1155,6 +1155,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Locked Beach
       objectReference: {fileID: 0}
+    - target: {fileID: 6233582771170298313, guid: 51196e959816fd848947d5e8575b6c25,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6758198988704945011, guid: 51196e959816fd848947d5e8575b6c25,
         type: 3}
       propertyPath: m_RootOrder
@@ -5836,7 +5841,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh217020
+  m_Name: pb_Mesh73304
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6194,6 +6199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Locked Office
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828172853860154705, guid: 82c3c03e3e646d9408601717ecd6c7c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3203291430030993387, guid: 82c3c03e3e646d9408601717ecd6c7c4,
         type: 3}
@@ -16048,6 +16058,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Locked Sports
       objectReference: {fileID: 0}
+    - target: {fileID: 2153027746195077228, guid: 458a697eaaa2457448c0bfc15babd0ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 490759834, guid: 458a697eaaa2457448c0bfc15babd0ad, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 458a697eaaa2457448c0bfc15babd0ad, type: 3}
@@ -16239,41 +16254,6 @@ PrefabInstance:
       propertyPath: Day4.Array.data[2]
       value: 
       objectReference: {fileID: 592535032}
-    - target: {fileID: 2898026560212366180, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239608026912205866, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239608026912205866, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239608026912205866, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239608026912205866, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239608026912205866, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 6239608026912205866, guid: 6b52198032c0f2b41a747d715278142d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -30.28
-      objectReference: {fileID: 0}
     - target: {fileID: 9158817500552824380, guid: 6b52198032c0f2b41a747d715278142d,
         type: 3}
       propertyPath: m_Name
