@@ -168,3 +168,60 @@ Received Import Request.
 Start importing Assets/_Game/_Prefabs/Employee/Employee.prefab using Guid(715adf8e112c21540b0990c2da486c19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '911c87c0ac148d5a5186646058488d72') in 0.322799 seconds 
   Import took 0.334388 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 5812.112991 seconds.
+  path: Assets/_Game/_3DAssets/Updated Character Set/Employee/Male_employee.fbx
+  artifactKey: Guid(7fd863c4321a6eb4faa23c24981d07eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Updated Character Set/Employee/Male_employee.fbx using Guid(7fd863c4321a6eb4faa23c24981d07eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d545e9688da1eca1e8e4a15ae814083') in 0.097847 seconds 
+  Import took 0.138449 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.425670 seconds.
+  path: Assets/_Game/_3DAssets/Updated Character Set/Employee/Emp_shoes.mat
+  artifactKey: Guid(0d77e614de804af418c1638dae121ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Updated Character Set/Employee/Emp_shoes.mat using Guid(0d77e614de804af418c1638dae121ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '396a2efebd3c0302b7a5c112b73ead9e') in 0.089919 seconds 
+  Import took 0.099536 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010418 seconds.
+  path: Assets/_Game/_3DAssets/Updated Character Set/Employee/Pant.mat
+  artifactKey: Guid(88121341efda6d14e953bd524b14eb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Updated Character Set/Employee/Pant.mat using Guid(88121341efda6d14e953bd524b14eb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3917e7f0fc318d6759a04781bcd195d5') in 0.018003 seconds 
+  Import took 0.025179 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008838 seconds.
+  path: Assets/_Game/_3DAssets/Updated Character Set/Employee/Shirt.mat
+  artifactKey: Guid(cb7f586e53acfd34f8290eb63b291d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Updated Character Set/Employee/Shirt.mat using Guid(cb7f586e53acfd34f8290eb63b291d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c9d3307387f7a93b3033d44b3545134') in 0.013938 seconds 
+  Import took 0.020577 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012210 seconds.
+  path: Assets/_Game/_3DAssets/Updated Character Set/Employee/Body.mat
+  artifactKey: Guid(70ea1040e89390149aa992deffc131eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Updated Character Set/Employee/Body.mat using Guid(70ea1040e89390149aa992deffc131eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb874fb383aca9dab6b9dc419f59ecdb') in 0.017244 seconds 
+  Import took 0.025251 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.032890 seconds.
+  path: Assets/_Game/_3DAssets/Updated Character Set/Employee/Tie.mat
+  artifactKey: Guid(7505a3ce0a91b3440bc6c9f8aa7171df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Updated Character Set/Employee/Tie.mat using Guid(7505a3ce0a91b3440bc6c9f8aa7171df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39de34e0505ea28e86715c02a0127ee6') in 0.031299 seconds 
+  Import took 0.037141 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009116 seconds.
+  path: Assets/_Game/_3DAssets/Employee/Tie_shirt.png
+  artifactKey: Guid(4d9cc0302a8842249b775f7c25984de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Employee/Tie_shirt.png using Guid(4d9cc0302a8842249b775f7c25984de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ffe417a4b9bfaaaefef9fe7bf52a6dc') in 0.053227 seconds 
+  Import took 0.060846 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
