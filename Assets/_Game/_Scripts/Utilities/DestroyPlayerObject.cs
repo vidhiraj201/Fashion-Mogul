@@ -8,7 +8,7 @@ public class DestroyPlayerObject : MonoBehaviour
     {
         try
         {
-            FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
+      //      FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
             FindObjectOfType<FashionM.Core.EmpStackingSystem>().poofCloth();
         }
         catch

@@ -101,7 +101,7 @@ namespace FashionM.Core
             {
                 try
                 {
-                    FindObjectOfType<playerStackingSystem>().resetStacking();
+                //    FindObjectOfType<playerStackingSystem>().resetStacking();
                     FindObjectOfType<EmpStackingSystem>().poofCloth();
                 }
                 catch
@@ -197,7 +197,7 @@ namespace FashionM.Core
             yield return new WaitForSeconds(t);
             try
             {
-                FindObjectOfType<playerStackingSystem>().resetStacking();
+              //  FindObjectOfType<playerStackingSystem>().resetStacking();
                 FindObjectOfType<EmpStackingSystem>().poofCloth();
             }
             catch

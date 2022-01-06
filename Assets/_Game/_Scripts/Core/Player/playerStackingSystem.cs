@@ -12,7 +12,7 @@ namespace FashionM.Core
         public GameObject StackingObject;
         public GameObject Cloths;
 
-        public GameObject paricalEffect;
+        public ParticleSystem paricalEffect;
 
         public Stores OR;        
 
@@ -32,6 +32,7 @@ namespace FashionM.Core
             if (Input.GetKeyDown(KeyCode.S))
             {
                 GameObject C = Instantiate(Cloths, StackingObject.transform.position, Quaternion.Euler(0,0,0));
+                paricalEffect.Play();
                 C.transform.rotation = Quaternion.Euler(0, 0, 0);
                 C.transform.parent = StackingObject.transform;
                 C.GetComponent<Cloths>().ClothIdentityNumber = 0;
@@ -59,6 +60,7 @@ namespace FashionM.Core
 
         public void resetStacking()
         {
+            print("Reset");
             if (!poof && ClothObject.Count > 0)
             {
                 Destroy(Instantiate(paricalEffect, StackingObject.transform.position, Quaternion.identity), 2);

@@ -22,7 +22,7 @@ public class SavingAndLoadingCasual : MonoBehaviour
     private void Awake()
     {
         empCountData();
-        LoadGame();
+        //LoadGame();
         GDC = SaveManagerCasual.Load();
     }
 

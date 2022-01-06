@@ -16,7 +16,7 @@ public class SavingAndLoading : MonoBehaviour
     {
         gm = FindObjectOfType<GameManager>();
         gameData = SaveManager.Load();
-        LoadGame();
+        //LoadGame();
     }
 
     public void SaveGame()

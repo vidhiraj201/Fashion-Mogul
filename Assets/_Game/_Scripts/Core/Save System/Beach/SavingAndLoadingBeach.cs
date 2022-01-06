@@ -21,7 +21,7 @@ public class SavingAndLoadingBeach : MonoBehaviour
     private void Awake()
     {
         empCountData();
-        LoadGame();
+        //LoadGame();
         GDB = SaveManagerBeach.Load();
     }
 

@@ -37,7 +37,7 @@ public class dayCompleteReport : MonoBehaviour
     {
         try
         {
-            FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
+        //    FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
             FindObjectOfType<FashionM.Core.EmpStackingSystem>().poofCloth();
         }
         catch

@@ -82,7 +82,7 @@ public class BlackOutsForTutorial : MonoBehaviour
             try
             {
                 StartCoroutine(day1(0.5f));
-                FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
+       //         FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
                 FindObjectOfType<FashionM.Core.EmpStackingSystem>().poofCloth();
             }
             catch
@@ -118,7 +118,7 @@ public class BlackOutsForTutorial : MonoBehaviour
             try
             {
                 StartCoroutine(day2(0.7f));
-                FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
+    //            FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
                 FindObjectOfType<FashionM.Core.EmpStackingSystem>().poofCloth();
             }
             catch
@@ -154,7 +154,7 @@ public class BlackOutsForTutorial : MonoBehaviour
             try
             {
                 StartCoroutine(day3(0.55f));
-                FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
+      //          FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
                 FindObjectOfType<FashionM.Core.EmpStackingSystem>().poofCloth();
             }
             catch
@@ -191,7 +191,7 @@ public class BlackOutsForTutorial : MonoBehaviour
             try
             {
                 StartCoroutine(day4(0.7f));
-                FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
+          //      FindObjectOfType<FashionM.Core.playerStackingSystem>().resetStacking();
                 FindObjectOfType<FashionM.Core.EmpStackingSystem>().poofCloth();
             }
             catch
