@@ -14,16 +14,16 @@ namespace FashionM.Core
 
         public GameObject paricalEffect;
 
-        public Stores OR;        
+        public Stores OR;
 
-
+        private FashionM.Core.GameManager gm;
 
         [Range(0,1)]
         public float PickupDileverVolume;
 
         void Start()
         {
-
+            gm = FindObjectOfType<FashionM.Core.GameManager>();
         }
 
        
@@ -116,6 +116,7 @@ namespace FashionM.Core
                         ClothObject[i].GetComponent<Cloths>().throwCloth(other.gameObject.transform);                        
                         other.gameObject.GetComponent<clientControl>().playerIsNear = true;
                         other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer = true;
+                        Instantiate(gm.customerUI, other.transform.position + new Vector3(0,3.5f,0), Quaternion.identity);
                         break;
                     }  
 

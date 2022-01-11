@@ -16,6 +16,14 @@ namespace FashionM.Core
         public Stores OR;
         private bool poof;
 
+        private FashionM.Core.GameManager gm;
+
+        private void Start()
+        {
+            gm = FindObjectOfType<FashionM.Core.GameManager>();
+        }
+
+
         [Range(0,1)]
         public float PickupDileverVolume = 0.5f;
         public void addClothToStack(float num, Material mat, GameObject obj)
@@ -64,6 +72,7 @@ namespace FashionM.Core
                         GetComponent<empMovement>().isWalkingTowardStore = false;
                         GetComponent<empControl>().StoreNumberStored = -1;
                         GetComponent<empMovement>().ClientNeedItem = -1;
+                        Instantiate(gm.customerUI, other.transform.position + new Vector3(0, 3.5f, 0), Quaternion.identity);
                     }
                 }
             }

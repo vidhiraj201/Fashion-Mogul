@@ -96,7 +96,7 @@ namespace FashionM.Control
 
             if (clothTookFromEmpOrPlayer && !CCountAdd)
             {
-                gm.customerServed += 1;
+                //gm.customerServed += 1;
                 CCountAdd = true;
             }
 

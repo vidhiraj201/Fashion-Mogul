@@ -9,6 +9,10 @@ public class SavingAndLoadingSection : MonoBehaviour
     public StoreExpansion Store_2;
     public StoreExpansion Store_3;
 
+    public OpenStore OS1;
+    public OpenStore OS2;
+    public OpenStore OS3;
+
     public GameDataSection GDS;
     private void Awake()
     {
@@ -41,6 +45,10 @@ public class SavingAndLoadingSection : MonoBehaviour
             /*if (Store_3.gameObject.activeSelf)*/
             GDS.Section_3 = (int)Store_3.MaxCoinNeedToUnlock;
 
+            GDS.Section_1_Cam = OS1.isOpen;
+            GDS.Section_2_Cam = OS2.isOpen;
+            GDS.Section_3_Cam = OS3.isOpen;
+
             SaveManagerSection.Save(GDS);
             print("Section Data Saved");
         }
@@ -64,6 +72,10 @@ public class SavingAndLoadingSection : MonoBehaviour
 
             /*if (Store_3.gameObject.activeSelf)*/
             Store_3.MaxCoinNeedToUnlock = GDS.Section_3;
+
+            OS1.isOpen = GDS.Section_1_Cam;
+            OS2.isOpen = GDS.Section_2_Cam;
+            OS3.isOpen = GDS.Section_3_Cam;
         }
         catch
         {

@@ -47,6 +47,8 @@ namespace FashionM.Core
             {
                 try
                 {
+                    /*if (!FindObjectOfType<FashionM.Control.UIHandler>().fittingStationList.Contains(this.gameObject))
+                        FindObjectOfType<FashionM.Control.UIHandler>().fittingStationList.Add(this.gameObject);*/
                     open = true;
                 }
                 catch

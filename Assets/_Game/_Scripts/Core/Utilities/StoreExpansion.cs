@@ -193,6 +193,9 @@ namespace FashionM.Core
      
         public void Spwan()
         {
+            if (!FindObjectOfType<FashionM.Control.UIHandler>().storeList.Contains(this.gameObject))
+                FindObjectOfType<FashionM.Control.UIHandler>().storeList.Add(this.gameObject);
+
             FindObjectOfType<AudioManager>().source.PlayOneShot(FindObjectOfType<AudioManager>().MoneyCounting, 0.5f);
             GameObject ToSpwanData = Instantiate(ToSpwan, PlacingPosition, Quaternion.Euler(PlacingRotation));
             ToSpwanData.transform.parent = GameObject.Find("Expanded Store").transform;

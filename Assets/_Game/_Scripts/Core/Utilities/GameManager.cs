@@ -19,6 +19,7 @@ namespace FashionM.Core
         public TextMeshProUGUI CustomerUI;
         public TextMeshProUGUI DayCountUI;
         public TextMeshProUGUI DayCountUI_1;
+        public TextMeshProUGUI LevelBonusLevelCount;
 
 
         public List<GameObject> Customer = new List<GameObject>();
@@ -44,11 +45,13 @@ namespace FashionM.Core
 
         [Header("UI")]
         public GameObject TapUI;
+        public GameObject customerUI;
         public GameObject UnlockStoreExpansionUI;
         public GameObject HireEmployee;
         public GameObject dayCompleteUI;
         public GameObject dayStartUI;
         public GameObject InfintyUI;
+        public GameObject levelUPUI;
         public Slider customerCountData; 
 
         [Header("Day Session")]
@@ -74,21 +77,27 @@ namespace FashionM.Core
             //dayStartUI.SetActive(false);
             InfintyUI.SetActive(false);
             watch = FindObjectOfType<dayCompleteReport>();
+            bonus.SetActive(false);
         }
 
         bool x;
         void Update()
         {
-            
-            coinControl();
-            DayCountUI.text = (dayCount + 1).ToString();
+            if (dayCount == 1 && !DayStart)
+                DayStart = true;
+
+                coinControl();
+            customerSliderAnimation();
+            if (dayCount > 0)
+            {
+                levelUPUI.SetActive(false);
+            }
+            DayCountUI.text = (dayCount + 2).ToString();
             
             if(dayCount>0)
-                DayCountUI_1.text = (dayCount ).ToString();
+                DayCountUI_1.text = (dayCount+1).ToString();
 
-            CustomerUI.text = customerServed + " / " + TotalCustomerGoal;
-            customerCountData.maxValue = TotalCustomerGoal;
-            customerCountData.value = customerServed;
+            
 
             /*if (dayStartUI.activeSelf)
                 dayStartUI.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Day " + (dayCount + 1);*/
@@ -125,7 +134,33 @@ namespace FashionM.Core
             }*/
 
         }
+        [Header("Customer Slider")]
+        public float speedUp;
+        public float speedDown;
+        private float sliderCount;
+        public void customerSliderAnimation()
+        {
+            CustomerUI.text = customerServed + " / " + TotalCustomerGoal;
+            customerCountData.maxValue = TotalCustomerGoal;
+            if(sliderCount < customerServed)
+            {
+                sliderCount += speedUp * Time.deltaTime;
+                if (sliderCount >= customerServed)
+                    sliderCount = customerServed;
+            }
+            if (sliderCount > customerServed)
+            {
+                sliderCount -= speedDown * Time.deltaTime;
+                if (sliderCount <= customerServed)
+                    sliderCount = customerServed;
+            }
 
+            customerCountData.value = sliderCount;
+        }
+        public void serveredCustomers()
+        {
+            customerServed += 1;
+        }
 
         void customerGoalGenrator()
         {
@@ -171,17 +206,20 @@ namespace FashionM.Core
         }
 
         public int dayCount;
+        public GameObject bonus;
         public void NextDayButton()
         {           
             dayCount += 1;
             DayOff = false;
             x = false;
+            levelUPUI.SetActive(false);
+            StartCoroutine(showBounus(1.2f));
             //StartCoroutine(startDayDelay(0.35f));
             customerServed -= TotalCustomerGoal;
             StartDayButton();
             dailyAmount = 0;
             if (dayCompleteUI.activeSelf)
-                dayCompleteUI.transform.GetChild(0).GetComponent<Animator>().Play("Out");       
+                dayCompleteUI.transform.GetChild(1).GetComponent<Animator>().Play("Out");                
             if (dayCount >= 2 )
             {
                 TotalCustomerGoal = TotalCustomerGoal * 2;
@@ -189,6 +227,15 @@ namespace FashionM.Core
             }            
             customerGoalGenrator();
             
+        }
+
+        IEnumerator showBounus(float t)
+        {
+            LevelBonusLevelCount.text = (dayCount + 1).ToString();
+            bonus.SetActive(true);
+            yield return new WaitForSeconds(t);
+            MaxCoin += 500;
+            bonus.SetActive(false);
         }
 
         public void StartDay()

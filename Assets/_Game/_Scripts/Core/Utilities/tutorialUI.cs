@@ -18,6 +18,8 @@ namespace FashionM.Core
         {
             GetComponent<Animator>().enabled = false;
         }
+
+        public GameObject glow;
         void Start()
         {
             DirectionalArrow.SetActive(false);
@@ -28,6 +30,9 @@ namespace FashionM.Core
                 GetComponent<Animator>().Play("0");
             }
             aro = FindObjectOfType<FashionM.Control.playerControl>().Arrow;
+
+            if (gm.dayCount == 1)
+                glow.SetActive(false);
             //i = 1;
         }
 
@@ -46,7 +51,7 @@ namespace FashionM.Core
             if(gm.dayCount == 1 && !reset)
             {
                 StartCustomer.Clear();
-                DirectionalArrow.SetActive(false);
+                DirectionalArrow.SetActive(false);                
                 reset = true;
             }
             if (gm.dayCount == 1 && !reset_1 && StartCustomer.Count>0)
