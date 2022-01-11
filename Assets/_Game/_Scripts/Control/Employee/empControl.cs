@@ -57,6 +57,11 @@ namespace FashionM.Control
                         GetComponent<EmpStackingSystem>().poofCloth();
                         GetComponent<empMovement>().ClientNeedItem = other.gameObject.GetComponent<clientControl>().NeedItem;
                     }
+                    if (GetComponent<EmpStackingSystem>().ClothObject.Count <= 0)
+                    {
+                        StoreNumberStored = -1;
+                        GetComponent<empMovement>().ClientNeedItem = other.gameObject.GetComponent<clientControl>().NeedItem;
+                    }
                 }
 
                 if (!other.gameObject.GetComponent<clientControl>().clothTookFromEmpOrPlayer && other.gameObject.GetComponent<clientMovement>().reched)

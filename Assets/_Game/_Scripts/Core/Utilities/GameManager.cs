@@ -234,7 +234,8 @@ namespace FashionM.Core
             LevelBonusLevelCount.text = (dayCount + 1).ToString();
             bonus.SetActive(true);
             yield return new WaitForSeconds(t);
-            MaxCoin += 500;
+            if(dayCount!=5 || dayCount != 9 || dayCount != 14) 
+                MaxCoin += 500;
             bonus.SetActive(false);
         }
 

@@ -126,13 +126,18 @@ namespace FashionM.Control
                 if (Target != null)
                 {
                     locked = true;
+                if(!Target.GetComponent<empControl>().Occupied){
                     Target.GetComponent<empControl>().Occupied = true;
+                    Target.GetComponent<empControl>().StoreNumberStored = -1;
+                }
+                
                     Target.GetComponent<empControl>().TargetForClient = transform.gameObject;
                     
 
                     if (!GetComponent<clientControl>().LeaveEmp && !GetComponent<clientControl>().clothTookFromEmpOrPlayer)
                 {
                         Target.GetComponent<empMovement>().ClientNeedItem = GetComponent<clientControl>().NeedItem;
+                    
                 }
 
                     if (GetComponent<clientControl>().clothTookFromEmpOrPlayer && !GetComponent<clientControl>().LeaveEmp)

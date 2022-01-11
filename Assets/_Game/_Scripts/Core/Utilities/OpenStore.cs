@@ -45,18 +45,25 @@ namespace FashionM.Core {
 
                 StartCoroutine(delay(1f));
             }
-            else
+            if(!G1.activeSelf && gm.dayCount != levelOpening)
             {
-                StartCoroutine(cashDelay(1));
+                cashDelay();
             }
         }
 
-
-        IEnumerator cashDelay(float t)
+        [SerializeField]float x = 1.5f;
+        void cashDelay()
         {
-            yield return new WaitForSeconds(t);
-            G1.SetActive(true);
-            G2.SetActive(false);
+            if (x >= 0)
+            {
+                x -= Time.deltaTime;
+            }
+            if (x <= 0)
+            {
+
+                G1.SetActive(true);
+                G2.SetActive(false);
+            }
         }
         IEnumerator delay(float t)
         {

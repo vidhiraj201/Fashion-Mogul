@@ -7,10 +7,9 @@ namespace FashionM.Control
 {
     public class UIHandler : MonoBehaviour
     {
-        public TextMeshProUGUI fittingStationCount;
+        public TextMeshProUGUI EmployeeCount;
         public TextMeshProUGUI storeSection;
 
-        public List<GameObject> fittingStationList = new List<GameObject>();
         public List<GameObject> storeList = new List<GameObject>();
 
         private FashionM.Core.GameManager gm;
@@ -22,7 +21,7 @@ namespace FashionM.Control
         {
 
             storeSection.text = storeList.Count + " / 4";
-            //fittingStationCount.text = fittingStationList.Count + " / 8";
+            EmployeeCount.text = gm.EmployeeCount.ToString();
         }      
     }
 }
