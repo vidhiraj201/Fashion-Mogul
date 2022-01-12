@@ -6,9 +6,14 @@ using Facebook.Unity;
 public class AnalyticalDataStorage : MonoBehaviour
 {
     private void Awake()
-    {        
-        GameAnalytics.Initialize();
+    {  
         FB.Init();        
+    }
+
+    private void Start()
+    {
+
+        GameAnalytics.Initialize();
     }
     public void StoreExpansionSentData(Transform t)
     {
@@ -21,14 +26,14 @@ public class AnalyticalDataStorage : MonoBehaviour
         print("EMPLOYEE DATA SENT TO _GAME ANALYTICS_");
     }
 
-    public void dayStartData(int dayDataCount, int customerIncoming)
+/*    public void dayStartData(int dayDataCount, int customerIncoming)
     {
         GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Day : "+(dayDataCount + 1) +" Total Customer : "+ customerIncoming);
         print("DAY START DATA SENT TO _GAME ANALYTICS_");
-    }
+    }*/
     public void dayEndData(int dayDataCount, int customerServed)
     {
-        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Day : " + (dayDataCount + 1) + " Total Customer Served : " + customerServed);
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete,(dayDataCount + 1).ToString());
         print("DAY END DATA SENT TO _GAME ANALYTICS_");
     }
 }

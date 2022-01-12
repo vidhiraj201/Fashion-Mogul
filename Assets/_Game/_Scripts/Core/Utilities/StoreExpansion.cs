@@ -106,8 +106,7 @@ namespace FashionM.Core
             Spwan();
             this.gameObject.SetActive(false);
             try
-            {
-                FindObjectOfType<AnalyticalDataStorage>().StoreExpansionSentData(transform);
+            {                
                 FindObjectOfType<SavingAndLoadingSection>().SaveGames();                
             }
             catch

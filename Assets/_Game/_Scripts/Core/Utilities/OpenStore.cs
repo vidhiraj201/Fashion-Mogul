@@ -41,6 +41,14 @@ namespace FashionM.Core {
                     G1.SetActive(false);
                     G2.SetActive(true);
                     gm.Cinemachine.Play(sectionName);
+                    try
+                    {
+                        FindObjectOfType<AnalyticalDataStorage>().StoreExpansionSentData(transform);
+                    }
+                    catch
+                    {
+
+                    }
                 }
 
                 StartCoroutine(delay(1f));

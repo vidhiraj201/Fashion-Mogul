@@ -1,0 +1,744 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.22f1 (e1a7f79fd887) revision 14788599'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 22000.376; Version 2009; 64bit' Language: 'en' Physical Memory: 16169 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.22f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+F:/Unity/3MG-Games/Fashion Mogul
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+58067
+Successfully changed project path to: F:/Unity/3MG-Games/Fashion Mogul
+F:/Unity/3MG-Games/Fashion Mogul
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 95.14 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.22f1 (e1a7f79fd887)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/Unity/3MG-Games/Fashion Mogul/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 Ti (ID=0x1f95)
+    Vendor:   
+    VRAM:     3962 MB
+    Driver:   30.0.14.7196
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56444
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001059 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 79.00 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.965 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1965ms)
+		BeginReloadAssembly (44ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (445ms)
+			LoadAssemblies (42ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (145ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (184ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (79ms)
+				BeforeProcessingInitializeOnLoad (13ms)
+				ProcessInitializeOnLoadAttributes (65ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.008238 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 81.26 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.399 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1400ms)
+		BeginReloadAssembly (126ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1217ms)
+			LoadAssemblies (92ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (333ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (576ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (81ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (395ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 1.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3948 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 173.8 MB.
+System memory in use after: 173.9 MB.
+
+Unloading 255 unused Assets to reduce memory usage. Loaded Objects now: 4318.
+Total: 4.330300 ms (FindLiveObjects: 0.458200 ms CreateObjectMapping: 0.277800 ms MarkObjects: 3.387000 ms  DeleteObjects: 0.206300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_SmallRocks_4Frames.tga
+  artifactKey: Guid(9648024bd8fe4834e8a465c7222510fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_SmallRocks_4Frames.tga using Guid(9648024bd8fe4834e8a465c7222510fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d16c01c05f6f936fa6831a710e56bba') in 0.069714 seconds 
+  Import took 0.075043 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Decal_BloodPuddle_AB.tga
+  artifactKey: Guid(4be0e8aa5e8747240af836ab4904c4a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Decal_BloodPuddle_AB.tga using Guid(4be0e8aa5e8747240af836ab4904c4a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd32de09f7f43f4e93a904f0f835cab25') in 0.027650 seconds 
+  Import took 0.034002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000141 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Diamond Outline.png
+  artifactKey: Guid(ba771561eb0dad34b9e1c40e5722e6ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Diamond Outline.png using Guid(ba771561eb0dad34b9e1c40e5722e6ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3ee27ed77a2662807d68e4ce5a30725') in 0.072041 seconds 
+  Import took 0.078092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueBG.png
+  artifactKey: Guid(59180eec8fb9a914580a70ada5faf41c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueBG.png using Guid(59180eec8fb9a914580a70ada5faf41c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '048ba7c5a55b048a3b87756b8c327e9f') in 0.061162 seconds 
+  Import took 0.067884 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/_Default/TutorialInfo/Icons/UniversalIcon.png
+  artifactKey: Guid(7801804018a7dcf42abb827444e18660) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Default/TutorialInfo/Icons/UniversalIcon.png using Guid(7801804018a7dcf42abb827444e18660) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '721b4c5cc51ef5d7ec2d9323548d0eed') in 0.022191 seconds 
+  Import took 0.027631 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/tickIcon.png
+  artifactKey: Guid(561afb67dfca5d846b69ae7b50af0a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/tickIcon.png using Guid(561afb67dfca5d846b69ae7b50af0a82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd38a1931385bc783aa67a91435a8498f') in 0.023635 seconds 
+  Import took 0.029454 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_GlowSoft.png
+  artifactKey: Guid(81c7f97f65635684e8fdca15d75b501f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_GlowSoft.png using Guid(81c7f97f65635684e8fdca15d75b501f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03f6dd0fff690d53b8b2c0d9b1d4385b') in 0.024134 seconds 
+  Import took 0.031591 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/_Game/_Texture/_Auro_Sneaker_Clone_UI's.png
+  artifactKey: Guid(300e3894c055c4a4782e870786e43c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Texture/_Auro_Sneaker_Clone_UI's.png using Guid(300e3894c055c4a4782e870786e43c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77c62868a9938ba9f69bf871be541c03') in 0.051295 seconds 
+  Import took 0.057542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Star Outline.png
+  artifactKey: Guid(512abf31f1111d8498b7c4be0186c618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Star Outline.png using Guid(512abf31f1111d8498b7c4be0186c618) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8debc10fe141dfa17c5e0d20c4515f4e') in 0.022963 seconds 
+  Import took 0.029199 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/_Game/_3DAssets/Cloths/Fbx/Casual Section/Tshirt_icon.png
+  artifactKey: Guid(19ca6059f814eee49b1167bd8fb80b01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Cloths/Fbx/Casual Section/Tshirt_icon.png using Guid(19ca6059f814eee49b1167bd8fb80b01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98b23e9c1a4c597cd28d55338521ca04') in 0.045576 seconds 
+  Import took 0.051604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000157 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_FadedRay.png
+  artifactKey: Guid(44ec2f2f64911364cbae06e7dcb572f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_FadedRay.png using Guid(44ec2f2f64911364cbae06e7dcb572f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b73372269fd73402a88d7fd7c24e3eb4') in 0.022096 seconds 
+  Import took 0.028208 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000174 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Diamond Outline.png
+  artifactKey: Guid(ee95c6682c9bfc84184687afe06f0aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Diamond Outline.png using Guid(ee95c6682c9bfc84184687afe06f0aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '112abdd299b94048acc15e617c276452') in 0.022019 seconds 
+  Import took 0.028861 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/_Assets/Advance Navigation/Gizmos/NavMeshLink Icon.png
+  artifactKey: Guid(92f4afa3e25264f5b964937ccea49ff2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/Advance Navigation/Gizmos/NavMeshLink Icon.png using Guid(92f4afa3e25264f5b964937ccea49ff2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be6a5451ffdf630aeefedeebd115e921') in 0.011925 seconds 
+  Import took 0.018379 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueRectNormal.png
+  artifactKey: Guid(985a419eaa7384e4eacf1014f94e7eac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueRectNormal.png using Guid(985a419eaa7384e4eacf1014f94e7eac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbb56572d7fbc3079916185a39011d45') in 0.020278 seconds 
+  Import took 0.027657 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000138 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/hintIcon.png
+  artifactKey: Guid(351e1dd701fbb314f8525aefc6f7b51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/hintIcon.png using Guid(351e1dd701fbb314f8525aefc6f7b51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8409653a7126050569d63de7be64b786') in 0.020898 seconds 
+  Import took 0.026814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000140 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/privacyIcon.png
+  artifactKey: Guid(8fc2efeec34716341b8f774fd892ef35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/privacyIcon.png using Guid(8fc2efeec34716341b8f774fd892ef35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c71879b1da1a2322f3caa8831689b63') in 0.022196 seconds 
+  Import took 0.027739 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Heart.png
+  artifactKey: Guid(025d69190a4ac0844aba79123c911853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Heart.png using Guid(025d69190a4ac0844aba79123c911853) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9865c5514c2c149feae23fb1bc7f707') in 0.021655 seconds 
+  Import took 0.029228 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueRectInactive.png
+  artifactKey: Guid(c02c38c716ace204689e9e6ad33c7fb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueRectInactive.png using Guid(c02c38c716ace204689e9e6ad33c7fb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06508809b0bdda1caaf3d9f1a5b8bf77') in 0.018656 seconds 
+  Import took 0.026351 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_HeartBrokenSlice.png
+  artifactKey: Guid(9864efbfd97a1d141aaef379143ac011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_HeartBrokenSlice.png using Guid(9864efbfd97a1d141aaef379143ac011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7006bda55169df9cdda8f718cca4e235') in 0.020976 seconds 
+  Import took 0.026851 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000129 seconds.
+  path: Assets/GameAnalytics/Gizmos/GameAnalytics/Images/active.png
+  artifactKey: Guid(2a410468f562749b09418cdaaa03e6c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GameAnalytics/Gizmos/GameAnalytics/Images/active.png using Guid(2a410468f562749b09418cdaaa03e6c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b517d3b5ac1cecd774765cef147f303') in 0.020486 seconds 
+  Import took 0.025921 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/_Game/_Texture/Banner_Sneaker_Clone_UI_2.png
+  artifactKey: Guid(dd88a99c1b2edce4b9b458369bebf306) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Texture/Banner_Sneaker_Clone_UI_2.png using Guid(dd88a99c1b2edce4b9b458369bebf306) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f96f8f9b62c13e8070fcf770dbb2ee7c') in 0.020406 seconds 
+  Import took 0.026651 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000157 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Star.png
+  artifactKey: Guid(939c731b0719b5a4987a4cbaf06633d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Star.png using Guid(939c731b0719b5a4987a4cbaf06633d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef4ff0558b432f9455369021f77eec36') in 0.019725 seconds 
+  Import took 0.027625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_HeartBroken_2Frames.png
+  artifactKey: Guid(050b4143c8c4cc14d8206f23cec429f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_HeartBroken_2Frames.png using Guid(050b4143c8c4cc14d8206f23cec429f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '999eb1e74604992de9fcb9e51e72c723') in 0.021439 seconds 
+  Import took 0.027621 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Glow.png
+  artifactKey: Guid(3a6477e5ce5437a43887ea340ca9faf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Glow.png using Guid(3a6477e5ce5437a43887ea340ca9faf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43ce12d7e2795bc845d6b4a767c3a275') in 0.018808 seconds 
+  Import took 0.025210 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/giftIcon.png
+  artifactKey: Guid(1092191d339e1d54285188962010c122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/giftIcon.png using Guid(1092191d339e1d54285188962010c122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb0f668e8473ec5f2d0cb3281dd0ac47') in 0.021649 seconds 
+  Import took 0.028342 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000155 seconds.
+  path: Assets/_Assets/Advance Navigation/Gizmos/NavMeshSurface Icon.png
+  artifactKey: Guid(e4f97225bcfb64760a1c81f460837f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/Advance Navigation/Gizmos/NavMeshSurface Icon.png using Guid(e4f97225bcfb64760a1c81f460837f01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90a5803c88ae5a9b8d585effd9963c6f') in 0.012997 seconds 
+  Import took 0.019737 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/coinIcon.png
+  artifactKey: Guid(b60b4f735e3ff5e47b534a5720d9c5f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/coinIcon.png using Guid(b60b4f735e3ff5e47b534a5720d9c5f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0406b572cca42fc0027eaf5222f4a13e') in 0.020828 seconds 
+  Import took 0.029274 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/_Game/_Texture/2Section_Area-UI's.png
+  artifactKey: Guid(9b24dc0a73606524e85371c9efd473f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Texture/2Section_Area-UI's.png using Guid(9b24dc0a73606524e85371c9efd473f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '533752d9b291e066e50749e1e92a6f9c') in 0.019092 seconds 
+  Import took 0.026221 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/_Game/_3DAssets/Cloths/Fbx/Beach Section/Bikini_Icon.png
+  artifactKey: Guid(4a6e806a854a32d46b68d391f5d7adf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Cloths/Fbx/Beach Section/Bikini_Icon.png using Guid(4a6e806a854a32d46b68d391f5d7adf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07d9b2780dccd1fa9bec85281d960d2e') in 0.021768 seconds 
+  Import took 0.027972 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Bat.png
+  artifactKey: Guid(32e27c4d7b392d448928e914fbf9b2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Bat.png using Guid(32e27c4d7b392d448928e914fbf9b2d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dd4f19d8aad64ab6083918207690396') in 0.019707 seconds 
+  Import took 0.026620 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000176 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueRectTapped.png
+  artifactKey: Guid(0eb573da6f820b64ca9dc6b0aca7940e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueRectTapped.png using Guid(0eb573da6f820b64ca9dc6b0aca7940e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb862de5153ca81db59c099fde842a44') in 0.019548 seconds 
+  Import took 0.026235 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Smiley Happy Outline.png
+  artifactKey: Guid(8b5cfdfaadd8a244c854bac174bd9120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Smiley Happy Outline.png using Guid(8b5cfdfaadd8a244c854bac174bd9120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2559b17190795c0ed45f5471ee19ad1f') in 0.024773 seconds 
+  Import took 0.031264 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Diamond.png
+  artifactKey: Guid(b271b752f88ea45478b526f9a8b763b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Diamond.png using Guid(b271b752f88ea45478b526f9a8b763b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ded26e03b7722069cc30c8b76e0f915e') in 0.021350 seconds 
+  Import took 0.027185 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/_Game/_Texture/Banner_Sneaker_Clone_UI_1.png
+  artifactKey: Guid(5931eb1dfedbf9946b1b2fd08296fa73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Texture/Banner_Sneaker_Clone_UI_1.png using Guid(5931eb1dfedbf9946b1b2fd08296fa73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47ff27b68d099a851f6ce12433fd6b16') in 0.017824 seconds 
+  Import took 0.024474 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_ShinyStar.png
+  artifactKey: Guid(cb2f31fa21f1ffe43b97ac15df86afd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_ShinyStar.png using Guid(cb2f31fa21f1ffe43b97ac15df86afd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9649898692e6a7e7530b575eecb5e71') in 0.019138 seconds 
+  Import took 0.025818 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000135 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Smiley Happy.png
+  artifactKey: Guid(ae09154c70a982142b0995efeb5f027a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Smiley Happy.png using Guid(ae09154c70a982142b0995efeb5f027a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f26abba7605e64ffe98d4efe4a9cb997') in 0.019328 seconds 
+  Import took 0.025455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Bat.png
+  artifactKey: Guid(80e56d9243738a44da994a2a7de9c041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Bat.png using Guid(80e56d9243738a44da994a2a7de9c041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38e5499541a30d640c23c4d9e4af558d') in 0.019623 seconds 
+  Import took 0.026199 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/_Game/_Textures/_Local/Cash Icon.png
+  artifactKey: Guid(d5634c80ead614c4a80a0e66361b763d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/Cash Icon.png using Guid(d5634c80ead614c4a80a0e66361b763d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ebc862d7fdc84883936203e49567e44') in 0.018421 seconds 
+  Import took 0.024421 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/arrow.png
+  artifactKey: Guid(cc629618dbfcf6248940ec079654490e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/arrow.png using Guid(cc629618dbfcf6248940ec079654490e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '399228c4b0a986595182e4e648ae4d78') in 0.018826 seconds 
+  Import took 0.025662 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/_Game/_3DAssets/Cloths/Fbx/Sport Section/Tshirt_icon.png
+  artifactKey: Guid(efd6851ba9a93d54f8220a12600d5cf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Cloths/Fbx/Sport Section/Tshirt_icon.png using Guid(efd6851ba9a93d54f8220a12600d5cf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2858b645fad121b037dea2584c984e66') in 0.018231 seconds 
+  Import took 0.024535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueBtnNormal.png
+  artifactKey: Guid(09bc6844f59f3624882acb398d410275) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueBtnNormal.png using Guid(09bc6844f59f3624882acb398d410275) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f08d108009df1755e561a88744f6877') in 0.021965 seconds 
+  Import took 0.030746 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/starIcon.png
+  artifactKey: Guid(e46e4d5e82bc0914885046975d7835c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/starIcon.png using Guid(e46e4d5e82bc0914885046975d7835c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3de755e06afee44bb5c36b622f09da6a') in 0.019588 seconds 
+  Import took 0.025406 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/_Default/TutorialInfo/Icons/Help_Icon.png
+  artifactKey: Guid(34f556d724b1bbf4097ca6220db2c581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Default/TutorialInfo/Icons/Help_Icon.png using Guid(34f556d724b1bbf4097ca6220db2c581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d3c220b1925419693912121a96f0618') in 0.021017 seconds 
+  Import took 0.027352 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000156 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Glow.png
+  artifactKey: Guid(e387f662afce60c4cbf4689043469d34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Glow.png using Guid(e387f662afce60c4cbf4689043469d34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '811da2ac4ebd5329e3f094f58ef5093f') in 0.023055 seconds 
+  Import took 0.030185 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/trophyIcon.png
+  artifactKey: Guid(b7c6e8accbd22754296e06628d2cd5b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/trophyIcon.png using Guid(b7c6e8accbd22754296e06628d2cd5b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c029a46f52da716f333d30facdcf25') in 0.026289 seconds 
+  Import took 0.033587 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Decal_BloodPuddle_AB.tga
+  artifactKey: Guid(4205837e4077a184ea3021dca3acaa48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Decal_BloodPuddle_AB.tga using Guid(4205837e4077a184ea3021dca3acaa48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff53e5e7fa31b134998605b59fa1ed32') in 0.016116 seconds 
+  Import took 0.022319 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/_Game/_3DAssets/Cloths/Fbx/Office Section/blue_oxford_button_down_fold.jpg
+  artifactKey: Guid(a9778d8c3f7ab2041937d49e6b1f8029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Cloths/Fbx/Office Section/blue_oxford_button_down_fold.jpg using Guid(a9778d8c3f7ab2041937d49e6b1f8029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43142240fa3ebf441d4d2af5c786131e') in 0.020283 seconds 
+  Import took 0.026208 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000161 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_HeartBrokenSlice.png
+  artifactKey: Guid(328355eba8ce47e41b3a6fc0329a61c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_HeartBrokenSlice.png using Guid(328355eba8ce47e41b3a6fc0329a61c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de4dcc6c80c285da55cd95c5d3f0b3b4') in 0.017058 seconds 
+  Import took 0.022914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_HeartOutline.png
+  artifactKey: Guid(74236b659313dff44bf59dab61235492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_HeartOutline.png using Guid(74236b659313dff44bf59dab61235492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '710d6087f3ee987f9bcca611ad53a902') in 0.020332 seconds 
+  Import took 0.026460 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/backBtn.png
+  artifactKey: Guid(91029b1c79a1b694aa8cd12dbe24a470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/backBtn.png using Guid(91029b1c79a1b694aa8cd12dbe24a470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6659bde2ac5070f697c2ff328a63098') in 0.021441 seconds 
+  Import took 0.028645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Star Outline.png
+  artifactKey: Guid(3ec618feb88d1cc4da88093df65f5795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Star Outline.png using Guid(3ec618feb88d1cc4da88093df65f5795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8af1b2e9b271df7fc31703771bbb8165') in 0.020261 seconds 
+  Import took 0.027782 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000151 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_ShinyStar.png
+  artifactKey: Guid(e11a46337d7c55c42b0a2df4ae4ce720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_ShinyStar.png using Guid(e11a46337d7c55c42b0a2df4ae4ce720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe2da3989b40cce74345fcf210c097fb') in 0.023157 seconds 
+  Import took 0.029974 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000141 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_SmallRocks_4Frames.tga
+  artifactKey: Guid(36410f6ca445b3042aee9caa9c37730e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_SmallRocks_4Frames.tga using Guid(36410f6ca445b3042aee9caa9c37730e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e36de42a234c97613422506965fe58a4') in 0.020833 seconds 
+  Import took 0.026590 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Smiley Happy.png
+  artifactKey: Guid(04968eedb3f06fb478bf733d8fb53727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Smiley Happy.png using Guid(04968eedb3f06fb478bf733d8fb53727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e30e11305d30c9ddcec6a7cce29fe20c') in 0.020470 seconds 
+  Import took 0.026423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/BG.png
+  artifactKey: Guid(d6616e02b5dfa8b47a01edc7daa7a431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/BG.png using Guid(d6616e02b5dfa8b47a01edc7daa7a431) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95d0a317c700ab42caba0e5077270b7f') in 0.024446 seconds 
+  Import took 0.030904 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/shareIcon.png
+  artifactKey: Guid(b933336e4d597044299f6b22dbe635c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/shareIcon.png using Guid(b933336e4d597044299f6b22dbe635c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d042a0144a4e92ec93a2bdd64cd7c33') in 0.022023 seconds 
+  Import took 0.028211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Wood.tga
+  artifactKey: Guid(1b6f6b4520da0a54dbbf54076ba6fb9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Wood.tga using Guid(1b6f6b4520da0a54dbbf54076ba6fb9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a44b023aadb59f8054b68fd1bf0c9053') in 0.022811 seconds 
+  Import took 0.028771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/lockIcon.png
+  artifactKey: Guid(106a6e492891e7b41a19527fc8acfa8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/lockIcon.png using Guid(106a6e492891e7b41a19527fc8acfa8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '789a3aa6555d8ac56f14ed55168c3ce1') in 0.020776 seconds 
+  Import took 0.027233 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_SkullStretch.png
+  artifactKey: Guid(87a80a81b94d57e4abd9241753ae7c3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_SkullStretch.png using Guid(87a80a81b94d57e4abd9241753ae7c3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0768011a4370b121593e88c1ad4d9bf') in 0.018050 seconds 
+  Import took 0.024705 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_SkullStretch.png
+  artifactKey: Guid(768b0970ee4daaf4c9da3b88a3642814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_SkullStretch.png using Guid(768b0970ee4daaf4c9da3b88a3642814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3fb4b27cc4ec8b48ffb73e4c21b2741') in 0.020671 seconds 
+  Import took 0.027528 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueBtnTapped.png
+  artifactKey: Guid(595f33c9cac191a4abd3e734fb500d66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/blueBtnTapped.png using Guid(595f33c9cac191a4abd3e734fb500d66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c9429907537e94e6845e7ca7073a085') in 0.021856 seconds 
+  Import took 0.027732 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000148 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Blood_AB.tga
+  artifactKey: Guid(9c8240b5c6ffd404dadb82f7b6f2cbe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Blood_AB.tga using Guid(9c8240b5c6ffd404dadb82f7b6f2cbe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '728821e83ca858c245c06a1e570f89e0') in 0.022197 seconds 
+  Import took 0.028131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Diamond.png
+  artifactKey: Guid(e9533c4fe61640242a99dc7c6fe8eac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Diamond.png using Guid(e9533c4fe61640242a99dc7c6fe8eac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd293c3302893762171d28c71391150f6') in 0.020772 seconds 
+  Import took 0.027120 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_FadedRay.png
+  artifactKey: Guid(03825a665aa62554eb3e92e2ab6c4b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_FadedRay.png using Guid(03825a665aa62554eb3e92e2ab6c4b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d72d3177fbf05a7ecf850871cbb284a') in 0.021558 seconds 
+  Import took 0.028917 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/_Game/_3DAssets/Cloths/Fbx/Office Section/Suit_Icon.png
+  artifactKey: Guid(5c7a22670d3f1c5419b304a0104c0d63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_3DAssets/Cloths/Fbx/Office Section/Suit_Icon.png using Guid(5c7a22670d3f1c5419b304a0104c0d63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c7a13aa93773972e30a5e0879588229') in 0.020241 seconds 
+  Import took 0.027706 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_HeartOutline.png
+  artifactKey: Guid(03e95ca11ee78cd4482680e2c4ec46f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_HeartOutline.png using Guid(03e95ca11ee78cd4482680e2c4ec46f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd20ee796943bf07ec632cf33a8c7a4b9') in 0.021208 seconds 
+  Import took 0.028335 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Blood_AB.tga
+  artifactKey: Guid(e1b85d706143e26488ceaeca23e6f757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Blood_AB.tga using Guid(e1b85d706143e26488ceaeca23e6f757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5abc6036878bce02e0eb0f6ac0cc92b') in 0.016092 seconds 
+  Import took 0.022751 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/plusIcon.png
+  artifactKey: Guid(4657e471f74a2854fb36afcf69c34f95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/plusIcon.png using Guid(4657e471f74a2854fb36afcf69c34f95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0a29be695510e93da1df586819fa663') in 0.022316 seconds 
+  Import took 0.029313 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000163 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_GlowSoft.png
+  artifactKey: Guid(8a75e78ce03d6bf4aa7ab9b759c2ca32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_GlowSoft.png using Guid(8a75e78ce03d6bf4aa7ab9b759c2ca32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '570509e84bb1baaa1bd36c50393c8768') in 0.020918 seconds 
+  Import took 0.027290 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000153 seconds.
+  path: Assets/_Assets/Advance Navigation/Gizmos/NavMeshModifierVolume Icon.png
+  artifactKey: Guid(cc7b9475dbddf4f9088d327d6e10ab77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/Advance Navigation/Gizmos/NavMeshModifierVolume Icon.png using Guid(cc7b9475dbddf4f9088d327d6e10ab77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6515838828219d060eddd42849c6e21e') in 0.012248 seconds 
+  Import took 0.018997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000440 seconds.
+  path: Assets/_Game/_Textures/_Local/HyperCasual Game UI/heartIcon.png
+  artifactKey: Guid(cde3b4ddc52d1af47a7e8018a4b37f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/_Local/HyperCasual Game UI/heartIcon.png using Guid(cde3b4ddc52d1af47a7e8018a4b37f00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47fa4abf218fa87264e64a3da0c81098') in 0.020219 seconds 
+  Import took 0.026874 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/_Game/_Textures/Particle Effect/CFX2_T_Smiley Happy Outline.png
+  artifactKey: Guid(0a097afabf6d2ad44b3232ff58b65248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Game/_Textures/Particle Effect/CFX2_T_Smiley Happy Outline.png using Guid(0a097afabf6d2ad44b3232ff58b65248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23ba51bfb5386f7877e1424849814b00') in 0.017492 seconds 
+  Import took 0.027125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_HeartBroken_2Frames.png
+  artifactKey: Guid(fc30dedb4b1539a459c3601dc98f4b47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_HeartBroken_2Frames.png using Guid(fc30dedb4b1539a459c3601dc98f4b47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c1e342b295e14c3cc9f9e949703f2e4') in 0.019201 seconds 
+  Import took 0.025961 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000143 seconds.
+  path: Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Star.png
+  artifactKey: Guid(6952b5f508f55574eaafe2fe79f66d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Assets/JMO Assets/Cartoon FX/Textures/CFX2_T_Star.png using Guid(6952b5f508f55574eaafe2fe79f66d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f99b9e11a8abb8ff0a2a31c1e113465') in 0.022743 seconds 
+  Import took 0.029368 seconds .
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 21.63 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 113 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 89.4 MB.
+System memory in use after: 89.6 MB.
+
+Unloading 112 unused Assets to reduce memory usage. Loaded Objects now: 4327.
+Total: 4.891300 ms (FindLiveObjects: 0.345600 ms CreateObjectMapping: 0.222600 ms MarkObjects: 4.251500 ms  DeleteObjects: 0.070500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
