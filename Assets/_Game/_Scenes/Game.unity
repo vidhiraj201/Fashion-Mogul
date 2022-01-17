@@ -6843,7 +6843,7 @@ PrefabInstance:
       objectReference: {fileID: 1297456471}
     - target: {fileID: 592535034, guid: 82c3c03e3e646d9408601717ecd6c7c4, type: 3}
       propertyPath: levelOpening
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 592535034, guid: 82c3c03e3e646d9408601717ecd6c7c4, type: 3}
       propertyPath: SectionUnlockUI
@@ -20351,7 +20351,7 @@ PrefabInstance:
       objectReference: {fileID: 1297456471}
     - target: {fileID: 26172994, guid: 458a697eaaa2457448c0bfc15babd0ad, type: 3}
       propertyPath: levelOpening
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 26172994, guid: 458a697eaaa2457448c0bfc15babd0ad, type: 3}
       propertyPath: SectionUnlockUI

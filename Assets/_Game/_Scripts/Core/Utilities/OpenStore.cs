@@ -78,7 +78,7 @@ namespace FashionM.Core {
             yield return new WaitForSeconds(t);
 
             isOpen = true;
-
+            G2.SetActive(false);
             if (sE.MaxCoinNeedToUnlock > 0)
                 sE.MaxCoinNeedToUnlock = 0;
         }

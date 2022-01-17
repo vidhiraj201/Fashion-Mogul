@@ -8,7 +8,7 @@ namespace FashionM.Core
     {
         public FashionM.Control.clientControl control;
 
-        public GameObject DCloth, Cloth0, Cloth1, Cloth2, Cloth3;
+        public GameObject DCloth1, DCloth2, Cloth0, Cloth1, Cloth2, Cloth3;
 
         private bool poof;
 
@@ -24,9 +24,8 @@ namespace FashionM.Core
                 x = 0.15f;
                 if (control.NeedItem == control.lv.RackNumber0.RackNumber)
                 {
-                    //DCloth.SetActive(false);
-
-                    DCloth.SetActive(true);
+                    DCloth2.SetActive(true);
+                    DCloth1.SetActive(true);
 
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(true);
@@ -36,8 +35,8 @@ namespace FashionM.Core
 
                 if (control.NeedItem == control.lv.RackNumber1.RackNumber)
                 {
-                    //DCloth.SetActive(false);
-                    DCloth.SetActive(true);
+                    DCloth2.SetActive(true);
+                    DCloth1.SetActive(true);
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(false);
                     Cloth2.SetActive(false);
@@ -45,8 +44,8 @@ namespace FashionM.Core
                 }
                 if (control.NeedItem == control.lv.RackNumber2.RackNumber)
                 {
-                    //DCloth.SetActive(false);
-                    DCloth.SetActive(true);
+                    DCloth2.SetActive(true);
+                    DCloth1.SetActive(true);
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(true);
                     Cloth2.SetActive(false);
@@ -55,8 +54,8 @@ namespace FashionM.Core
 
                 if (control.NeedItem == control.lv.RackNumber3.RackNumber)
                 {
-                    //DCloth.SetActive(false);
-                    DCloth.SetActive(true);
+                    DCloth2.SetActive(true);
+                    DCloth1.SetActive(true);
                     Cloth0.SetActive(false);
                     Cloth1.SetActive(true);
                     Cloth2.SetActive(false);
@@ -87,7 +86,8 @@ namespace FashionM.Core
                 {
                     if (control.NeedItem == control.lv.RackNumber0.RackNumber)
                     {
-                        DCloth.SetActive(true);
+                        DCloth2.SetActive(true);
+                        DCloth1.SetActive(true);
                         Cloth0.SetActive(true);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(false);
@@ -96,7 +96,8 @@ namespace FashionM.Core
 
                     if (control.NeedItem == control.lv.RackNumber1.RackNumber)
                     {
-                        DCloth.SetActive(true);
+                        DCloth2.SetActive(true);
+                        DCloth1.SetActive(true);
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(false);
@@ -104,6 +105,8 @@ namespace FashionM.Core
                     }
                     if (control.NeedItem == control.lv.RackNumber2.RackNumber)
                     {
+                        DCloth2.SetActive(true);
+                        DCloth1.SetActive(true);
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(true);
@@ -112,7 +115,8 @@ namespace FashionM.Core
 
                     if (control.NeedItem == control.lv.RackNumber3.RackNumber)
                     {
-                        DCloth.SetActive(false);
+                        DCloth2.SetActive(false);
+                        DCloth1.SetActive(false);
                         Cloth0.SetActive(false);
                         Cloth1.SetActive(true);
                         Cloth2.SetActive(false);

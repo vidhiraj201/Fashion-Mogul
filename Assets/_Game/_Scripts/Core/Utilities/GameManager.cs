@@ -179,6 +179,20 @@ namespace FashionM.Core
                 //customerGoal = 5;
                 TotalCustomerGoal = 5;
             }
+            if (dayCount == 3) TotalCustomerGoal = 10;
+            if (dayCount == 4) TotalCustomerGoal = 40;
+            if (dayCount == 5) TotalCustomerGoal = 30;
+            if (dayCount == 6) TotalCustomerGoal = 50;
+            if (dayCount == 7) TotalCustomerGoal = 60;
+            if (dayCount == 8) TotalCustomerGoal = 80;
+            if (dayCount == 9) TotalCustomerGoal = 50;
+            if (dayCount == 10) TotalCustomerGoal = 75;
+            if (dayCount == 11) TotalCustomerGoal = 90;            
+            if (dayCount == 12) TotalCustomerGoal = 80;            
+            if (dayCount == 13) TotalCustomerGoal = 60;            
+            if (dayCount == 14) TotalCustomerGoal = 35;            
+            if (dayCount == 15) TotalCustomerGoal = 90;                    
+            if (dayCount >= 16) TotalCustomerGoal = 100;                    
         }
 
 
@@ -219,12 +233,7 @@ namespace FashionM.Core
             StartDayButton();
             dailyAmount = 0;
             if (dayCompleteUI.activeSelf)
-                dayCompleteUI.transform.GetChild(1).GetComponent<Animator>().Play("Out");                
-            if (dayCount >= 2 )
-            {
-                TotalCustomerGoal = TotalCustomerGoal * 2;
-/*                customerGoal = TotalCustomerGoal;*/
-            }            
+                dayCompleteUI.transform.GetChild(1).GetComponent<Animator>().Play("Out");                   
             customerGoalGenrator();
             
         }
