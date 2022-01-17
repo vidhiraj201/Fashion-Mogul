@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Breathing Idle
+  m_Name: Breathing Idle 1
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -10699,7 +10699,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.003447886, y: 4.51, z: 0.03208168}
+        value: {x: -0.003447886, y: 5.95, z: 0.03208168}
         inSlope: {x: -0.29249498, y: 0, z: 0}
         outSlope: {x: -0.29249498, y: 0, z: 0}
         tangentMode: 0
@@ -60060,7 +60060,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4.51
+        value: 5.95
         inSlope: 0
         outSlope: 0
         tangentMode: 136
