@@ -16,6 +16,7 @@ namespace FashionM.Core {
         [Header("LevelUP")]
         public GameObject G1;
         public GameObject G2;
+        public GameObject G3;
         // Start is called before the first frame update
         void Start()
         {
@@ -31,6 +32,9 @@ namespace FashionM.Core {
                 SectionUnlockUI.SetActive(true);
 
 
+            if (sE.MaxCoinNeedToUnlock <= 0 && !sE.enabled)
+                isOpen = true;
+
             if (gm.dayCount >= levelOpening)
             {               
                 sE.enabled = true;
@@ -39,6 +43,7 @@ namespace FashionM.Core {
                 if (!isOpen)
                 {
                     G1.SetActive(false);
+                    G3.SetActive(false);
                     G2.SetActive(true);
                     gm.Cinemachine.Play(sectionName);
                     try
@@ -53,6 +58,7 @@ namespace FashionM.Core {
 
                 StartCoroutine(delay(1f));
             }
+
             if(!G1.activeSelf && gm.dayCount != levelOpening)
             {
                 cashDelay();
@@ -71,6 +77,7 @@ namespace FashionM.Core {
 
                 G1.SetActive(true);
                 G2.SetActive(false);
+                G3.SetActive(true);
             }
         }
         IEnumerator delay(float t)

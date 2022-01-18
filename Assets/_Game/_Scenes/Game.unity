@@ -1872,6 +1872,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1297456471}
     - target: {fileID: 2033563789, guid: 51196e959816fd848947d5e8575b6c25, type: 3}
+      propertyPath: G3
+      value: 
+      objectReference: {fileID: 1635933914}
+    - target: {fileID: 2033563789, guid: 51196e959816fd848947d5e8575b6c25, type: 3}
       propertyPath: levelOpening
       value: 5
       objectReference: {fileID: 0}
@@ -6842,6 +6846,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1297456471}
     - target: {fileID: 592535034, guid: 82c3c03e3e646d9408601717ecd6c7c4, type: 3}
+      propertyPath: G3
+      value: 
+      objectReference: {fileID: 1635933914}
+    - target: {fileID: 592535034, guid: 82c3c03e3e646d9408601717ecd6c7c4, type: 3}
       propertyPath: levelOpening
       value: 10
       objectReference: {fileID: 0}
@@ -6962,7 +6970,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920740825}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d324273d3bfac848a1a59fb400636c9, type: 3}
   m_Name: 
@@ -16014,8 +16022,9 @@ MonoBehaviour:
   poofForColor: {fileID: 1571628296}
   speedUp: 20
   speedDown: 75
-  dayCount: 4
+  dayCount: 0
   bonus: {fileID: 699722016}
+  noBonus: 0
 --- !u!114 &1894883825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20350,6 +20359,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1297456471}
     - target: {fileID: 26172994, guid: 458a697eaaa2457448c0bfc15babd0ad, type: 3}
+      propertyPath: G3
+      value: 
+      objectReference: {fileID: 1635933914}
+    - target: {fileID: 26172994, guid: 458a697eaaa2457448c0bfc15babd0ad, type: 3}
       propertyPath: levelOpening
       value: 15
       objectReference: {fileID: 0}
@@ -20611,6 +20624,11 @@ PrefabInstance:
       propertyPath: Day4.Array.data[2]
       value: 
       objectReference: {fileID: 592535032}
+    - target: {fileID: 3539431147905025733, guid: 6b52198032c0f2b41a747d715278142d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9158817500552824380, guid: 6b52198032c0f2b41a747d715278142d,
         type: 3}
       propertyPath: m_Name

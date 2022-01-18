@@ -221,6 +221,7 @@ namespace FashionM.Core
 
         public int dayCount;
         public GameObject bonus;
+        public bool noBonus;
         public void NextDayButton()
         {           
             dayCount += 1;
@@ -228,7 +229,6 @@ namespace FashionM.Core
             x = false;
             levelUPUI.SetActive(false);
             StartCoroutine(showBounus(1.2f));
-            //StartCoroutine(startDayDelay(0.35f));
             customerServed -= TotalCustomerGoal;
             StartDayButton();
             dailyAmount = 0;
@@ -243,7 +243,7 @@ namespace FashionM.Core
             LevelBonusLevelCount.text = (dayCount + 1).ToString();
             bonus.SetActive(true);
             yield return new WaitForSeconds(t);
-            if(dayCount!=5 || dayCount != 9 || dayCount != 14) 
+            if(dayCount!=5 || dayCount != 10 || dayCount != 15) 
                 MaxCoin += 500;
             bonus.SetActive(false);
         }

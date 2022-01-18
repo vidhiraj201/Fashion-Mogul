@@ -107,7 +107,7 @@ namespace FashionM.Core
             this.gameObject.SetActive(false);
             try
             {                
-                FindObjectOfType<SavingAndLoadingSection>().SaveGames();                
+                //'FindObjectOfType<SavingAndLoadingSection>().SaveGames();                
             }
             catch
             {

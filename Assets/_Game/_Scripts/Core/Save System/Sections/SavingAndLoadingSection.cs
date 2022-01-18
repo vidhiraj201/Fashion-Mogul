@@ -16,7 +16,7 @@ public class SavingAndLoadingSection : MonoBehaviour
     public GameDataSection GDS;
     private void Awake()
     {
-        LoadGame();
+        //LoadGame();
         GDS = SaveManagerSection.Load();
     }
 

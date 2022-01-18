@@ -23,12 +23,12 @@ public class SaveGame : MonoBehaviour
             save = saveGame;
             try
             {
-                FindObjectOfType<SavingAndLoadingSection>().SaveGames();
-                FindObjectOfType<SavingAndLoading>().SaveGame();                
+                /*FindObjectOfType<SavingAndLoadingSection>().SaveGames();
+                FindObjectOfType<SavingAndLoading>().SaveGame();
                 FindObjectOfType<SavingAndLoadingCasual>().SaveGame();
                 FindObjectOfType<SavingAndLoadingBeach>().SaveGame();
                 FindObjectOfType<SavingAndLoadingOffice>().SaveGame();
-                FindObjectOfType<SavingAndLoadingSport>().SaveGame();
+                FindObjectOfType<SavingAndLoadingSport>().SaveGame();*/
             }
             catch
             {
