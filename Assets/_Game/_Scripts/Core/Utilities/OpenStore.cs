@@ -16,6 +16,7 @@ namespace FashionM.Core {
         [Header("LevelUP")]
         public GameObject G1;
         public GameObject G2;
+        public GameObject G3;
         // Start is called before the first frame update
         void Start()
         {
@@ -39,6 +40,7 @@ namespace FashionM.Core {
                 if (!isOpen)
                 {
                     G1.SetActive(false);
+                    G3.SetActive(false);
                     G2.SetActive(true);
                     gm.Cinemachine.Play(sectionName);
                     try
@@ -70,6 +72,7 @@ namespace FashionM.Core {
             {
 
                 G1.SetActive(true);
+                G3.SetActive(true);
                 G2.SetActive(false);
             }
         }

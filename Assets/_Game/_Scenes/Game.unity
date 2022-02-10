@@ -1872,6 +1872,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1297456471}
     - target: {fileID: 2033563789, guid: 51196e959816fd848947d5e8575b6c25, type: 3}
+      propertyPath: G3
+      value: 
+      objectReference: {fileID: 1635933914}
+    - target: {fileID: 2033563789, guid: 51196e959816fd848947d5e8575b6c25, type: 3}
       propertyPath: levelOpening
       value: 5
       objectReference: {fileID: 0}
@@ -6841,6 +6845,10 @@ PrefabInstance:
       propertyPath: G2
       value: 
       objectReference: {fileID: 1297456471}
+    - target: {fileID: 592535034, guid: 82c3c03e3e646d9408601717ecd6c7c4, type: 3}
+      propertyPath: G3
+      value: 
+      objectReference: {fileID: 1635933914}
     - target: {fileID: 592535034, guid: 82c3c03e3e646d9408601717ecd6c7c4, type: 3}
       propertyPath: levelOpening
       value: 10
@@ -20349,6 +20357,10 @@ PrefabInstance:
       propertyPath: G2
       value: 
       objectReference: {fileID: 1297456471}
+    - target: {fileID: 26172994, guid: 458a697eaaa2457448c0bfc15babd0ad, type: 3}
+      propertyPath: G3
+      value: 
+      objectReference: {fileID: 1635933914}
     - target: {fileID: 26172994, guid: 458a697eaaa2457448c0bfc15babd0ad, type: 3}
       propertyPath: levelOpening
       value: 15
